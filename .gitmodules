@@ -58,3 +58,8 @@
 	url = git@github.com:courtois-neuromod/floc.fmriprep.git
 	datalad-id = 237e4de8-a4d4-42aa-8814-ab0f2f6c331c
 	datalad-url = git@github.com:courtois-neuromod/floc.fmriprep.git
+[submodule "friends/fmriprep"]
+	path = friends/fmriprep
+	url = git@github.com:courtois-neuromod/friends.fmriprep.git
+	datalad-id = cbfd6482-5670-4f39-ba1b-9623f1f460b8
+	datalad-url = git@github.com:courtois-neuromod/friends.fmriprep.git
