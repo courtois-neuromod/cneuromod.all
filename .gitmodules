@@ -168,3 +168,8 @@
 	url = git@github.com:courtois-neuromod/things.mriqc.git
 	datalad-id = c9fba741-e1dc-465d-9d3f-a8d27a1fbcae
 	datalad-url = git@github.com:courtois-neuromod/things.mriqc.git
+[submodule "retinotopy/prf"]
+	path = retinotopy/prf
+	url = git@github.com:courtois-neuromod/retinotopy.prf.git
+	datalad-id = 5cccb887-2bf5-4465-8a5b-684cdaa8e7b0
+	datalad-url = git@github.com:courtois-neuromod/retinotopy.prf.git
