@@ -118,3 +118,8 @@
 	url = git@github.com:courtois-neuromod/anat.freesurfer.git
 	datalad-id = e91589e2-3533-4b78-9bd2-660e2cc26a59
 	datalad-url = git@github.com:courtois-neuromod/anat.freesurfer.git
+[submodule "anat/freesurfer.longitudinal"]
+	path = anat/freesurfer.longitudinal
+	url = git@github.com:courtois-neuromod/anat.freesurfer_longitudinal.git
+	datalad-id = a05d7185-17f8-49d8-91ae-f3859a483815
+	datalad-url = git@github.com:courtois-neuromod/anat.freesurfer_longitudinal.git
