@@ -173,3 +173,8 @@
 	url = git@github.com:courtois-neuromod/retinotopy.prf.git
 	datalad-id = 5cccb887-2bf5-4465-8a5b-684cdaa8e7b0
 	datalad-url = https://github.com/courtois-neuromod/retinotopy.prf.git
+[submodule "shinobi/training"]
+	path = shinobi/training
+	url = git@github.com:courtois-neuromod/shinobi_training.git
+	datalad-id = b579da63-22ef-42da-8793-a48e3e78e204
+	datalad-url = https://github.com/courtois-neuromod/shinobi_training.git
