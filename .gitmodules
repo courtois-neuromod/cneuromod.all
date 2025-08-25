@@ -191,3 +191,7 @@
 	path = harrypotter/physprep
 	url = git@github.com:courtois-neuromod/harrypotter.physprep.git
 	datalad-url = git@github.com:courtois-neuromod/harrypotter.physprep.git
+[submodule "mario/physprep"]
+	path = mario/physprep
+	url = git@github.com:courtois-neuromod/mario.physprep.git
+	datalad-url = git@github.com:courtois-neuromod/mario.physprep.git
