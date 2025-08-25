@@ -123,3 +123,8 @@
 	url = git@github.com:courtois-neuromod/anat.freesurfer_longitudinal.git
 	datalad-id = a05d7185-17f8-49d8-91ae-f3859a483815
 	datalad-url = git@github.com:courtois-neuromod/anat.freesurfer_longitudinal.git
+[submodule "floc/rois"]
+	path = floc/rois
+	url = git@github.com:courtois-neuromod/floc.rois.git
+	datalad-id = 64b59aaf-4a0b-47c8-867e-fb47ecf01988
+	datalad-url = git@github.com:courtois-neuromod/floc.rois.git
