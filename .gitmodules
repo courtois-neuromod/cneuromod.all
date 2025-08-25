@@ -158,3 +158,8 @@
 	url = git@github.com:courtois-neuromod/movie10.mriqc.git
 	datalad-id = 6440e3f3-4a38-4572-8e3a-f5a93da1c4c8
 	datalad-url = git@github.com:courtois-neuromod/movie10.mriqc.git
+[submodule "shinobi/mriqc"]
+	path = shinobi/mriqc
+	url = git@github.com:courtois-neuromod/shinobi.mriqc.git
+	datalad-id = 8fe6d6a1-ef9a-45f5-9907-83f4aa659978
+	datalad-url = git@github.com:courtois-neuromod/shinobi.mriqc.git
