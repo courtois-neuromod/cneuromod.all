@@ -183,3 +183,7 @@
 	url = git@github.com:courtois-neuromod/anat.atlases.git
 	datalad-id = 4de38bf7-7bc9-479b-b7f1-d93c81f9880a
 	datalad-url = git@github.com:courtois-neuromod/anat.atlases.git
+[submodule "friends/physprep"]
+	path = friends/physprep
+	url = git@github.com:courtois-neuromod/friends.physprep.git
+	datalad-url = git@github.com:courtois-neuromod/friends.physprep.git
