@@ -203,3 +203,8 @@
 	path = shinobi/physprep
 	url = git@github.com:courtois-neuromod/shinobi.physprep.git
 	datalad-url = https://github.com/courtois-neuromod/shinobi.physprep.git
+[submodule "anat/pycortex"]
+	path = anat/pycortex
+	url = git@github.com:courtois-neuromod/anat.pycortex.git
+	datalad-id = 77f50c61-82aa-4f3a-ae7c-9b3b6e3f7cdf
+	datalad-url = https://github.com/courtois-neuromod/anat.pycortex.git
