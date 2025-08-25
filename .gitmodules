@@ -148,3 +148,8 @@
 	url = git@github.com:courtois-neuromod/floc.mriqc.git
 	datalad-id = c31a8583-6ccc-4bb4-98b1-a1b427d7856f
 	datalad-url = git@github.com:courtois-neuromod/floc.mriqc.git
+[submodule "friends/mriqc"]
+	path = friends/mriqc
+	url = git@github.com:courtois-neuromod/friends.mriqc.git
+	datalad-id = 420f6c93-132e-461d-a868-6b9f386ffa10
+	datalad-url = git@github.com:courtois-neuromod/friends.mriqc.git
