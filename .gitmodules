@@ -38,3 +38,8 @@
 	url = git@github.com:courtois-neuromod/movie10.git
 	datalad-id = 74df9898-c9bb-11e9-85f3-3ea8d101da1a
 	datalad-url = git@github.com:courtois-neuromod/movie10.git
+[submodule "retinotopy/bids"]
+	path = retinotopy/bids
+	url = git@github.com:courtois-neuromod/retinotopy.git
+	datalad-id = df96e39c-55e0-4862-a5c4-66145afcff6a
+	datalad-url = git@github.com:courtois-neuromod/retinotopy.git
