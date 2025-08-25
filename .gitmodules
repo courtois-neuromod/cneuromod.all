@@ -8,3 +8,8 @@
 	url = git@github.com:courtois-neuromod/floc.git
 	datalad-id = a1aba9da-6122-4824-948f-241b0a1f4886
 	datalad-url = git@github.com:courtois-neuromod/floc.git
+[submodule "friends/bids"]
+	path = friends/bids
+	url = git@github.com:courtois-neuromod/friends.git
+	datalad-id = 66738676-1d20-11ea-9a9e-3ea8d101da1a
+	datalad-url = git@github.com:courtois-neuromod/friends.git
