@@ -93,3 +93,8 @@
 	url = git@github.com:courtois-neuromod/retinotopy.fmriprep.git
 	datalad-id = 48398cbc-de88-4e06-ad53-09fec11fe65b
 	datalad-url = git@github.com:courtois-neuromod/retinotopy.fmriprep.git
+[submodule "shinobi/fmriprep"]
+	path = shinobi/fmriprep
+	url = git@github.com:courtois-neuromod/shinobi.fmriprep.git
+	datalad-id = 99a5a823-59ed-4f4e-9fbd-971bb5e7d1d5
+	datalad-url = git@github.com:courtois-neuromod/shinobi.fmriprep.git
