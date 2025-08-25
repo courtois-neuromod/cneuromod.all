@@ -138,3 +138,8 @@
 	url = git@github.com:courtois-neuromod/things-glm.git
 	datalad-id = 522a1885-1f42-48c3-af0d-30f08d72aa36
 	datalad-url = git@github.com:courtois-neuromod/things-glm.git
+[submodule "things/behaviour"]
+	path = things/behaviour
+	url = git@github.com:courtois-neuromod/things.behaviour.git
+	datalad-id = 3814d9a1-62c1-456f-9204-623c238934fc
+	datalad-url = git@github.com:courtois-neuromod/things.behaviour.git
