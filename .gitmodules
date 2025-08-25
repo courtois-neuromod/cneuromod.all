@@ -28,3 +28,8 @@
 	url = git@github.com:courtois-neuromod/hcptrt.git
 	datalad-id = 75ea31e2-f730-11e9-aec7-3ea8d101da1a
 	datalad-url = git@github.com:courtois-neuromod/hcptrt.git
+[submodule "mario/bids"]
+	path = mario/bids
+	url = git@github.com:courtois-neuromod/mario.git
+	datalad-id = 195953d1-63c4-491a-adb1-c2e9ea1a2746
+	datalad-url = git@github.com:courtois-neuromod/mario.git
