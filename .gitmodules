@@ -48,3 +48,8 @@
 	url = git@github.com:courtois-neuromod/shinobi.git
 	datalad-id = 3ee55e10-f8f6-11ea-83ca-3ea8d101da1a
 	datalad-url = git@github.com:courtois-neuromod/shinobi.git
+[submodule "things/bids"]
+	path = things/bids
+	url = git@github.com:courtois-neuromod/things.git
+	datalad-id = 5151ad3c-321e-4111-abf0-95fee0dcbb90
+	datalad-url = git@github.com:courtois-neuromod/things.git
