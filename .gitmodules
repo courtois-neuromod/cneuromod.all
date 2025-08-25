@@ -199,3 +199,7 @@
 	path = movie10/physprep
 	url = git@github.com:courtois-neuromod/movie10.physprep.git
 	datalad-url = git@github.com:courtois-neuromod/movie10.physprep.git
+[submodule "shinobi/physprep"]
+	path = shinobi/physprep
+	url = git@github.com:courtois-neuromod/shinobi.physprep.git
+	datalad-url = git@github.com:courtois-neuromod/shinobi.physprep.git
