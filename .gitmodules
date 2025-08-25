@@ -33,3 +33,8 @@
 	url = git@github.com:courtois-neuromod/mario.git
 	datalad-id = 195953d1-63c4-491a-adb1-c2e9ea1a2746
 	datalad-url = git@github.com:courtois-neuromod/mario.git
+[submodule "movie10/bids"]
+	path = movie10/bids
+	url = git@github.com:courtois-neuromod/movie10.git
+	datalad-id = 74df9898-c9bb-11e9-85f3-3ea8d101da1a
+	datalad-url = git@github.com:courtois-neuromod/movie10.git
