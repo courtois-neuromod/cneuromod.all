@@ -182,24 +182,24 @@
 	path = anat/atlases
 	url = git@github.com:courtois-neuromod/anat.atlases.git
 	datalad-id = 4de38bf7-7bc9-479b-b7f1-d93c81f9880a
-	datalad-url = git@github.com:courtois-neuromod/anat.atlases.git
+	datalad-url = https://github.com/courtois-neuromod/anat.atlases.git
 [submodule "friends/physprep"]
 	path = friends/physprep
 	url = git@github.com:courtois-neuromod/friends.physprep.git
-	datalad-url = git@github.com:courtois-neuromod/friends.physprep.git
+	datalad-url = https://github.com/courtois-neuromod/friends.physprep.git
 [submodule "harrypotter/physprep"]
 	path = harrypotter/physprep
 	url = git@github.com:courtois-neuromod/harrypotter.physprep.git
-	datalad-url = git@github.com:courtois-neuromod/harrypotter.physprep.git
+	datalad-url = https://github.com/courtois-neuromod/harrypotter.physprep.git
 [submodule "mario/physprep"]
 	path = mario/physprep
 	url = git@github.com:courtois-neuromod/mario.physprep.git
-	datalad-url = git@github.com:courtois-neuromod/mario.physprep.git
+	datalad-url = https://github.com/courtois-neuromod/mario.physprep.git
 [submodule "movie10/physprep"]
 	path = movie10/physprep
 	url = git@github.com:courtois-neuromod/movie10.physprep.git
-	datalad-url = git@github.com:courtois-neuromod/movie10.physprep.git
+	datalad-url = https://github.com/courtois-neuromod/movie10.physprep.git
 [submodule "shinobi/physprep"]
 	path = shinobi/physprep
 	url = git@github.com:courtois-neuromod/shinobi.physprep.git
-	datalad-url = git@github.com:courtois-neuromod/shinobi.physprep.git
+	datalad-url = https://github.com/courtois-neuromod/shinobi.physprep.git
