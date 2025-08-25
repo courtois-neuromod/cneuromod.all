@@ -3,3 +3,8 @@
 	url = git@github.com:courtois-neuromod/anat.git
 	datalad-id = b376774c-889d-11ea-b60e-3ea8d101da1a
 	datalad-url = git@github.com:courtois-neuromod/anat.git
+[submodule "floc/bids"]
+	path = floc/bids
+	url = git@github.com:courtois-neuromod/floc.git
+	datalad-id = a1aba9da-6122-4824-948f-241b0a1f4886
+	datalad-url = git@github.com:courtois-neuromod/floc.git
