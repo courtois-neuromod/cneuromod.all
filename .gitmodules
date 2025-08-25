@@ -2,174 +2,174 @@
 	path = anat/bids
 	url = git@github.com:courtois-neuromod/anat.git
 	datalad-id = b376774c-889d-11ea-b60e-3ea8d101da1a
-	datalad-url = git@github.com:courtois-neuromod/anat.git
+	datalad-url = https://github.com/courtois-neuromod/anat.git
 [submodule "floc/bids"]
 	path = floc/bids
 	url = git@github.com:courtois-neuromod/floc.git
 	datalad-id = a1aba9da-6122-4824-948f-241b0a1f4886
-	datalad-url = git@github.com:courtois-neuromod/floc.git
+	datalad-url = https://github.com/courtois-neuromod/floc.git
 [submodule "friends/bids"]
 	path = friends/bids
 	url = git@github.com:courtois-neuromod/friends.git
 	datalad-id = 66738676-1d20-11ea-9a9e-3ea8d101da1a
-	datalad-url = git@github.com:courtois-neuromod/friends.git
+	datalad-url = https://github.com/courtois-neuromod/friends.git
 [submodule "gamepad/bids"]
 	path = gamepad/bids
 	url = git@github.com:courtois-neuromod/gamepad.git
 	datalad-id = afdbdee8-50ec-4cd4-9baa-354a946585c5
-	datalad-url = git@github.com:courtois-neuromod/gamepad.git
+	datalad-url = https://github.com/courtois-neuromod/gamepad.git
 [submodule "harrypotter/bids"]
 	path = harrypotter/bids
 	url = git@github.com:courtois-neuromod/harrypotter.git
 	datalad-id = d58c7aa5-3e9f-48bf-9cb9-d55057f460fd
-	datalad-url = git@github.com:courtois-neuromod/harrypotter.git
+	datalad-url = https://github.com/courtois-neuromod/harrypotter.git
 [submodule "hcptrt/bids"]
 	path = hcptrt/bids
 	url = git@github.com:courtois-neuromod/hcptrt.git
 	datalad-id = 75ea31e2-f730-11e9-aec7-3ea8d101da1a
-	datalad-url = git@github.com:courtois-neuromod/hcptrt.git
+	datalad-url = https://github.com/courtois-neuromod/hcptrt.git
 [submodule "mario/bids"]
 	path = mario/bids
 	url = git@github.com:courtois-neuromod/mario.git
 	datalad-id = 195953d1-63c4-491a-adb1-c2e9ea1a2746
-	datalad-url = git@github.com:courtois-neuromod/mario.git
+	datalad-url = https://github.com/courtois-neuromod/mario.git
 [submodule "movie10/bids"]
 	path = movie10/bids
 	url = git@github.com:courtois-neuromod/movie10.git
 	datalad-id = 74df9898-c9bb-11e9-85f3-3ea8d101da1a
-	datalad-url = git@github.com:courtois-neuromod/movie10.git
+	datalad-url = https://github.com/courtois-neuromod/movie10.git
 [submodule "retinotopy/bids"]
 	path = retinotopy/bids
 	url = git@github.com:courtois-neuromod/retinotopy.git
 	datalad-id = df96e39c-55e0-4862-a5c4-66145afcff6a
-	datalad-url = git@github.com:courtois-neuromod/retinotopy.git
+	datalad-url = https://github.com/courtois-neuromod/retinotopy.git
 [submodule "shinobi/bids"]
 	path = shinobi/bids
 	url = git@github.com:courtois-neuromod/shinobi.git
 	datalad-id = 3ee55e10-f8f6-11ea-83ca-3ea8d101da1a
-	datalad-url = git@github.com:courtois-neuromod/shinobi.git
+	datalad-url = https://github.com/courtois-neuromod/shinobi.git
 [submodule "things/bids"]
 	path = things/bids
 	url = git@github.com:courtois-neuromod/things.git
 	datalad-id = 5151ad3c-321e-4111-abf0-95fee0dcbb90
-	datalad-url = git@github.com:courtois-neuromod/things.git
+	datalad-url = https://github.com/courtois-neuromod/things.git
 [submodule "floc/fmriprep"]
 	path = floc/fmriprep
 	url = git@github.com:courtois-neuromod/floc.fmriprep.git
 	datalad-id = 237e4de8-a4d4-42aa-8814-ab0f2f6c331c
-	datalad-url = git@github.com:courtois-neuromod/floc.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/floc.fmriprep.git
 [submodule "friends/fmriprep"]
 	path = friends/fmriprep
 	url = git@github.com:courtois-neuromod/friends.fmriprep.git
 	datalad-id = cbfd6482-5670-4f39-ba1b-9623f1f460b8
-	datalad-url = git@github.com:courtois-neuromod/friends.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/friends.fmriprep.git
 [submodule "gamepad/fmriprep"]
 	path = gamepad/fmriprep
 	url = git@github.com:courtois-neuromod/gamepad.fmriprep.git
 	datalad-id = e8f3cb93-15a8-41c5-9d63-33cb5b4bf143
-	datalad-url = git@github.com:courtois-neuromod/gamepad.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/gamepad.fmriprep.git
 [submodule "harrypotter/fmriprep"]
 	path = harrypotter/fmriprep
 	url = git@github.com:courtois-neuromod/harrypotter.fmriprep.git
 	datalad-id = e7c71cca-4d8e-4bd1-b8c7-5fe43e44c1b9
-	datalad-url = git@github.com:courtois-neuromod/harrypotter.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/harrypotter.fmriprep.git
 [submodule "hcptrt/fmriprep"]
 	path = hcptrt/fmriprep
 	url = git@github.com:courtois-neuromod/hcptrt.fmriprep.git
 	datalad-id = 167b1afc-ab5f-473b-932b-7e7a28c37dc3
-	datalad-url = git@github.com:courtois-neuromod/hcptrt.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/hcptrt.fmriprep.git
 [submodule "mario/fmriprep"]
 	path = mario/fmriprep
 	url = git@github.com:courtois-neuromod/mario.fmriprep.git
 	datalad-id = c1c43979-a83d-42b7-9508-4fface179af8
-	datalad-url = git@github.com:courtois-neuromod/mario.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/mario.fmriprep.git
 [submodule "movie10/fmriprep"]
 	path = movie10/fmriprep
 	url = git@github.com:courtois-neuromod/movie10.fmriprep.git
 	datalad-id = 3f0351b0-6d9f-4d05-841e-040cbe830bc7
-	datalad-url = git@github.com:courtois-neuromod/movie10.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/movie10.fmriprep.git
 [submodule "retinotopy/fmriprep"]
 	path = retinotopy/fmriprep
 	url = git@github.com:courtois-neuromod/retinotopy.fmriprep.git
 	datalad-id = 48398cbc-de88-4e06-ad53-09fec11fe65b
-	datalad-url = git@github.com:courtois-neuromod/retinotopy.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/retinotopy.fmriprep.git
 [submodule "shinobi/fmriprep"]
 	path = shinobi/fmriprep
 	url = git@github.com:courtois-neuromod/shinobi.fmriprep.git
 	datalad-id = 99a5a823-59ed-4f4e-9fbd-971bb5e7d1d5
-	datalad-url = git@github.com:courtois-neuromod/shinobi.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/shinobi.fmriprep.git
 [submodule "things/fmriprep"]
 	path = things/fmriprep
 	url = git@github.com:courtois-neuromod/things.fmriprep.git
 	datalad-id = 81d8c126-b10f-4e8b-9eab-6825964c8552
-	datalad-url = git@github.com:courtois-neuromod/things.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/things.fmriprep.git
 [submodule "anat/smriprep"]
 	path = anat/smriprep
 	url = git@github.com:courtois-neuromod/anat.smriprep.git
 	datalad-id = f3ef9683-0a58-4d2b-b4eb-d33d8fc3fd2b
-	datalad-url = git@github.com:courtois-neuromod/anat.smriprep.git
+	datalad-url = https://github.com/courtois-neuromod/anat.smriprep.git
 [submodule "anat/smriprep.longitudinal"]
 	path = anat/smriprep.longitudinal
 	url = git@github.com:courtois-neuromod/smriprep.longitudinal.git
 	datalad-id = 428cc920-6975-4b3f-82c6-a078ed1fa8f8
-	datalad-url = git@github.com:courtois-neuromod/smriprep.longitudinal.git
+	datalad-url = https://github.com/courtois-neuromod/smriprep.longitudinal.git
 [submodule "anat/freesurfer"]
 	path = anat/freesurfer
 	url = git@github.com:courtois-neuromod/anat.freesurfer.git
 	datalad-id = e91589e2-3533-4b78-9bd2-660e2cc26a59
-	datalad-url = git@github.com:courtois-neuromod/anat.freesurfer.git
+	datalad-url = https://github.com/courtois-neuromod/anat.freesurfer.git
 [submodule "anat/freesurfer.longitudinal"]
 	path = anat/freesurfer.longitudinal
 	url = git@github.com:courtois-neuromod/anat.freesurfer_longitudinal.git
 	datalad-id = a05d7185-17f8-49d8-91ae-f3859a483815
-	datalad-url = git@github.com:courtois-neuromod/anat.freesurfer_longitudinal.git
+	datalad-url = https://github.com/courtois-neuromod/anat.freesurfer_longitudinal.git
 [submodule "floc/rois"]
 	path = floc/rois
 	url = git@github.com:courtois-neuromod/floc.rois.git
 	datalad-id = 64b59aaf-4a0b-47c8-867e-fb47ecf01988
-	datalad-url = git@github.com:courtois-neuromod/floc.rois.git
+	datalad-url = https://github.com/courtois-neuromod/floc.rois.git
 [submodule "things/glmsingle"]
 	path = things/glmsingle
 	url = git@github.com:courtois-neuromod/things.glmsingle.git
 	datalad-id = 48db661d-fcef-44ba-a2bc-4bb04f8fd3d5
-	datalad-url = git@github.com:courtois-neuromod/things.glmsingle.git
+	datalad-url = https://github.com/courtois-neuromod/things.glmsingle.git
 [submodule "things/glm"]
 	path = things/glm
 	url = git@github.com:courtois-neuromod/things-glm.git
 	datalad-id = 522a1885-1f42-48c3-af0d-30f08d72aa36
-	datalad-url = git@github.com:courtois-neuromod/things-glm.git
+	datalad-url = https://github.com/courtois-neuromod/things-glm.git
 [submodule "things/behaviour"]
 	path = things/behaviour
 	url = git@github.com:courtois-neuromod/things.behaviour.git
 	datalad-id = 3814d9a1-62c1-456f-9204-623c238934fc
-	datalad-url = git@github.com:courtois-neuromod/things.behaviour.git
+	datalad-url = https://github.com/courtois-neuromod/things.behaviour.git
 [submodule "floc/mriqc"]
 	path = floc/mriqc
 	url = git@github.com:courtois-neuromod/floc.mriqc.git
 	datalad-id = c31a8583-6ccc-4bb4-98b1-a1b427d7856f
-	datalad-url = git@github.com:courtois-neuromod/floc.mriqc.git
+	datalad-url = https://github.com/courtois-neuromod/floc.mriqc.git
 [submodule "friends/mriqc"]
 	path = friends/mriqc
 	url = git@github.com:courtois-neuromod/friends.mriqc.git
 	datalad-id = 420f6c93-132e-461d-a868-6b9f386ffa10
-	datalad-url = git@github.com:courtois-neuromod/friends.mriqc.git
+	datalad-url = https://github.com/courtois-neuromod/friends.mriqc.git
 [submodule "movie10/mriqc"]
 	path = movie10/mriqc
 	url = git@github.com:courtois-neuromod/movie10.mriqc.git
 	datalad-id = 6440e3f3-4a38-4572-8e3a-f5a93da1c4c8
-	datalad-url = git@github.com:courtois-neuromod/movie10.mriqc.git
+	datalad-url = https://github.com/courtois-neuromod/movie10.mriqc.git
 [submodule "shinobi/mriqc"]
 	path = shinobi/mriqc
 	url = git@github.com:courtois-neuromod/shinobi.mriqc.git
 	datalad-id = 8fe6d6a1-ef9a-45f5-9907-83f4aa659978
-	datalad-url = git@github.com:courtois-neuromod/shinobi.mriqc.git
+	datalad-url = https://github.com/courtois-neuromod/shinobi.mriqc.git
 [submodule "things/mriqc"]
 	path = things/mriqc
 	url = git@github.com:courtois-neuromod/things.mriqc.git
 	datalad-id = c9fba741-e1dc-465d-9d3f-a8d27a1fbcae
-	datalad-url = git@github.com:courtois-neuromod/things.mriqc.git
+	datalad-url = https://github.com/courtois-neuromod/things.mriqc.git
 [submodule "retinotopy/prf"]
 	path = retinotopy/prf
 	url = git@github.com:courtois-neuromod/retinotopy.prf.git
 	datalad-id = 5cccb887-2bf5-4465-8a5b-684cdaa8e7b0
-	datalad-url = git@github.com:courtois-neuromod/retinotopy.prf.git
+	datalad-url = https://github.com/courtois-neuromod/retinotopy.prf.git
