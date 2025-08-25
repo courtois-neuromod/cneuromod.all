@@ -23,3 +23,8 @@
 	url = git@github.com:courtois-neuromod/harrypotter.git
 	datalad-id = d58c7aa5-3e9f-48bf-9cb9-d55057f460fd
 	datalad-url = git@github.com:courtois-neuromod/harrypotter.git
+[submodule "hcptrt/bids"]
+	path = hcptrt/bids
+	url = git@github.com:courtois-neuromod/hcptrt.git
+	datalad-id = 75ea31e2-f730-11e9-aec7-3ea8d101da1a
+	datalad-url = git@github.com:courtois-neuromod/hcptrt.git
