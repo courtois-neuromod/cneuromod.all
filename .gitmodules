@@ -103,3 +103,8 @@
 	url = git@github.com:courtois-neuromod/things.fmriprep.git
 	datalad-id = 81d8c126-b10f-4e8b-9eab-6825964c8552
 	datalad-url = git@github.com:courtois-neuromod/things.fmriprep.git
+[submodule "anat/smriprep"]
+	path = anat/smriprep
+	url = git@github.com:courtois-neuromod/anat.smriprep.git
+	datalad-id = f3ef9683-0a58-4d2b-b4eb-d33d8fc3fd2b
+	datalad-url = git@github.com:courtois-neuromod/anat.smriprep.git
