@@ -68,3 +68,8 @@
 	url = git@github.com:courtois-neuromod/gamepad.fmriprep.git
 	datalad-id = e8f3cb93-15a8-41c5-9d63-33cb5b4bf143
 	datalad-url = git@github.com:courtois-neuromod/gamepad.fmriprep.git
+[submodule "harrypotter/fmriprep"]
+	path = harrypotter/fmriprep
+	url = git@github.com:courtois-neuromod/harrypotter.fmriprep.git
+	datalad-id = e7c71cca-4d8e-4bd1-b8c7-5fe43e44c1b9
+	datalad-url = git@github.com:courtois-neuromod/harrypotter.fmriprep.git
