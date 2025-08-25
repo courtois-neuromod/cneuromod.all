@@ -73,3 +73,8 @@
 	url = git@github.com:courtois-neuromod/harrypotter.fmriprep.git
 	datalad-id = e7c71cca-4d8e-4bd1-b8c7-5fe43e44c1b9
 	datalad-url = git@github.com:courtois-neuromod/harrypotter.fmriprep.git
+[submodule "hcptrt/fmriprep"]
+	path = hcptrt/fmriprep
+	url = git@github.com:courtois-neuromod/hcptrt.fmriprep.git
+	datalad-id = 167b1afc-ab5f-473b-932b-7e7a28c37dc3
+	datalad-url = git@github.com:courtois-neuromod/hcptrt.fmriprep.git
