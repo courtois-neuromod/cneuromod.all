@@ -83,3 +83,8 @@
 	url = git@github.com:courtois-neuromod/mario.fmriprep.git
 	datalad-id = c1c43979-a83d-42b7-9508-4fface179af8
 	datalad-url = git@github.com:courtois-neuromod/mario.fmriprep.git
+[submodule "movie10/fmriprep"]
+	path = movie10/fmriprep
+	url = git@github.com:courtois-neuromod/movie10.fmriprep.git
+	datalad-id = 3f0351b0-6d9f-4d05-841e-040cbe830bc7
+	datalad-url = git@github.com:courtois-neuromod/movie10.fmriprep.git
