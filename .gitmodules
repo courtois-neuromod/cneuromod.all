@@ -108,3 +108,8 @@
 	url = git@github.com:courtois-neuromod/anat.smriprep.git
 	datalad-id = f3ef9683-0a58-4d2b-b4eb-d33d8fc3fd2b
 	datalad-url = git@github.com:courtois-neuromod/anat.smriprep.git
+[submodule "anat/smriprep.longitudinal"]
+	path = anat/smriprep.longitudinal
+	url = git@github.com:courtois-neuromod/smriprep.longitudinal.git
+	datalad-id = 428cc920-6975-4b3f-82c6-a078ed1fa8f8
+	datalad-url = git@github.com:courtois-neuromod/smriprep.longitudinal.git
