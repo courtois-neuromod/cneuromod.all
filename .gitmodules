@@ -212,3 +212,7 @@
 	path = petit-prince/bids
 	url = git@github.com:courtois-neuromod/petit-prince.git
 	datalad-url = git@github.com:courtois-neuromod/petit-prince.git
+[submodule "petit-prince/fmriprep"]
+	path = petit-prince/fmriprep
+	url = git@github.com:courtois-neuromod/petit-prince.fmriprep.git
+	datalad-url = git@github.com:courtois-neuromod/petit-prince.fmriprep.git
