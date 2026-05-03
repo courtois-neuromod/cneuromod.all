@@ -24,6 +24,10 @@ cd <submodule-path> && datalad get <file-or-glob>
 datalad save -m "description of change"
 ```
 
+## Contributor naming convention
+
+Always use **Lune Bellec** (login: `lunebellec`, profile: `https://github.com/lunebellec`) in `.all-contributorsrc` files. Never use "Pierre Bellec" or login `pbellec`.
+
 ## Per-dataset metadata
 
 Each top-level dataset folder (e.g. `hcptrt/`, `anat/`) may contain two metadata files that are auto-rendered into the Sphinx documentation at build time:

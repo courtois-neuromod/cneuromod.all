@@ -1,0 +1,41 @@
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: available }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: available }
+
+duration:
+  n_sessions_min: 10
+  n_sessions_max: 13
+  hours_per_participant: 8
+  hours_total: 48
+
+tasks:
+  - emoji: "🎭"
+    label: "7 HCP task localizers (23 conditions)"
+    note: "13–18 repetitions per participant"
+  - emoji: "💤"
+    label: "resting state"
+    note: "4–6 repetitions per participant"
+
+modalities:
+  - emoji: "🧠"
+    label: "Neuroimaging (fMRI)"
+    status: available
+  - emoji: "📊"
+    label: "Behavior (Event files)"
+    status: available
+  - emoji: "📈"
+    label: "Physiology"
+    components:
+      - { label: ECG,              status: not_collected }
+      - { label: pulse,            status: not_collected }
+      - { label: respiration,      status: not_collected }
+      - { label: skin conductance, status: not_collected }
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: Gaze,         status: not_collected }
+      - { label: pupillometry, status: not_collected }
