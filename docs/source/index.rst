@@ -4,9 +4,12 @@
    :maxdepth: 1
    :caption: Contents:
 
+   contents/access
+   contents/downloading
+   contents/participants
+   contents/mri
    AUTHORS
    ACKNOWLEDGMENT
-   components/access
    _components_placeholder_
 
 .. toctree::

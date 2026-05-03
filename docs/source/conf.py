@@ -99,8 +99,10 @@ _STATUS_ICON = {
     'not_collected': '❌',
 }
 
-# Uppercase .md files at the repo root that are not processing-pipeline docs
+# Uppercase .md files at the repo root excluded from auto-discovery entirely
 _ROOT_MD_EXCLUDE = {'README.md', 'CLAUDE.md'}
+# Uppercase .md files that are symlinked but hardcoded in index.rst (kept out of the placeholder)
+_ROOT_MD_MANUAL = {'DOWNLOADING.md'}
 
 
 def _symlink(link_path, target_path, base_dir):
@@ -147,7 +149,7 @@ def _auto_discover_datasets(app):
     repo_root = os.path.abspath(os.path.join(conf_dir, '..', '..'))
 
     # --- global component pages (root-level uppercase .md files) ---
-    components_dir = os.path.join(conf_dir, 'components')
+    components_dir = os.path.join(conf_dir, 'contents')
     os.makedirs(components_dir, exist_ok=True)
     global_comps = []
     for f in sorted(Path(repo_root).glob('*.md')):
@@ -155,7 +157,8 @@ def _auto_discover_datasets(app):
             continue
         link_path = Path(components_dir) / (f.stem.lower() + '.md')
         _symlink(link_path, f, components_dir)
-        global_comps.append((f.stem, f))
+        if f.name not in _ROOT_MD_MANUAL:
+            global_comps.append((f.stem, f))
     _global_components = global_comps
 
     # --- dataset pages ---
@@ -380,8 +383,8 @@ def _render_components_row(components):
         _, title, _ = _extract_component_title(content)
         display = title if title else stem.title()
         if kind == 'page':
-            # Link to standalone component page in components/
-            parts.append(f'[{display}](../components/{stem.lower()})')
+            # Link to standalone component page in contents/
+            parts.append(f'[{display}](../contents/{stem.lower()})')
         else:
             # Same-page anchor link to embedded section
             anchor = re.sub(r'[^a-z0-9]+', '', display.lower())
@@ -413,7 +416,7 @@ def _inject_index(app, docname, source):
         entries = '\n   '.join(f'datasets/{name}' for name in _discovered_datasets)
         source[0] = source[0].replace('   _datasets_placeholder_', f'   {entries}')
     if _global_components:
-        entries = '\n   '.join(f'components/{stem.lower()}' for stem, _ in _global_components)
+        entries = '\n   '.join(f'contents/{stem.lower()}' for stem, _ in _global_components)
         source[0] = source[0].replace('   _components_placeholder_', f'   {entries}')
     else:
         source[0] = source[0].replace('\n   _components_placeholder_', '')
@@ -461,7 +464,7 @@ def _always_reread_index(app, env, added, changed, removed):
     # so content stays current on incremental builds.
     seen = set()
     force = ['index']
-    force += [f'components/{stem.lower()}' for stem, _ in _global_components]
+    force += [f'contents/{stem.lower()}' for stem, _ in _global_components]
     for name in _dataset_citation:
         force.append(f'datasets/{name}')
         seen.add(name)
