@@ -1,1 +1,0 @@
-../../../anat/README.md

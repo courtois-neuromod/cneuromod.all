@@ -166,6 +166,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "myst-parser" },
+    { name = "pyyaml" },
     { name = "sphinx" },
     { name = "sphinx-rtd-theme" },
 ]
@@ -179,6 +180,7 @@ pybids = [
 requires-dist = [
     { name = "myst-parser", specifier = ">=3.0" },
     { name = "pybids", marker = "extra == 'pybids'", specifier = ">=0.17" },
+    { name = "pyyaml", specifier = ">=6.0" },
     { name = "sphinx", specifier = ">=8.0" },
     { name = "sphinx-rtd-theme", specifier = ">=2.0" },
 ]
