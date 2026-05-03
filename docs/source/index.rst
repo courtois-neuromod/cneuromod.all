@@ -11,4 +11,5 @@
    :maxdepth: 1
    :caption: Datasets:
 
+   datasets/anat
    datasets/hcptrt
