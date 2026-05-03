@@ -6,6 +6,8 @@
 
    AUTHORS
    ACKNOWLEDGMENT
+   components/access
+   _components_placeholder_
 
 .. toctree::
    :maxdepth: 1
