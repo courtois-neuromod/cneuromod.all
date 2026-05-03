@@ -78,10 +78,18 @@ def _render_contributors(rc_path):
     return f"\n\n## Contributors\n\n{contributors_str}\n\n_{legend}_\n"
 
 
+def _resolve_stats_key(stats, dotted_key):
+    val = stats
+    for part in dotted_key.split('.'):
+        val = val.get(part, {}) if isinstance(val, dict) else {}
+    return val if isinstance(val, dict) else {}
+
+
 def _render_key_facts(info_path):
     with open(info_path, encoding='utf-8') as f:
         data = yaml.safe_load(f)
 
+    stats = data.get('stats', {})
     rows = []
 
     subjects = data.get('subjects', [])
@@ -90,6 +98,9 @@ def _render_key_facts(info_path):
             f"`{s['id']}` {_STATUS_ICON.get(s.get('status', ''), '')}"
             for s in subjects
         )
+        subjects_n = stats.get('subjects_n')
+        if subjects_n is not None:
+            cells = f"{subjects_n} — {cells}"
         rows.append(('**Subjects**', cells))
 
     dur = data.get('duration', {})
@@ -127,7 +138,21 @@ def _render_key_facts(info_path):
         emoji = mod.get('emoji', '')
         label = mod.get('label', '')
         mod_components = mod.get('components', [])
-        if mod_components:
+        stats_key = mod.get('stats_key')
+
+        if stats_key:
+            stats_val = _resolve_stats_key(stats, stats_key)
+            parts = []
+            if 'total_h' in stats_val:
+                parts.append(f"{stats_val['total_h']} h total")
+            if 'per_subject_h' in stats_val:
+                parts.append(f"{stats_val['per_subject_h']} h/subject")
+            if parts:
+                cell = f"{emoji} {label} — {' · '.join(parts)}"
+            else:
+                status_icon = _STATUS_ICON.get(mod.get('status', ''), '')
+                cell = f"{emoji} {label} {status_icon}"
+        elif mod_components:
             comp_str = ', '.join(
                 f"{c['label']} {_STATUS_ICON.get(c.get('status', ''), '')}"
                 for c in mod_components

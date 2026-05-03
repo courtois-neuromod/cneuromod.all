@@ -122,3 +122,47 @@ def dataset_info_yaml_empty(tmp_path):
     p = tmp_path / 'dataset_info.yaml'
     p.write_text(yaml.dump({}), encoding='utf-8')
     return p
+
+
+@pytest.fixture
+def dataset_info_yaml_with_stats(tmp_path):
+    data = {
+        'stats': {
+            'subjects_n': 6,
+            'neuroimaging': {
+                'fmri': {'total_h': 48, 'per_subject_h': 8},
+            },
+            'responses': {
+                'controlled_tasks': {'total_unique': 23},
+            },
+        },
+        'subjects': [
+            {'id': 'sub-01', 'status': 'available'},
+            {'id': 'sub-02', 'status': 'available'},
+        ],
+        'duration': {
+            'n_sessions_min': 10,
+            'n_sessions_max': 13,
+            'hours_per_participant': 8,
+            'hours_total': 48,
+        },
+        'tasks': [
+            {'emoji': '🎭', 'label': 'HCP task localizers', 'note': '23 conditions'},
+        ],
+        'modalities': [
+            {
+                'emoji': '🧠',
+                'label': 'Neuroimaging (fMRI)',
+                'status': 'available',
+                'stats_key': 'neuroimaging.fmri',
+            },
+            {
+                'emoji': '📊',
+                'label': 'Behavior',
+                'status': 'available',
+            },
+        ],
+    }
+    p = tmp_path / 'dataset_info.yaml'
+    p.write_text(yaml.dump(data, allow_unicode=True), encoding='utf-8')
+    return p

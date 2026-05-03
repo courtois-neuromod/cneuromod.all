@@ -87,6 +87,30 @@ class TestRenderKeyFacts:
         result = _render_key_facts(dataset_info_yaml)
         assert '## Key facts' in result
 
+    def test_stats_subjects_count(self, dataset_info_yaml_with_stats):
+        result = _render_key_facts(dataset_info_yaml_with_stats)
+        assert '6 —' in result
+        assert '`sub-01`' in result
+
+    def test_stats_fmri_hours(self, dataset_info_yaml_with_stats):
+        result = _render_key_facts(dataset_info_yaml_with_stats)
+        assert '48 h total' in result
+        assert '8 h/subject' in result
+
+    def test_stats_fmri_no_status_icon(self, dataset_info_yaml_with_stats):
+        result = _render_key_facts(dataset_info_yaml_with_stats)
+        # fMRI row should show hours, not the availability icon
+        lines = [l for l in result.splitlines() if 'fMRI' in l]
+        assert lines, "No fMRI row found"
+        assert '✅' not in lines[0]
+
+    def test_stats_fallback_no_stats_key(self, dataset_info_yaml_with_stats):
+        result = _render_key_facts(dataset_info_yaml_with_stats)
+        # Behavior modality has no stats_key — should fall back to status icon
+        lines = [l for l in result.splitlines() if 'Behavior' in l]
+        assert lines, "No Behavior row found"
+        assert '✅' in lines[0]
+
 
 class TestExtractComponentTitle:
     def test_basic_heading(self):

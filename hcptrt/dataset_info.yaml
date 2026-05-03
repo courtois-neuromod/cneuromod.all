@@ -1,3 +1,13 @@
+stats:
+  subjects_n: 6
+  neuroimaging:
+    fmri:
+      total_h: 48
+      per_subject_h: 8
+  responses:
+    controlled_tasks:
+      total_unique: 23
+
 subjects:
   - { id: sub-01, status: available }
   - { id: sub-02, status: available }
@@ -24,6 +34,7 @@ modalities:
   - emoji: "🧠"
     label: "Neuroimaging (fMRI)"
     status: available
+    stats_key: "neuroimaging.fmri"
   - emoji: "📊"
     label: "Behavior (Event files)"
     status: available
