@@ -6,3 +6,9 @@
 
    AUTHORS
    ACKNOWLEDGMENT
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Datasets:
+
+   datasets/hcptrt
