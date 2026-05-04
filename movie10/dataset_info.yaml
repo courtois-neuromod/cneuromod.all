@@ -1,0 +1,44 @@
+stats:
+  subjects_n: 6
+  neuroimaging:
+    fmri:
+      total_h: 60.0
+      per_subject_h: 10.0
+  naturalistic_stimuli:
+    video:
+      total_unique: 7.3
+      per_subject_unique: 7.3
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: available }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: available }
+
+tasks:
+  - emoji: "🎬"
+    label: "4 feature films (~7.3 h unique content)"
+    note: "The Bourne Supremacy, The Wolf of Wall Street, Hidden Figures, Life (BBC)"
+
+modalities:
+  - emoji: "🧠"
+    label: "Neuroimaging (fMRI)"
+    status: available
+    stats_key: "neuroimaging.fmri"
+  - emoji: "🎬"
+    label: "Naturalistic video (4 feature films)"
+    stats_key: "naturalistic_stimuli.video"
+    unit: h
+  - emoji: "📈"
+    label: "Physiology"
+    components:
+      - { label: ECG,         status: not_collected }
+      - { label: respiration, status: not_collected }
+      - { label: pulse,       status: not_collected }
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: not_collected }
+      - { label: pupillometry, status: not_collected }

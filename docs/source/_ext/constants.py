@@ -53,9 +53,10 @@ _CONTRIB_LABEL = {
 }
 
 _STATUS_ICON = {
-    'available':     '✅',
-    'pending':       '⬜',
-    'not_collected': '❌',
+    'available':              '✅',
+    'pending':                '⬜',
+    'not_collected':          '❌',
+    'collected_not_released': '🔒',
 }
 
 # Uppercase .md files at the repo root excluded from auto-discovery entirely
