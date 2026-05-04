@@ -103,24 +103,6 @@ def _render_key_facts(info_path):
             cells = f"{subjects_n} — {cells}"
         rows.append(('**Subjects**', cells))
 
-    dur = data.get('duration', {})
-    if dur:
-        n_min = dur.get('n_sessions_min')
-        n_max = dur.get('n_sessions_max')
-        h_pp = dur.get('hours_per_participant')
-        h_tot = dur.get('hours_total')
-        parts = []
-        if n_min is not None and n_max is not None:
-            parts.append(f"{n_min}–{n_max} sessions")
-        elif n_min is not None:
-            parts.append(f"{n_min}+ sessions")
-        if h_pp is not None:
-            parts.append(f"~{h_pp} h/participant")
-        if h_tot is not None:
-            parts.append(f"~{h_tot} h total")
-        if parts:
-            rows.append(('**Duration**', ' · '.join(parts)))
-
     tasks = data.get('tasks', [])
     for i, task in enumerate(tasks):
         emoji = task.get('emoji', '')
@@ -142,11 +124,13 @@ def _render_key_facts(info_path):
 
         if stats_key:
             stats_val = _resolve_stats_key(stats, stats_key)
+            unit = mod.get('unit', '')
             parts = []
-            if 'total_h' in stats_val:
-                parts.append(f"{stats_val['total_h']} h total")
             if 'per_subject_h' in stats_val:
                 parts.append(f"{stats_val['per_subject_h']} h/subject")
+            elif 'per_subject_unique' in stats_val:
+                unit_label = 'h/subject' if unit == 'h' else (unit if unit else 'unique/subject')
+                parts.append(f"{stats_val['per_subject_unique']} {unit_label}")
             if parts:
                 cell = f"{emoji} {label} — {' · '.join(parts)}"
             else:

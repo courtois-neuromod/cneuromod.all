@@ -26,7 +26,7 @@ datalad save -m "description of change"
 
 ## Contributor naming convention
 
-Always use **Lune Bellec** (login: `lunebellec`, profile: `https://github.com/lunebellec`) in `.all-contributorsrc` files. Never use "Pierre Bellec" or login `pbellec`.
+Always use **Lune Bellec** (login: `lunebellec`, profile: `https://github.com/lunebellec`) in `contributors.json` files. Never use "Pierre Bellec" or login `pbellec`.
 
 ## Per-dataset metadata
 
@@ -34,9 +34,9 @@ Each top-level dataset folder (e.g. `hcptrt/`, `anat/`) may contain two metadata
 
 - **`CITATION.cff`** — Citation File Format 1.2.0 (`type: dataset`). The `preferred-citation` block points to the paper(s) users should cite. This renders as a "How to cite" tip admonition on the dataset's doc page. Citation and contributor lists are kept separate because the key reference for a dataset (often an analysis paper) may have different authors than the people who collected/curated the data.
 
-- **`.all-contributorsrc`** — allcontributors JSON schema. Lists contributors with `contributions` role keys (`data`, `code`, `doc`, `design`, `review`, `maintenance`, `projectManagement`, `ideas`, `mentoring`, `bug`, `userTesting`, `financial`, `question`). Renders as a "Contributors" section with emoji annotations. People without GitHub accounts omit `login`; organizations are supported.
+- **`contributors.json`** — allcontributors JSON schema. Lists contributors with `contributions` role keys (`data`, `code`, `doc`, `design`, `review`, `maintenance`, `projectManagement`, `ideas`, `mentoring`, `bug`, `userTesting`, `financial`, `question`). Renders as a "Contributors" section with emoji annotations. People without GitHub accounts omit `login`; organizations are supported.
 
-The Sphinx pipeline in `docs/source/conf.py` discovers both files automatically — no manual wiring needed. Add a `README.md` to a dataset folder and it appears in the docs; add `CITATION.cff` and/or `.all-contributorsrc` alongside it and the citation/contributor blocks render automatically.
+The Sphinx pipeline in `docs/source/conf.py` discovers both files automatically — no manual wiring needed. Add a `README.md` to a dataset folder and it appears in the docs; add `CITATION.cff` and/or `contributors.json` alongside it and the citation/contributor blocks render automatically.
 
 ## Submodule structure
 

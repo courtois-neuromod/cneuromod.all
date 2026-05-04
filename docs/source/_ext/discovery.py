@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 from .constants import _ROOT_MD_EXCLUDE, _ROOT_MD_MANUAL
+from . import validator as _validator
 
 _discovered_datasets = []
 _global_components = []   # [(stem, path), ...] — root-level component pages
@@ -96,7 +97,7 @@ def _auto_discover_datasets(app):
         if os.path.isfile(cff_path):
             citation[name] = cff_path
 
-        rc_path = os.path.join(full_path, '.all-contributorsrc')
+        rc_path = os.path.join(full_path, 'contributors.json')
         if os.path.isfile(rc_path):
             contributors[name] = rc_path
 
@@ -113,3 +114,8 @@ def _auto_discover_datasets(app):
     _dataset_contributors = contributors
     _dataset_info = info
     _dataset_components = components
+
+    schema = _validator._load_schema()
+    for name, info_path in info.items():
+        for err in _validator.validate_dataset_info(info_path, schema):
+            app.warn(f"[{name}] dataset_info.yaml stats: {err}")

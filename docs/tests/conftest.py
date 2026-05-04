@@ -1,6 +1,7 @@
 import json
 import pytest
 import yaml
+from pathlib import Path
 
 
 @pytest.fixture
@@ -72,7 +73,7 @@ def contributorsrc(tmp_path):
             },
         ],
     }
-    p = tmp_path / '.all-contributorsrc'
+    p = tmp_path / 'contributors.json'
     p.write_text(json.dumps(data), encoding='utf-8')
     return p
 
@@ -80,7 +81,7 @@ def contributorsrc(tmp_path):
 @pytest.fixture
 def contributorsrc_empty(tmp_path):
     data = {'contributors': []}
-    p = tmp_path / '.all-contributorsrc'
+    p = tmp_path / 'contributors.json'
     p.write_text(json.dumps(data), encoding='utf-8')
     return p
 
@@ -92,12 +93,6 @@ def dataset_info_yaml(tmp_path):
             {'id': 'sub-01', 'status': 'available'},
             {'id': 'sub-02', 'status': 'pending'},
         ],
-        'duration': {
-            'n_sessions_min': 5,
-            'n_sessions_max': 10,
-            'hours_per_participant': 8,
-            'hours_total': 48,
-        },
         'tasks': [
             {'emoji': '🎬', 'label': 'Movie watching', 'note': 'natural stimuli'},
         ],
@@ -132,20 +127,17 @@ def dataset_info_yaml_with_stats(tmp_path):
             'neuroimaging': {
                 'fmri': {'total_h': 48, 'per_subject_h': 8},
             },
+            'naturalistic_stimuli': {
+                'resting_state': {'total_unique': 7.5, 'per_subject_unique': 1.25},
+            },
             'responses': {
-                'controlled_tasks': {'total_unique': 23},
+                'controlled_tasks': {'total_unique': 23, 'per_subject_unique': 23},
             },
         },
         'subjects': [
             {'id': 'sub-01', 'status': 'available'},
             {'id': 'sub-02', 'status': 'available'},
         ],
-        'duration': {
-            'n_sessions_min': 10,
-            'n_sessions_max': 13,
-            'hours_per_participant': 8,
-            'hours_total': 48,
-        },
         'tasks': [
             {'emoji': '🎭', 'label': 'HCP task localizers', 'note': '23 conditions'},
         ],
@@ -157,12 +149,67 @@ def dataset_info_yaml_with_stats(tmp_path):
                 'stats_key': 'neuroimaging.fmri',
             },
             {
+                'emoji': '💤',
+                'label': 'Resting state',
+                'stats_key': 'naturalistic_stimuli.resting_state',
+                'unit': 'h',
+            },
+            {
                 'emoji': '📊',
                 'label': 'Behavior',
-                'status': 'available',
+                'stats_key': 'responses.controlled_tasks',
             },
         ],
     }
     p = tmp_path / 'dataset_info.yaml'
     p.write_text(yaml.dump(data, allow_unicode=True), encoding='utf-8')
+    return p
+
+
+@pytest.fixture
+def schema_path():
+    return Path(__file__).parent.parent.parent / 'schema.json'
+
+
+@pytest.fixture
+def dataset_info_yaml_valid_stats(tmp_path):
+    data = {
+        'stats': {
+            'subjects_n': 6,
+            'neuroimaging': {'fmri': {'total_h': 54.6, 'per_subject_h': 9.1}},
+            'naturalistic_stimuli': {
+                'resting_state': {'total_unique': 7.5, 'per_subject_unique': 1.25},
+            },
+            'responses': {'controlled_tasks': {'total_unique': 21, 'per_subject_unique': 21}},
+        },
+    }
+    p = tmp_path / 'dataset_info.yaml'
+    p.write_text(yaml.dump(data), encoding='utf-8')
+    return p
+
+
+@pytest.fixture
+def dataset_info_yaml_invalid_stats(tmp_path):
+    data = {
+        'stats': {
+            'subjects_n': 'six',  # should be integer
+            'neuroimaging': {'fmri': {'total_h': 'lots', 'per_subject_h': 9.1}},
+        },
+    }
+    p = tmp_path / 'dataset_info.yaml'
+    p.write_text(yaml.dump(data), encoding='utf-8')
+    return p
+
+
+@pytest.fixture
+def dataset_info_yaml_extra_key_stats(tmp_path):
+    data = {
+        'stats': {
+            'neuroimaging': {
+                'fmri': {'total_h': 10.0, 'per_subject_h': 2.0, 'extra_field': 99},
+            },
+        },
+    }
+    p = tmp_path / 'dataset_info.yaml'
+    p.write_text(yaml.dump(data), encoding='utf-8')
     return p

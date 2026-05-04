@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dataset",
+  "description": "A dense neuroAI dataset entry",
+  "type": "object",
+  "required": ["name"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full dataset name"
+    },
+    "reference": {
+      "type": "string",
+      "description": "URL to the primary publication or official documentation"
+    },
+    "subjects_n": {
+      "type": "integer",
+      "description": "Number of participants"
+    },
+    "neuroimaging": {
+      "type": "object",
+      "description": "Neural recording modalities",
+      "additionalProperties": false,
+      "properties": {
+        "fmri": {
+          "description": "fMRI recording volume (hours)",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "eeg": {
+          "description": "EEG recording volume (hours)",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "meg": {
+          "description": "MEG recording volume (hours)",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "ieeg": {
+          "description": "Intracranial EEG recording volume (hours)",
+          "$ref": "#/$defs/recording_hours"
+        }
+      }
+    },
+    "naturalistic_stimuli": {
+      "type": "object",
+      "description": "Naturalistic stimulus exposure. Unit varies by modality: images are counts (#), all others are hours (h).",
+      "additionalProperties": false,
+      "properties": {
+        "images": {
+          "description": "Image stimuli (count)",
+          "$ref": "#/$defs/stimulus_modality"
+        },
+        "video": {
+          "description": "Video stimuli (hours)",
+          "$ref": "#/$defs/stimulus_modality"
+        },
+        "audio": {
+          "description": "Non-speech audio stimuli (hours)",
+          "$ref": "#/$defs/stimulus_modality"
+        },
+        "speech_listening": {
+          "description": "Speech listening stimuli (hours)",
+          "$ref": "#/$defs/stimulus_modality"
+        },
+        "text_reading": {
+          "description": "Text reading stimuli (hours)",
+          "$ref": "#/$defs/stimulus_modality"
+        },
+        "resting_state": {
+          "description": "Resting-state (no task, no external stimuli; hours)",
+          "$ref": "#/$defs/stimulus_modality"
+        }
+      }
+    },
+    "responses": {
+      "type": "object",
+      "description": "Behavioral response modalities. Unit varies: controlled_tasks are condition counts, game_actions are hours.",
+      "additionalProperties": false,
+      "properties": {
+        "controlled_tasks": {
+          "description": "Controlled experimental task conditions (count)",
+          "$ref": "#/$defs/stimulus_modality"
+        },
+        "game_actions": {
+          "description": "Game action responses (hours)",
+          "$ref": "#/$defs/stimulus_modality"
+        }
+      }
+    },
+    "physiology": {
+      "type": "object",
+      "description": "Physiological recording modalities (hours)",
+      "additionalProperties": false,
+      "properties": {
+        "ecg": {
+          "description": "ECG / heart rate (hours)",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "respiration": {
+          "description": "Respiration belt (hours)",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "plethysmograph": {
+          "description": "Photoplethysmograph / pulse oximeter (hours)",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "eda": {
+          "description": "Electrodermal activity (hours)",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "eye_tracking": {
+          "description": "Eye tracking (hours)",
+          "$ref": "#/$defs/recording_hours"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "recording_hours": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total_h": {
+          "type": "number",
+          "description": "Total hours across all subjects"
+        },
+        "per_subject_h": {
+          "type": "number",
+          "description": "Hours per subject"
+        }
+      }
+    },
+    "stimulus_modality": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total_unique": {
+          "type": "number",
+          "description": "Total unique stimulus volume (unit depends on modality)"
+        },
+        "per_subject_unique": {
+          "type": "number",
+          "description": "Unique stimulus volume per subject"
+        },
+        "total_with_repetition": {
+          "type": "number",
+          "description": "Total volume including across-subject repetitions"
+        },
+        "per_subject_with_repetition": {
+          "type": "number",
+          "description": "Volume per subject including within-subject repetitions"
+        }
+      }
+    }
+  }
+}

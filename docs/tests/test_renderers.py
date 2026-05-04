@@ -64,12 +64,6 @@ class TestRenderKeyFacts:
         assert '✅' in result  # available
         assert '⬜' in result  # pending
 
-    def test_duration(self, dataset_info_yaml):
-        result = _render_key_facts(dataset_info_yaml)
-        assert '5–10 sessions' in result
-        assert '~8 h/participant' in result
-        assert '~48 h total' in result
-
     def test_tasks(self, dataset_info_yaml):
         result = _render_key_facts(dataset_info_yaml)
         assert 'Movie watching' in result
@@ -94,22 +88,27 @@ class TestRenderKeyFacts:
 
     def test_stats_fmri_hours(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)
-        assert '48 h total' in result
         assert '8 h/subject' in result
+        assert '48 h total' not in result  # totals are dropped; per-subject only
 
     def test_stats_fmri_no_status_icon(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)
-        # fMRI row should show hours, not the availability icon
         lines = [l for l in result.splitlines() if 'fMRI' in l]
         assert lines, "No fMRI row found"
         assert '✅' not in lines[0]
 
-    def test_stats_fallback_no_stats_key(self, dataset_info_yaml_with_stats):
+    def test_stats_per_subject_unique(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)
-        # Behavior modality has no stats_key — should fall back to status icon
         lines = [l for l in result.splitlines() if 'Behavior' in l]
         assert lines, "No Behavior row found"
-        assert '✅' in lines[0]
+        assert '23 unique/subject' in lines[0]
+
+    def test_stats_resting_state_unit_h(self, dataset_info_yaml_with_stats):
+        result = _render_key_facts(dataset_info_yaml_with_stats)
+        lines = [l for l in result.splitlines() if 'Resting state' in l]
+        assert lines, "No Resting state row found"
+        assert 'h/subject' in lines[0]
+        assert 'unique/subject' not in lines[0]
 
 
 class TestExtractComponentTitle:
