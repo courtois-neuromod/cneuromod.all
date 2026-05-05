@@ -54,6 +54,7 @@ _CONTRIB_LABEL = {
 
 _STATS_EMOJI = {
     'neuroimaging.fmri':                  '🧠',
+    'naturalistic_stimuli.images':        '🖼️',
     'naturalistic_stimuli.video':         '🎬',
     'naturalistic_stimuli.resting_state': '💤',
     'responses.controlled_tasks':         '📊',
@@ -65,6 +66,7 @@ _STATS_EMOJI = {
 
 _STATS_LABEL = {
     'neuroimaging.fmri':                  'Neuroimaging (fMRI)',
+    'naturalistic_stimuli.images':        'Images',
     'naturalistic_stimuli.video':         'Naturalistic video',
     'naturalistic_stimuli.resting_state': 'Resting state',
     'responses.controlled_tasks':         'Behavior (controlled task)',
@@ -75,6 +77,7 @@ _STATS_LABEL = {
 }
 
 _STATS_UNIT = {
+    'naturalistic_stimuli.images':        'unique images/subject',
     'naturalistic_stimuli.video':         'h',
     'naturalistic_stimuli.resting_state': 'h',
     'responses.controlled_tasks':         'unique conditions / subject',

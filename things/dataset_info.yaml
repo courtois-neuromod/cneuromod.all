@@ -4,8 +4,8 @@ stats:
     fmri:
       total_h: 65.5
       per_subject_h: 16.4
-  responses:
-    controlled_tasks:
+  naturalistic_stimuli:
+    images:
       total_unique: 4320
       per_subject_unique: 4320
 
@@ -22,10 +22,8 @@ tasks:
 
 modalities:
   - stats_key: "neuroimaging.fmri"
-  - stats_key: "responses.controlled_tasks"
-    emoji: "🖼️"
+  - stats_key: "naturalistic_stimuli.images"
     label: "Visual stimuli (THINGS images)"
-    unit: "unique images/subject"
   - emoji: "📈"
     label: "Physiology"
     components:
