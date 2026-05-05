@@ -30,18 +30,9 @@ tasks:
     note: "4–6 repetitions per participant"
 
 modalities:
-  - emoji: "🧠"
-    label: "Neuroimaging (fMRI)"
-    status: available
-    stats_key: "neuroimaging.fmri"
-  - emoji: "💤"
-    label: "Resting state"
-    stats_key: "naturalistic_stimuli.resting_state"
-    unit: h
-  - emoji: "📊"
-    label: "Behavior (controlled task)"
-    stats_key: "responses.controlled_tasks"
-    unit: "unique conditions / subject"
+  - stats_key: "neuroimaging.fmri"
+  - stats_key: "naturalistic_stimuli.resting_state"
+  - stats_key: "responses.controlled_tasks"
   - emoji: "📈"
     label: "Physiology"
     components:

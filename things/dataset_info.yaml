@@ -1,0 +1,40 @@
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 65.5
+      per_subject_h: 16.4
+  responses:
+    controlled_tasks:
+      total_unique: 4320
+      per_subject_unique: 4320
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available, note: "ses-024–026 administered out of planned order" }
+  - { id: sub-06, status: available, note: "3840 unique images (vs 4320); ses-019–026 administered out of planned order" }
+
+tasks:
+  - emoji: "🖼️"
+    label: "Continuous visual recognition — 720 THINGS object categories"
+    note: "33–36 sessions × up to 6 runs; ~4320 unique images; each image shown 3× across sessions"
+
+modalities:
+  - stats_key: "neuroimaging.fmri"
+  - stats_key: "responses.controlled_tasks"
+    emoji: "🖼️"
+    label: "Visual stimuli (THINGS images)"
+    unit: "unique images/subject"
+  - emoji: "📈"
+    label: "Physiology"
+    components:
+      - { label: ECG,              status: collected_not_released }
+      - { label: respiration,      status: collected_not_released }
+      - { label: pulse,            status: collected_not_released }
+      - { label: skin conductance, status: collected_not_released }
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: available }
+      - { label: pupillometry, status: available }

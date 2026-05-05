@@ -23,14 +23,8 @@ tasks:
     note: "The Bourne Supremacy, The Wolf of Wall Street, Hidden Figures, Life (BBC)"
 
 modalities:
-  - emoji: "🧠"
-    label: "Neuroimaging (fMRI)"
-    status: available
-    stats_key: "neuroimaging.fmri"
-  - emoji: "🎬"
-    label: "Naturalistic video (4 feature films)"
-    stats_key: "naturalistic_stimuli.video"
-    unit: h
+  - stats_key: "neuroimaging.fmri"
+  - stats_key: "naturalistic_stimuli.video"
   - emoji: "📈"
     label: "Physiology"
     components:

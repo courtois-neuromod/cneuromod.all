@@ -142,23 +142,9 @@ def dataset_info_yaml_with_stats(tmp_path):
             {'emoji': '🎭', 'label': 'HCP task localizers', 'note': '23 conditions'},
         ],
         'modalities': [
-            {
-                'emoji': '🧠',
-                'label': 'Neuroimaging (fMRI)',
-                'status': 'available',
-                'stats_key': 'neuroimaging.fmri',
-            },
-            {
-                'emoji': '💤',
-                'label': 'Resting state',
-                'stats_key': 'naturalistic_stimuli.resting_state',
-                'unit': 'h',
-            },
-            {
-                'emoji': '📊',
-                'label': 'Behavior',
-                'stats_key': 'responses.controlled_tasks',
-            },
+            {'stats_key': 'neuroimaging.fmri'},
+            {'stats_key': 'naturalistic_stimuli.resting_state'},
+            {'stats_key': 'responses.controlled_tasks'},
         ],
     }
     p = tmp_path / 'dataset_info.yaml'

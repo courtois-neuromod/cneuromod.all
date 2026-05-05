@@ -36,14 +36,8 @@ tasks:
     note: "~65 hours of naturalistic movie watching per subject"
 
 modalities:
-  - emoji: "🧠"
-    label: "Neuroimaging (fMRI)"
-    status: available
-    stats_key: "neuroimaging.fmri"
-  - emoji: "🎬"
-    label: "Naturalistic video (Friends S1–7)"
-    stats_key: "naturalistic_stimuli.video"
-    unit: h
+  - stats_key: "neuroimaging.fmri"
+  - stats_key: "naturalistic_stimuli.video"
   - emoji: "📈"
     label: "Physiology (from season 4, ~38 h/subject)"
     components:

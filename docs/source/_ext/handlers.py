@@ -4,6 +4,7 @@ from .renderers import (
     _render_component_sections,
     _render_components_row,
     _render_contributors,
+    _render_featured_in,
     _render_key_facts,
 )
 
@@ -57,6 +58,20 @@ def _inject_dataset_metadata(app, docname, source):
         source[0] = source[0].rstrip('\n') + sections
 
 
+def _inject_content_metadata(app, docname, source):
+    if not docname.startswith('contents/'):
+        return
+    stem = docname[len('contents/'):]
+    table = _render_featured_in(stem, discovery._dataset_components)
+    if not table:
+        return
+    pos = source[0].find('\n\n')
+    if pos >= 0:
+        source[0] = source[0][:pos + 2] + table.lstrip('\n') + '\n\n' + source[0][pos + 2:]
+    else:
+        source[0] = table.lstrip('\n') + '\n\n' + source[0]
+
+
 def _always_reread_index(app, env, added, changed, removed):
     # Force re-read of index, component pages, and dataset pages with metadata,
     # so content stays current on incremental builds.
@@ -85,4 +100,5 @@ def setup(app):
     app.connect('builder-inited', discovery._auto_discover_datasets)
     app.connect('source-read', _inject_index)
     app.connect('source-read', _inject_dataset_metadata)
+    app.connect('source-read', _inject_content_metadata)
     app.connect('env-get-outdated', _always_reread_index)

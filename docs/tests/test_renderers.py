@@ -21,7 +21,7 @@ class TestRenderCitation:
         assert 'A great paper' in result
         assert '**NeuroImage**' in result
         assert '10.1234/test' in result
-        assert '## How to cite' in result
+        assert ':::{tip}' in result
 
     def test_many_authors_et_al(self, citation_cff_many_authors):
         result = _render_citation(citation_cff_many_authors)
@@ -101,7 +101,7 @@ class TestRenderKeyFacts:
         result = _render_key_facts(dataset_info_yaml_with_stats)
         lines = [l for l in result.splitlines() if 'Behavior' in l]
         assert lines, "No Behavior row found"
-        assert '23 unique/subject' in lines[0]
+        assert '23 unique conditions / subject' in lines[0]
 
     def test_stats_resting_state_unit_h(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)

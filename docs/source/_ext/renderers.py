@@ -3,7 +3,7 @@ import re
 import yaml
 from pathlib import Path
 
-from .constants import _CONTRIB_EMOJI, _CONTRIB_LABEL, _STATUS_ICON
+from .constants import _COMPONENT_ICON, _CONTRIB_EMOJI, _CONTRIB_LABEL, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
 
 
 def _render_citation(cff_path):
@@ -43,7 +43,7 @@ def _render_citation(cff_path):
     if doi:
         citation_line += f" [doi: {doi}](https://doi.org/{doi})"
 
-    return f"\n\n## How to cite\n\nIf you use this dataset, please cite:\n\n{citation_line}\n"
+    return f"\n\n:::{{tip}}\nIf you use this dataset, please cite:\n\n{citation_line}\n:::\n"
 
 
 def _render_contributors(rc_path):
@@ -117,14 +117,14 @@ def _render_key_facts(info_path):
     modalities = data.get('modalities', [])
     first_mod = True
     for mod in modalities:
-        emoji = mod.get('emoji', '')
-        label = mod.get('label', '')
-        mod_components = mod.get('components', [])
         stats_key = mod.get('stats_key')
+        emoji = mod.get('emoji') or (stats_key and _STATS_EMOJI.get(stats_key)) or ''
+        label = mod.get('label') or (stats_key and _STATS_LABEL.get(stats_key)) or ''
+        mod_components = mod.get('components', [])
 
         if stats_key:
             stats_val = _resolve_stats_key(stats, stats_key)
-            unit = mod.get('unit', '')
+            unit = mod.get('unit') or _STATS_UNIT.get(stats_key, '')
             parts = []
             if 'per_subject_h' in stats_val:
                 parts.append(f"{stats_val['per_subject_h']} h/subject")
@@ -184,12 +184,26 @@ def _render_components_row(components):
         content = path.read_text(encoding='utf-8')
         _, title, _ = _extract_component_title(content)
         display = title if title else stem.title()
+        icon = _COMPONENT_ICON.get(stem.lower(), '')
+        prefix = f'{icon} ' if icon else ''
         if kind == 'page':
-            parts.append(f'[{display}](../contents/{stem.lower()})')
+            parts.append(f'{prefix}[{display}](../contents/{stem.lower()})')
         else:
             anchor = re.sub(r'[^a-z0-9]+', '', display.lower())
-            parts.append(f'[{display}](#{anchor})')
+            parts.append(f'{prefix}[{display}](#{anchor})')
     return '| **Components** | ' + ' · '.join(parts) + ' |'
+
+
+def _render_featured_in(stem, dataset_components):
+    datasets = [
+        name for name, comps in sorted(dataset_components.items())
+        if any(s.lower() == stem.lower() and kind == 'page' for s, _, kind in comps)
+    ]
+    if not datasets:
+        return ''
+    cell = ' · '.join(f'[{name}](../datasets/{name})' for name in datasets)
+    lines = ['', '', '## Featured in', '', '| | |', '|---|---|', f'| **Datasets** | {cell} |', '']
+    return '\n'.join(lines)
 
 
 def _render_component_sections(components):

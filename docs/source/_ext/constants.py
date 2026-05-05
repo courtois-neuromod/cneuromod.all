@@ -52,11 +52,56 @@ _CONTRIB_LABEL = {
     'video':             'video',
 }
 
+_STATS_EMOJI = {
+    'neuroimaging.fmri':                  '🧠',
+    'naturalistic_stimuli.video':         '🎬',
+    'naturalistic_stimuli.resting_state': '💤',
+    'responses.controlled_tasks':         '📊',
+    'physiology.ecg':                     '📈',
+    'physiology.respiration':             '📈',
+    'physiology.plethysmograph':          '📈',
+    'physiology.eye_tracking':            '👁️',
+}
+
+_STATS_LABEL = {
+    'neuroimaging.fmri':                  'Neuroimaging (fMRI)',
+    'naturalistic_stimuli.video':         'Naturalistic video',
+    'naturalistic_stimuli.resting_state': 'Resting state',
+    'responses.controlled_tasks':         'Behavior (controlled task)',
+    'physiology.ecg':                     'ECG',
+    'physiology.respiration':             'Respiration',
+    'physiology.plethysmograph':          'Pulse',
+    'physiology.eye_tracking':            'Eye tracking',
+}
+
+_STATS_UNIT = {
+    'naturalistic_stimuli.video':         'h',
+    'naturalistic_stimuli.resting_state': 'h',
+    'responses.controlled_tasks':         'unique conditions / subject',
+}
+
 _STATUS_ICON = {
     'available':              '✅',
     'pending':                '⬜',
     'not_collected':          '❌',
     'collected_not_released': '🔒',
+}
+
+_COMPONENT_ICON = {
+    'bids':        '📁',
+    'fmriprep':    '🧠',
+    'mriqc':       '📊',
+    'smriprep':    '🏗️',
+    'physprep':    '📈',
+    'freesurfer':  '🗺️',
+    'atlases':     '📍',
+    'pycortex':    '🖥️',
+    'rois':        '🎯',
+    'prf':         '👁️',
+    'behaviour':   '🎮',
+    'glm':         '📉',
+    'glmsingle':   '📉',
+    'training':    '🕹️',
 }
 
 # Uppercase .md files at the repo root excluded from auto-discovery entirely
