@@ -10,6 +10,7 @@
    contents/mri
    AUTHORS
    ACKNOWLEDGMENT
+   REFERENCES
    _components_placeholder_
 
 .. toctree::

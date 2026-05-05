@@ -7,12 +7,21 @@ master_doc = 'index'
 extensions = [
     'sphinx.ext.autosectionlabel',
     'myst_parser',
+    'sphinxcontrib.bibtex',
 ]
+
+bibtex_bibfiles = ['cneuromod_references_20260504.bib']
+bibtex_default_style = 'unsrt'
+bibtex_reference_style = 'label'
 
 templates_path = ['_templates']
 exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'collapse_navigation': True,
+    'navigation_depth': 2,
+}
 html_short_title = 'CNeuroMod'
 html_logo = 'img/logo_neuromod_black.png'
 html_favicon = 'img/logo_neuromod_small.png'

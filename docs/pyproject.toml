@@ -8,6 +8,7 @@ dependencies = [
     "myst-parser>=3.0",
     "pyyaml>=6.0",
     "jsonschema>=4.0",
+    "sphinxcontrib-bibtex>=2.6.5",
 ]
 
 [project.optional-dependencies]
