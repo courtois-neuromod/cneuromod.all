@@ -10,7 +10,7 @@ extensions = [
     'sphinxcontrib.bibtex',
 ]
 
-bibtex_bibfiles = ['cneuromod_references_20260504.bib']
+bibtex_bibfiles = ['cneuromod_references.bib']
 bibtex_default_style = 'unsrt'
 bibtex_reference_style = 'label'
 

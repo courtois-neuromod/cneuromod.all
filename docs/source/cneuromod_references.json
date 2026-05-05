@@ -1,0 +1,14 @@
+{
+  "SearchDate": "2026-05-04",
+  "Sources": [
+    {
+      "Database": "Google Scholar",
+      "Queries": [
+        "cneuromod.ca",
+        "algonauts 2025"
+      ],
+      "DateFilter": "published since 2025"
+    }
+  ],
+  "CurationMethod": "Automated search followed by manual verification"
+}
