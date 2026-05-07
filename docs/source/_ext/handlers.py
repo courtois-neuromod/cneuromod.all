@@ -10,16 +10,27 @@ from .renderers import (
 
 
 def _inject_index(app, docname, source):
-    if docname != 'index':
+    pass
+
+
+def _inject_datasets_index(app, docname, source):
+    if docname != 'contents/datasets':
         return
     if discovery._discovered_datasets:
-        entries = '\n   '.join(f'datasets/{name}' for name in discovery._discovered_datasets)
-        source[0] = source[0].replace('   _datasets_placeholder_', f'   {entries}')
-    if discovery._global_components:
-        entries = '\n   '.join(f'contents/{stem.lower()}' for stem, _ in discovery._global_components)
-        source[0] = source[0].replace('   _components_placeholder_', f'   {entries}')
+        entries = '\n   '.join(f'../datasets/{name}' for name in discovery._discovered_datasets)
+        source[0] = source[0].replace('   _datasets_toc_placeholder_', f'   {entries}')
     else:
-        source[0] = source[0].replace('\n   _components_placeholder_', '')
+        source[0] = source[0].replace('\n   _datasets_toc_placeholder_', '')
+
+
+def _inject_components_index(app, docname, source):
+    if docname != 'contents/components':
+        return
+    if discovery._global_components:
+        entries = '\n   '.join(stem.lower() for stem, _ in discovery._global_components)
+        source[0] = source[0].replace('   _components_toc_placeholder_', f'   {entries}')
+    else:
+        source[0] = source[0].replace('\n   _components_toc_placeholder_', '')
 
 
 def _inject_dataset_metadata(app, docname, source):
@@ -76,7 +87,7 @@ def _always_reread_index(app, env, added, changed, removed):
     # Force re-read of index, component pages, and dataset pages with metadata,
     # so content stays current on incremental builds.
     seen = set()
-    force = ['index']
+    force = ['index', 'contents/components', 'contents/datasets']
     force += [f'contents/{stem.lower()}' for stem, _ in discovery._global_components]
     for name in discovery._dataset_citation:
         force.append(f'datasets/{name}')
@@ -99,6 +110,8 @@ def _always_reread_index(app, env, added, changed, removed):
 def setup(app):
     app.connect('builder-inited', discovery._auto_discover_datasets)
     app.connect('source-read', _inject_index)
+    app.connect('source-read', _inject_components_index)
+    app.connect('source-read', _inject_datasets_index)
     app.connect('source-read', _inject_dataset_metadata)
     app.connect('source-read', _inject_content_metadata)
     app.connect('env-get-outdated', _always_reread_index)

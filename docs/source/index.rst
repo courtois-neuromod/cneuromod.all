@@ -1,20 +1,15 @@
 .. include:: OVERVIEW.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
    contents/access
    contents/downloading
    contents/participants
    contents/mri
+   contents/components
+   contents/datasets
    AUTHORS
    ACKNOWLEDGMENT
    REFERENCES
-   _components_placeholder_
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Datasets:
-
-   _datasets_placeholder_
