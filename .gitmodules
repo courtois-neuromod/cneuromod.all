@@ -229,3 +229,7 @@
 	path = mario_eeg/bids
 	url = git@github.com:courtois-neuromod/mario_eeg
 	datalad-url = git@github.com:courtois-neuromod/mario_eeg
+[submodule "mariostars/bids"]
+	path = mariostars/bids
+	url = git@github.com:courtois-neuromod/mariostars
+	datalad-url = git@github.com:courtois-neuromod/mariostars
