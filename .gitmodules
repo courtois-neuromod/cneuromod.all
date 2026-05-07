@@ -276,3 +276,8 @@
 	path = emotion-videos/fmriprep
 	url = git@github.com:courtois-neuromod/emotion-videos.fmriprep
 	datalad-url = git@github.com:courtois-neuromod/emotion-videos.fmriprep
+[submodule "emotion-videos/bids"]
+	path = emotion-videos/bids
+	url = git@github.com:courtois-neuromod/emotion-videos
+	datalad-id = be554e46-3ca3-43a8-99c5-4b7a424fd499
+	datalad-url = git@github.com:courtois-neuromod/emotion-videos
