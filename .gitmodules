@@ -250,3 +250,7 @@
 	path = langlocalizer/fmriprep
 	url = git@github.com:courtois-neuromod/langlocalizer.fmriprep
 	datalad-url = git@github.com:courtois-neuromod/langlocalizer.fmriprep
+[submodule "mario3/fmriprep"]
+	path = mario3/fmriprep
+	url = git@github.com:courtois-neuromod/mario3.fmriprep
+	datalad-url = git@github.com:courtois-neuromod/mario3.fmriprep
