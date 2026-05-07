@@ -281,3 +281,8 @@
 	url = git@github.com:courtois-neuromod/emotion-videos
 	datalad-id = be554e46-3ca3-43a8-99c5-4b7a424fd499
 	datalad-url = git@github.com:courtois-neuromod/emotion-videos
+[submodule "emotion-videos/tedana"]
+	path = emotion-videos/tedana
+	url = git@github.com:courtois-neuromod/emotion-videos.tedana
+	datalad-id = e6b78aa4-394d-4caa-9715-a4334c9d22b3
+	datalad-url = git@github.com:courtois-neuromod/emotion-videos.tedana
