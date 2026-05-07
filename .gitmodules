@@ -220,3 +220,8 @@
 	path = langlocalizer/bids
 	url = git@github.com:courtois-neuromod/langlocalizer
 	datalad-url = git@github.com:courtois-neuromod/langlocalizer
+[submodule "mario3/bids"]
+	path = mario3/bids
+	url = git@github.com:courtois-neuromod/mario3
+	datalad-id = 061941e4-bdb6-4f5a-9f47-cc1b962d1ec6
+	datalad-url = git@github.com:courtois-neuromod/mario3
