@@ -241,3 +241,8 @@
 	path = narratives/bids
 	url = git@github.com:courtois-neuromod/narratives
 	datalad-url = git@github.com:courtois-neuromod/narratives
+[submodule "triplets/bids"]
+	path = triplets/bids
+	url = git@github.com:courtois-neuromod/triplets
+	datalad-id = 76c5e7cf-b8eb-4a0e-97b5-d6fdf029924a
+	datalad-url = git@github.com:courtois-neuromod/triplets
