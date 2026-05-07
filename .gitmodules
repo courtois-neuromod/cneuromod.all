@@ -254,3 +254,7 @@
 	path = mario3/fmriprep
 	url = git@github.com:courtois-neuromod/mario3.fmriprep
 	datalad-url = git@github.com:courtois-neuromod/mario3.fmriprep
+[submodule "mariostars/fmriprep"]
+	path = mariostars/fmriprep
+	url = git@github.com:courtois-neuromod/mariostars.fmriprep
+	datalad-url = git@github.com:courtois-neuromod/mariostars.fmriprep
