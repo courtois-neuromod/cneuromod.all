@@ -267,3 +267,8 @@
 	path = narratives/fmriprep
 	url = git@github.com:courtois-neuromod/narratives.fmriprep
 	datalad-url = git@github.com:courtois-neuromod/narratives.fmriprep
+[submodule "triplets/fmriprep"]
+	path = triplets/fmriprep
+	url = git@github.com:courtois-neuromod/triplets.fmriprep
+	datalad-id = 6eb11d57-4cd5-4220-b22e-0b628c382a7c
+	datalad-url = git@github.com:courtois-neuromod/triplets.fmriprep
