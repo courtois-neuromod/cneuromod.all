@@ -4,10 +4,12 @@ stats:
     fmri:
       total_h: 60.0
       per_subject_h: 10.0
-  naturalistic_stimuli:
+  passive:
     video:
       total_unique: 7.3
       per_subject_unique: 7.3
+      total_with_repetition: 60.0
+      per_subject_with_repetition: 10.0
 
 subjects:
   - { id: sub-01, status: available }

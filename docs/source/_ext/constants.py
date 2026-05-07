@@ -54,6 +54,10 @@ _CONTRIB_LABEL = {
 
 _STATS_EMOJI = {
     'neuroimaging.fmri':                  '🧠',
+    'passive.images':                     '🖼️',
+    'passive.video':                      '🎬',
+    'passive.resting_state':              '💤',
+    'active.controlled':                  '📊',
     'naturalistic_stimuli.images':        '🖼️',
     'naturalistic_stimuli.video':         '🎬',
     'naturalistic_stimuli.resting_state': '💤',
@@ -61,11 +65,16 @@ _STATS_EMOJI = {
     'physiology.ecg':                     '📈',
     'physiology.respiration':             '📈',
     'physiology.plethysmograph':          '📈',
+    'physiology.eda':                     '📈',
     'physiology.eye_tracking':            '👁️',
 }
 
 _STATS_LABEL = {
     'neuroimaging.fmri':                  'Neuroimaging (fMRI)',
+    'passive.images':                     'Images',
+    'passive.video':                      'Naturalistic video',
+    'passive.resting_state':              'Resting state',
+    'active.controlled':                  'Behavior (controlled task)',
     'naturalistic_stimuli.images':        'Images',
     'naturalistic_stimuli.video':         'Naturalistic video',
     'naturalistic_stimuli.resting_state': 'Resting state',
@@ -73,10 +82,15 @@ _STATS_LABEL = {
     'physiology.ecg':                     'ECG',
     'physiology.respiration':             'Respiration',
     'physiology.plethysmograph':          'Pulse',
+    'physiology.eda':                     'Skin conductance (EDA)',
     'physiology.eye_tracking':            'Eye tracking',
 }
 
 _STATS_UNIT = {
+    'passive.images':                     'unique images/subject',
+    'passive.video':                      'h',
+    'passive.resting_state':              'h',
+    'active.controlled':                  'h',
     'naturalistic_stimuli.images':        'unique images/subject',
     'naturalistic_stimuli.video':         'h',
     'naturalistic_stimuli.resting_state': 'h',
@@ -85,6 +99,7 @@ _STATS_UNIT = {
 
 _STATUS_ICON = {
     'available':              '✅',
+    'partial':                '🟡',
     'pending':                '⬜',
     'not_collected':          '❌',
     'collected_not_released': '🔒',

@@ -83,7 +83,7 @@
       "properties": {
         "controlled": {
           "description": "Controlled experimental tasks (hours)",
-          "$ref": "#/$defs/recording_hours"
+          "$ref": "#/$defs/stimulus_modality"
         },
         "game_actions": {
           "description": "Game action responses (hours)",

@@ -4,14 +4,18 @@ stats:
     fmri:
       total_h: 54.6
       per_subject_h: 9.1
-  naturalistic_stimuli:
+  passive:
     resting_state:
-      total_unique: 7.5
+      total_unique: 1.25
       per_subject_unique: 1.25
-  responses:
-    controlled_tasks:
-      total_unique: 21
-      per_subject_unique: 21
+      total_with_repetition: 7.5
+      per_subject_with_repetition: 1.25
+  active:
+    controlled:
+      total_unique: 0.52
+      per_subject_unique: 0.52
+      total_with_repetition: 47.1
+      per_subject_with_repetition: 7.85
 
 subjects:
   - { id: sub-01, status: available }
@@ -30,9 +34,6 @@ tasks:
     note: "4–6 repetitions per participant"
 
 modalities:
-  - stats_key: "neuroimaging.fmri"
-  - stats_key: "naturalistic_stimuli.resting_state"
-  - stats_key: "responses.controlled_tasks"
   - emoji: "📈"
     label: "Physiology"
     components:

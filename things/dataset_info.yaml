@@ -4,10 +4,18 @@ stats:
     fmri:
       total_h: 65.5
       per_subject_h: 16.4
-  naturalistic_stimuli:
+  passive:
     images:
       total_unique: 4320
       per_subject_unique: 4320
+      total_with_repetition: 50400
+      per_subject_with_repetition: 12960
+  active:
+    controlled:
+      total_unique: 16.4
+      per_subject_unique: 16.4
+      total_with_repetition: 65.5
+      per_subject_with_repetition: 16.4
 
 subjects:
   - { id: sub-01, status: available }
@@ -18,12 +26,9 @@ subjects:
 tasks:
   - emoji: "🖼️"
     label: "Continuous visual recognition — 720 THINGS object categories"
-    note: "33–36 sessions × up to 6 runs; ~4320 unique images; each image shown 3× across sessions"
+    note: "33–36 sessions × up to 6 runs; ~4320 unique images; each image shown 3× across sessions; confidence rating on each trial"
 
 modalities:
-  - stats_key: "neuroimaging.fmri"
-  - stats_key: "naturalistic_stimuli.images"
-    label: "Visual stimuli (THINGS images)"
   - emoji: "📈"
     label: "Physiology"
     components:

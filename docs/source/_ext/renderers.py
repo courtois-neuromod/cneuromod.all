@@ -94,10 +94,12 @@ def _render_key_facts(info_path):
 
     subjects = data.get('subjects', [])
     if subjects:
-        cells = ' · '.join(
-            f"`{s['id']}` {_STATUS_ICON.get(s.get('status', ''), '')}"
-            for s in subjects
-        )
+        def _subject_cell(s):
+            icon = _STATUS_ICON.get(s.get('status', ''), '')
+            note = s.get('note', '')
+            base = f"`{s['id']}` {icon}"
+            return f"{base} _({note})_" if note else base
+        cells = ' · '.join(_subject_cell(s) for s in subjects)
         subjects_n = stats.get('subjects_n')
         if subjects_n is not None:
             cells = f"{subjects_n} — {cells}"
@@ -115,8 +117,24 @@ def _render_key_facts(info_path):
         rows.append((field, cell))
 
     modalities = data.get('modalities', [])
-    first_mod = True
+    override_map = {}
+    manual_mods = []
     for mod in modalities:
+        sk = mod.get('stats_key')
+        if sk:
+            override_map[sk] = mod
+        else:
+            manual_mods.append(mod)
+
+    resolved_mods = []
+    for stats_key in _STATS_EMOJI:
+        stats_val = _resolve_stats_key(stats, stats_key)
+        if stats_val:
+            resolved_mods.append(override_map.get(stats_key, {'stats_key': stats_key}))
+    resolved_mods.extend(manual_mods)
+
+    first_mod = True
+    for mod in resolved_mods:
         stats_key = mod.get('stats_key')
         emoji = mod.get('emoji') or (stats_key and _STATS_EMOJI.get(stats_key)) or ''
         label = mod.get('label') or (stats_key and _STATS_LABEL.get(stats_key)) or ''
