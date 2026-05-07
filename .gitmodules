@@ -272,3 +272,7 @@
 	url = git@github.com:courtois-neuromod/triplets.fmriprep
 	datalad-id = 6eb11d57-4cd5-4220-b22e-0b628c382a7c
 	datalad-url = git@github.com:courtois-neuromod/triplets.fmriprep
+[submodule "emotion-videos/fmriprep"]
+	path = emotion-videos/fmriprep
+	url = git@github.com:courtois-neuromod/emotion-videos.fmriprep
+	datalad-url = git@github.com:courtois-neuromod/emotion-videos.fmriprep
