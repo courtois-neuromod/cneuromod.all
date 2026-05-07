@@ -4,7 +4,7 @@ stats:
     fmri:
       total_h: 368
       per_subject_h: 65.0
-  passive:
+  tasks:
     video:
       total_unique: 65.0
       per_subject_unique: 65.0

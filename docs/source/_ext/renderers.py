@@ -82,7 +82,7 @@ def _resolve_stats_key(stats, dotted_key):
     val = stats
     for part in dotted_key.split('.'):
         val = val.get(part, {}) if isinstance(val, dict) else {}
-    return val if isinstance(val, dict) else {}
+    return val
 
 
 def _render_key_facts(info_path):
@@ -144,7 +144,10 @@ def _render_key_facts(info_path):
             stats_val = _resolve_stats_key(stats, stats_key)
             unit = mod.get('unit') or _STATS_UNIT.get(stats_key, '')
             parts = []
-            if 'per_subject_h' in stats_val:
+            if isinstance(stats_val, int):
+                unit_label = unit if unit else 'contrasts'
+                parts.append(f"{stats_val} {unit_label}")
+            elif 'per_subject_h' in stats_val:
                 parts.append(f"{stats_val['per_subject_h']} h/subject")
             elif 'per_subject_unique' in stats_val:
                 unit_label = 'h/subject' if unit == 'h' else (unit if unit else 'unique/subject')

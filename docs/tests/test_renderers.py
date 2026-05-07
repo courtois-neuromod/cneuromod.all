@@ -97,11 +97,17 @@ class TestRenderKeyFacts:
         assert lines, "No fMRI row found"
         assert '✅' not in lines[0]
 
-    def test_stats_per_subject_unique(self, dataset_info_yaml_with_stats):
+    def test_stats_controlled_hours(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)
         lines = [l for l in result.splitlines() if 'Behavior' in l]
         assert lines, "No Behavior row found"
-        assert '23 unique conditions / subject' in lines[0]
+        assert '7.85 h/subject' in lines[0]
+
+    def test_stats_contrasts_count(self, dataset_info_yaml_with_stats):
+        result = _render_key_facts(dataset_info_yaml_with_stats)
+        lines = [l for l in result.splitlines() if 'Contrasts' in l]
+        assert lines, "No Contrasts row found"
+        assert '23 contrasts' in lines[0]
 
     def test_stats_resting_state_unit_h(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)

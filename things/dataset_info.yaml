@@ -4,18 +4,16 @@ stats:
     fmri:
       total_h: 65.5
       per_subject_h: 16.4
-  passive:
+  tasks:
     images:
       total_unique: 4320
       per_subject_unique: 4320
       total_with_repetition: 50400
       per_subject_with_repetition: 12960
-  active:
     controlled:
-      total_unique: 16.4
-      per_subject_unique: 16.4
-      total_with_repetition: 65.5
-      per_subject_with_repetition: 16.4
+      total_h: 65.5
+      per_subject_h: 16.4
+    contrasts: 720
 
 subjects:
   - { id: sub-01, status: available }

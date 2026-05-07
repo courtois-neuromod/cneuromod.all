@@ -1,119 +1,116 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Dataset",
-  "description": "A dense neuroAI dataset entry",
+  "description": "Metadata and volume statistics for a dense neuroAI dataset entry. Each dataset is an independent git+git-annex repository registered as a submodule in cneuromod.all.",
   "type": "object",
   "required": ["name"],
   "additionalProperties": false,
   "properties": {
     "name": {
       "type": "string",
-      "description": "Full dataset name"
+      "description": "Full dataset name, as it should appear in citations and documentation."
     },
     "short_name": {
       "type": "string",
-      "description": "Short display name for figures"
+      "description": "Short display name used in figures and compact tables (ideally ≤ 12 characters)."
     },
     "reference": {
       "type": "string",
-      "description": "URL to the primary publication or official documentation"
+      "description": "URL to the primary publication or official documentation page for this dataset."
     },
     "subjects_n": {
       "type": "integer",
-      "description": "Number of participants"
+      "description": "Number of participants who contributed data to this dataset."
     },
     "neuroimaging": {
       "type": "object",
-      "description": "Neural recording modalities",
+      "description": "Neural recording modalities. Each entry reports the total acquisition time in hours across all sessions and subjects.",
       "additionalProperties": false,
       "properties": {
         "fmri": {
-          "description": "fMRI recording volume (hours)",
+          "description": "BOLD fMRI acquisition time (hours), including all runs and sessions across the full dataset.",
           "$ref": "#/$defs/recording_hours"
         },
         "eeg": {
-          "description": "EEG recording volume (hours)",
+          "description": "EEG acquisition time (hours), including all runs and sessions.",
           "$ref": "#/$defs/recording_hours"
         },
         "meg": {
-          "description": "MEG recording volume (hours)",
+          "description": "MEG acquisition time (hours), including all runs and sessions.",
           "$ref": "#/$defs/recording_hours"
         },
         "ieeg": {
-          "description": "Intracranial EEG recording volume (hours)",
+          "description": "Intracranial EEG acquisition time (hours), including all runs and sessions.",
           "$ref": "#/$defs/recording_hours"
         }
       }
     },
-    "passive": {
+    "tasks": {
       "type": "object",
-      "description": "Passive stimulus exposure. Unit varies by modality: images are counts (#), all others are hours (h).",
+      "description": "Volume of relevant task dimensions. Each sub-field captures a distinct type of stimulus or behavioral engagement. Units vary by modality: images are counts (#), controlled and all other stimulus fields are hours (h), and contrasts is a plain integer.",
       "additionalProperties": false,
       "properties": {
         "images": {
-          "description": "Image stimuli (count)",
+          "description": "Static image stimuli (count). total_unique and per_subject_unique count distinct image files; *_with_repetition counts total presentations including repeated showings.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "video": {
-          "description": "Video stimuli (hours)",
+          "description": "Continuous video stimuli (hours). total_unique is the duration of distinct video content; *_with_repetition includes repeated viewings.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "audio": {
-          "description": "Non-speech audio stimuli (hours)",
+          "description": "Non-speech audio stimuli (hours), e.g. music or environmental sounds. total_unique is the duration of distinct audio content.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "speech_listening": {
-          "description": "Speech listening stimuli (hours)",
+          "description": "Spoken language listening stimuli (hours), e.g. audiobooks, podcasts, or speech passages.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "text_reading": {
-          "description": "Text reading stimuli (hours)",
+          "description": "Text reading stimuli (hours), e.g. sentences or passages displayed on screen.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "resting_state": {
-          "description": "Resting-state (no task, no external stimuli; hours)",
-          "$ref": "#/$defs/stimulus_modality"
-        }
-      }
-    },
-    "active": {
-      "type": "object",
-      "description": "Active behavioral paradigms. controlled is hours of controlled experimental tasks; game_actions are hours of gameplay.",
-      "additionalProperties": false,
-      "properties": {
-        "controlled": {
-          "description": "Controlled experimental tasks (hours)",
+          "description": "Resting-state scans (hours): no task instruction, no external stimulus. per_subject_unique is the amount of rest data recorded per subject in a single pass through the protocol.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "game_actions": {
-          "description": "Game action responses (hours)",
+          "description": "Gameplay recordings (hours): active video-game sessions where participants produced motor responses. Captures the behavioral richness of naturalistic game interaction.",
           "$ref": "#/$defs/stimulus_modality"
+        },
+        "controlled": {
+          "description": "Volume of controlled experiments, in hours. Controlled experiments have a fixed trial structure designed to isolate specific cognitive or perceptual processes (e.g. task localizers, block designs). Use recording_hours rather than stimulus_modality because the relevant quantity is total scan time, not unique stimulus content.",
+          "$ref": "#/$defs/recording_hours"
+        },
+        "contrasts": {
+          "type": "integer",
+          "description": "Number of canonical statistical contrasts that can be generated from the controlled experiments in this dataset (e.g. condition A vs. baseline, condition A vs. condition B). Each contrast yields one whole-brain statistical map per subject."
         }
       }
     },
     "physiology": {
       "type": "object",
-      "description": "Physiological recording modalities (hours)",
+      "description": "Peripheral physiological recording modalities (hours). Each entry reports total acquisition time; coverage may be less than fMRI if sensors were only deployed for a subset of sessions.",
       "additionalProperties": false,
       "properties": {
         "ecg": {
-          "description": "ECG / heart rate (hours)",
+          "description": "Electrocardiogram / heart rate recording (hours).",
           "$ref": "#/$defs/recording_hours"
         },
         "respiration": {
-          "description": "Respiration belt (hours)",
+          "description": "Respiration belt recording (hours), measuring thoracic expansion during breathing.",
           "$ref": "#/$defs/recording_hours"
         },
         "plethysmograph": {
-          "description": "Photoplethysmograph / pulse oximeter (hours)",
+          "description": "Photoplethysmograph / pulse oximeter recording (hours), capturing peripheral pulse waveform.",
           "$ref": "#/$defs/recording_hours"
         },
         "eda": {
-          "description": "Electrodermal activity (hours)",
+          "description": "Electrodermal activity (skin conductance) recording (hours), an index of sympathetic arousal.",
           "$ref": "#/$defs/recording_hours"
         },
         "eye_tracking": {
-          "description": "Eye tracking (hours)",
+          "description": "Eye tracking recording (hours), capturing gaze position and/or pupil diameter.",
           "$ref": "#/$defs/recording_hours"
         }
       }
@@ -122,38 +119,40 @@
   "$defs": {
     "recording_hours": {
       "type": "object",
+      "description": "Total acquisition volume for a recording modality, expressed in hours.",
       "additionalProperties": false,
       "properties": {
         "total_h": {
           "type": "number",
-          "description": "Total hours across all subjects"
+          "description": "Total hours pooled across all subjects and sessions."
         },
         "per_subject_h": {
           "type": "number",
-          "description": "Hours per subject"
+          "description": "Average hours per subject (total_h / subjects_n)."
         }
       }
     },
     "stimulus_modality": {
       "type": "object",
+      "description": "Stimulus volume for a single modality, distinguishing unique content from repeated presentations.",
       "required": ["total_unique", "per_subject_unique", "total_with_repetition", "per_subject_with_repetition"],
       "additionalProperties": false,
       "properties": {
         "total_unique": {
           "type": "number",
-          "description": "Total unique stimulus volume (unit depends on modality)"
+          "description": "Total unique stimulus volume across all subjects (images: count of distinct files; all others: hours of distinct content). Each stimulus item is counted once regardless of how many times it was shown."
         },
         "per_subject_unique": {
           "type": "number",
-          "description": "Unique stimulus volume per subject"
+          "description": "Unique stimulus volume per subject — the novel content each participant was exposed to, counted once per item."
         },
         "total_with_repetition": {
           "type": "number",
-          "description": "Total volume including across-subject repetitions"
+          "description": "Total stimulus volume including within-subject and across-subject repetitions (images: total presentations; all others: total hours of stimulus delivery)."
         },
         "per_subject_with_repetition": {
           "type": "number",
-          "description": "Volume per subject including within-subject repetitions"
+          "description": "Stimulus volume per subject including within-session repetitions of the same item (images: average presentations per subject; all others: hours per subject)."
         }
       }
     }

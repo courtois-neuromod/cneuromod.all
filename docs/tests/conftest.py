@@ -127,11 +127,13 @@ def dataset_info_yaml_with_stats(tmp_path):
             'neuroimaging': {
                 'fmri': {'total_h': 48, 'per_subject_h': 8},
             },
-            'naturalistic_stimuli': {
-                'resting_state': {'total_unique': 7.5, 'per_subject_unique': 1.25},
-            },
-            'responses': {
-                'controlled_tasks': {'total_unique': 23, 'per_subject_unique': 23},
+            'tasks': {
+                'resting_state': {
+                    'total_unique': 1.25, 'per_subject_unique': 1.25,
+                    'total_with_repetition': 7.5, 'per_subject_with_repetition': 1.25,
+                },
+                'controlled': {'total_h': 47.1, 'per_subject_h': 7.85},
+                'contrasts': 23,
             },
         },
         'subjects': [
@@ -143,8 +145,9 @@ def dataset_info_yaml_with_stats(tmp_path):
         ],
         'modalities': [
             {'stats_key': 'neuroimaging.fmri'},
-            {'stats_key': 'naturalistic_stimuli.resting_state'},
-            {'stats_key': 'responses.controlled_tasks'},
+            {'stats_key': 'tasks.resting_state'},
+            {'stats_key': 'tasks.controlled'},
+            {'stats_key': 'tasks.contrasts'},
         ],
     }
     p = tmp_path / 'dataset_info.yaml'
@@ -163,10 +166,14 @@ def dataset_info_yaml_valid_stats(tmp_path):
         'stats': {
             'subjects_n': 6,
             'neuroimaging': {'fmri': {'total_h': 54.6, 'per_subject_h': 9.1}},
-            'naturalistic_stimuli': {
-                'resting_state': {'total_unique': 7.5, 'per_subject_unique': 1.25},
+            'tasks': {
+                'resting_state': {
+                    'total_unique': 1.25, 'per_subject_unique': 1.25,
+                    'total_with_repetition': 7.5, 'per_subject_with_repetition': 1.25,
+                },
+                'controlled': {'total_h': 47.1, 'per_subject_h': 7.85},
+                'contrasts': 23,
             },
-            'responses': {'controlled_tasks': {'total_unique': 21, 'per_subject_unique': 21}},
         },
     }
     p = tmp_path / 'dataset_info.yaml'
