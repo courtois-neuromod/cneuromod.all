@@ -286,3 +286,8 @@
 	url = git@github.com:courtois-neuromod/emotion-videos.tedana
 	datalad-id = e6b78aa4-394d-4caa-9715-a4334c9d22b3
 	datalad-url = git@github.com:courtois-neuromod/emotion-videos.tedana
+[submodule "emotion-videos/physprep"]
+	path = emotion-videos/physprep
+	url = git@github.com:courtois-neuromod/emotion-videos.physprep
+	datalad-id = 9cc5a748-787b-4668-9d63-f483d7f4c603
+	datalad-url = git@github.com:courtois-neuromod/emotion-videos.physprep
