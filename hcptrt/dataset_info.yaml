@@ -6,10 +6,8 @@ stats:
       per_subject_h: 9.1
   tasks:
     resting_state:
-      total_unique: 1.25
-      per_subject_unique: 1.25
-      total_with_repetition: 7.5
-      per_subject_with_repetition: 1.25
+      total_h: 7.5
+      per_subject_h: 1.25
     controlled:
       total_h: 47.1
       per_subject_h: 7.85

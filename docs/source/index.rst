@@ -12,4 +12,5 @@
    contents/datasets
    AUTHORS
    ACKNOWLEDGMENT
+   HOWTOCITE
    REFERENCES

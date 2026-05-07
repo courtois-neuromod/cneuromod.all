@@ -10,6 +10,16 @@ stats:
       per_subject_unique: 65.0
       total_with_repetition: 390.0
       per_subject_with_repetition: 65.0
+    audio:
+      total_unique: 65.0
+      per_subject_unique: 65.0
+      total_with_repetition: 390.0
+      per_subject_with_repetition: 65.0
+    speech_listening:
+      total_unique: 65.0
+      per_subject_unique: 65.0
+      total_with_repetition: 390.0
+      per_subject_with_repetition: 65.0
   physiology:
     ecg:
       total_h: 368

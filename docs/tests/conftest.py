@@ -128,10 +128,7 @@ def dataset_info_yaml_with_stats(tmp_path):
                 'fmri': {'total_h': 48, 'per_subject_h': 8},
             },
             'tasks': {
-                'resting_state': {
-                    'total_unique': 1.25, 'per_subject_unique': 1.25,
-                    'total_with_repetition': 7.5, 'per_subject_with_repetition': 1.25,
-                },
+                'resting_state': {'total_h': 7.5, 'per_subject_h': 1.25},
                 'controlled': {'total_h': 47.1, 'per_subject_h': 7.85},
                 'contrasts': 23,
             },
@@ -167,10 +164,7 @@ def dataset_info_yaml_valid_stats(tmp_path):
             'subjects_n': 6,
             'neuroimaging': {'fmri': {'total_h': 54.6, 'per_subject_h': 9.1}},
             'tasks': {
-                'resting_state': {
-                    'total_unique': 1.25, 'per_subject_unique': 1.25,
-                    'total_with_repetition': 7.5, 'per_subject_with_repetition': 1.25,
-                },
+                'resting_state': {'total_h': 7.5, 'per_subject_h': 1.25},
                 'controlled': {'total_h': 47.1, 'per_subject_h': 7.85},
                 'contrasts': 23,
             },

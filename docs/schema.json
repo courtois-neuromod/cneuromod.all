@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Dataset",
-  "description": "Metadata and volume statistics for a dense neuroAI dataset entry. Each dataset is an independent git+git-annex repository registered as a submodule in cneuromod.all.",
+  "description": "Metadata and volume statistics for dense neuroAI datasets.",
   "type": "object",
   "required": ["name"],
   "additionalProperties": false,
@@ -47,11 +47,11 @@
     },
     "tasks": {
       "type": "object",
-      "description": "Volume of relevant task dimensions. Each sub-field captures a distinct type of stimulus or behavioral engagement. Units vary by modality: images are counts (#), controlled and all other stimulus fields are hours (h), and contrasts is a plain integer.",
+      "description": "Volume of relevant task dimensions. Each sub-field captures a distinct type of stimulus or behavioral engagement. Units vary by modality: images and contrasts are counts (#), all other stimulus and recording fields are hours (h).",
       "additionalProperties": false,
       "properties": {
         "images": {
-          "description": "Static image stimuli (count). total_unique and per_subject_unique count distinct image files; *_with_repetition counts total presentations including repeated showings.",
+          "description": "Static image stimuli (count).",
           "$ref": "#/$defs/stimulus_modality"
         },
         "video": {
@@ -59,24 +59,24 @@
           "$ref": "#/$defs/stimulus_modality"
         },
         "audio": {
-          "description": "Non-speech audio stimuli (hours), e.g. music or environmental sounds. total_unique is the duration of distinct audio content.",
+          "description": "Audio stimuli (hours), e.g. music or environmental sounds. Audio stimuli may include speech. total_unique is the duration of distinct audio content. *_with_repetition includes repeated listening.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "speech_listening": {
-          "description": "Spoken language listening stimuli (hours), e.g. audiobooks, podcasts, or speech passages.",
+          "description": "Audio stimuli (hours) featuring spoken language, e.g. movies featuring dialogues, audiobooks, podcasts, or speech passages. The stimuli may have periods without speech, e.g. a pure action scene in a movie. total_unique is the duration of distinct audio content. *_with_repetition includes repeated listening.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "text_reading": {
-          "description": "Text reading stimuli (hours), e.g. sentences or passages displayed on screen.",
+          "description": "Text reading stimuli (hours), e.g. sentences or passages displayed on screen. total_unique is the duration of distinct reading content. *_with_repetition includes repeated reading of the same text.",
           "$ref": "#/$defs/stimulus_modality"
         },
         "resting_state": {
           "description": "Resting-state scans (hours): no task instruction, no external stimulus. per_subject_unique is the amount of rest data recorded per subject in a single pass through the protocol.",
-          "$ref": "#/$defs/stimulus_modality"
+          "$ref": "#/$defs/recording_hours"
         },
-        "game_actions": {
+        "game": {
           "description": "Gameplay recordings (hours): active video-game sessions where participants produced motor responses. Captures the behavioral richness of naturalistic game interaction.",
-          "$ref": "#/$defs/stimulus_modality"
+          "$ref": "#/$defs/recording_hours"
         },
         "controlled": {
           "description": "Volume of controlled experiments, in hours. Controlled experiments have a fixed trial structure designed to isolate specific cognitive or perceptual processes (e.g. task localizers, block designs). Use recording_hours rather than stimulus_modality because the relevant quantity is total scan time, not unique stimulus content.",
@@ -90,7 +90,7 @@
     },
     "physiology": {
       "type": "object",
-      "description": "Peripheral physiological recording modalities (hours). Each entry reports total acquisition time; coverage may be less than fMRI if sensors were only deployed for a subset of sessions.",
+      "description": "Peripheral physiological recording modalities (hours). Each entry reports total acquisition time; coverage may be less than neuroimaging if sensors were only deployed for a subset of sessions, or more if some recording sessions are available without neuroimaging.",
       "additionalProperties": false,
       "properties": {
         "ecg": {

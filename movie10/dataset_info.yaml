@@ -4,8 +4,31 @@ stats:
     fmri:
       total_h: 60.0
       per_subject_h: 10.0
+  physiology:
+    ecg:
+      total_h: 60.0
+      per_subject_h: 10.0
+    respiration:
+      total_h: 60.0
+      per_subject_h: 10.0
+    plethysmograph:
+      total_h: 60.0
+      per_subject_h: 10.0
+    eda:
+      total_h: 60.0
+      per_subject_h: 10.0
   tasks:
     video:
+      total_unique: 7.3
+      per_subject_unique: 7.3
+      total_with_repetition: 60.0
+      per_subject_with_repetition: 10.0
+    audio:
+      total_unique: 7.3
+      per_subject_unique: 7.3
+      total_with_repetition: 60.0
+      per_subject_with_repetition: 10.0
+    speech_listening:
       total_unique: 7.3
       per_subject_unique: 7.3
       total_with_repetition: 60.0
@@ -26,13 +49,7 @@ tasks:
 
 modalities:
   - stats_key: "neuroimaging.fmri"
-  - stats_key: "naturalistic_stimuli.video"
-  - emoji: "📈"
-    label: "Physiology"
-    components:
-      - { label: ECG,         status: not_collected }
-      - { label: respiration, status: not_collected }
-      - { label: pulse,       status: not_collected }
+  - stats_key: "tasks.video"
   - emoji: "👁️"
     label: "Eyetracking"
     components:
