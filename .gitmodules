@@ -233,3 +233,7 @@
 	path = mariostars/bids
 	url = git@github.com:courtois-neuromod/mariostars
 	datalad-url = git@github.com:courtois-neuromod/mariostars
+[submodule "multfs/bids"]
+	path = multfs/bids
+	url = git@github.com:courtois-neuromod/multfs
+	datalad-url = git@github.com:courtois-neuromod/multfs
