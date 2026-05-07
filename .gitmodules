@@ -216,3 +216,7 @@
 	path = petit-prince/fmriprep
 	url = git@github.com:courtois-neuromod/petit-prince.fmriprep.git
 	datalad-url = git@github.com:courtois-neuromod/petit-prince.fmriprep.git
+[submodule "langlocalizer/bids"]
+	path = langlocalizer/bids
+	url = git@github.com:courtois-neuromod/langlocalizer
+	datalad-url = git@github.com:courtois-neuromod/langlocalizer
