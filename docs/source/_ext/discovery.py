@@ -1,5 +1,8 @@
+import logging
 import os
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 from .constants import _ROOT_MD_EXCLUDE, _ROOT_MD_MANUAL
 from . import validator as _validator
@@ -118,4 +121,4 @@ def _auto_discover_datasets(app):
     schema = _validator._load_schema()
     for name, info_path in info.items():
         for err in _validator.validate_dataset_info(info_path, schema):
-            app.warn(f"[{name}] dataset_info.yaml stats: {err}")
+            logger.warning(f"[{name}] dataset_info.yaml stats: {err}")

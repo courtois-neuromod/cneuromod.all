@@ -10,6 +10,10 @@
       "type": "string",
       "description": "Full dataset name"
     },
+    "short_name": {
+      "type": "string",
+      "description": "Short display name for figures"
+    },
     "reference": {
       "type": "string",
       "description": "URL to the primary publication or official documentation"
@@ -41,9 +45,9 @@
         }
       }
     },
-    "naturalistic_stimuli": {
+    "passive": {
       "type": "object",
-      "description": "Naturalistic stimulus exposure. Unit varies by modality: images are counts (#), all others are hours (h).",
+      "description": "Passive stimulus exposure. Unit varies by modality: images are counts (#), all others are hours (h).",
       "additionalProperties": false,
       "properties": {
         "images": {
@@ -72,14 +76,14 @@
         }
       }
     },
-    "responses": {
+    "active": {
       "type": "object",
-      "description": "Behavioral response modalities. Unit varies: controlled_tasks are condition counts, game_actions are hours.",
+      "description": "Active behavioral paradigms. controlled is hours of controlled experimental tasks; game_actions are hours of gameplay.",
       "additionalProperties": false,
       "properties": {
-        "controlled_tasks": {
-          "description": "Controlled experimental task conditions (count)",
-          "$ref": "#/$defs/stimulus_modality"
+        "controlled": {
+          "description": "Controlled experimental tasks (hours)",
+          "$ref": "#/$defs/recording_hours"
         },
         "game_actions": {
           "description": "Game action responses (hours)",
@@ -132,6 +136,7 @@
     },
     "stimulus_modality": {
       "type": "object",
+      "required": ["total_unique", "per_subject_unique", "total_with_repetition", "per_subject_with_repetition"],
       "additionalProperties": false,
       "properties": {
         "total_unique": {
