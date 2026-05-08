@@ -42,6 +42,10 @@
         "ieeg": {
           "description": "Intracranial EEG acquisition time (hours), including all runs and sessions.",
           "$ref": "#/$defs/recording_hours"
+        },
+        "calcium_imaging": {
+          "description": "Calcium imaging acquisition time (hours), including all runs and sessions.",
+          "$ref": "#/$defs/recording_hours"
         }
       }
     },
