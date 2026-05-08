@@ -10,6 +10,19 @@ stats:
       per_subject_unique: 1.17
       total_with_repetition: 5.83
       per_subject_with_repetition: 1.17
+  physiology:
+    ecg:
+      total_h: 5.8
+      per_subject_h: 1.17
+    respiration:
+      total_h: 5.8
+      per_subject_h: 1.17
+    plethysmograph:
+      total_h: 5.8
+      per_subject_h: 1.17
+    eda:
+      total_h: 5.8
+      per_subject_h: 1.17
 
 subjects:
   - { id: sub-01, status: available }
@@ -25,13 +38,6 @@ tasks:
     note: "word-by-word text at 2 Hz; 7 runs × ~10 min; 1 session per participant"
 
 modalities:
-  - emoji: "📈"
-    label: "Physiology"
-    components:
-      - { label: ECG,              status: available }
-      - { label: respiration,      status: available }
-      - { label: pulse,            status: available }
-      - { label: skin conductance, status: available }
   - emoji: "👁️"
     label: "Eyetracking"
     components:

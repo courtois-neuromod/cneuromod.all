@@ -13,7 +13,7 @@ stats:
     controlled:
       total_h: 65.5
       per_subject_h: 16.4
-    contrasts: 720
+    contrasts: 1
 
 subjects:
   - { id: sub-01, status: available }
