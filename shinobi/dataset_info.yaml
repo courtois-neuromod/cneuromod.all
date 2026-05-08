@@ -8,6 +8,16 @@ stats:
     game:
       total_h: 32
       per_subject_h: 8.0
+    video:
+      total_unique: 32.0
+      per_subject_unique: 8.0
+      total_with_repetition: 32.0
+      per_subject_with_repetition: 8.0
+    audio:
+      total_unique: 32.0
+      per_subject_unique: 8.0
+      total_with_repetition: 32.0
+      per_subject_with_repetition: 8.0
   physiology:
     ecg:
       total_h: 32
