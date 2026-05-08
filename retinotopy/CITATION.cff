@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+type: dataset
+title: "Retinotopy — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: St-Laurent
+      given-names: Marie
+    - family-names: Pinsard
+      given-names: Basile
+    - family-names: Contier
+      given-names: Oliver
+    - family-names: DuPre
+      given-names: Elizabeth
+    - family-names: Seeliger
+      given-names: Katja
+    - family-names: Borghesani
+      given-names: Valentina
+    - family-names: Boyle
+      given-names: Julie A.
+    - family-names: Bellec
+      given-names: Lune
+    - family-names: Hebart
+      given-names: Martin N.
+  title: "CNeuroMod-THINGS, a densely-sampled fMRI dataset for visual neuroscience"
+  journal: Scientific Data
+  year: 2026
+  volume: 13
+  pages: "141"
+  doi: "10.1038/s41597-026-06591-y"
