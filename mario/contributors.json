@@ -1,0 +1,109 @@
+{
+  "files": [
+    "README"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "FrancoisPgm",
+      "name": "François Paugam",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35327799?v=4",
+      "profile": "https://github.com/FrancoisPgm",
+      "contributions": [
+        "data",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "RainyFields",
+      "name": "RainyFields",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44264329?v=4",
+      "profile": "https://github.com/RainyFields",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1155388?v=4",
+      "profile": "https://github.com/bpinsard",
+      "contributions": [
+        "design",
+        "projectManagement",
+        "data"
+      ]
+    },
+    {
+      "login": "emilie-dessureault",
+      "name": "emilie-dessureault",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61021023?v=4",
+      "profile": "https://github.com/emilie-dessureault",
+      "contributions": [
+        "data",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "hyruuk",
+      "name": "Yann Harel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36450529?v=4",
+      "profile": "https://github.com/hyruuk",
+      "contributions": [
+        "design",
+        "data",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "julieaboyle1",
+      "name": "Julie A. Boyle",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39348727?v=4",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": [
+        "design",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "maelleF",
+      "name": "maelleF",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29599311?v=4",
+      "profile": "https://github.com/maelleF",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "me-pic",
+      "name": "Marie-Eve Picard",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77584086?v=4",
+      "profile": "https://github.com/me-pic",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "motahareh-pourrahimi",
+      "name": "Motahareh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81639625?v=4",
+      "profile": "https://github.com/motahareh-pourrahimi",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "lunebellec",
+      "name": "Lune Bellec",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1670887?v=4",
+      "profile": "https://github.com/lunebellec",
+      "contributions": [
+        "design"
+      ]
+    }
+  ],
+  "projectName": "mario",
+  "projectOwner": "courtois-neuromod"
+}
