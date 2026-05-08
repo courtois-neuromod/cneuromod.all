@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+type: dataset
+title: "CNeuroMod-HarryPotter — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Toneva
+      given-names: Mariya
+    - family-names: Mitchell
+      given-names: Tom M.
+    - family-names: Wehbe
+      given-names: Leila
+  title: "Combining computational controls with natural text reveals aspects of meaning composition"
+  journal: Nature Computational Science
+  year: 2022
+  volume: 2
+  pages: "745–757"
+  doi: "10.1038/s43588-022-00354-6"

@@ -28,6 +28,8 @@ datalad save -m "description of change"
 
 Always use **Lune Bellec** (login: `lunebellec`, profile: `https://github.com/lunebellec`) in `contributors.json` files. Never use "Pierre Bellec" or login `pbellec`.
 
+Always use **Julie A. Boyle** (login: `julieaboyle1`, profile: `https://github.com/julieaboyle1`) — never the short form "jboyle".
+
 ## Per-dataset metadata
 
 Each top-level dataset folder (e.g. `hcptrt/`, `anat/`) may contain two metadata files that are auto-rendered into the Sphinx documentation at build time:

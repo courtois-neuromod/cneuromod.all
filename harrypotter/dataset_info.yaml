@@ -1,0 +1,39 @@
+stats:
+  subjects_n: 5
+  neuroimaging:
+    fmri:
+      total_h: 5.8
+      per_subject_h: 1.17
+  tasks:
+    text_reading:
+      total_unique: 1.17
+      per_subject_unique: 1.17
+      total_with_repetition: 5.83
+      per_subject_with_repetition: 1.17
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: not_collected }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: available }
+
+tasks:
+  - emoji: "📖"
+    label: "Harry Potter and the Sorcerer's Stone — Chapter 9"
+    note: "word-by-word text at 2 Hz; 7 runs × ~10 min; 1 session per participant"
+
+modalities:
+  - emoji: "📈"
+    label: "Physiology"
+    components:
+      - { label: ECG,              status: available }
+      - { label: respiration,      status: available }
+      - { label: pulse,            status: available }
+      - { label: skin conductance, status: available }
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: not_collected }
+      - { label: pupillometry, status: not_collected }
