@@ -291,3 +291,8 @@
 	url = git@github.com:courtois-neuromod/emotion-videos.physprep
 	datalad-id = 9cc5a748-787b-4668-9d63-f483d7f4c603
 	datalad-url = git@github.com:courtois-neuromod/emotion-videos.physprep
+[submodule "ood/bids"]
+	path = ood/bids
+	url = git@github.com:courtois-neuromod/ood
+	datalad-id = f2040046-a06f-455a-b692-6070ea0ed94c
+	datalad-url = git@github.com:courtois-neuromod/ood
