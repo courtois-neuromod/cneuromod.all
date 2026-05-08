@@ -1,0 +1,24 @@
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 3.1
+      per_subject_h: 0.77
+  tasks:
+    controlled:
+      total_h: 3.1
+      per_subject_h: 0.77
+    contrasts: 9
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: not_collected }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: not_collected }
+
+tasks:
+  - emoji: "👁️"
+    label: "Functional localizer — 5 visual categories (faces, bodies, places, objects, characters)"
+    note: "6 sessions × 2 runs; rapid 12-trial blocks; one-back repetition detection task; 9 GLM contrasts; subject-specific ROIs for FFA, OFA, pSTS, PPA, OPA, MPA and EBA"
