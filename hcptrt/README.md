@@ -33,5 +33,19 @@ The duration of BOLD series are slightly varying across participants and repetit
 ### [Working memory](http://www.cognitiveatlas.org/task/id/trm_550b50095d4a3/)
 `wm` duration: approximately 5 minutes. There were two subtasks: a category specific representation, and a working memory task. Participants were presented with blocks of either places, tools, faces, and body parts. Within each run, all 4 types of stimuli were presented in blocks, with each block being labelled as a 2-back task (participants needed to indicate if they saw the same image two images back), or a version of a 0-back task (participants were shown a target at the start of the trial and needed to indicate if the current image matched the target). There were thus 8 different event types `<stim>_<back>`, where `<stim>` was one of `place`, `tools`, `face` or `body`, and `<back>` was one of `0back` or `2back`. Each image was presented for 2 seconds, followed by a 500 ms ITI. Each of the 2 runs included 8 event types with 10 trials per type, as well as 4 fixation blocks (15 secs).
 
+## Contrasts
+
+The seven tasks yield a total of 36 GLM contrasts (as described in [Barch et al. 2013](https://doi.org/10.1016/j.neuroimage.2013.05.033), pp. 180–181):
+
+| Task | Contrasts | Description |
+|---|---|---|
+| Working memory | 11 | 2-back vs. fixation; 0-back vs. fixation; 2-back vs. 0-back; each of 4 stimulus categories (body, face, place, tool) vs. fixation; each category vs. average of all others |
+| Motor | 10 | Each of 5 movement types (right hand, left hand, right foot, left foot, tongue) vs. baseline; each movement type vs. average of all others |
+| Gambling | 3 | Reward vs. baseline; loss vs. baseline; reward vs. loss |
+| Language | 3 | Story vs. baseline; math vs. baseline; story vs. math |
+| Social cognition | 3 | Social vs. baseline; random vs. baseline; social vs. random |
+| Relational processing | 3 | Relational vs. baseline; matching vs. baseline; relational vs. matching |
+| Emotion processing | 3 | Faces vs. baseline; shapes vs. baseline; faces vs. shapes |
+
 ### [Resting state](http://www.cognitiveatlas.org/task/id/trm_4c8a834779883/)
 `restingstate` duration: 15 minutes. In every other session, one resting-state fMRI run was acquired, giving 5 runs per participant. Participants were asked to keep their eyes open, look at a fixation cross in the middle of the screen, and not fall asleep. A total of five resting-state fMRI runs were acquired per subject.

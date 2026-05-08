@@ -11,7 +11,7 @@ stats:
     controlled:
       total_h: 47.1
       per_subject_h: 7.85
-    contrasts: 23
+    contrasts: 36
 
 subjects:
   - { id: sub-01, status: available }
@@ -23,7 +23,7 @@ subjects:
 
 tasks:
   - emoji: "🎭"
-    label: "7 HCP task localizers (23 conditions)"
+    label: "7 HCP task localizers (36 contrasts)"
     note: "13–18 repetitions per participant"
   - emoji: "💤"
     label: "resting state"
