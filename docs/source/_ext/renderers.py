@@ -212,7 +212,7 @@ def _render_components_row(components):
         else:
             anchor = re.sub(r'[^a-z0-9]+', '-', display.lower()).strip('-')
             parts.append(f'{prefix}[{display}](#{anchor})')
-    return '| **Components** | ' + ' · '.join(parts) + ' |'
+    return '| **Assets** | ' + ' · '.join(parts) + ' |'
 
 
 def _render_featured_in(stem, dataset_components):
@@ -236,7 +236,7 @@ def _render_component_sections(components):
     section_comps = [(s, p) for s, p, k in components if k == 'section']
     if not section_comps:
         return ''
-    lines = ['\n\n## Components\n']
+    lines = ['\n\n## Specific assets\n']
     for stem, path in section_comps:
         content = path.read_text(encoding='utf-8')
         level, title, rest = _extract_component_title(content)
