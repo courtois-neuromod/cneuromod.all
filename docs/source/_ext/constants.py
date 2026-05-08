@@ -125,6 +125,20 @@ _COMPONENT_ICON = {
     'training':    '🕹️',
 }
 
+_DATASET_EMOJI = {
+    'anat':        '🧬',
+    'floc':        '🎯',
+    'friends':     '📺',
+    'gamepad':     '🎮',
+    'harrypotter': '📚',
+    'hcptrt':      '🎭',
+    'mario':       '🕹️',
+    'movie10':     '🎬',
+    'retinotopy':  '👁️',
+    'shinobi':     '🥷',
+    'things':      '🖼️',
+}
+
 # Uppercase .md files at the repo root excluded from auto-discovery entirely
 _ROOT_MD_EXCLUDE = {'README.md', 'CLAUDE.md'}
 # Uppercase .md files that are symlinked but hardcoded in index.rst (kept out of the placeholder)

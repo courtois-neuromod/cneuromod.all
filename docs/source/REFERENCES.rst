@@ -1,7 +1,7 @@
 References
 ==========
 
-Publications that cite or use the Courtois NeuroMod dataset.
+Publications that use or describe the CNeuroMod datasets.
 
 .. bibliography::
    :all:

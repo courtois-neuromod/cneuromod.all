@@ -3,7 +3,7 @@ import re
 import yaml
 from pathlib import Path
 
-from .constants import _COMPONENT_ICON, _CONTRIB_EMOJI, _CONTRIB_LABEL, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
+from .constants import _COMPONENT_ICON, _CONTRIB_EMOJI, _CONTRIB_LABEL, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
 
 
 def _render_citation(cff_path):
@@ -222,7 +222,11 @@ def _render_featured_in(stem, dataset_components):
     ]
     if not datasets:
         return ''
-    cell = ' · '.join(f'[{name}](../datasets/{name})' for name in datasets)
+    cell = ' · '.join(
+        f'{_DATASET_EMOJI[name]} [{name}](../datasets/{name})' if name in _DATASET_EMOJI
+        else f'[{name}](../datasets/{name})'
+        for name in datasets
+    )
     lines = ['', '', '## Featured in', '', '| | |', '|---|---|', f'| **Datasets** | {cell} |', '']
     return '\n'.join(lines)
 
