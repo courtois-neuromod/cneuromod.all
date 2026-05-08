@@ -1,0 +1,52 @@
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 32
+      per_subject_h: 8.0
+  tasks:
+    game:
+      total_h: 32
+      per_subject_h: 8.0
+  physiology:
+    ecg:
+      total_h: 32
+      per_subject_h: 8.0
+    respiration:
+      total_h: 32
+      per_subject_h: 8.0
+    plethysmograph:
+      total_h: 32
+      per_subject_h: 8.0
+    eda:
+      total_h: 32
+      per_subject_h: 8.0
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: not_collected }
+  - { id: sub-04, status: available, note: "11 sessions (vs 12 for other participants)" }
+  - { id: sub-05, status: not_collected }
+  - { id: sub-06, status: available, note: "~7 h fMRI (vs ~8 h for other participants)" }
+
+tasks:
+  - emoji: "🎮"
+    label: "Shinobi III: Return of the Ninja Master — in-scanner gameplay"
+    note: "3 levels cycled (1, 4, 5); 4–5 runs × ~10 min per session; 11–12 sessions per participant; ~8 h fMRI per participant"
+  - emoji: "🏠"
+    label: "Shinobi III — at-home behavioral training (shinobi/training submodule)"
+    note: "Behavioral only; free-choice training regimen before scanner sessions; total gameplay per participant (training + in-scanner) exceeds fMRI acquisition time"
+
+modalities:
+  - emoji: "🕹️"
+    label: "Game logs"
+    components:
+      - { label: "button presses",        status: available }
+      - { label: "game replay (.bk2)",    status: partial, note: "some files lost during acquisition" }
+      - { label: "annotated events (RAM)", status: available }
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: not_collected }
+      - { label: pupillometry, status: not_collected }

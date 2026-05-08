@@ -210,7 +210,7 @@ def _render_components_row(components):
         if kind == 'page':
             parts.append(f'{prefix}[{display}](../contents/{stem.lower()})')
         else:
-            anchor = re.sub(r'[^a-z0-9]+', '', display.lower())
+            anchor = re.sub(r'[^a-z0-9]+', '-', display.lower()).strip('-')
             parts.append(f'{prefix}[{display}](#{anchor})')
     return '| **Components** | ' + ' · '.join(parts) + ' |'
 

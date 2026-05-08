@@ -40,6 +40,22 @@ Each top-level dataset folder (e.g. `hcptrt/`, `anat/`) may contain two metadata
 
 The Sphinx pipeline in `docs/source/conf.py` discovers both files automatically — no manual wiring needed. Add a `README.md` to a dataset folder and it appears in the docs; add `CITATION.cff` and/or `contributors.json` alongside it and the citation/contributor blocks render automatically.
 
+### `dataset_info.yaml` schema
+
+Defined in `docs/schema.json`; auto-rendered labels/emoji are in `docs/source/_ext/constants.py`. Key rules:
+
+**`stats` section** — all numeric data goes here and is auto-rendered. Valid keys:
+- `subjects_n` (integer)
+- `neuroimaging`: `fmri`, `eeg`, `meg`, `ieeg`, `calcium_imaging` — each a `{total_h, per_subject_h}` object
+- `tasks`: `game`, `video`, `audio`, `speech_listening`, `text_reading`, `resting_state`, `controlled`, `contrasts`, `images`
+  - `game` (not `gameplay`) — use `{total_h, per_subject_h}`
+  - stimulus types (`video`, `audio`, `speech_listening`, `text_reading`, `images`) — use `{total_unique, per_subject_unique, total_with_repetition, per_subject_with_repetition}`
+- `physiology`: `ecg`, `respiration`, `plethysmograph`, `eda`, `eye_tracking` — each a `{total_h, per_subject_h}` object. **All physiology in `stats` is auto-rendered; do not duplicate it in `modalities`.**
+
+**`modalities` section** — manual list for things not captured in `stats` (e.g. game log file types, eyetracking availability when `eye_tracking` is absent from stats). Do not list physiology signals here.
+
+**`subjects` section** — list of `{id, status}` objects; valid statuses: `available`, `partial`, `pending`, `not_collected`, `collected_not_released`.
+
 ## Submodule structure
 
 | Path | Type | GitHub repo |
