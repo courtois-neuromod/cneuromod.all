@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+type: dataset
+title: "CNeuroMod-Gamepad — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Harel
+      given-names: Yann
+    - family-names: Cyr
+      given-names: André
+    - family-names: Boyle
+      given-names: Julie
+    - family-names: Pinsard
+      given-names: Basile
+    - family-names: Bernard
+      given-names: Jeremy
+    - family-names: Fourcade
+      given-names: Marie-France
+    - family-names: Aggarwal
+      given-names: Himanshu
+    - family-names: Ponce
+      given-names: Ana Fernanda
+    - family-names: Thirion
+      given-names: Bertrand
+    - family-names: Jerbi
+      given-names: Karim
+    - family-names: Bellec
+      given-names: Lune
+  title: "Open design of a reproducible videogame controller for MRI and MEG"
+  year: 2023
+  doi: "10.1371/journal.pone.0290158"
+  journal: "PLOS ONE"
+  volume: 18
+  issue: 11
+  notes: "e0290158"
