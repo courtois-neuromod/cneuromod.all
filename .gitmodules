@@ -301,3 +301,7 @@
 	url = git@github.com:courtois-neuromod/ood.fmriprep
 	datalad-id = f5896166-1256-4a2a-a9fc-9820b19d2fa0
 	datalad-url = git@github.com:courtois-neuromod/ood.fmriprep
+[submodule "mutemusic/fmriprep"]
+	path = mutemusic/fmriprep
+	url = git@github.com:courtois-neuromod/mutemusic.fmriprep
+	datalad-url = git@github.com:courtois-neuromod/mutemusic.fmriprep
