@@ -305,3 +305,7 @@
 	path = mutemusic/fmriprep
 	url = git@github.com:courtois-neuromod/mutemusic.fmriprep
 	datalad-url = git@github.com:courtois-neuromod/mutemusic.fmriprep
+[submodule "mutemusic/bids"]
+	path = mutemusic/bids
+	url = git@github.com:courtois-neuromod/mutemusic
+	datalad-url = git@github.com:courtois-neuromod/mutemusic
