@@ -309,3 +309,8 @@
 	path = mutemusic/bids
 	url = git@github.com:courtois-neuromod/mutemusic
 	datalad-url = https://github.com/courtois-neuromod/mutemusic
+[submodule "hearing/bids"]
+	path = hearing/bids
+	url = git@github.com:courtois-neuromod/hearing.git
+	datalad-id = 0f821d45-4e4f-467c-b30d-db06fb1c34de
+	datalad-url = https://github.com/courtois-neuromod/hearing.git
