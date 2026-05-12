@@ -2,34 +2,34 @@ stats:
   subjects_n: 4
   neuroimaging:
     fmri:
-      total_h: 32
+      total_h: 31
       per_subject_h: 8.0
   tasks:
     game:
-      total_h: 32
+      total_h: 31
       per_subject_h: 8.0
     video:
-      total_unique: 32.0
+      total_unique: 31.0
       per_subject_unique: 8.0
-      total_with_repetition: 32.0
+      total_with_repetition: 31.0
       per_subject_with_repetition: 8.0
     audio:
-      total_unique: 32.0
+      total_unique: 31.0
       per_subject_unique: 8.0
-      total_with_repetition: 32.0
+      total_with_repetition: 31.0
       per_subject_with_repetition: 8.0
   physiology:
     ecg:
-      total_h: 32
+      total_h: 31
       per_subject_h: 8.0
     respiration:
-      total_h: 32
+      total_h: 31
       per_subject_h: 8.0
     plethysmograph:
-      total_h: 32
+      total_h: 31
       per_subject_h: 8.0
     eda:
-      total_h: 32
+      total_h: 31
       per_subject_h: 8.0
 
 subjects:
@@ -52,9 +52,13 @@ modalities:
   - emoji: "🕹️"
     label: "Game logs"
     components:
-      - { label: "button presses",        status: available }
+      - { label: "annotated events (.tsv)", status: available, note: "includes button presses and game events aligned to the fMRI" }
       - { label: "game replay (.bk2)",    status: partial, note: "some files lost during acquisition" }
-      - { label: "annotated events (RAM)", status: available }
+      - { label: "video replay (.mp4)", status: available }
+      - { label: "replay summary (.json)", status: available }
+      - { label: "mapped RAM variables (.json)", status: available }
+      - { label: "low-level features (.npy)", status: available }      
+      
   - emoji: "👁️"
     label: "Eyetracking"
     components:
