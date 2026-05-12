@@ -44,5 +44,15 @@ Companion `.bk2` replays, `.mp4` videos, `.json` summaries, mapped RAM variables
 
 In addition, the 22 levels are split into 313 short **scenes** annotated with 29 design patterns (23 from Dahlskog & Togelius, 2012, plus 6 contextual ones). See [`SCENES.md`](./SCENES.md) and the [`mario.scenes`](https://github.com/courtois-neuromod/mario.scenes) submodule for details and tooling to generate clip-level metadata, video, and memory dumps for each scene attempt.
 
+## Tutorials
+The [`mario.tutorials`](https://github.com/courtois-neuromod/mario.tutorials) repository provides a set of Colab-ready Jupyter notebooks that illustrate end-to-end use of the dataset on a single participant / single session, suitable for running on a laptop:
+
+1. **Dataset overview** — exploration of the BIDS layout and behavioral annotations.
+2. **Event-based analysis** — session-level GLM with hand-crafted action and game-event regressors and interpretable contrasts.
+3. **Reinforcement learning** — training a CNN-based RL agent on the same gameplay and extracting layer activations.
+4. **Brain encoding** — ridge-regression encoding models that map RL-agent activations onto BOLD signals, comparing layers.
+
+The notebooks adapt and combine methodology from the [`shinobi_fmri`](https://github.com/courtois-neuromod/shinobi_fmri) and [`mario_generalization`](https://github.com/courtois-neuromod/mario_generalization) repositories.
+
 ## Reference
 A detailed description of the dataset and an associated modelling study are available in [Paugam et al., bioRxiv 2025](https://doi.org/10.1101/2025.11.28.691119).
