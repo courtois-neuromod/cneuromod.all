@@ -1,3 +1,6 @@
+from tabulate import tabulate
+import yaml
+
 from . import discovery
 from .renderers import (
     _render_citation,
@@ -22,6 +25,25 @@ def _inject_datasets_index(app, docname, source):
     else:
         source[0] = source[0].replace('\n   _datasets_toc_placeholder_', '')
 
+
+def _inject_datasets_tables(app, docname, source):
+    if docname != 'contents/datasets':
+        return
+    if discovery._discovered_datasets:
+        df = []
+        for name, info_path in discovery._dataset_info.items():
+            components = discovery._dataset_components.get(name, [])
+            with open(info_path, encoding='utf-8') as f:
+                data = yaml.safe_load(f)
+                print(data)
+                df.append({
+                    "dataset": name,
+                    "n_subjects": data['stats']['subjects_n'],
+                } | {cpnt[0]:True for cpnt in components})
+        rst_table = tabulate(df, headers='keys', tablefmt='rst')
+        source[0] = source[0].replace('_datasets_table_placeholder_', f'{rst_table}')
+    else:
+        source[0] = source[0].replace('\n_datasets_table_placeholder_', '')
 
 def _inject_components_index(app, docname, source):
     if docname != 'contents/components':
@@ -112,6 +134,7 @@ def setup(app):
     app.connect('source-read', _inject_index)
     app.connect('source-read', _inject_components_index)
     app.connect('source-read', _inject_datasets_index)
+    app.connect('source-read', _inject_datasets_tables)
     app.connect('source-read', _inject_dataset_metadata)
     app.connect('source-read', _inject_content_metadata)
     app.connect('env-get-outdated', _always_reread_index)
