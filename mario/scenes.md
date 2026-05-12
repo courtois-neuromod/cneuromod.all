@@ -1,3 +1,0 @@
-# scenes
-
-This codebase splits the 22 SMB levels used for this dataset into 313 smaller "scenes" (approx. 15 per level), which can be seen as atomic units of gameplay. These scenes are annotated with 23 elementary design patterns suggested by Dahlskog & Togelius, 2012, and complemented with 6 additional patterns (beginning, ending, bonus zone, waterworld, moving platform, and checkpoint) that provide additional context. The code in the repository can perform analysis on the scenes annotations, as well as generate clips from the behavioral data of the mario dataset. For each attempt at completing a scene, the code will create files containing metadata (.json), video (.gif, .mp4 or .webp) and memory or game variables dumps (.npz).
