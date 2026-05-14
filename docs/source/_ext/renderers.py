@@ -246,3 +246,17 @@ def _render_component_sections(components):
         lines.append(f'\n### {display}\n')
         lines.append(body)
     return '\n'.join(lines)
+
+
+def _render_dataset_table(discovery):
+    df = []
+    for name, info_path in discovery._dataset_info.items():
+        components = discovery._dataset_components.get(name, [])
+        with open(info_path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+            print(data)
+            df.append({
+                "dataset": f"{_DATASET_EMOJI[name]} {name}",
+                "n_subjects": data['stats']['subjects_n'],
+            } | {cpnt[0]:f"`{_COMPONENT_ICON[cpnt[0].lower()]} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower()}>`__" for cpnt in components})
+    return df

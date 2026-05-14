@@ -9,6 +9,7 @@ from .renderers import (
     _render_contributors,
     _render_featured_in,
     _render_key_facts,
+    _render_dataset_table,
 )
 
 
@@ -30,17 +31,9 @@ def _inject_datasets_tables(app, docname, source):
     if docname != 'contents/datasets':
         return
     if discovery._discovered_datasets:
-        df = []
-        for name, info_path in discovery._dataset_info.items():
-            components = discovery._dataset_components.get(name, [])
-            with open(info_path, encoding='utf-8') as f:
-                data = yaml.safe_load(f)
-                print(data)
-                df.append({
-                    "dataset": name,
-                    "n_subjects": data['stats']['subjects_n'],
-                } | {cpnt[0]:True for cpnt in components})
+        df = _render_dataset_table(discovery)
         rst_table = tabulate(df, headers='keys', tablefmt='rst')
+        print(rst_table)
         source[0] = source[0].replace('_datasets_table_placeholder_', f'{rst_table}')
     else:
         source[0] = source[0].replace('\n_datasets_table_placeholder_', '')

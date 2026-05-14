@@ -63,10 +63,10 @@ _STATS_EMOJI = {
     'tasks.game':             '🎮',
     'tasks.controlled':       '📊',
     'tasks.contrasts':        '📐',
-    'physiology.ecg':         '📈',
-    'physiology.respiration': '📈',
-    'physiology.plethysmograph': '📈',
-    'physiology.eda':         '📈',
+    'physiology.ecg':         '🫀',
+    'physiology.respiration': '🫁',
+    'physiology.plethysmograph': '🫀',
+    'physiology.eda':         '😓',
     'physiology.eye_tracking': '👁️',
 }
 
@@ -113,7 +113,7 @@ _COMPONENT_ICON = {
     'fmriprep':    '🧠',
     'mriqc':       '📊',
     'smriprep':    '🏗️',
-    'physprep':    '📈',
+    'physprep':    '🫀',
     'freesurfer':  '🗺️',
     'atlases':     '📍',
     'pycortex':    '🖥️',
