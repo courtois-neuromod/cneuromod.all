@@ -370,3 +370,7 @@
 	path = narratives/mriqc
 	url = ./narratives/mriqc
 	datalad-id = 07631845-399d-469f-92cc-ad120bc1dee3
+[submodule "ood/mriqc"]
+	path = ood/mriqc
+	url = ./ood/mriqc
+	datalad-id = 35c52e6a-94bf-4058-8416-ca5095d30a9d
