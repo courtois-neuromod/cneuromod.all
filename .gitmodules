@@ -362,3 +362,7 @@
 	path = multfs/mriqc
 	url = ./multfs/mriqc
 	datalad-id = 59933f80-0f9b-4332-a77d-5b2c6e320068
+[submodule "mutemusic/mriqc"]
+	path = mutemusic/mriqc
+	url = ./mutemusic/mriqc
+	datalad-id = e436b8e1-f3ba-40cf-b76c-530f568d7930
