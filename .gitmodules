@@ -358,3 +358,7 @@
 	path = mariostars/mriqc
 	url = ./mariostars/mriqc
 	datalad-id = 1a798430-3fc1-4caa-9810-57185453c769
+[submodule "multfs/mriqc"]
+	path = multfs/mriqc
+	url = ./multfs/mriqc
+	datalad-id = 59933f80-0f9b-4332-a77d-5b2c6e320068
