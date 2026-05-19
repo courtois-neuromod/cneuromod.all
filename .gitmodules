@@ -326,3 +326,7 @@
 	path = gamepad/mriqc
 	url = ./gamepad/mriqc
 	datalad-id = 40fb4f11-a831-4aea-b450-26f1e97f44ca
+[submodule "harrypotter/mriqc"]
+	path = harrypotter/mriqc
+	url = ./harrypotter/mriqc
+	datalad-id = 9a213897-4b34-4d4f-ac56-ad8e85a90b6a
