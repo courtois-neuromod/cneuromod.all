@@ -382,3 +382,7 @@
 	path = retinotopy/mriqc
 	url = ./retinotopy/mriqc
 	datalad-id = fc3ba9b6-4d2b-4fbf-938a-4db0374487d9
+[submodule "triplets/mriqc"]
+	path = triplets/mriqc
+	url = ./triplets/mriqc
+	datalad-id = b377e381-2a6e-4e46-9e17-4be95273cf00
