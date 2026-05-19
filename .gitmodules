@@ -422,3 +422,5 @@
 	datalad-url = git@github.com:courtois-neuromod/hcptrt.git
 [submodule "langlocalizer/mriqc/sourcedata/langlocalizer"]
 	datalad-url = git@github.com:courtois-neuromod/langlocalizer
+[submodule "mario3/mriqc/sourcedata/mario3"]
+	datalad-url = git@github.com:courtois-neuromod/mario3
