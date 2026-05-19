@@ -346,3 +346,7 @@
 	path = mario3/mriqc
 	url = ./mario3/mriqc
 	datalad-id = 17837b2a-cad6-432b-9fc8-f9572a9c41a9
+[submodule "mario/mriqc"]
+	path = mario/mriqc
+	url = ./mario/mriqc
+	datalad-id = e02df18d-02d2-4f28-b6d1-c0905f160ab3
