@@ -378,3 +378,5 @@
 	path = triplets/mriqc
 	url = ./triplets/mriqc
 	datalad-id = b377e381-2a6e-4e46-9e17-4be95273cf00
+[submodule "anat/mriqc/containers"]
+	datalad-url = https://github.com/ReproNim/containers.git
