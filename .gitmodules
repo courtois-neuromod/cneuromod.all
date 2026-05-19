@@ -382,3 +382,5 @@
 	datalad-url = https://github.com/ReproNim/containers.git
 [submodule "emotion-videos/mriqc/containers"]
 	datalad-url = https://github.com/ReproNim/containers.git
+[submodule "gamepad/mriqc/containers"]
+	datalad-url = https://github.com/ReproNim/containers.git
