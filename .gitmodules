@@ -342,3 +342,7 @@
 	path = langlocalizer/mriqc
 	url = ./langlocalizer/mriqc
 	datalad-id = f7bd0fda-b5ca-43b1-a1cd-6db37a01cc38
+[submodule "mario3/mriqc"]
+	path = mario3/mriqc
+	url = ./mario3/mriqc
+	datalad-id = 17837b2a-cad6-432b-9fc8-f9572a9c41a9
