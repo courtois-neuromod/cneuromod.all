@@ -428,3 +428,5 @@
 	datalad-url = git@github.com:courtois-neuromod/mario.git
 [submodule "mariostars/mriqc/sourcedata/mariostars"]
 	datalad-url = git@github.com:courtois-neuromod/mariostars
+[submodule "multfs/mriqc/sourcedata/multfs"]
+	datalad-url = git@github.com:courtois-neuromod/multfs
