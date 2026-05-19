@@ -350,3 +350,7 @@
 	path = mario/mriqc
 	url = ./mario/mriqc
 	datalad-id = e02df18d-02d2-4f28-b6d1-c0905f160ab3
+[submodule "mario_eeg/mriqc"]
+	path = mario_eeg/mriqc
+	url = ./mario_eeg/mriqc
+	datalad-id = 6fed3fa6-7231-45dc-8c56-6591d6c41588
