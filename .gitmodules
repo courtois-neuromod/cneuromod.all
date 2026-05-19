@@ -416,3 +416,5 @@
 	datalad-url = git@github.com:courtois-neuromod/emotion-videos
 [submodule "gamepad/mriqc/sourcedata/gamepad"]
 	datalad-url = git@github.com:courtois-neuromod/gamepad.git
+[submodule "harrypotter/mriqc/sourcedata/harrypotter"]
+	datalad-url = git@github.com:courtois-neuromod/harrypotter.git
