@@ -432,3 +432,5 @@
 	datalad-url = git@github.com:courtois-neuromod/multfs
 [submodule "mutemusic/mriqc/sourcedata/mutemusic"]
 	datalad-url = git@github.com:courtois-neuromod/mutemusic
+[submodule "narratives/mriqc/sourcedata/narratives"]
+	datalad-url = git@github.com:courtois-neuromod/narratives
