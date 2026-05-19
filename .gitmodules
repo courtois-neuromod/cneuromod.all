@@ -374,3 +374,7 @@
 	path = ood/mriqc
 	url = ./ood/mriqc
 	datalad-id = 35c52e6a-94bf-4058-8416-ca5095d30a9d
+[submodule "petit-prince/mriqc"]
+	path = petit-prince/mriqc
+	url = ./petit-prince/mriqc
+	datalad-id = 66e43d0b-b3c9-4a36-a3b6-291619c22dbe
