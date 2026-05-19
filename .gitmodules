@@ -408,3 +408,5 @@
 	datalad-url = https://github.com/ReproNim/containers.git
 [submodule "retinotopy/mriqc/containers"]
 	datalad-url = https://github.com/ReproNim/containers.git
+[submodule "triplets/mriqc/containers"]
+	datalad-url = https://github.com/ReproNim/containers.git
