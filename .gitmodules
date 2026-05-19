@@ -314,3 +314,7 @@
 	url = git@github.com:courtois-neuromod/hearing.git
 	datalad-id = 0f821d45-4e4f-467c-b30d-db06fb1c34de
 	datalad-url = https://github.com/courtois-neuromod/hearing.git
+[submodule "anat/mriqc"]
+	path = anat/mriqc
+	url = ./anat/mriqc
+	datalad-id = 62c1eb6f-1d46-41fe-ad28-f311d4c63ab3
