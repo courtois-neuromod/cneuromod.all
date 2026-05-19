@@ -378,3 +378,7 @@
 	path = petit-prince/mriqc
 	url = ./petit-prince/mriqc
 	datalad-id = 66e43d0b-b3c9-4a36-a3b6-291619c22dbe
+[submodule "retinotopy/mriqc"]
+	path = retinotopy/mriqc
+	url = ./retinotopy/mriqc
+	datalad-id = fc3ba9b6-4d2b-4fbf-938a-4db0374487d9
