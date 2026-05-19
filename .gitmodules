@@ -400,3 +400,5 @@
 	datalad-url = https://github.com/ReproNim/containers.git
 [submodule "mutemusic/mriqc/containers"]
 	datalad-url = https://github.com/ReproNim/containers.git
+[submodule "narratives/mriqc/containers"]
+	datalad-url = https://github.com/ReproNim/containers.git
