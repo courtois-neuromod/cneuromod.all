@@ -366,3 +366,7 @@
 	path = mutemusic/mriqc
 	url = ./mutemusic/mriqc
 	datalad-id = e436b8e1-f3ba-40cf-b76c-530f568d7930
+[submodule "narratives/mriqc"]
+	path = narratives/mriqc
+	url = ./narratives/mriqc
+	datalad-id = 07631845-399d-469f-92cc-ad120bc1dee3
