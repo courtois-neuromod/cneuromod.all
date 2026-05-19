@@ -330,3 +330,7 @@
 	path = harrypotter/mriqc
 	url = ./harrypotter/mriqc
 	datalad-id = 9a213897-4b34-4d4f-ac56-ad8e85a90b6a
+[submodule "hcptrt/mriqc"]
+	path = hcptrt/mriqc
+	url = ./hcptrt/mriqc
+	datalad-id = 1bc1c774-8a7e-45ef-8a11-217e53123c59
