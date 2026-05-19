@@ -322,3 +322,7 @@
 	path = emotion-videos/mriqc
 	url = ./emotion-videos/mriqc
 	datalad-id = 8177380d-cc3c-4aaf-9d76-b075547198eb
+[submodule "gamepad/mriqc"]
+	path = gamepad/mriqc
+	url = ./gamepad/mriqc
+	datalad-id = 40fb4f11-a831-4aea-b450-26f1e97f44ca
