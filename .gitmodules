@@ -412,3 +412,5 @@
 	datalad-url = https://github.com/ReproNim/containers.git
 [submodule "anat/mriqc/sourcedata/anat"]
 	datalad-url = git@github.com:courtois-neuromod/anat.git
+[submodule "emotion-videos/mriqc/sourcedata/emotion-videos"]
+	datalad-url = git@github.com:courtois-neuromod/emotion-videos
