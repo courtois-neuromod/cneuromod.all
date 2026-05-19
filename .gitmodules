@@ -208,3 +208,109 @@
 	url = git@github.com:courtois-neuromod/anat.pycortex.git
 	datalad-id = 77f50c61-82aa-4f3a-ae7c-9b3b6e3f7cdf
 	datalad-url = https://github.com/courtois-neuromod/anat.pycortex.git
+[submodule "petit-prince/bids"]
+	path = petit-prince/bids
+	url = git@github.com:courtois-neuromod/petit-prince.git
+	datalad-url = https://github.com/courtois-neuromod/petit-prince.git
+[submodule "petit-prince/fmriprep"]
+	path = petit-prince/fmriprep
+	url = git@github.com:courtois-neuromod/petit-prince.fmriprep.git
+	datalad-url = https://github.com/courtois-neuromod/petit-prince.fmriprep.git
+[submodule "langlocalizer/bids"]
+	path = langlocalizer/bids
+	url = git@github.com:courtois-neuromod/langlocalizer
+	datalad-url = https://github.com/courtois-neuromod/langlocalizer
+[submodule "mario3/bids"]
+	path = mario3/bids
+	url = git@github.com:courtois-neuromod/mario3
+	datalad-id = 061941e4-bdb6-4f5a-9f47-cc1b962d1ec6
+	datalad-url = https://github.com/courtois-neuromod/mario3
+[submodule "mario_eeg/bids"]
+	path = mario_eeg/bids
+	url = git@github.com:courtois-neuromod/mario_eeg
+	datalad-url = https://github.com/courtois-neuromod/mario_eeg
+[submodule "mariostars/bids"]
+	path = mariostars/bids
+	url = git@github.com:courtois-neuromod/mariostars
+	datalad-url = https://github.com/courtois-neuromod/mariostars
+[submodule "multfs/bids"]
+	path = multfs/bids
+	url = git@github.com:courtois-neuromod/multfs
+	datalad-url = https://github.com/courtois-neuromod/multfs
+[submodule "narratives/bids"]
+	path = narratives/bids
+	url = git@github.com:courtois-neuromod/narratives
+	datalad-url = https://github.com/courtois-neuromod/narratives
+[submodule "triplets/bids"]
+	path = triplets/bids
+	url = git@github.com:courtois-neuromod/triplets
+	datalad-id = 76c5e7cf-b8eb-4a0e-97b5-d6fdf029924a
+	datalad-url = https://github.com/courtois-neuromod/triplets
+[submodule "langlocalizer/fmriprep"]
+	path = langlocalizer/fmriprep
+	url = git@github.com:courtois-neuromod/langlocalizer.fmriprep
+	datalad-url = https://github.com/courtois-neuromod/langlocalizer.fmriprep
+[submodule "mario3/fmriprep"]
+	path = mario3/fmriprep
+	url = git@github.com:courtois-neuromod/mario3.fmriprep
+	datalad-url = https://github.com/courtois-neuromod/mario3.fmriprep
+[submodule "mariostars/fmriprep"]
+	path = mariostars/fmriprep
+	url = git@github.com:courtois-neuromod/mariostars.fmriprep
+	datalad-url = https://github.com/courtois-neuromod/mariostars.fmriprep
+[submodule "multfs/fmriprep"]
+	path = multfs/fmriprep
+	url = git@github.com:courtois-neuromod/multfs.fmriprep
+	datalad-id = 304ac9d7-afb0-4495-8372-86ed052bb6f2
+	datalad-url = https://github.com/courtois-neuromod/multfs.fmriprep
+[submodule "narratives/fmriprep"]
+	path = narratives/fmriprep
+	url = git@github.com:courtois-neuromod/narratives.fmriprep
+	datalad-url = https://github.com/courtois-neuromod/narratives.fmriprep
+[submodule "triplets/fmriprep"]
+	path = triplets/fmriprep
+	url = git@github.com:courtois-neuromod/triplets.fmriprep
+	datalad-id = 6eb11d57-4cd5-4220-b22e-0b628c382a7c
+	datalad-url = https://github.com/courtois-neuromod/triplets.fmriprep
+[submodule "emotion-videos/fmriprep"]
+	path = emotion-videos/fmriprep
+	url = git@github.com:courtois-neuromod/emotion-videos.fmriprep
+	datalad-url = https://github.com/courtois-neuromod/emotion-videos.fmriprep
+[submodule "emotion-videos/bids"]
+	path = emotion-videos/bids
+	url = git@github.com:courtois-neuromod/emotion-videos
+	datalad-id = be554e46-3ca3-43a8-99c5-4b7a424fd499
+	datalad-url = https://github.com/courtois-neuromod/emotion-videos
+[submodule "emotion-videos/tedana"]
+	path = emotion-videos/tedana
+	url = git@github.com:courtois-neuromod/emotion-videos.tedana
+	datalad-id = e6b78aa4-394d-4caa-9715-a4334c9d22b3
+	datalad-url = https://github.com/courtois-neuromod/emotion-videos.tedana
+[submodule "emotion-videos/physprep"]
+	path = emotion-videos/physprep
+	url = git@github.com:courtois-neuromod/emotion-videos.physprep
+	datalad-id = 9cc5a748-787b-4668-9d63-f483d7f4c603
+	datalad-url = https://github.com/courtois-neuromod/emotion-videos.physprep
+[submodule "ood/bids"]
+	path = ood/bids
+	url = git@github.com:courtois-neuromod/ood
+	datalad-id = f2040046-a06f-455a-b692-6070ea0ed94c
+	datalad-url = https://github.com/courtois-neuromod/ood
+[submodule "ood/fmriprep"]
+	path = ood/fmriprep
+	url = git@github.com:courtois-neuromod/ood.fmriprep
+	datalad-id = f5896166-1256-4a2a-a9fc-9820b19d2fa0
+	datalad-url = https://github.com/courtois-neuromod/ood.fmriprep
+[submodule "mutemusic/fmriprep"]
+	path = mutemusic/fmriprep
+	url = git@github.com:courtois-neuromod/mutemusic.fmriprep
+	datalad-url = https://github.com/courtois-neuromod/mutemusic.fmriprep
+[submodule "mutemusic/bids"]
+	path = mutemusic/bids
+	url = git@github.com:courtois-neuromod/mutemusic
+	datalad-url = https://github.com/courtois-neuromod/mutemusic
+[submodule "hearing/bids"]
+	path = hearing/bids
+	url = git@github.com:courtois-neuromod/hearing.git
+	datalad-id = 0f821d45-4e4f-467c-b30d-db06fb1c34de
+	datalad-url = https://github.com/courtois-neuromod/hearing.git
