@@ -318,3 +318,7 @@
 	path = anat/mriqc
 	url = ./anat/mriqc
 	datalad-id = 62c1eb6f-1d46-41fe-ad28-f311d4c63ab3
+[submodule "emotion-videos/mriqc"]
+	path = emotion-videos/mriqc
+	url = ./emotion-videos/mriqc
+	datalad-id = 8177380d-cc3c-4aaf-9d76-b075547198eb
