@@ -396,3 +396,5 @@
 	datalad-url = https://github.com/ReproNim/containers.git
 [submodule "mariostars/mriqc/containers"]
 	datalad-url = https://github.com/ReproNim/containers.git
+[submodule "multfs/mriqc/containers"]
+	datalad-url = https://github.com/ReproNim/containers.git
