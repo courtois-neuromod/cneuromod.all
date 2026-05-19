@@ -384,3 +384,5 @@
 	datalad-url = https://github.com/ReproNim/containers.git
 [submodule "gamepad/mriqc/containers"]
 	datalad-url = https://github.com/ReproNim/containers.git
+[submodule "harrypotter/mriqc/containers"]
+	datalad-url = https://github.com/ReproNim/containers.git
