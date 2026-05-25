@@ -1,0 +1,14 @@
+/* Allow key-facts table cells to wrap.
+   theme.js wraps all docutils tables in div.wy-table-responsive at runtime,
+   which sets white-space:nowrap on all td/th. Override that here. */
+#key-facts .wy-table-responsive table td,
+#key-facts .wy-table-responsive table th,
+#key-facts table td,
+#key-facts table th {
+    white-space: normal;
+}
+
+#key-facts table code,
+#key-facts table span.pre {
+    white-space: normal;
+}
