@@ -12,3 +12,29 @@
 #key-facts table span.pre {
     white-space: normal;
 }
+
+#datasets table p{
+  font-size:1.4rem;
+  line-height:1.4rem;
+}
+
+#datasets table th{
+    height: 150px; /* Adjust height based on your text length */
+    white-space: nowrap;
+    border:0;
+    width: 20px;
+}
+
+#datasets table th>p{
+  transform: rotate(-45deg);
+  width: 20px;
+}
+
+#datasets a{
+  text-decoration: none;
+}
+
+
+#datasets table td+td{
+  letter-spacing: -.6em;
+}
