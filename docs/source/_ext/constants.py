@@ -115,10 +115,10 @@ _COMPONENT_ICON = {
     'smriprep':    '🏗️',
     'physprep':    '🫀',
     'freesurfer':  '🗺️',
-    'atlases':     '📍',
+    'atlases':     '📍🗺️',
     'pycortex':    '🖥️',
-    'rois':        '🎯',
-    'prf':         '👁️',
+    'rois':        '📍',
+    'prf':         '🗺️👁️',
     'behaviour':   '🎮',
     'glm':         '📉',
     'glmsingle':   '📉',
@@ -127,7 +127,7 @@ _COMPONENT_ICON = {
 }
 
 _DATASET_EMOJI = {
-    'anat':        '🧬',
+    'anat':        '💀',
     'floc':        '🎯',
     'friends':     '📺',
     'gamepad':     '🎮',
