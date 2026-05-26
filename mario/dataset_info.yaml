@@ -49,9 +49,13 @@ modalities:
   - emoji: "🕹️"
     label: "Game logs"
     components:
-      - { label: "button presses",      status: available }
+      - { label: "annotated events (.tsv)", status: available, note: "includes button presses and game events aligned to the fMRI" }
       - { label: "game replay (.bk2)",  status: available }
-      - { label: "scene annotations",   status: available, note: "313 scenes across 22 levels, annotated with 29 design patterns (mario/scenes submodule)" }
+      - { label: "video replay (.mp4)", status: available }
+      - { label: "replay summary (.json)", status: available }
+      - { label: "mapped RAM variables (.json)", status: available }
+      - { label: "low-level features (.npy)", status: available }
+      - { label: "scene annotations",   status: available, note: "313 scenes across 22 levels, annotated with 29 design patterns (mario.scenes submodule)" }
   - emoji: "👁️"
     label: "Eyetracking"
     components:

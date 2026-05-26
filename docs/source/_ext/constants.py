@@ -123,6 +123,7 @@ _COMPONENT_ICON = {
     'glm':         '📉',
     'glmsingle':   '📉',
     'training':    '🕹️',
+    'scenes':      '🗺️',
 }
 
 _DATASET_EMOJI = {

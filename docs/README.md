@@ -43,7 +43,6 @@ docs/
 │   ├── img/              # Logos
 │   └── _static/          # Ethics docs, MRI protocols, posters
 ├── pyproject.toml        # Dependencies (managed by uv)
-├── requirements.txt      # RTD-compatible deps (mirrors pyproject.toml)
 └── Makefile
 ```
 
