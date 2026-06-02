@@ -473,3 +473,7 @@
 	path = gamepad/tsnr
 	url = ./gamepad/tsnr
 	datalad-id = be860568-a99c-461f-86cf-d88be55e3378
+[submodule "harrypotter/tsnr"]
+	path = harrypotter/tsnr
+	url = ./harrypotter/tsnr
+	datalad-id = 748dfca8-3b6a-4685-8d06-b5c3d3c8e99d
