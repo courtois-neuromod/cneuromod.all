@@ -469,3 +469,7 @@
 	path = friends/tsnr
 	url = ./friends/tsnr
 	datalad-id = 6e0b6bc6-23a5-4f3d-8496-0531291f7812
+[submodule "gamepad/tsnr"]
+	path = gamepad/tsnr
+	url = ./gamepad/tsnr
+	datalad-id = be860568-a99c-461f-86cf-d88be55e3378
