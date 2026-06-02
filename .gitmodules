@@ -501,3 +501,7 @@
 	path = mario_eeg/tsnr
 	url = ./mario_eeg/tsnr
 	datalad-id = dbe0f90b-e03c-47bc-b947-62db5d284c02
+[submodule "mariostars/tsnr"]
+	path = mariostars/tsnr
+	url = ./mariostars/tsnr
+	datalad-id = 2c5ac5e4-9b9a-446e-ae52-b3a3f4ea0566
