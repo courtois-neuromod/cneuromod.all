@@ -517,3 +517,7 @@
 	path = mutemusic/tsnr
 	url = ./mutemusic/tsnr
 	datalad-id = 3d5adc8a-b993-4a1b-925d-a642e3feb523
+[submodule "narratives/tsnr"]
+	path = narratives/tsnr
+	url = ./narratives/tsnr
+	datalad-id = f8fcd20c-7c59-4986-97dc-822d56b34a6e
