@@ -529,3 +529,7 @@
 	path = petit-prince/tsnr
 	url = ./petit-prince/tsnr
 	datalad-id = 03a096b3-d9e4-48af-b56b-049d9c5c1417
+[submodule "shinobi/tsnr"]
+	path = shinobi/tsnr
+	url = ./shinobi/tsnr
+	datalad-id = caf6a190-ea07-45b3-8882-62eae16708de
