@@ -513,3 +513,7 @@
 	path = multfs/tsnr
 	url = ./multfs/tsnr
 	datalad-id = d5ae8da2-20f9-48c0-9062-ee0b3a0194bb
+[submodule "mutemusic/tsnr"]
+	path = mutemusic/tsnr
+	url = ./mutemusic/tsnr
+	datalad-id = 3d5adc8a-b993-4a1b-925d-a642e3feb523
