@@ -493,3 +493,7 @@
 	path = mario/tsnr
 	url = ./mario/tsnr
 	datalad-id = 3de43c64-eee5-424c-8941-903f53a9947f
+[submodule "mario3/tsnr"]
+	path = mario3/tsnr
+	url = ./mario3/tsnr
+	datalad-id = 275cf9bd-0028-45fe-8730-3b547955a21a
