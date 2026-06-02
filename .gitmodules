@@ -461,3 +461,7 @@
 	path = emotion-videos/tsnr
 	url = https://github.com/courtois-neuromod/emotion-videos.tsnr
 	datalad-url = https://github.com/courtois-neuromod/emotion-videos.tsnr
+[submodule "docs/tsnr"]
+	path = docs/tsnr
+	url = ./docs/tsnr
+	datalad-id = a45baa56-d9c5-493e-979f-b487ea4e5aba
