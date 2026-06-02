@@ -215,20 +215,29 @@ def _render_components_row(components):
     return '| **Assets** | ' + ' · '.join(parts) + ' |'
 
 
-def _render_featured_in(stem, dataset_components):
-    datasets = [
-        name for name, comps in sorted(dataset_components.items())
-        if any(s.lower() == stem.lower() and kind == 'page' for s, _, kind in comps)
-    ]
-    if not datasets:
-        return ''
-    cell = ' · '.join(
-        f'{_DATASET_EMOJI[name]} [{name}](../datasets/{name})' if name in _DATASET_EMOJI
-        else f'[{name}](../datasets/{name})'
-        for name in datasets
-    )
-    lines = ['', '', '## Featured in', '', '| | |', '|---|---|', f'| **Datasets** | {cell} |', '']
-    return '\n'.join(lines)
+def _render_components_table(global_components, dataset_components):
+    rows = []
+    for stem, path in global_components:
+        content = path.read_text(encoding='utf-8')
+        _, title, _ = _extract_component_title(content)
+        display = title if title else stem.title()
+        icon = _COMPONENT_ICON.get(stem.lower(), '')
+        prefix = f'{icon} ' if icon else ''
+        asset_link = f'`{prefix}{display} <{stem.lower()}.html>`__'
+        datasets = [
+            name for name, comps in sorted(dataset_components.items())
+            if any(s.lower() == stem.lower() and kind == 'page' for s, _, kind in comps)
+        ]
+        if not datasets:
+            continue
+        repo_suffix = '' if stem.lower() == 'bids' else f'.{stem.lower()}'
+        cell = ' · '.join(
+            f'`{_DATASET_EMOJI[name]} {name} <https://github.com/courtois-neuromod/{name}{repo_suffix}>`__' if name in _DATASET_EMOJI
+            else f'`{name} <https://github.com/courtois-neuromod/{name}{repo_suffix}>`__'
+            for name in datasets
+        )
+        rows.append({'Asset': asset_link, 'Datasets': cell})
+    return rows
 
 
 def _render_component_sections(components):

@@ -56,6 +56,11 @@
     text-decoration: none;
 }
 
+/* assets overview table: keep asset-name column on one line */
+#assets table td:first-child {
+    white-space: nowrap;
+}
+
 /* furo adds padding:0 .25rem on td and margin:.25rem on td p — on a 20px column
    that consumes nearly all the space before the icon renders, clipping it.
    Zero both out for every column after the dataset name. */
