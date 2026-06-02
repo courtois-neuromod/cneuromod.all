@@ -16,6 +16,23 @@ Volume outputs were projected to cortical surfaces using FreeSurfer `mri_vol2sur
 
 The data release includes binary ROI masks in native (T1w) volume space for `sub-01`, `sub-02`, and `sub-03`.
 
+## Pipeline
+
+The full analysis runs in eight steps:
+
+1. Build TR-locked binary aperture masks (ring, bar, wedge) downsampled from task frame rate to TR resolution (192×192 px).
+2. Preprocess BOLD data: detrend, normalize, average across repeated runs of the same aperture type, then chunk into segments of up to 240 voxels for parallel processing.
+3. Estimate pRF parameters (angle, eccentricity, RF size, R², gain) per chunk with analyzePRF in MATLAB R2021a (requires Optimization and Parallel Computing toolboxes; ~36 h/subject on Alliance Canada HPC).
+4. Reassemble chunked outputs into whole-brain volumes and convert metrics to Neuropythy-compatible conventions.
+5. Project volume maps to cortical surfaces with FreeSurfer `mri_vol2surf`.
+6. Run Neuropythy `register_retinotopy` to refine individual pRF maps against a group HCP atlas prior and infer visual area labels (varea).
+7. Convert Neuropythy surface outputs back to T1w volumes with `mri_convert` and `fslreorient2std`.
+8. Resample ROI masks to functional (EPI) resolution; export binary masks for V1, V2, V3, hV4, VO1/VO2, LO1/LO2, TO1/TO2, V3a/V3b.
+
+## Replication
+
+Step-by-step instructions for replicating the full pipeline — including exact script calls, input/output file names, and HPC job parameters — are provided in the [pRF analysis code repository](https://github.com/courtois-neuromod/retinotopy.prf/blob/main/code/README.md).
+
 ## Reference
 
 Kay, K.N., Winawer, J., Mezer, A., & Wandell, B.A. (2013). Compressive spatial summation in human visual cortex. *Journal of Neurophysiology*, 110(2), 481–494. <https://doi.org/10.1152/jn.00105.2013>
