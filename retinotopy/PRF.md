@@ -1,4 +1,4 @@
-# Population Receptive Field (pRF) Analysis
+# Population Receptive Field
 
 Voxel-wise population receptive fields were estimated with the [analyzePRF](http://kendrickkay.net/analyzePRF/) MATLAB toolbox ([GitHub](https://github.com/cvnlab/analyzePRF); commit `a3ac908`, based on release 1.6) in MATLAB R2021a.
 

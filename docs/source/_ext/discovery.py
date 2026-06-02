@@ -9,6 +9,7 @@ from . import validator as _validator
 
 _discovered_datasets = []
 _global_components = []   # [(stem, path), ...] — root-level component pages
+_local_components = []    # [(stem, path, dataset_name), ...] — dataset-specific component pages
 _dataset_citation = {}
 _dataset_contributors = {}
 _dataset_info = {}
@@ -50,7 +51,7 @@ def _discover_dataset_components(dataset_path, global_stems):
 
 
 def _auto_discover_datasets(app):
-    global _discovered_datasets, _global_components
+    global _discovered_datasets, _global_components, _local_components
     global _dataset_citation, _dataset_contributors, _dataset_info, _dataset_components
 
     conf_dir = os.path.dirname(os.path.abspath(__file__))
@@ -112,11 +113,27 @@ def _auto_discover_datasets(app):
         if comps:
             components[name] = comps
 
+    # Promote section-kind components to standalone pages in contents/
+    local_comps = []
+    global_stems_set = {stem.lower() for stem, _ in global_comps}
+    for name, comps in list(components.items()):
+        updated = []
+        for stem, path, kind in comps:
+            if kind == 'section' and stem.lower() not in global_stems_set:
+                link_path = Path(components_dir) / (stem.lower() + '.md')
+                _symlink(link_path, path, components_dir)
+                local_comps.append((stem, path, name))
+                updated.append((stem, path, 'page'))
+            else:
+                updated.append((stem, path, kind))
+        components[name] = updated
+
     _discovered_datasets = found
     _dataset_citation = citation
     _dataset_contributors = contributors
     _dataset_info = info
     _dataset_components = components
+    _local_components = local_comps
 
     schema = _validator._load_schema()
     for name, info_path in info.items():

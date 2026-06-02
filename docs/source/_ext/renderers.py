@@ -215,7 +215,7 @@ def _render_components_row(components):
     return '| **Assets** | ' + ' · '.join(parts) + ' |'
 
 
-def _render_components_table(global_components, dataset_components):
+def _render_components_table(global_components, dataset_components, local_components=None):
     rows = []
     for stem, path in global_components:
         content = path.read_text(encoding='utf-8')
@@ -235,6 +235,20 @@ def _render_components_table(global_components, dataset_components):
             f'`{_DATASET_EMOJI[name]} {name} <https://github.com/courtois-neuromod/{name}{repo_suffix}>`__' if name in _DATASET_EMOJI
             else f'`{name} <https://github.com/courtois-neuromod/{name}{repo_suffix}>`__'
             for name in datasets
+        )
+        rows.append({'Asset': asset_link, 'Datasets': cell})
+    for stem, path, dataset_name in sorted(local_components or [], key=lambda x: x[0]):
+        content = path.read_text(encoding='utf-8')
+        _, title, _ = _extract_component_title(content)
+        display = title if title else stem.title()
+        icon = _COMPONENT_ICON.get(stem.lower(), '')
+        prefix = f'{icon} ' if icon else ''
+        asset_link = f'`{prefix}{display} <{stem.lower()}.html>`__'
+        repo_suffix = f'.{stem.lower()}'
+        cell = (
+            f'`{_DATASET_EMOJI[dataset_name]} {dataset_name} <https://github.com/courtois-neuromod/{dataset_name}{repo_suffix}>`__'
+            if dataset_name in _DATASET_EMOJI
+            else f'`{dataset_name} <https://github.com/courtois-neuromod/{dataset_name}{repo_suffix}>`__'
         )
         rows.append({'Asset': asset_link, 'Datasets': cell})
     return rows
@@ -267,5 +281,5 @@ def _render_dataset_table(discovery):
             df.append({
                 "dataset": f"`{_DATASET_EMOJI[name]} {name} <../datasets/{name}.html>`__",
                 "n_subjects": data['stats']['subjects_n'],
-            } | {cpnt[0]:f"`{_COMPONENT_ICON[cpnt[0].lower()]} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
+            } | {cpnt[0]:f"`{_COMPONENT_ICON.get(cpnt[0].lower(), _DATASET_EMOJI.get(name, '📦'))} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
     return df

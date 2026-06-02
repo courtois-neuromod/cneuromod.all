@@ -41,8 +41,12 @@ def _inject_datasets_tables(app, docname, source):
 def _inject_components_index(app, docname, source):
     if docname != 'contents/components':
         return
-    if discovery._global_components:
-        entries = '\n   '.join(stem.lower() for stem, _ in discovery._global_components)
+    all_stems = sorted(
+        {stem.lower() for stem, _ in discovery._global_components}
+        | {stem.lower() for stem, _, _ in discovery._local_components}
+    )
+    if all_stems:
+        entries = '\n   '.join(all_stems)
         source[0] = source[0].replace('   _components_toc_placeholder_', f'   {entries}')
     else:
         source[0] = source[0].replace('\n   _components_toc_placeholder_', '')
@@ -54,6 +58,7 @@ def _inject_components_table(app, docname, source):
     rows = _render_components_table(
         list(discovery._global_components),
         discovery._dataset_components,
+        local_components=discovery._local_components,
     )
     if rows:
         rst_table = tabulate(rows, headers='keys', tablefmt='rst')
@@ -105,6 +110,7 @@ def _always_reread_index(app, env, added, changed, removed):
     seen = set()
     force = ['index', 'contents/components', 'contents/datasets']
     force += [f'contents/{stem.lower()}' for stem, _ in discovery._global_components]
+    force += [f'contents/{stem.lower()}' for stem, _, _ in discovery._local_components]
     for name in discovery._dataset_citation:
         force.append(f'datasets/{name}')
         seen.add(name)
