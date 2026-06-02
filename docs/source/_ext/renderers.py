@@ -258,5 +258,5 @@ def _render_dataset_table(discovery):
             df.append({
                 "dataset": f"`{_DATASET_EMOJI[name]} {name} <../datasets/{name}.html>`__",
                 "n_subjects": data['stats']['subjects_n'],
-            } | {cpnt[0]:f"`{_COMPONENT_ICON[cpnt[0].lower()]} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower()}>`__" for cpnt in components})
+            } | {cpnt[0]:f"`{_COMPONENT_ICON[cpnt[0].lower()]} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
     return df
