@@ -521,3 +521,7 @@
 	path = narratives/tsnr
 	url = ./narratives/tsnr
 	datalad-id = f8fcd20c-7c59-4986-97dc-822d56b34a6e
+[submodule "ood/tsnr"]
+	path = ood/tsnr
+	url = ./ood/tsnr
+	datalad-id = 63ff1d46-c4c8-406a-86dc-2c5339e1e60e
