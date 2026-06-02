@@ -442,3 +442,8 @@
 	datalad-url = git@github.com:courtois-neuromod/retinotopy.git
 [submodule "triplets/mriqc/sourcedata/triplets"]
 	datalad-url = git@github.com:courtois-neuromod/triplets
+[submodule "things/tsnr"]
+	path = things/tsnr
+	url = https://github.com/courtois-neuromod/things.tsnr
+	datalad-id = ebe8b092-b3d4-48f7-a585-89a3bd0935d6
+	datalad-url = https://github.com/courtois-neuromod/things.tsnr
