@@ -509,3 +509,7 @@
 	path = movie10/tsnr
 	url = ./movie10/tsnr
 	datalad-id = 28602d3c-53e2-4c3a-9ee8-84b6b964fbf0
+[submodule "multfs/tsnr"]
+	path = multfs/tsnr
+	url = ./multfs/tsnr
+	datalad-id = d5ae8da2-20f9-48c0-9062-ee0b3a0194bb
