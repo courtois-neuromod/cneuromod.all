@@ -33,12 +33,12 @@
     vertical-align: bottom;
     white-space: nowrap;
     border: 0;
-    width: 20px;
+    width: 30px;
 }
 
 #datasets table th > p {
     transform: rotate(-45deg);
-    width: 20px;
+    width: 30px;
 }
 
 /* dataset name column — wide, upright */
