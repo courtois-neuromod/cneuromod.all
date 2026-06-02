@@ -485,3 +485,7 @@
 	path = hearing/tsnr
 	url = ./hearing/tsnr
 	datalad-id = 0d0aec51-0f5f-451b-83c5-d4e1fd0c8f07
+[submodule "langlocalizer/tsnr"]
+	path = langlocalizer/tsnr
+	url = ./langlocalizer/tsnr
+	datalad-id = 7f9d54a6-b746-431d-bf4b-c0b88464d47f
