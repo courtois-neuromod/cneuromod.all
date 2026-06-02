@@ -525,3 +525,7 @@
 	path = ood/tsnr
 	url = ./ood/tsnr
 	datalad-id = 63ff1d46-c4c8-406a-86dc-2c5339e1e60e
+[submodule "petit-prince/tsnr"]
+	path = petit-prince/tsnr
+	url = ./petit-prince/tsnr
+	datalad-id = 03a096b3-d9e4-48af-b56b-049d9c5c1417
