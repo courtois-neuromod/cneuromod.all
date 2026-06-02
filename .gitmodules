@@ -477,3 +477,7 @@
 	path = harrypotter/tsnr
 	url = ./harrypotter/tsnr
 	datalad-id = 748dfca8-3b6a-4685-8d06-b5c3d3c8e99d
+[submodule "hcptrt/tsnr"]
+	path = hcptrt/tsnr
+	url = ./hcptrt/tsnr
+	datalad-id = 3facd844-cf53-4a82-a0bc-22a0806b7a04
