@@ -4,7 +4,8 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "sphinx>=8.0",
-    "furo",
+    "furo>=2024.1.29",
+    "sphinx-design>=0.6",
     "myst-parser>=3.0",
     "pyyaml>=6.0",
     "jsonschema>=4.0",

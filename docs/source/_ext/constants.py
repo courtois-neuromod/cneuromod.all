@@ -118,7 +118,7 @@ _COMPONENT_ICON = {
     'atlases':     '📍🗺️',
     'pycortex':    '🖥️',
     'rois':        '📍',
-    'prf':         '🗺️👁️',
+    'prf':         '🗺️',
     'behaviour':   '🎮',
     'glm':         '📉',
     'glmsingle':   '📉',

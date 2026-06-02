@@ -8,6 +8,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'myst_parser',
     'sphinxcontrib.bibtex',
+    'sphinx_design',
 ]
 
 bibtex_bibfiles = ['cneuromod_references.bib']
@@ -19,8 +20,7 @@ exclude_patterns = []
 
 html_theme = 'furo'
 html_theme_options = {
-    'collapse_navigation': True,
-    'navigation_depth': 2,
+    'navigation_with_keys': True,
 }
 html_short_title = 'CNeuroMod'
 html_logo = 'img/logo_neuromod_black.png'
