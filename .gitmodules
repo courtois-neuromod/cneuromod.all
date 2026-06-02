@@ -505,3 +505,7 @@
 	path = mariostars/tsnr
 	url = ./mariostars/tsnr
 	datalad-id = 2c5ac5e4-9b9a-446e-ae52-b3a3f4ea0566
+[submodule "movie10/tsnr"]
+	path = movie10/tsnr
+	url = ./movie10/tsnr
+	datalad-id = 28602d3c-53e2-4c3a-9ee8-84b6b964fbf0
