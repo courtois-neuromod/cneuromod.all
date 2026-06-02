@@ -493,10 +493,6 @@
 	path = mario3/tsnr
 	url = ./mario3/tsnr
 	datalad-id = 275cf9bd-0028-45fe-8730-3b547955a21a
-[submodule "mario_eeg/tsnr"]
-	path = mario_eeg/tsnr
-	url = ./mario_eeg/tsnr
-	datalad-id = dbe0f90b-e03c-47bc-b947-62db5d284c02
 [submodule "mariostars/tsnr"]
 	path = mariostars/tsnr
 	url = ./mariostars/tsnr
