@@ -533,3 +533,7 @@
 	path = shinobi/tsnr
 	url = ./shinobi/tsnr
 	datalad-id = caf6a190-ea07-45b3-8882-62eae16708de
+[submodule "triplets/tsnr"]
+	path = triplets/tsnr
+	url = ./triplets/tsnr
+	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
