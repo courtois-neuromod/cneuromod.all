@@ -46,7 +46,7 @@ per minute. The signal was than downsample to 1000 Hz. The peaks and troughs wer
 
 ## QC-ing pipeline description
 In order to evaluate the usability of the physiological data, quality indices were calculated for each modality on the filtered signals. These signals were
-analysed in 1-minute sliding windows for each run. The quality assessment is summarized in the `*_desc-quality.json` files provided for each run, which contain the percentage of valid windows across the run for each modality. That percentage was used to provide a `Pass` or `Fail` assessment, where the quality of the run is considered acceptable (`Pass`) if more than 80% of the windows in a run were considered as acceptable.
+analysed in 1-minute consecutive windows for each run. The quality assessment is summarized in the `*_desc-quality.json` files provided for each run, which contain the percentage of valid windows across the run for each modality. That percentage was used to provide a `Pass` or `Fail` assessment, where the quality of the run is considered acceptable (`Pass`) if more than 80% of the windows in a run were considered as acceptable.
 
 :::{important}
 Even if a quality assessment is provided for each run, it is the responsibility of the researchers to make sure the data met their quality requirements.

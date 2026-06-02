@@ -2,7 +2,7 @@
 
 ## Overview
 
-This dataset contains functional MRI (fMRI) data acquired while 6 CNeuroMod participants watched episodes of the American sitcom *Friends* in English. The dataset covers seasons 1–7 (~65 hours of content per subject), making it one of the largest naturalistic fMRI datasets available. fMRI responses span the whole brain and are synchronized with multimodal movie stimuli — visual frames, audio samples, and time-stamped language transcripts.
+This dataset contains functional MRI (fMRI) data acquired while 6 CNeuroMod participants watched episodes of the American sitcom *Friends* in English. The dataset covers seasons 1–7. fMRI responses span the whole brain and are synchronized with multimodal movie stimuli — visual frames, audio samples, and time-stamped language transcripts.
 
 The Friends dataset is the primary training corpus for the [Algonauts Project 2025 Challenge](https://algonautsproject.com/) (*How the Human Brain Makes Sense of Multimodal Movies*), which benchmarks computational encoding models of multimodal brain responses.
 
@@ -14,12 +14,12 @@ Each episode provides three synchronized stimulus streams:
 - **Audio samples** — stereo audio track
 - **Language transcripts** — time-stamped English subtitles
 
-Each episode is split into two scanning segments (a/b) with a small overlap so participants can catch up with the storyline between runs. The BIDS `task` entity encodes season, episode, and segment as `task-s<season>e<episode>[ab]` (e.g., `task-s01e01a`).
+Each episode is split into multiple scanning segments (typically a/b, and a/b/c/d for double episodes) of ~12 minutes each. Segments have a small overlap so participants can catch up with the storyline between runs. The BIDS `task` entity encodes season, episode, and segment as `task-s<season>e<episode>[ab]` (e.g., `task-s01e01a`).
 
 :::{important}
-A mistake happened when ripping the first season, causing `s01e01` and `s01e06` to be swapped in name and order of presentation. Files were renamed afterward to match external data such as annotations. However the order of presentation remains, slightly disrupting the storyline presented to the participant.
+A mistake happened when the pilot episode (`s01e01`) was accidentally skipped at the beginning of the first season. It was shown to participants after they had watched episodes `s01e02` to `s01e06`, causing a slight disruption in the storyline. In the latest release, files have been renamed to match the episodes’ intended order (rather than the order in which they were administered) and to be consistent with external data such as annotation corpora.
 :::
 
 ## Coverage
 
-All six subjects completed seasons 1–6, with one exception: `sub-04` only completed seasons 1–4 (and a few segments of season 5). Season 7 (~10 hours) is included in the dataset; fMRI responses for that season are withheld as a held-out in-distribution test set for the Algonauts 2025 Challenge.
+All six subjects completed seasons 1–7, with one exception: `sub-04` only completed seasons 1–4 (and a few segments of season 5). Stimuli from season 7 (~10 hours) are included in the released dataset; fMRI responses for that season are withheld as a held-out in-distribution test set, as currently featured in the Algonauts 2025 Challenge and to appear in the future CNeuroMod benchmark.
