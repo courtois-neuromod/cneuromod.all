@@ -25,21 +25,21 @@ stats:
       per_subject_h: 1.17
 
 subjects:
-  - { id: sub-01, status: available }
-  - { id: sub-02, status: available }
-  - { id: sub-03, status: available }
-  - { id: sub-04, status: not_collected }
-  - { id: sub-05, status: available }
-  - { id: sub-06, status: available }
+- {id: sub-01, status: available}
+- {id: sub-02, status: available}
+- {id: sub-03, status: available}
+- {id: sub-04, status: not_collected}
+- {id: sub-05, status: available}
+- {id: sub-06, status: available}
 
 tasks:
-  - emoji: "📖"
-    label: "Harry Potter and the Sorcerer's Stone — Chapter 9"
-    note: "word-by-word text at 2 Hz; 7 runs × ~10 min; 1 session per participant"
+- emoji: "📖"
+  label: "Harry Potter and the Sorcerer's Stone — Chapter 9"
+  note: "word-by-word text at 2 Hz; 7 runs × ~10 min; 1 session per participant"
 
 modalities:
-  - emoji: "👁️"
-    label: "Eyetracking"
-    components:
-      - { label: gaze,         status: not_collected }
-      - { label: pupillometry, status: not_collected }
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: not_collected}
+  - {label: pupillometry, status: not_collected}
