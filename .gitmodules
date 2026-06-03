@@ -237,7 +237,7 @@
 	path = multfs/bids
 	url = git@github.com:courtois-neuromod/multfs
 	datalad-url = https://github.com/courtois-neuromod/multfs
-	branch = dev
+	branch = events
 [submodule "narratives/bids"]
 	path = narratives/bids
 	url = git@github.com:courtois-neuromod/narratives
