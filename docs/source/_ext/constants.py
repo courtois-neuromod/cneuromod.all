@@ -127,17 +127,27 @@ _COMPONENT_ICON = {
 }
 
 _DATASET_EMOJI = {
-    'anat':        '💀',
-    'floc':        '🎯',
-    'friends':     '📺',
-    'gamepad':     '🎮',
-    'harrypotter': '📚',
-    'hcptrt':      '🎭',
-    'mario':       '🕹️',
-    'movie10':     '🎬',
-    'retinotopy':  '👁️',
-    'shinobi':     '🥷',
-    'things':      '🖼️',
+    'anat':           '💀',
+    'emotion-videos': '😮',
+    'floc':           '🎯',
+    'friends':        '📺',
+    'gamepad':        '🎮',
+    'harrypotter':    '📚',
+    'hcptrt':         '🎭',
+    'hearing':        '👂',
+    'langlocalizer':  '🗣️',
+    'mario':          '🕹️',
+    'mario_eeg':      '🧠',
+    'mariostars':     '⭐',
+    'movie10':        '🎬',
+    'multfs':         '🧩',
+    'narratives':     '📖',
+    'ood':            '🔍',
+    'petit-prince':   '👑',
+    'retinotopy':     '👁️',
+    'shinobi':        '🥷',
+    'things':         '🖼️',
+    'triplets':       '🔺',
 }
 
 # Uppercase .md files at the repo root excluded from auto-discovery entirely

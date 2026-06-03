@@ -10,6 +10,7 @@ from .renderers import (
     _render_contributors,
     _render_key_facts,
     _render_dataset_table,
+    _render_unreleased_warning,
 )
 
 
@@ -100,6 +101,9 @@ def _inject_dataset_metadata(app, docname, source):
 
     if sections:
         source[0] = source[0].rstrip('\n') + sections
+
+    if name not in discovery._dataset_readme:
+        source[0] = source[0].rstrip('\n') + _render_unreleased_warning()
 
 
 

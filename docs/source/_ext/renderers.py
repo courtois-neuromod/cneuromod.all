@@ -6,6 +6,15 @@ from pathlib import Path
 from .constants import _COMPONENT_ICON, _CONTRIB_EMOJI, _CONTRIB_LABEL, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
 
 
+def _render_unreleased_warning():
+    msg = (
+        "This dataset has been collected but has not yet been finalized and publicly released. "
+        "The CNeuroMod team is working hard to finalize and release all datasets, "
+        "but good things take time."
+    )
+    return f"\n\n:::{{warning}}\n{msg}\n:::\n"
+
+
 def _render_citation(cff_path):
     with open(cff_path, encoding='utf-8') as f:
         data = yaml.safe_load(f)

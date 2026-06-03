@@ -19,6 +19,10 @@ subjects:
 - {id: sub-01, status: available}
 - {id: sub-02, status: available}
 - {id: sub-03, status: available, note: "ses-024–026 administered out of planned order"}
+- id: sub-04
+  status: not_collected
+- id: sub-05
+  status: not_collected
 - {id: sub-06, status: available, note: "3840 unique images (vs 4320); ses-019–026
     administered out of planned order"}
 

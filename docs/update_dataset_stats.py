@@ -129,7 +129,10 @@ def update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri):
         data["stats"]["neuroimaging"]["fmri"]["total_h"] = total_h
         data["stats"]["neuroimaging"]["fmri"]["per_subject_h"] = per_subject_h
 
-    for entry in data.get("subjects", []):
+    if "subjects" not in data:
+        data["subjects"] = []
+
+    for entry in data["subjects"]:
         subj_id = entry["id"]
         if entry.get("status") in PRESERVE_STATUSES:
             continue
@@ -137,6 +140,15 @@ def update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri):
         if entry.get("status") != new_status:
             changes.append(f"  subjects[{subj_id}].status: {entry.get('status')} → {new_status}")
             entry["status"] = new_status
+
+    existing_ids = {entry["id"] for entry in data["subjects"]}
+    for subj_id in ALL_SUBJECTS:
+        if subj_id not in existing_ids:
+            new_status = "available" if subj_id in active_ids else "not_collected"
+            changes.append(f"  subjects[{subj_id}].status: (missing) → {new_status}")
+            data["subjects"].append({"id": subj_id, "status": new_status})
+
+    data["subjects"].sort(key=lambda e: e["id"])
 
     with open(yaml_path, "w") as f:
         yaml.dump(data, f)
