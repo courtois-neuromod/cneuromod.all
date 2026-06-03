@@ -137,6 +137,7 @@ _DATASET_EMOJI = {
     'hearing':        '👂',
     'langlocalizer':  '🗣️',
     'mario':          '🕹️',
+    'mario3':         '🍄',
     'mario_eeg':      '🧠',
     'mariostars':     '⭐',
     'movie10':        '🎬',
