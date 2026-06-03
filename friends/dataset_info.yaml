@@ -2,8 +2,8 @@ stats:
   subjects_n: 6
   neuroimaging:
     fmri:
-      total_h: 286.4
-      per_subject_h: 47.7
+      total_h: 371.5
+      per_subject_h: 61.9
   tasks:
     video:
       total_unique: 65.0

@@ -2,8 +2,8 @@ stats:
   subjects_n: 5
   neuroimaging:
     fmri:
-      total_h: 5.8
-      per_subject_h: 1.17
+      total_h: 7.0
+      per_subject_h: 1.4
   tasks:
     text_reading:
       total_unique: 1.17
