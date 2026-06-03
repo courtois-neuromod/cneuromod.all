@@ -11,6 +11,5 @@
    contents/components
    contents/datasets
    AUTHORS
-   ACKNOWLEDGMENT
    HOWTOCITE
    REFERENCES
