@@ -33,7 +33,6 @@ def _inject_datasets_tables(app, docname, source):
     if discovery._discovered_datasets:
         df = _render_dataset_table(discovery)
         rst_table = tabulate(df, headers='keys', tablefmt='rst')
-        print(rst_table)
         source[0] = source[0].replace('_datasets_table_placeholder_', f'{rst_table}')
     else:
         source[0] = source[0].replace('\n_datasets_table_placeholder_', '')
