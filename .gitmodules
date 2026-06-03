@@ -461,3 +461,6 @@
 	path = emotion-videos/tsnr
 	url = https://github.com/courtois-neuromod/emotion-videos.tsnr
 	datalad-url = https://github.com/courtois-neuromod/emotion-videos.tsnr
+[submodule "analysis/cneuromod.all.statistics"]
+	path = analysis/cneuromod.all.statistics
+	url = git@github.com:courtois-neuromod/cneuromod.all.statistics.git
