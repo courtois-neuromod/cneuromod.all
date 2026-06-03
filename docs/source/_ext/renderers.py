@@ -277,7 +277,6 @@ def _render_dataset_table(discovery):
         components = discovery._dataset_components.get(name, [])
         with open(info_path, encoding='utf-8') as f:
             data = yaml.safe_load(f)
-            print(data)
             df.append({
                 "dataset": f"`{_DATASET_EMOJI[name]} {name} <../datasets/{name}.html>`__",
                 "n_subjects": data['stats']['subjects_n'],
