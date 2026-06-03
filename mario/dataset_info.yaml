@@ -2,8 +2,8 @@ stats:
   subjects_n: 5
   neuroimaging:
     fmri:
-      total_h: 49.3
-      per_subject_h: 9.9
+      total_h: 92.2
+      per_subject_h: 18.4
   tasks:
     game:
       total_h: 84.0

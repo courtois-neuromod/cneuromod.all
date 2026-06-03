@@ -29,9 +29,7 @@ DEFAULT_STATS_DIR = (
 )
 
 # Stats dataset name → folder name (only non-trivial overrides needed)
-STATS_TO_FOLDER = {
-    "mario3": "mario",
-}
+STATS_TO_FOLDER = {}
 
 PRESERVE_STATUSES = {"partial", "pending", "collected_not_released"}
 
