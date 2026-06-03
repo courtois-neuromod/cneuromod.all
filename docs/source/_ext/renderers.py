@@ -43,7 +43,7 @@ def _render_citation(cff_path):
     if doi:
         citation_line += f" [doi: {doi}](https://doi.org/{doi})"
 
-    return f"\n\n:::{{tip}}\nIf you use this dataset, please cite:\n\n{citation_line}\n:::\n"
+    return f"\n\n:::{{admonition}} How to cite\n:class: tip\n\n{citation_line}\n:::\n"
 
 
 def _render_contributors(rc_path):
@@ -75,7 +75,7 @@ def _render_contributors(rc_path):
     legend = ' · '.join(legend_parts)
 
     contributors_str = ' · '.join(entries)
-    return f"\n\n## Contributors\n\n{contributors_str}\n\n_{legend}_\n"
+    return f"\n\n:::{{admonition}} Contributors\n:class: note\n\n{contributors_str}\n\n<hr style=\"margin: 0.3em 0;\"/>\n\n_{legend}_\n:::\n"
 
 
 def _resolve_stats_key(stats, dotted_key):
