@@ -1,0 +1,15 @@
+stats:
+  subjects_n: 6
+subjects:
+- id: sub-01
+  status: available
+- id: sub-02
+  status: available
+- id: sub-03
+  status: available
+- id: sub-04
+  status: available
+- id: sub-05
+  status: available
+- id: sub-06
+  status: available

@@ -1,0 +1,19 @@
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 4.2
+      per_subject_h: 1.1
+subjects:
+- id: sub-01
+  status: available
+- id: sub-02
+  status: available
+- id: sub-03
+  status: available
+- id: sub-04
+  status: not_collected
+- id: sub-05
+  status: available
+- id: sub-06
+  status: not_collected

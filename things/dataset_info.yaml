@@ -2,7 +2,7 @@ stats:
   subjects_n: 4
   neuroimaging:
     fmri:
-      total_h: 65.5
+      total_h: 65.6
       per_subject_h: 16.4
   tasks:
     images:
@@ -16,26 +16,28 @@ stats:
     contrasts: 1
 
 subjects:
-  - { id: sub-01, status: available }
-  - { id: sub-02, status: available }
-  - { id: sub-03, status: available, note: "ses-024–026 administered out of planned order" }
-  - { id: sub-06, status: available, note: "3840 unique images (vs 4320); ses-019–026 administered out of planned order" }
+- {id: sub-01, status: available}
+- {id: sub-02, status: available}
+- {id: sub-03, status: available, note: "ses-024–026 administered out of planned order"}
+- {id: sub-06, status: available, note: "3840 unique images (vs 4320); ses-019–026
+    administered out of planned order"}
 
 tasks:
-  - emoji: "🖼️"
-    label: "Continuous visual recognition — 720 THINGS object categories"
-    note: "33–36 sessions × up to 6 runs; ~4320 unique images; each image shown 3× across sessions; confidence rating on each trial"
+- emoji: "🖼️"
+  label: "Continuous visual recognition — 720 THINGS object categories"
+  note: "33–36 sessions × up to 6 runs; ~4320 unique images; each image shown 3× across
+    sessions; confidence rating on each trial"
 
 modalities:
-  - emoji: "📈"
-    label: "Physiology"
-    components:
-      - { label: ECG,              status: collected_not_released }
-      - { label: respiration,      status: collected_not_released }
-      - { label: pulse,            status: collected_not_released }
-      - { label: skin conductance, status: collected_not_released }
-  - emoji: "👁️"
-    label: "Eyetracking"
-    components:
-      - { label: gaze,         status: available }
-      - { label: pupillometry, status: available }
+- emoji: "📈"
+  label: "Physiology"
+  components:
+  - {label: ECG, status: collected_not_released}
+  - {label: respiration, status: collected_not_released}
+  - {label: pulse, status: collected_not_released}
+  - {label: skin conductance, status: collected_not_released}
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: available}
+  - {label: pupillometry, status: available}
