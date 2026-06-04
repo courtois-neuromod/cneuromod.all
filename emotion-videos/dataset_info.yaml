@@ -4,6 +4,29 @@ stats:
     fmri:
       total_h: 25.9
       per_subject_h: 5.2
+  tasks:
+    video:
+      total_unique: 5.2
+      per_subject_unique: 5.2
+      total_with_repetition: 26.0
+      per_subject_with_repetition: 5.2
+  physiology:
+    ecg:
+      total_h: 25.9
+      per_subject_h: 5.2
+    respiration:
+      total_h: 25.9
+      per_subject_h: 5.2
+    plethysmograph:
+      total_h: 25.9
+      per_subject_h: 5.2
+    eda:
+      total_h: 25.9
+      per_subject_h: 5.2
+    eye_tracking:
+      total_h: 25.9
+      per_subject_h: 5.2
+
 subjects:
 - id: sub-01
   status: available
@@ -17,3 +40,8 @@ subjects:
   status: available
 - id: sub-06
   status: available
+
+tasks:
+- emoji: "📺"
+  label: "Silent emotion-evoking video clips"
+  note: "~5.2 hours of naturalistic silent video watching per subject; clips are shared across subjects but not repeated within"

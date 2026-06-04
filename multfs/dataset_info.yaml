@@ -4,6 +4,17 @@ stats:
     fmri:
       total_h: 43.8
       per_subject_h: 8.8
+  tasks:
+    game:
+      total_h: 43.8
+      per_subject_h: 8.8
+
+tasks:
+- emoji: "🧩"
+  label: "Visual working memory — combinatorial feature task"
+  note: "Continuously quizzed on visual feature combinations across varying difficulty
+    levels (~10 repetitions per stimulus per subject); stimuli shared across subjects.
+    Designed for RSA and brain encoding across a rich combinatorial task space."
 subjects:
 - id: sub-01
   status: available

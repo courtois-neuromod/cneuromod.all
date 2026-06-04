@@ -4,6 +4,12 @@ stats:
     fmri:
       total_h: 4.2
       per_subject_h: 1.1
+  tasks:
+    controlled:
+      total_h: 4.2
+      per_subject_h: 1.1
+    contrasts: 4
+
 subjects:
 - id: sub-01
   status: available
