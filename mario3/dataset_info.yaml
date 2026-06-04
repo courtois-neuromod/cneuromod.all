@@ -4,7 +4,7 @@ stats:
     fmri:
       total_h: 49.3
       per_subject_h: 9.9
-    tasks:
+  tasks:
       game:
         total_h: 49.3
         per_subject_h: 9.9

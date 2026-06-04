@@ -4,7 +4,7 @@ stats:
     fmri:
       total_h: 15.8
       per_subject_h: 3.2
-    tasks:
+  tasks:
       audio:
         total_unique: 1.1
         per_subject_unique: 1.1
