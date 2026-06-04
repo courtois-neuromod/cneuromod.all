@@ -4,6 +4,7 @@ stats:
     fmri:
       total_h: 16.6
       per_subject_h: 3.3
+      
 subjects:
 - id: sub-01
   status: available

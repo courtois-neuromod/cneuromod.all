@@ -1,1 +1,34 @@
-../.git/annex/objects/vM/F5/MD5E-s677--5cbb2593add1fb800ebbd1decc592ee7.yaml/MD5E-s677--5cbb2593add1fb800ebbd1decc592ee7.yaml
+stats:
+  subjects_n: 5
+  neuroimaging:
+    fmri:
+      total_h: 49.3
+      per_subject_h: 9.9
+    tasks:
+      game:
+        total_h: 49.3
+        per_subject_h: 9.9
+      video:
+        total_unique: 49.3
+        per_subject_unique: 9.9
+        total_with_repetition: 49.3
+        per_subject_with_repetition: 9.9
+      audio:
+        total_unique: 49.3
+        per_subject_unique: 9.9
+        total_with_repetition: 49.3
+        per_subject_with_repetition: 9.9
+
+subjects:
+- id: sub-01
+  status: available
+- id: sub-02
+  status: available
+- id: sub-03
+  status: available
+- id: sub-04
+  status: not_collected
+- id: sub-05
+  status: available
+- id: sub-06
+  status: available

@@ -142,6 +142,7 @@ _DATASET_EMOJI = {
     'mariostars':     '⭐',
     'movie10':        '🎬',
     'multfs':         '🧩',
+    'mutemusic':      '🎶',
     'narratives':     '📖',
     'ood':            '🔍',
     'petit-prince':   '👑',

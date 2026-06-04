@@ -1,1 +1,11 @@
-../.git/annex/objects/10/XJ/MD5E-s275--0e960bc10678e488efa6c7db0ab9385b.sh/MD5E-s275--0e960bc10678e488efa6c7db0ab9385b.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+STATS_DIR="$(dirname "${BASH_SOURCE[0]}")/cneuromod.all.statistics"
+
+export INVOKE_CNEUROMOD_ALL_DIR="$REPO_ROOT"
+
+cd "$STATS_DIR"
+uv run invoke -e clean
+uv run invoke -e run

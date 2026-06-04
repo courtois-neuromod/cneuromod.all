@@ -1,1 +1,67 @@
-../.git/annex/objects/xv/K8/MD5E-s2039--677cae8eb18a3ce36dc27ca476c30873.yaml/MD5E-s2039--677cae8eb18a3ce36dc27ca476c30873.yaml
+stats:
+  subjects_n: 5
+  neuroimaging:
+    fmri:
+      total_h: 92.2
+      per_subject_h: 18.4
+  tasks:
+    game:
+      total_h: 92.2
+      per_subject_h: 18.4
+    video:
+      total_unique: 92.2
+      per_subject_unique: 18.4
+      total_with_repetition: 92.2
+      per_subject_with_repetition: 18.4
+    audio:
+      total_unique: 92.2
+      per_subject_unique: 18.4
+      total_with_repetition: 92.2
+      per_subject_with_repetition: 18.4
+  physiology:
+    ecg:
+      total_h: 92.2
+      per_subject_h: 18.4
+    respiration:
+      total_h: 92.2
+      per_subject_h: 18.4
+    plethysmograph:
+      total_h: 92.2
+      per_subject_h: 18.4
+    eda:
+      total_h: 92.2
+      per_subject_h: 18.4
+
+subjects:
+- {id: sub-01, status: available}
+- {id: sub-02, status: available}
+- {id: sub-03, status: available}
+- {id: sub-04, status: not_collected}
+- {id: sub-05, status: available}
+- {id: sub-06, status: available}
+
+tasks:
+- emoji: "🎮"
+  label: "Super Mario Bros — in-scanner gameplay"
+  note: "22 levels (excluding water and boss levels); discovery phase (all levels
+    in order, unlimited attempts) then practice phase (random level per run); 3374
+    total level attempts across 5 participants; ~16.8 h fMRI per participant"
+
+modalities:
+- emoji: "🕹️"
+  label: "Game logs"
+  components:
+  - {label: "annotated events (.tsv)", status: available, note: "includes button presses
+      and game events aligned to the fMRI"}
+  - {label: "game replay (.bk2)", status: available}
+  - {label: "video replay (.mp4)", status: available}
+  - {label: "replay summary (.json)", status: available}
+  - {label: "mapped RAM variables (.json)", status: available}
+  - {label: "low-level features (.npy)", status: available}
+  - {label: "scene annotations", status: available, note: "313 scenes across 22 levels,
+      annotated with 29 design patterns (mario.scenes submodule)"}
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: collected_not_released}
+  - {label: pupillometry, status: collected_not_released}

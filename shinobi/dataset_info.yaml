@@ -1,1 +1,68 @@
-../.git/annex/objects/Zx/v6/MD5E-s2190--d6a9582d4cb901298b176fc6637176da.yaml/MD5E-s2190--d6a9582d4cb901298b176fc6637176da.yaml
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 41.5
+      per_subject_h: 10.4
+  tasks:
+    game:
+      total_h: 41.5
+      per_subject_h: 10.4
+    video:
+      total_unique: 41.5
+      per_subject_unique: 10.4
+      total_with_repetition: 41.5
+      per_subject_with_repetition: 10.4
+    audio:
+      total_unique: 41.5
+      per_subject_unique: 10.4
+      total_with_repetition: 41.5
+      per_subject_with_repetition: 10.4
+  physiology:
+    ecg:
+      total_h: 31
+      per_subject_h: 8.0
+    respiration:
+      total_h: 31
+      per_subject_h: 8.0
+    plethysmograph:
+      total_h: 31
+      per_subject_h: 8.0
+    eda:
+      total_h: 31
+      per_subject_h: 8.0
+
+subjects:
+- {id: sub-01, status: available}
+- {id: sub-02, status: available}
+- {id: sub-03, status: not_collected}
+- {id: sub-04, status: available, note: "11 sessions (vs 12 for other participants)"}
+- {id: sub-05, status: not_collected}
+- {id: sub-06, status: available, note: "~7 h fMRI (vs ~8 h for other participants)"}
+
+tasks:
+- emoji: "🎮"
+  label: "Shinobi III: Return of the Ninja Master — in-scanner gameplay"
+  note: "3 levels cycled (1, 4, 5); 4–5 runs × ~10 min per session; 11–12 sessions
+    per participant; ~8 h fMRI per participant"
+- emoji: "🏠"
+  label: "Shinobi III — at-home behavioral training (shinobi/training submodule)"
+  note: "Behavioral only; free-choice training regimen before scanner sessions; total
+    gameplay per participant (training + in-scanner) exceeds fMRI acquisition time"
+
+modalities:
+- emoji: "🕹️"
+  label: "Game logs"
+  components:
+  - {label: "annotated events (.tsv)", status: available, note: "includes button presses
+      and game events aligned to the fMRI"}
+  - {label: "game replay (.bk2)", status: partial, note: "some files lost during acquisition"}
+  - {label: "video replay (.mp4)", status: available}
+  - {label: "replay summary (.json)", status: available}
+  - {label: "mapped RAM variables (.json)", status: available}
+  - {label: "low-level features (.npy)", status: available}
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: not_collected}
+  - {label: pupillometry, status: not_collected}
