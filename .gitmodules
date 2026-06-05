@@ -466,6 +466,70 @@
 	path = emotion-videos/tsnr
 	url = https://github.com/courtois-neuromod/emotion-videos.tsnr
 	datalad-url = https://github.com/courtois-neuromod/emotion-videos.tsnr
+[submodule "friends/tsnr"]
+	path = friends/tsnr
+	url = ./friends/tsnr
+	datalad-id = 6e0b6bc6-23a5-4f3d-8496-0531291f7812
+[submodule "gamepad/tsnr"]
+	path = gamepad/tsnr
+	url = ./gamepad/tsnr
+	datalad-id = be860568-a99c-461f-86cf-d88be55e3378
+[submodule "harrypotter/tsnr"]
+	path = harrypotter/tsnr
+	url = ./harrypotter/tsnr
+	datalad-id = 748dfca8-3b6a-4685-8d06-b5c3d3c8e99d
+[submodule "hcptrt/tsnr"]
+	path = hcptrt/tsnr
+	url = ./hcptrt/tsnr
+	datalad-id = 3facd844-cf53-4a82-a0bc-22a0806b7a04
+[submodule "langlocalizer/tsnr"]
+	path = langlocalizer/tsnr
+	url = ./langlocalizer/tsnr
+	datalad-id = 7f9d54a6-b746-431d-bf4b-c0b88464d47f
+[submodule "mario/tsnr"]
+	path = mario/tsnr
+	url = ./mario/tsnr
+	datalad-id = 3de43c64-eee5-424c-8941-903f53a9947f
+[submodule "mario3/tsnr"]
+	path = mario3/tsnr
+	url = ./mario3/tsnr
+	datalad-id = 275cf9bd-0028-45fe-8730-3b547955a21a
+[submodule "mariostars/tsnr"]
+	path = mariostars/tsnr
+	url = ./mariostars/tsnr
+	datalad-id = 2c5ac5e4-9b9a-446e-ae52-b3a3f4ea0566
+[submodule "movie10/tsnr"]
+	path = movie10/tsnr
+	url = ./movie10/tsnr
+	datalad-id = 28602d3c-53e2-4c3a-9ee8-84b6b964fbf0
+[submodule "multfs/tsnr"]
+	path = multfs/tsnr
+	url = ./multfs/tsnr
+	datalad-id = d5ae8da2-20f9-48c0-9062-ee0b3a0194bb
+[submodule "mutemusic/tsnr"]
+	path = mutemusic/tsnr
+	url = ./mutemusic/tsnr
+	datalad-id = 3d5adc8a-b993-4a1b-925d-a642e3feb523
+[submodule "narratives/tsnr"]
+	path = narratives/tsnr
+	url = ./narratives/tsnr
+	datalad-id = f8fcd20c-7c59-4986-97dc-822d56b34a6e
+[submodule "ood/tsnr"]
+	path = ood/tsnr
+	url = ./ood/tsnr
+	datalad-id = 63ff1d46-c4c8-406a-86dc-2c5339e1e60e
+[submodule "petit-prince/tsnr"]
+	path = petit-prince/tsnr
+	url = ./petit-prince/tsnr
+	datalad-id = 03a096b3-d9e4-48af-b56b-049d9c5c1417
+[submodule "shinobi/tsnr"]
+	path = shinobi/tsnr
+	url = ./shinobi/tsnr
+	datalad-id = caf6a190-ea07-45b3-8882-62eae16708de
+[submodule "triplets/tsnr"]
+	path = triplets/tsnr
+	url = ./triplets/tsnr
+	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
 [submodule "analysis/cneuromod.all.statistics"]
 	path = analysis/cneuromod.all.statistics
 	url = git@github.com:courtois-neuromod/cneuromod.all.statistics.git
