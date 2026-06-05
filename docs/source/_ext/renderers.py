@@ -288,6 +288,37 @@ def _render_dataset_table(discovery):
             data = yaml.safe_load(f)
             df.append({
                 "dataset": f"`{_DATASET_EMOJI[name]} {name} <../datasets/{name}.html>`__",
-                "n_subjects": data['stats']['subjects_n'],
-            } | {cpnt[0]:f"`{_COMPONENT_ICON.get(cpnt[0].lower(), _DATASET_EMOJI.get(name, '📦'))} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
+            } | {cpnt[0]: f"`{_COMPONENT_ICON.get(cpnt[0].lower(), _DATASET_EMOJI.get(name, '📦'))} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
+
+    all_cols = [k for k in dict.fromkeys(k for row in df for k in row) if k != 'dataset']
+    single_cols = [col for col in all_cols if sum(1 for row in df if row.get(col)) == 1]
+    multi_cols = [col for col in all_cols if col not in single_cols]
+
+    merged = []
+    for row in df:
+        new_row = {'dataset': row['dataset']}
+        for col in multi_cols:
+            new_row[col] = row.get(col, '')
+        other_parts = [row[col] for col in single_cols if row.get(col)]
+        new_row['other'] = ' · '.join(other_parts)
+        merged.append(new_row)
+    return merged
+
+
+def _render_dataset_stats_table(discovery):
+    stream_keys = [k for k in _STATS_EMOJI if not k.startswith('physiology.')]
+    df = []
+    for name, info_path in discovery._dataset_info.items():
+        with open(info_path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+        stats = data.get('stats', {})
+        row = {'Dataset': f"`{_DATASET_EMOJI.get(name, '')} {name} <../datasets/{name}.html>`__"}
+        for key in stream_keys:
+            val = _resolve_stats_key(stats, key)
+            if key == 'neuroimaging.fmri':
+                col = 'fMRI (h/sub)'
+                row[col] = str(val['per_subject_h']) if isinstance(val, dict) and 'per_subject_h' in val else ('—' if val else '')
+            else:
+                row[_STATS_LABEL[key]] = _STATS_EMOJI[key] if val else ''
+        df.append(row)
     return df

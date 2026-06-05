@@ -71,7 +71,7 @@ _STATS_EMOJI = {
 }
 
 _STATS_LABEL = {
-    'neuroimaging.fmri':      'Neuroimaging (fMRI)',
+    'neuroimaging.fmri':      'fMRI',
     'tasks.images':           'Images',
     'tasks.video':            'Naturalistic video',
     'tasks.audio':            'Audio',
@@ -79,7 +79,7 @@ _STATS_LABEL = {
     'tasks.text_reading':     'Text reading',
     'tasks.resting_state':    'Resting state',
     'tasks.game':             'Gameplay',
-    'tasks.controlled':       'Behavior (controlled task)',
+    'tasks.controlled':       'Controlled',
     'tasks.contrasts':        'Contrasts',
     'physiology.ecg':         'ECG',
     'physiology.respiration': 'Respiration',

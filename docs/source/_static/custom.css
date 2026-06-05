@@ -56,9 +56,64 @@
     text-decoration: none;
 }
 
-/* assets overview table: keep asset-name column on one line */
-#assets table td:first-child {
+/* furo's overflow-x:auto forces overflow-y:auto too, clipping rotated headers */
+#assets .table-wrapper.container {
+    overflow: visible;
+}
+
+/* assets overview table */
+#assets table p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#assets table th {
+    height: 100px;
+    vertical-align: bottom;
     white-space: nowrap;
+    border: 0;
+    width: 30px;
+}
+
+#assets table th > p {
+    transform: rotate(-45deg);
+    width: 30px;
+}
+
+/* dataset name column — wide, upright */
+#assets table th:first-child {
+    width: 120px;
+    height: auto;
+}
+
+#assets table th:first-child > p {
+    transform: none;
+    width: auto;
+}
+
+#assets a {
+    text-decoration: none;
+}
+
+/* keep asset-name and "other" columns on one line */
+#assets table td:first-child,
+#assets table td:last-child {
+    white-space: nowrap;
+}
+
+/* zero padding and center for all columns after dataset name */
+#assets table td + td {
+    padding: 0;
+    text-align: center;
+}
+
+#assets table td + td p {
+    margin: 0;
+}
+
+#assets table td + td:empty,
+#assets table td + td:has(> p:empty) {
+    background-color: #f0f0f0;
 }
 
 /* furo adds padding:0 .25rem on td and margin:.25rem on td p — on a 20px column
@@ -71,4 +126,9 @@
 
 #datasets table td + td p {
     margin: 0;
+}
+
+#datasets table td + td:empty,
+#datasets table td + td:has(> p:empty) {
+    background-color: #f0f0f0;
 }
