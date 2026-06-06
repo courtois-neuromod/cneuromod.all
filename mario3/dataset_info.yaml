@@ -5,19 +5,19 @@ stats:
       total_h: 49.3
       per_subject_h: 9.9
   tasks:
-      game:
-        total_h: 49.3
-        per_subject_h: 9.9
-      video:
-        total_unique: 49.3
-        per_subject_unique: 9.9
-        total_with_repetition: 49.3
-        per_subject_with_repetition: 9.9
-      audio:
-        total_unique: 49.3
-        per_subject_unique: 9.9
-        total_with_repetition: 49.3
-        per_subject_with_repetition: 9.9
+    game:
+      total_h: 49.3
+      per_subject_h: 9.9
+    video:
+      total_unique: 49.3
+      per_subject_unique: 9.9
+      total_with_repetition: 49.3
+      per_subject_with_repetition: 9.9
+    audio:
+      total_unique: 49.3
+      per_subject_unique: 9.9
+      total_with_repetition: 49.3
+      per_subject_with_repetition: 9.9
 
 subjects:
 - id: sub-01

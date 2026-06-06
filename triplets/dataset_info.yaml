@@ -14,9 +14,9 @@ stats:
 tasks:
 - emoji: "🔺"
   label: "Word triplets — semantic odd-one-out judgment"
-  note: "Single words shown in triplets; participants select the semantic odd one out.
-    Each unique word shown ~3× per subject; stimuli shared across subjects.
-    Designed for representational similarity analysis and brain encoding models."
+  note: "Single words shown in triplets; participants select the semantic odd one
+    out. Each unique word shown ~3× per subject; stimuli shared across subjects. Designed
+    for representational similarity analysis and brain encoding models."
 subjects:
 - id: sub-01
   status: available

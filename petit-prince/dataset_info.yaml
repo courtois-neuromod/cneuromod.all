@@ -5,17 +5,17 @@ stats:
       total_h: 15.8
       per_subject_h: 3.2
   tasks:
-      audio:
-        total_unique: 1.1
-        per_subject_unique: 1.1
-        total_with_repetition: 15.8
-        per_subject_with_repetition: 3.2
-      speech_listening:
-        total_unique: 1.1
-        per_subject_unique: 1.1
-        total_with_repetition: 15.8
-        per_subject_with_repetition: 3.2
-        
+    audio:
+      total_unique: 1.1
+      per_subject_unique: 1.1
+      total_with_repetition: 15.8
+      per_subject_with_repetition: 3.2
+    speech_listening:
+      total_unique: 1.1
+      per_subject_unique: 1.1
+      total_with_repetition: 15.8
+      per_subject_with_repetition: 3.2
+
 subjects:
 - id: sub-01
   status: available

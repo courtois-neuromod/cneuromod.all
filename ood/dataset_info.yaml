@@ -5,21 +5,21 @@ stats:
       total_h: 6.1
       per_subject_h: 2.0
   tasks:
-      video:
-        total_unique: 2.0
-        per_subject_unique: 2.0
-        total_with_repetition: 6.1
-        per_subject_with_repetition: 6.1
-      audio:
-        total_unique: 2.0
-        per_subject_unique: 2.0
-        total_with_repetition: 6.1
-        per_subject_with_repetition: 6.1
-      speech_listening:
-        total_unique: 2.0
-        per_subject_unique: 2.0
-        total_with_repetition: 6.1
-        per_subject_with_repetition: 6.1
+    video:
+      total_unique: 2.0
+      per_subject_unique: 2.0
+      total_with_repetition: 6.1
+      per_subject_with_repetition: 6.1
+    audio:
+      total_unique: 2.0
+      per_subject_unique: 2.0
+      total_with_repetition: 6.1
+      per_subject_with_repetition: 6.1
+    speech_listening:
+      total_unique: 2.0
+      per_subject_unique: 2.0
+      total_with_repetition: 6.1
+      per_subject_with_repetition: 6.1
 subjects:
 - id: sub-01
   status: not_collected

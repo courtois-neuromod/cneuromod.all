@@ -44,4 +44,5 @@ subjects:
 tasks:
 - emoji: "📺"
   label: "Silent emotion-evoking video clips"
-  note: "~5.2 hours of naturalistic silent video watching per subject; clips are shared across subjects but not repeated within"
+  note: "~5.2 hours of naturalistic silent video watching per subject; clips are shared
+    across subjects but not repeated within"
