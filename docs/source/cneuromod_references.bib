@@ -1,0 +1,1496 @@
+@PHDTHESIS{Vicente2025-lo,
+  title     = "Codificação de Dados {fMRI} com Grandes Modelos de Linguagem:
+               Avaliação de Estratégia Multissujeito e Mapeamento Intersujeito",
+  author    = "Vicente, A L G",
+  publisher = "teses.usp.br",
+  year      =  2025,
+  school    = "Universidade de São Paulo"
+}
+
+@PHDTHESIS{Banic2026-dt,
+  title     = "From Brain Signal Structure to Function Attribution: An
+               Examination of Schaefer Parcel Dynamics under Multimodal
+               Naturalistic Stimulation",
+  author    = "Banić, B",
+  publisher = "repozitorij.ffzg.unizg.hr",
+  year      =  2026,
+  school    = "University of Zagreb"
+}
+
+@ARTICLE{St-Laurent2026-zc,
+  title     = "{CNeuroMod}-{THINGS}, a densely-sampled {fMRI} dataset for visual
+               neuroscience",
+  author    = "St-Laurent, Marie and Pinsard, Basile and Contier, Oliver and
+               DuPre, Elizabeth and Seeliger, Katja and Borghesani, Valentina
+               and Boyle, Julie A and Bellec, Lune and Hebart, Martin N",
+  journal   = "Sci. Data",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  13,
+  number    =  1,
+  pages     =  141,
+  abstract  = "Data-hungry neuro-AI modelling requires ever larger neuroimaging
+               datasets. CNeuroMod-THINGS meets this need by capturing neural
+               representations for a wide set of semantic concepts using
+               well-characterized images in a new densely-sampled, large-scale
+               fMRI dataset. Importantly, CNeuroMod-THINGS exploits synergies
+               between two existing projects: the THINGS initiative (THINGS) and
+               the Courtois Project on Neural Modelling (CNeuroMod). THINGS has
+               developed a common set of thoroughly annotated images broadly
+               sampling natural and man-made objects which is used to acquire a
+               growing collection of multimodal neural responses. Meanwhile,
+               CNeuroMod is acquiring hundreds of hours of fMRI data from a core
+               set of participants during controlled and naturalistic tasks,
+               including visual tasks like movie watching and videogame playing.
+               For CNeuroMod-THINGS, four CNeuroMod participants each completed
+               33-36 sessions of a continuous recognition paradigm using 4320
+               images from the THINGS stimulus set spanning 720 categories. We
+               report behavioural and neuroimaging metrics that showcase the
+               quality of the data. By bridging together large existing
+               resources, CNeuroMod-THINGS expands our capacity to model human
+               vision in controlled and naturalistic settings.",
+  month     =  jan,
+  year      =  2026,
+  language  = "en"
+}
+
+@ARTICLE{Pushpita2025-mr,
+  title       = "Two cortical mechanisms for natural audiovisual processing",
+  author      = "Pushpita, Subha Nawer and Wehbe, Leila",
+  journal     = "bioRxiv",
+  institution = "bioRxiv",
+  abstract    = "Understanding how the human brain processes naturalistic
+                 audiovisual information remains a central challenge in
+                 cognitive neuroscience. Progress has been limited, however, by
+                 the difficulty of modeling complex audiovisual feature spaces -
+                 most prior work has therefore relied on short, controlled
+                 stimuli, or on stimuli from one modality at a time, leaving
+                 cortical mechanisms that support real-world comprehension
+                 poorly characterized. Further, while recent advances in
+                 artificial intelligence now enable the extraction of
+                 high-dimensional, time-resolved features from naturalistic
+                 stimuli, how cortical regions dynamically process auditory and
+                 visual information as time unfolds remains largely unexplored.
+                 Using large-scale fMRI data collected while participants
+                 watched movies, we developed two complementary computational
+                 approaches relying on prediction performance to map the
+                 moment-by-moment dynamics of sensory processing across cortical
+                 regions: one tracks when one modality predicts a region's
+                 activity substantially better than the other, capturing
+                 temporal transitions in modality dominance, while the other
+                 identifies periods when both modalities predict the region
+                 well, indicating balanced representation of auditory and visual
+                 information. Together, these analyses reveal two complementary
+                 patterns of audiovisual organization across cortex: a pair of
+                 ``bows'' of modality switching - one posterior bow encircling
+                 category-selective visual cortex and another anterior bow
+                 spanning dorso-lateral frontal areas, and an arrow-like axis of
+                 bimodally predicted regions extending from lateral occipital
+                 cortex into the temporal cortex. The coexistence of these
+                 systems points to a cortical architecture that flexibly
+                 reweights sensory inputs while maintaining balanced multimodal
+                 representations, supporting robust comprehension of complex
+                 natural events. More broadly, this work illustrates how
+                 naturalistic neuroimaging experiments informed by modern
+                 machine learning approaches can reveal new principles of
+                 dynamic audiovisual processing in the human brain.",
+  year        =  2025
+}
+
+@ARTICLE{Corsico2025-pz,
+  title     = "Network-Specific Models for Multimodal Brain Response Prediction",
+  author    = "Corsico, Andrea and Rigamonti, Giorgia and Zini, Simone and
+               Celona, Luigi and Napoletano, Paolo",
+  journal   = "arXiv e-prints",
+  publisher = "ui.adsabs.harvard.edu",
+  pages     = "arXiv--2508",
+  abstract  = "In this work, we present a network-specific approach for
+               predicting brain responses to complex multimodal movies,
+               leveraging the Yeo 7-network parcellation of the Schaefer atlas.
+               Rather than treating the brain as a homogeneous system, we
+               grouped the seven functional networks into four clusters and
+               trained separate multi-subject, multi-layer perceptron (MLP)
+               models for each. This architecture supports cluster-specific
+               optimization and adaptive memory modeling, allowing each model to
+               adjust temporal dynamics and",
+  year      =  2025
+}
+
+@ARTICLE{Schad2025-nx,
+  title         = "{VIBE}: Video-input brain encoder for {fMRI} response
+                   modeling",
+  author        = "Schad, Daniel Carlström and Dixit, Shrey and Keck, Janis and
+                   Studenyak, Viktor and Shpilevoi, Aleksandr and Bicanski,
+                   Andrej",
+  journal       = "arXiv [cs.LG]",
+  abstract      = "We present VIBE, a two-stage Transformer that fuses
+                   multi-modal video, audio, and text features to predict fMRI
+                   activity. Representations from open-source models (Qwen2.5,
+                   BEATs, Whisper, SlowFast, V-JEPA) are merged by a
+                   modality-fusion transformer and temporally decoded by a
+                   prediction transformer with rotary embeddings. Trained on 65
+                   hours of movie data from the CNeuroMod dataset and ensembled
+                   across 20 seeds, VIBE attains mean parcel-wise Pearson
+                   correlations of 0.3225 on in-distribution Friends S07 and
+                   0.2125 on six out-of-distribution films. An earlier iteration
+                   of the same architecture obtained 0.3198 and 0.2096,
+                   respectively, winning Phase-1 and placing second overall in
+                   the Algonauts 2025 Challenge.",
+  month         =  jul,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.LG"
+}
+
+@ARTICLE{Villanueva2025-xe,
+  title         = "Predicting brain responses to natural movies with multimodal
+                   {LLMs}",
+  author        = "Villanueva, Cesar Kadir Torrico and Tu, Jiaxin Cindy and
+                   Tripathy, Mihir and Lane, Connor and Iyer, Rishab and Scotti,
+                   Paul S",
+  journal       = "arXiv [cs.CV]",
+  abstract      = "We present MedARC's team solution to the Algonauts 2025
+                   challenge. Our pipeline leveraged rich multimodal
+                   representations from various state-of-the-art pretrained
+                   models across video (V-JEPA2), speech (Whisper), text (Llama
+                   3.2), vision-text (InternVL3), and vision-text-audio
+                   (Qwen2.5-Omni). These features extracted from the models were
+                   linearly projected to a latent space, temporally aligned to
+                   the fMRI time series, and finally mapped to cortical parcels
+                   through a lightweight encoder comprising a shared group head
+                   plus subject-specific residual heads. We trained hundreds of
+                   model variants across hyperparameter settings, validated them
+                   on held-out movies and assembled ensembles targeted to each
+                   parcel in each subject. Our final submission achieved a mean
+                   Pearson's correlation of 0.2085 on the test split of withheld
+                   out-of-distribution movies, placing our team in fourth place
+                   for the competition. We further discuss a last-minute
+                   optimization that would have raised us to second place. Our
+                   results highlight how combining features from models trained
+                   in different modalities, using a simple architecture
+                   consisting of shared-subject and single-subject components,
+                   and conducting comprehensive model selection and ensembling
+                   improves generalization of encoding models to novel movie
+                   stimuli. All code is available on GitHub.",
+  month         =  jul,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.CV"
+}
+
+@ARTICLE{Abdollahi2025-cp,
+  title         = "Probing multimodal fusion in the brain: The dominance of
+                   audiovisual streams in naturalistic encoding",
+  author        = "Abdollahi, Hamid and Majoumerd, Amir Hossein Mansouri and
+                   Baboukani, Amir Hossein Bagheri and Suratgar, Amir Abolfazl
+                   and Menhaj, Mohammad Bagher",
+  journal       = "arXiv [cs.CV]",
+  abstract      = "Predicting brain activity in response to naturalistic,
+                   multimodal stimuli is a key challenge in computational
+                   neuroscience. While encoding models are becoming more
+                   powerful, their ability to generalize to truly novel contexts
+                   remains a critical, often untested, question. In this work,
+                   we developed brain encoding models using state-of-the-art
+                   visual (X-CLIP) and auditory (Whisper) feature extractors and
+                   rigorously evaluated them on both in-distribution (ID) and
+                   diverse out-of-distribution (OOD) data. Our results reveal a
+                   fundamental trade-off between model complexity and
+                   generalization: a higher-capacity attention-based model
+                   excelled on ID data, but a simpler linear model was more
+                   robust, outperforming a competitive baseline by 18\% on the
+                   OOD set. Intriguingly, we found that linguistic features did
+                   not improve predictive accuracy, suggesting that for familiar
+                   languages, neural encoding may be dominated by the continuous
+                   visual and auditory streams over redundant textual
+                   information. Spatially, our approach showed marked
+                   performance gains in the auditory cortex, underscoring the
+                   benefit of high-fidelity speech representations.
+                   Collectively, our findings demonstrate that rigorous OOD
+                   testing is essential for building robust neuro-AI models and
+                   provides nuanced insights into how model architecture,
+                   stimulus characteristics, and sensory hierarchies shape the
+                   neural encoding of our rich, multimodal world.",
+  month         =  jul,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.CV"
+}
+
+@ARTICLE{Yin2026-xn,
+  title         = "Improving multimodal brain encoding model with dynamic
+                   subject-awareness routing",
+  author        = "Yin, Xuanhua and Zhao, Runkai and Cai, Weidong",
+  journal       = "arXiv [cs.AI]",
+  abstract      = "Naturalistic fMRI encoding must handle multimodal inputs,
+                   shifting fusion styles, and pronounced inter-subject
+                   variability. We introduce AFIRE (Agnostic Framework for
+                   Multimodal fMRI Response Encoding), an agnostic interface
+                   that standardizes time-aligned post-fusion tokens from varied
+                   encoders, and MIND, a plug-and-play Mixture-of-Experts
+                   decoder with a subject-aware dynamic gating. Trained
+                   end-to-end for whole-brain prediction, AFIRE decouples the
+                   decoder from upstream fusion, while MIND combines
+                   token-dependent Top-K sparse routing with a subject prior to
+                   personalize expert usage without sacrificing generality.
+                   Experiments across multiple multimodal backbones and subjects
+                   show consistent improvements over strong baselines, enhanced
+                   cross-subject generalization, and interpretable expert
+                   patterns that correlate with content type. The framework
+                   offers a simple attachment point for new encoders and
+                   datasets, enabling robust, plug-and-improve performance for
+                   naturalistic neuroimaging studies.",
+  month         =  feb,
+  year          =  2026,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.AI"
+}
+
+@ARTICLE{Schad2025-pz,
+  title         = "{VIBE}: Video-input brain encoder for {fMRI} response
+                   modeling",
+  author        = "Schad, Daniel Carlström and Dixit, Shrey and Keck, Janis and
+                   Studenyak, Viktor and Shpilevoi, Aleksandr and Bicanski,
+                   Andrej",
+  journal       = "arXiv [cs.LG]",
+  abstract      = "We present VIBE, a two-stage Transformer that fuses
+                   multi-modal video, audio, and text features to predict fMRI
+                   activity. Representations from open-source models (Qwen2.5,
+                   BEATs, Whisper, SlowFast, V-JEPA) are merged by a
+                   modality-fusion transformer and temporally decoded by a
+                   prediction transformer with rotary embeddings. Trained on 65
+                   hours of movie data from the CNeuroMod dataset and ensembled
+                   across 20 seeds, VIBE attains mean parcel-wise Pearson
+                   correlations of 0.3225 on in-distribution Friends S07 and
+                   0.2125 on six out-of-distribution films. An earlier iteration
+                   of the same architecture obtained 0.3198 and 0.2096,
+                   respectively, winning Phase-1 and placing second overall in
+                   the Algonauts 2025 Challenge.",
+  month         =  jul,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.LG"
+}
+
+@ARTICLE{Villanueva2025-aw,
+  title         = "Predicting brain responses to natural movies with multimodal
+                   {LLMs}",
+  author        = "Villanueva, Cesar Kadir Torrico and Tu, Jiaxin Cindy and
+                   Tripathy, Mihir and Lane, Connor and Iyer, Rishab and Scotti,
+                   Paul S",
+  journal       = "arXiv [cs.CV]",
+  abstract      = "We present MedARC's team solution to the Algonauts 2025
+                   challenge. Our pipeline leveraged rich multimodal
+                   representations from various state-of-the-art pretrained
+                   models across video (V-JEPA2), speech (Whisper), text (Llama
+                   3.2), vision-text (InternVL3), and vision-text-audio
+                   (Qwen2.5-Omni). These features extracted from the models were
+                   linearly projected to a latent space, temporally aligned to
+                   the fMRI time series, and finally mapped to cortical parcels
+                   through a lightweight encoder comprising a shared group head
+                   plus subject-specific residual heads. We trained hundreds of
+                   model variants across hyperparameter settings, validated them
+                   on held-out movies and assembled ensembles targeted to each
+                   parcel in each subject. Our final submission achieved a mean
+                   Pearson's correlation of 0.2085 on the test split of withheld
+                   out-of-distribution movies, placing our team in fourth place
+                   for the competition. We further discuss a last-minute
+                   optimization that would have raised us to second place. Our
+                   results highlight how combining features from models trained
+                   in different modalities, using a simple architecture
+                   consisting of shared-subject and single-subject components,
+                   and conducting comprehensive model selection and ensembling
+                   improves generalization of encoding models to novel movie
+                   stimuli. All code is available on GitHub.",
+  month         =  jul,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.CV"
+}
+
+@ARTICLE{He2025-vt,
+  title         = "A multimodal {Seq2Seq} Transformer for predicting brain
+                   responses to naturalistic stimuli",
+  author        = "He, Qianyi and Leong, Yuan Chang",
+  journal       = "arXiv [cs.CV]",
+  abstract      = "The Algonauts 2025 Challenge called on the community to
+                   develop encoding models that predict whole-brain fMRI
+                   responses to naturalistic multimodal movies. In this
+                   submission, we propose a sequence-to-sequence Transformer
+                   that autoregressively predicts fMRI activity from visual,
+                   auditory, and language inputs. Stimulus features were
+                   extracted using pretrained models including VideoMAE, HuBERT,
+                   Qwen, and BridgeTower. The decoder integrates information
+                   from prior brain states and current stimuli via dual
+                   cross-attention mechanisms that attend to both perceptual
+                   information extracted from the stimulus as well as narrative
+                   information provided by high-level summaries of the content.
+                   One core innovation of our approach is the use of sequences
+                   of multimodal context to predict sequences of brain activity,
+                   enabling the model to capture long-range temporal structure
+                   in both stimuli and neural responses. Another is the
+                   combination of a shared encoder with partial subject-specific
+                   decoder, which leverages common representational structure
+                   across subjects while accounting for individual variability.
+                   Our model achieves strong performance on both in-distribution
+                   and out-of-distribution data, demonstrating the effectiveness
+                   of temporally-aware, multimodal sequence modeling for brain
+                   activity prediction. The code is available at
+                   https://github.com/Angelneer926/Algonauts\_challenge.",
+  month         =  jul,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.CV"
+}
+
+@ARTICLE{Yin2026-ri,
+  title         = "{BrainVista}: Modeling naturalistic brain dynamics as
+                   multimodal next-token prediction",
+  author        = "Yin, Xuanhua and Zhao, Runkai and Yao, Lina and Cai, Weidong",
+  journal       = "arXiv [q-bio.NC]",
+  abstract      = "Naturalistic fMRI characterizes the brain as a dynamic
+                   predictive engine driven by continuous sensory streams.
+                   However, modeling the causal forward evolution in realistic
+                   neural simulation is impeded by the timescale mismatch
+                   between multimodal inputs and the complex topology of
+                   cortical networks. To address these challenges, we introduce
+                   BrainVista, a multimodal autoregressive framework designed to
+                   model the causal evolution of brain states. BrainVista
+                   incorporates Network-wise Tokenizers to disentangle
+                   system-specific dynamics and a Spatial Mixer Head that
+                   captures inter-network information flow without compromising
+                   functional boundaries. Furthermore, we propose a novel
+                   Stimulus-to-Brain (S2B) masking mechanism to synchronize
+                   high-frequency sensory stimuli with hemodynamically filtered
+                   signals, enabling strict, history-only causal conditioning.
+                   We validate our framework on Algonauts 2025, CineBrain, and
+                   HAD, achieving state-of-the-art fMRI encoding performance. In
+                   long-horizon rollout settings, our model yields substantial
+                   improvements over baselines, increasing pattern correlation
+                   by 36.0\% and 33.3\% on relative to the strongest baseline
+                   Algonauts 2025 and CineBrain, respectively.",
+  month         =  feb,
+  year          =  2026,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.NC"
+}
+
+@ARTICLE{Scholz2025-io,
+  title         = "Stacked regression using off-the-shelf, stimulus-tuned and
+                   fine-tuned neural networks for predicting {fMRI} brain
+                   responses to movies (Algonauts 2025 report)",
+  author        = "Scholz, Robert and Bagga, Kunal and Ahrends, Christine and
+                   Barbano, Carlo Alberto",
+  journal       = "arXiv [eess.IV]",
+  abstract      = "We present our submission to the Algonauts 2025 Challenge,
+                   where the goal is to predict fMRI brain responses to movie
+                   stimuli. Our approach integrates multimodal representations
+                   from large language models, video encoders, audio models, and
+                   vision-language models, combining both off-the-shelf and
+                   fine-tuned variants. To improve performance, we enhanced
+                   textual inputs with detailed transcripts and summaries, and
+                   we explored stimulus-tuning and fine-tuning strategies for
+                   language and vision models. Predictions from individual
+                   models were combined using stacked regression, yielding solid
+                   results. Our submission, under the team name Seinfeld, ranked
+                   10th. We make all code and resources publicly available,
+                   contributing to ongoing efforts in developing multimodal
+                   encoding models for brain activity.",
+  month         =  oct,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "eess.IV"
+}
+
+@ARTICLE{Corsico2025-si,
+  title         = "The {ISLab} solution to the algonauts Challenge 2025: A
+                   multimodal deep learning approach to brain response
+                   prediction",
+  author        = "Corsico, Andrea and Rigamonti, Giorgia and Zini, Simone and
+                   Celona, Luigi and Napoletano, Paolo",
+  journal       = "arXiv [q-bio.NC]",
+  abstract      = "In this work, we present a network-specific approach for
+                   predicting brain responses to complex multimodal movies,
+                   leveraging the Yeo 7-network parcellation of the Schaefer
+                   atlas. Rather than treating the brain as a homogeneous
+                   system, we grouped the seven functional networks into four
+                   clusters and trained separate multi-subject, multi-layer
+                   perceptron (MLP) models for each. This architecture supports
+                   cluster-specific optimization and adaptive memory modeling,
+                   allowing each model to adjust temporal dynamics and modality
+                   weighting based on the functional role of its target network.
+                   Our results demonstrate that this clustered strategy
+                   significantly enhances prediction accuracy across the 1,000
+                   cortical regions of the Schaefer atlas. The final model
+                   achieved an eighth-place ranking in the Algonauts Project
+                   2025 Challenge, with out-of-distribution (OOD) correlation
+                   scores nearly double those of the baseline model used in the
+                   selection phase. Code is available at
+                   https://github.com/Corsi01/algo2025.",
+  month         =  oct,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.NC"
+}
+
+@ARTICLE{Eren2025-xi,
+  title         = "Multimodal recurrent ensembles for predicting brain responses
+                   to naturalistic movies (Algonauts 2025)",
+  author        = "Eren, Semih and Kucukahmetler, Deniz and Scherf, Nico",
+  journal       = "arXiv [q-bio.NC]",
+  abstract      = "Accurately predicting distributed cortical responses to
+                   naturalistic stimuli requires models that integrate visual,
+                   auditory and semantic information over time. We present a
+                   hierarchical multimodal recurrent ensemble that maps
+                   pretrained video, audio, and language embeddings to fMRI time
+                   series recorded while four subjects watched almost 80 hours
+                   of movies provided by the Algonauts 2025 challenge.
+                   Modality-specific bidirectional RNNs encode temporal
+                   dynamics; their hidden states are fused and passed to a
+                   second recurrent layer, and lightweight subject-specific
+                   heads output responses for 1000 cortical parcels. Training
+                   relies on a composite MSE-correlation loss and a curriculum
+                   that gradually shifts emphasis from early sensory to late
+                   association regions. Averaging 100 model variants further
+                   boosts robustness. The resulting system ranked third on the
+                   competition leaderboard, achieving an overall Pearson r =
+                   0.2094 and the highest single-parcel peak score (mean r =
+                   0.63) among all participants, with particularly strong gains
+                   for the most challenging subject (Subject 5). The approach
+                   establishes a simple, extensible baseline for future
+                   multimodal brain-encoding benchmarks.",
+  month         =  oct,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.NC"
+}
+
+@ARTICLE{Jindal2026-tr,
+  title         = "How does longer temporal context enhance multimodal narrative
+                   video processing in the brain?",
+  author        = "Jindal, Prachi and Khandelwal, Anant and Gupta, Manish and
+                   Raju, Bapi S and Oota, Subba Reddy and Chakraborty, Tanmoy",
+  journal       = "arXiv [q-bio.NC]",
+  abstract      = "Understanding how humans and artificial intelligence systems
+                   process complex narrative videos is a fundamental challenge
+                   at the intersection of neuroscience and machine learning.
+                   This study investigates how the temporal context length of
+                   video clips (3--12 s clips) and the narrative-task prompting
+                   shape brain-model alignment during naturalistic movie
+                   watching. Using fMRI recordings from participants viewing
+                   full-length movies, we examine how brain regions sensitive to
+                   narrative context dynamically represent information over
+                   varying timescales and how these neural patterns align with
+                   model-derived features. We find that increasing clip duration
+                   substantially improves brain alignment for multimodal large
+                   language models (MLLMs), whereas unimodal video models show
+                   little to no gain. Further, shorter temporal windows align
+                   with perceptual and early language regions, while longer
+                   windows preferentially align higher-order integrative
+                   regions, mirrored by a layer-to-cortex hierarchy in MLLMs.
+                   Finally, narrative-task prompts (multi-scene summary,
+                   narrative summary, character motivation, and event boundary
+                   detection) elicit task-specific, region-dependent brain
+                   alignment patterns and context-dependent shifts in clip-level
+                   tuning in higher-order regions. Together, our results
+                   position long-form narrative movies as a principled testbed
+                   for probing biologically relevant temporal integration and
+                   interpretable representations in long-context MLLMs.",
+  month         =  feb,
+  year          =  2026,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.NC"
+}
+
+@PHDTHESIS{Sainath2020-uo,
+  title     = "Modeling functional brain activity of human working memory using
+               deep recurrent neural networks",
+  author    = "Sainath, Pravish",
+  publisher = "umontreal.scholaris.ca",
+  abstract  = "Résumé Dans les systèmes cognitifs, le rôle de la mémoire de
+               travail est crucial pour le raisonnement visuel et la prise de
+               décision. D'énormes progrès ont été réalisés dans la
+               compréhension des mécanismes de la mémoire de travail
+               humain/animal, ainsi que dans la formulation de différents cadres
+               de réseaux de neurones artificiels à mémoire augmentée.",
+  year      =  2020,
+  school    = "Université de Montréal"
+}
+
+@ARTICLE{Oota2025-ic,
+  title         = "Multi-modal brain encoding models for multi-modal stimuli",
+  author        = "Oota, Subba Reddy and Pahwa, Khushbu and Marreddy, Mounika
+                   and Singh, Maneesh and Gupta, Manish and Raju, Bapi S",
+  journal       = "arXiv [q-bio.NC]",
+  abstract      = "Despite participants engaging in unimodal stimuli, such as
+                   watching images or silent videos, recent work has
+                   demonstrated that multi-modal Transformer models can predict
+                   visual brain activity impressively well, even with
+                   incongruent modality representations. This raises the
+                   question of how accurately these multi-modal models can
+                   predict brain activity when participants are engaged in
+                   multi-modal stimuli. As these models grow increasingly
+                   popular, their use in studying neural activity provides
+                   insights into how our brains respond to such multi-modal
+                   naturalistic stimuli, i.e., where it separates and integrates
+                   information across modalities through a hierarchy of early
+                   sensory regions to higher cognition. We investigate this
+                   question by using multiple unimodal and two types of
+                   multi-modal models-cross-modal and jointly pretrained-to
+                   determine which type of model is more relevant to fMRI brain
+                   activity when participants are engaged in watching movies. We
+                   observe that both types of multi-modal models show improved
+                   alignment in several language and visual regions. This study
+                   also helps in identifying which brain regions process
+                   unimodal versus multi-modal information. We further
+                   investigate the contribution of each modality to multi-modal
+                   alignment by carefully removing unimodal features one by one
+                   from multi-modal representations, and find that there is
+                   additional information beyond the unimodal embeddings that is
+                   processed in the visual and language regions. Based on this
+                   investigation, we find that while for cross-modal models,
+                   their brain alignment is partially attributed to the video
+                   modality; for jointly pretrained models, it is partially
+                   attributed to both the video and audio modalities. This
+                   serves as a strong motivation for the neuroscience community
+                   to investigate the interpretability of these models for
+                   deepening our understanding of multi-modal information
+                   processing in brain.",
+  month         =  may,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.NC"
+}
+
+@ARTICLE{Fokin2025-ys,
+  title    = "Functional connectivity localizes a distributed supramodal core
+              for naturalistic viewing",
+  author   = "Fokin, Viacheslav and Sherafati, Arefeh",
+  journal  = "bioRxiv",
+  abstract = "Understanding the brain mechanisms that support naturalistic
+              perception is a central goal of cognitive neuroscience. Research
+              has progressed from studying the brain with simple unimodal
+              stimuli to employing richer paradigms that engage visual,
+              auditory, and language modalities in naturalistic environments.
+              Recent multimodal encoding models have shown strong promise in
+              modeling and predicting neural responses to such complex stimuli.
+              Previous studies, however, have primarily focused on two
+              modalities (visual and auditory) and often highlight regions
+              implicated in audiovisual processing (e.g., posterior STS), but do
+              not delineate a compact, replicable subnetwork for multimodal,
+              naturalistic stimuli. While these studies produced valuable maps
+              of sensory integration, their scope was restricted to two
+              modalities and they lacked replication, leaving the full picture
+              of the multimodal integration uncertain. Moreover, no studies have
+              localized a compact, replicable subnetwork via FC-guided ablation
+              under naturalistic viewing. The present study advances our
+              understanding of naturalistic perception by identifying the most
+              informative parcels in Schaefer’s brain atlas that contribute to
+              this task. Building on our earlier work demonstrating that
+              functional connectivity can reveal parcels critical for
+              naturalistic perception, we refine this approach by applying “top
+              drop/bottom drop” and “top keep/bottom keep” selection strategies
+              as well as “broken-stick” analysis to focus on regions most
+              relevant for multimodal integration during naturalistic viewing.",
+  year     =  2025
+}
+
+@PHDTHESIS{Kemtur2023-zg,
+  title     = "{AI}-based modeling of brain and behavior: Combining
+               neuroimaging, imitation learning and video games",
+  author    = "Kemtur, A",
+  publisher = "umontreal.scholaris.ca",
+  year      =  2023,
+  school    = "Université de Montréal"
+}
+
+@ARTICLE{Scholz2024-la,
+  title    = "Individual brain activity patterns during task are predicted by
+              distinct resting-state networks that may reflect local
+              neurobiological features",
+  author   = "Scholz, Robert and Benn, Austin and Shevchenko, Victoria and
+              Klatzmann, Ulysse and Wei, Wei and Alberti, Francesco and Chiou,
+              Rocco and Zhang, Xi-Han and Leech, Robert and Smallwood, Jonathan
+              and Margulies, Daniel",
+  journal  = "bioRxiv",
+  abstract = "Understanding how individual cortical features shape functional
+              brain organization offers a promising framework for examining the
+              principles of cognitive specialization in the human brain. This
+              study explores the relationship between various cortical
+              characteristics—i.e resting-state functional connectivity,
+              structural connectivity, microstructure, morphology, and
+              geometry—and the layout of task-specific functional activations.
+              We employ linear models to predict the functional layout of the
+              cortex at the individual level from each of these feature
+              modalities. Our findings demonstrate that resting-state component
+              loadings predict individual task activations, consistently across
+              hemispheres and independent datasets. Whereas the first few
+              components provide a common space for functional activations
+              across tasks, predictive higher-order component loadings
+              demonstrated task-specificity. Cortical microstructure/morphology
+              was notably predictive of activation strength in the occipital
+              cortex, highlighting its relevance for cortical functional
+              specialization. By relating resting state components to a set of
+              reference maps of cortical organization, we identify associations
+              that suggest possible neurobiological underpinnings of specific
+              cognitive functions. The remaining feature modalities were only
+              predictive of group-level functional activations. These results
+              advance our understanding of how distinct cortical features may
+              contribute to functional specialization, guiding future inquiry
+              into the organization of cognitive functions on the cortex.",
+  year     =  2024
+}
+
+@ARTICLE{Sainath2025-hr,
+  title    = "Task-optimized Artificial Neural Networks align with human brain
+              activity in a visual working memory task",
+  author   = "Sainath, Pravish and Lajoie, Guillaume and Bellec, Lune",
+  journal  = "PsyArXiv",
+  abstract = "Brain encoding using Artificial Neural Networks (ANNs) has
+              recently emerged as a powerful tool to uncover which features of
+              complex stimuli drive brain activity in a fully data-driven
+              manner. While previous research has primarily focused on
+              perception (vision, audition), this study explores the application
+              of recurrent neural networks (RNNs) to model visual working memory
+              through a 2-back task. Participants viewed sequences of images and
+              identified whether each image was seen two steps back in the
+              sequence. We trained Long-Short Term Memory (LSTM) networks on
+              this task using pixel-level representations of complex images from
+              the ImageNet database and utilized the learned representations to
+              predict functional brain activity recorded from subjects
+              performing the 2-back task designed by the Human Connectome
+              Project. Results demonstrate that ANNs can perform the 2-back task
+              with high accuracy, and sparse attention mechanisms were
+              beneficial for a fixed network capacity. The artificial
+              representations of images effectively encoded individual brain
+              activity during 2-back trials. High encoding accuracy was
+              consistently observed in regions such as the dorsal and visual
+              dorsal streams, and frontal cortices.",
+  year     =  2025
+}
+
+@PHDTHESIS{Freteault2025-bp,
+  title     = "Neuro-inspired artificial intelligence applied to auditory
+               perception and imagination of natural scenes",
+  author    = "Freteault, M",
+  publisher = "theses.hal.science",
+  year      =  2025,
+  school    = "Université de Montréal"
+}
+
+@PHDTHESIS{Harel2024-pa,
+  title     = "Du flux cérébral au flow psychologique: vers une étude de la
+               fluctuation des états attentionnels par la neuroimagerie du jeu
+               vidéo",
+  author    = "Harel, Yann",
+  publisher = "umontreal.scholaris.ca",
+  abstract  = "(étude 2). Enfin, nous avons investigué les corrélats neuronaux
+               de fluctuations de l’état attentionnel lors résolution temporelle
+               de la magnétoencéphalographie (étude 3). Cette dernière",
+  year      =  2024,
+  school    = "Université de Montréal"
+}
+
+@ARTICLE{Bilgin2025-xz,
+  title    = "Brain-informed language model training enables scalable and
+              generalizable alignment with human brain activity",
+  author   = "Bilgin, Isil Poyraz and St-Laurent, Marie and Bellec, Lune P and
+              Wehbe, Leila",
+  journal  = "openreview.net",
+  abstract = "Language models (LMs) provide rich representational spaces that
+              partially align with neural activity during naturalistic
+              experiences such as movie watching. Yet leveraging brain
+              recordings to actively guide LM training remains underexplored.
+              Here, we address this question by investigating whether functional
+              MRI recordings can guide LLM training by aligning language
+              representations with brain dynamics. Using over 50 hours of fMRI
+              data from six participants watching Friends, plus 10 hours of
+              held-out movies, we augmented pre-trained and randomly initialized
+              LMs with a brain alignment module and compared multiple training
+              strategies. Our results show three main findings. First,
+              brain-informed fine-tuning consistently outperforms text-only
+              baselines and brain-from-scratch models, with voxel-level gains
+              that scale with both model size (GPT-2 124M, LLaMA-2 7B) and
+              training duration (1–40 hours). These improvements generalize
+              across participants and out-of-sample movies, yielding robust
+              cross-subject and cross-stimulus encoding. Second, a
+              dual-objective loss that balances language modeling with brain
+              alignment surpasses brain-only optimization, producing more stable
+              and generalizable encoders. Finally, brain supervision enriches LM
+              representations with multisensory inductive biases:
+              brain-fine-tuned models outperform unimodal baselines on
+              VL-Commonsense, better capturing perceptual and associative
+              properties (e.g., color, shape, co-occurrence) that text-only
+              training underrepresents. Together, these results establish
+              cortical dynamics as an effective supervisory signal, enabling
+              scalable, generalizable, and brain-aligned LMs that internalize
+              aspects of human-like multimodal representation.",
+  month    =  oct,
+  year     =  2025,
+  language = "en"
+}
+
+@INCOLLECTION{Corsico2026-hy,
+  title     = "Decoding affective states from {fMRI} using automatically labeled
+               multi-modal movie stimuli",
+  author    = "Corsico, Andrea and Rigamonti, Giorgia and Zini, Simone and
+               Celona, Luigi and Napoletano, Paolo",
+  booktitle = "Lecture Notes in Computer Science",
+  publisher = "Springer Nature Switzerland",
+  address   = "Cham",
+  pages     = "89--100",
+  series    = "Lecture Notes in Computer Science",
+  year      =  2026,
+  language  = "en"
+}
+
+@ARTICLE{Toneva2022-vu,
+  title     = "Same cause; Different effects in the brain",
+  author    = "Toneva, Mariya and Williams, Jennifer and Bollu, Anand and Dann,
+               Christoph and Wehbe, Leila",
+  journal   = "Proc. Mach. Learn. Res.",
+  publisher = "pmc.ncbi.nlm.nih.gov",
+  volume    =  177,
+  pages     = "787--825",
+  abstract  = "To study information processing in the brain, neuroscientists
+               manipulate experimental stimuli while recording participant brain
+               activity. They can then use encoding models to find out which
+               brain ``zone'' (e.g. which region of interest, volume pixel or
+               electrophysiology sensor) is predicted from the stimulus
+               properties. Given the assumptions underlying this setup, when
+               stimulus properties are predictive of the activity in a zone,
+               these properties are understood to cause activity in that zone.
+               In recent years, researchers have used neural networks to
+               construct representations that capture the diverse properties of
+               complex stimuli, such as natural language or natural images.
+               Encoding models built using these high-dimensional
+               representations are often able to significantly predict the
+               activity in large swathes of cortex, suggesting that the activity
+               in all these brain zones is caused by stimulus properties
+               captured in the representation. It is then natural to ask: ``Is
+               the activity in these different brain zones caused by the
+               stimulus properties in the same way?'' In neuroscientific terms,
+               this corresponds to asking if these different zones process the
+               stimulus properties in the same way. Here, we propose a new
+               framework that enables researchers to ask if the properties of a
+               stimulus affect two brain zones in the same way. We use simulated
+               data and two real fMRI datasets with complex naturalistic stimuli
+               to show that our framework enables us to make such inferences.
+               Our inferences are strikingly consistent between the two
+               datasets, indicating that the proposed framework is a promising
+               new tool for neuroscientists to understand how information is
+               processed in the brain.",
+  month     =  apr,
+  year      =  2022,
+  keywords  = "encoding models; fMRI; interpretability; neurolinguistics;
+               neuroscience; regression",
+  language  = "en"
+}
+
+@ARTICLE{Rogalla2026-vi,
+  title         = "Probabilistic prediction of neural dynamics via
+                   autoregressive flow matching",
+  author        = "Rogalla, Nicole and Qin, Yuzhen and Senden, Mario and
+                   El-Gazzar, Ahmed and van Gerven, Marcel",
+  journal       = "arXiv [q-bio.NC]",
+  abstract      = "Forecasting neural activity in response to naturalistic
+                   stimuli remains a key challenge for understanding brain
+                   dynamics and enabling downstream neurotechnological
+                   applications. Here, we introduce a generative forecasting
+                   framework for modeling neural dynamics based on
+                   autoregressive flow matching (AFM). Building on recent
+                   advances in transport-based generative modeling, our approach
+                   probabilistically predicts neural responses at scale from
+                   multimodal sensory input. Specifically, we learn the
+                   conditional distribution of future neural activity given past
+                   neural dynamics and concurrent sensory input, explicitly
+                   modeling neural activity as a temporally evolving process in
+                   which future states depend on recent neural history. We
+                   evaluate our framework on the Algonauts project 2025
+                   challenge functional magnetic resonance imaging dataset using
+                   subject-specific models. AFM significantly outperforms both a
+                   non-autoregressive flow-matching baseline and the official
+                   challenge general linear model baseline in predicting
+                   short-term parcel-wise blood oxygenation level-dependent
+                   (BOLD) activity, demonstrating improved generalization and
+                   widespread cortical prediction performance. Ablation analyses
+                   show that access to past BOLD dynamics is a dominant driver
+                   of performance, while autoregressive factorization yields
+                   consistent, modest gains under short-horizon, context-rich
+                   conditions. Together, these findings position autoregressive
+                   flow-based generative modeling as an effective approach for
+                   short-term probabilistic forecasting of neural dynamics with
+                   promising applications in closed-loop neurotechnology.",
+  month         =  apr,
+  year          =  2026,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.NC"
+}
+
+@ARTICLE{Policzer2025-ja,
+  title         = "The one where they brain-tune for social cognition:
+                   Multi-modal brain-tuning on Friends",
+  author        = "Policzer, Nico and Braunstein, Cameron and Toneva, Mariya",
+  journal       = "arXiv [cs.AI]",
+  abstract      = "Recent studies on audio models show brain-tuning -
+                   fine-tuning models to better predict corresponding fMRI
+                   activity - improves brain alignment and increases performance
+                   on downstream semantic and audio tasks. We extend this
+                   approach to a multimodal audio-video model to enhance social
+                   cognition, targeting the Superior Temporal Sulcus (STS), a
+                   key region for social processing, while subjects watch
+                   Friends. We find significant increases in brain alignment to
+                   the STS and an adjacent ROI, as well as improvements to a
+                   social cognition task related to the training data - sarcasm
+                   detection in sitcoms. In summary, our study extends
+                   brain-tuning to the multi-modal domain, demonstrating
+                   improvements to a downstream task after tuning to a relevant
+                   functional region.",
+  month         =  nov,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.AI"
+}
+
+@INPROCEEDINGS{Dong2023-cd,
+  title       = "Interpreting multimodal video transformers using brain
+                 recordings",
+  author      = "Dong, Dota Tianai and Toneva, Mariya",
+  booktitle   = "ICLR 2023 Workshop on Multimodal Representation Learning: Perks
+                 and Pitfalls",
+  institution = "ICLR 2023 Workshop on Multimodal Representation Learning",
+  abstract    = "Integrating information from multiple modalities is arguably
+                 one of the essential prerequisites for grounding artificial
+                 intelligence systems with an understanding of the real world.
+                 Recent advances in video transformers that jointly learn from
+                 vision, text, and sound over time have made some progress
+                 toward this goal, but the degree to which these models
+                 integrate information from the input modalities still remains
+                 unclear. In this work, we present a promising approach for
+                 probing a multimodal video transformer model by leveraging
+                 neuroscientific evidence of multimodal information processing
+                 in the brain. We use the brain recordings of subjects watching
+                 a popular TV show to interpret the integration of multiple
+                 modalities in a video transformer, before and after it is
+                 trained to perform a question-answering task that requires
+                 vision and language information. For the early and middle
+                 layers, we show that fine-tuning on the vision-language task
+                 does not improve the alignment in brain regions that are
+                 thought to support the integration of multimodal information
+                 over their pre-trained counterparts. We further show that the
+                 top layers of the fine-tuned model align substantially less
+                 with the brain representations, and yield better task
+                 performances than other layers, which indicates that the task
+                 may require additional information from the one available in
+                 the brain recordings.",
+  month       =  may,
+  year        =  2023
+}
+
+@MISC{BoyleUnknown-cr,
+  title        = "{CNeuroMod} Data Collection Complete: {200h} of individual
+                  {fMRI} Across Diverse Naturalistic and Controlled Tasks to
+                  build {NeuroAI} models",
+  author       = "Boyle, Julie A and Pinsard, Basile",
+  abstract     = "Dense fMRI datasets are gaining popularity as a powerful
+                  resource to build integrative NeuroAI models to understand the
+                  brain. The Courtois Project on Neuronal Modelling (CNeuroMod)
+                  has now completed a 5-years data collection process resulting
+                  in 200 hours of fMRI data per subject using diverse
+                  naturalistic and controlled cognitive tasks. CNeuroMod is the
+                  largest dense fMRI dataset currently available to support the
+                  development of individualized and generalizable AI models of
+                  complex brain processes.",
+  howpublished = "\url{https://2025.ccneuro.org/abstract\_pdf/Boyle\_2025\_CNeuroMod\_Data\_Collection\_Complete\_200h\_individual.pdf}",
+  note         = "Accessed: 2026-5-4"
+}
+
+@ARTICLE{Fortier2025-bo,
+  title     = "{MRI} noise and auditory health: Can one hundred scans be linked
+               to hearing loss? The case of the Courtois {NeuroMod} project",
+  author    = "Fortier, Eddy and Bellec, Pierre and Boyle, Julie A and Fuente,
+               Adrian",
+  journal   = "PLoS One",
+  publisher = "Public Library of Science (PLoS)",
+  volume    =  20,
+  number    =  1,
+  pages     = "e0309513",
+  abstract  = "Magnetic resonance imaging (MRI) is one of the most commonly used
+               tools in neuroscience. However, it implies exposure to high noise
+               levels. Exposure to noise can lead to temporary or permanent
+               hearing loss, especially when the exposure is long and/or
+               repeated. Little is known about the hearing risks for people
+               undergoing several MRI examinations, especially in the context of
+               longitudinal studies. The goal of this study was to assess the
+               potential impact of repeated exposure to MRI noise on hearing in
+               research participants undergoing dozens of MRI scans. This
+               investigation was made possible thanks to an unprecedented
+               intensive MRI research data collection effort (the Courtois
+               NeuroMod project) where participants have been scanned weekly (up
+               to twice a week), with the use of hearing protection, since 2018.
+               Their hearing was tested periodically, over a period of 1.5
+               years. First, baseline pure-tone thresholds and distortion
+               product otoacoustic emission (DPOAE) amplitudes were acquired
+               before the beginning of this study. Hearing tests were then
+               scheduled immediately before/immediately after a scan and with a
+               delay of two to seven days after a scan. Pure-tone thresholds and
+               DPOAE amplitudes showed no scanner noise impact right after the
+               scan session when compared to the values acquired right before
+               the scan session. Pure-tone thresholds and DPOAE amplitudes
+               acquired in the delayed condition and compared to the baseline
+               showed similar results. These results suggest an absence of
+               impact from MRI noise exposure. Overall, our results show that an
+               intensive longitudinal MRI study like the Courtois NeuroMod
+               project likely does not cause hearing damage to participants when
+               they properly utilize adequate hearing protection.",
+  month     =  jan,
+  year      =  2025,
+  language  = "en"
+}
+
+@INPROCEEDINGS{d-Ascoli2026-hf,
+  title     = "{TRIBE}: {TRImodal} Brain Encoder for whole-brain {fMRI} response
+               prediction",
+  author    = "d'Ascoli, Stéphane and Rapin, Jérémy and Benchetrit, Yohann and
+               Banville, Hubert and King, Jean-Rémi",
+  booktitle = "Proceedings of the 14th International Conference on Learning
+               Representations 2026",
+  abstract  = "Historically, neuroscience has progressed by fragmenting into
+               specialized domains, each focusing on isolated modalities, tasks,
+               or brain regions. While fruitful, this approach hinders the
+               development of a unified model of cognition. Here, we introduce
+               TRIBE, the first deep neural network trained to predict brain
+               responses to stimuli across multiple modalities, cortical areas
+               and individuals. By combining the pretrained representations of
+               text, audio and video foundational models and handling their
+               time-evolving nature with a transformer, our model can precisely
+               model the spatial and temporal fMRI responses to videos,
+               achieving the first place in the Algonauts 2025 brain encoding
+               competition with a significant margin over competitors. Ablations
+               show that while unimodal models can reliably predict their
+               corresponding cortical networks (e.g. visual or auditory
+               networks), they are systematically outperformed by our multimodal
+               model in high-level associative cortices. Currently applied to
+               perception and comprehension, our approach paves the way towards
+               building an integrative model of representations in the human
+               brain. Our code is available at
+               https://github.com/facebookresearch/algonauts-2025.",
+  month     =  apr,
+  year      =  2026
+}
+
+@INPROCEEDINGS{Harel2025-gl,
+  title     = "Human-{AI} Alignment of Learning Trajectories in Video Games: a
+               continual {RL} benchmark proposal",
+  author    = "Harel, Yann and Bellec, Lune P and Paugam, François and Delhaye,
+               Hugo and Durand, Audrey",
+  booktitle = "Reinforcement Learning and Video Games Workshop @ RLC 2025",
+  abstract  = "We propose a design for a continual reinforcement learning (CRL)
+               benchmark called GHAIA, centered on human-AI alignment of
+               learning trajectories in structured video game environments.
+               Using \textit{Super Mario Bros.} as a case study, gameplay is
+               decomposed into short, annotated scenes organized into diverse
+               task sequences based on gameplay patterns and difficulty.
+               Evaluation protocols measure both plasticity and stability, with
+               flexible revisit and pacing schedules. A key innovation is the
+               inclusion of high-resolution human gameplay data collected under
+               controlled conditions, enabling direct comparison of human and
+               agent learning. In addition to adapting classical CRL metrics
+               like forgetting and backward transfer, we introduce semantic
+               transfer metrics capturing learning over groups of scenes sharing
+               similar game patterns. We demonstrate the feasibility of our
+               approach on human and agent data, and discuss key aspects of the
+               first release for community input.",
+  month     =  jul,
+  year      =  2025
+}
+
+@ARTICLE{Paugam2025-oq,
+  title       = "Training neural networks from scratch in a videogame leads to
+                 brittle brain encoding",
+  author      = "Paugam, François and Pinsard, Basile and St-Laurent, Marie and
+                 Lajoie, Guillaume and Bellec, Lune",
+  journal     = "bioRxiv",
+  institution = "bioRxiv",
+  abstract    = "Abstract Recent brain-encoding studies using videogame tasks
+                 suggest that the training objective of an artificial neural
+                 network plays a central role in how well the network’s
+                 representations align with brain activity. This study
+                 investigates the alignment of artificial neural network
+                 activations with brain activity elicited by a video game task
+                 using models trained from scratch in controlled settings. We
+                 specifically compared three model training objectives:
+                 reinforcement learning, imitation learning, and a vision task,
+                 while accounting for other potential factors which may impact
+                 performance such as training data and model architecture. We
+                 tested models on brain encoding, i.e. their ability to predict
+                 functional magnetic resonance imaging (fMRI) signals acquired
+                 while human subjects played different levels of the video game
+                 Super Mario Bros. When tested on new playthroughs from the game
+                 levels seen at training, the reinforcement learning objective
+                 had a small but significant advantage in brain encoding,
+                 followed by the imitation learning and vision models. We
+                 hypothesized that brain-aligned representations would emerge
+                 only in task-competent models, and that the specific brain
+                 regions well encoded by a model would depend on the nature of
+                 the task it was trained on. While brain encoding did improve
+                 during model training, even an untrained model with matching
+                 architecture approached the performance of the best models.
+                 Contrary to our hypotheses, no model layers or specific
+                 training objectives aligned preferentially with specific brain
+                 areas. Large performance gaps also persisted in fully trained
+                 models across game levels, both those seen during training and
+                 entirely novel ones. Overall, even though reinforcement
+                 learning presented a small advantage to train brain encoding
+                 models for videogame data, all tested brain encoding models
+                 exhibited brittle performance with limited generalization both
+                 within- and out-of-distribution. Overall, our results suggest
+                 that training small artificial models from scratch is not
+                 sufficiently reliable, and that incorporating pretrained models
+                 such as foundation vision–action models may ultimately be
+                 necessary to support robust inferences about brain
+                 representations.",
+  month       =  dec,
+  year        =  2025
+}
+
+@MISC{Harel_undated-rz,
+  title    = "Brittle Brain Encoding: Poor Out-of-Distribution Generalization
+              Shows the Human Brain is neither a Nintendo Entertainment System
+              nor a Four-Layer Convolutional Neural Network",
+  author   = "Harel, Yann and St-Laurent, Marie and Bellec, Lune",
+  abstract = "To explore the correspondence between artificial neural networks
+              and brain function, we tested three models-trained agent,
+              untrained agent, and game RAM-on their capacity to use game data
+              to predict brain activity (fMRI) in humans playing Super Mario
+              Bros. All brain encoding models performed similarly within the
+              training distribution (training levels), but none generalized to
+              out-of-distribution (OOD) levels. The OOD performance drop was
+              generally greater than the difference between models. Our results
+              underscore how current brain encoding approaches may overstate
+              brain-model similarity, and highlight the critical importance of
+              evaluating generalization when using brain scores to compare
+              models."
+}
+
+@ARTICLE{Scotti2025-dn,
+  title         = "Insights from the Algonauts 2025 winners",
+  author        = "Scotti, Paul S and Tripathy, Mihir",
+  journal       = "arXiv [q-bio.NC]",
+  abstract      = "The Algonauts 2025 Challenge just wrapped up a few weeks ago.
+                   It is a biennial challenge in computational neuroscience in
+                   which teams attempt to build models that predict human brain
+                   activity from carefully curated stimuli. Previous editions
+                   (2019, 2021, 2023) focused on still images and short videos;
+                   the 2025 edition, which concluded last month (late July),
+                   pushed the field further by using long, multimodal movies.
+                   Teams were tasked with predicting fMRI responses across 1,000
+                   whole-brain parcels across four participants in the dataset
+                   who were scanned while watching nearly 80 hours of
+                   naturalistic movie stimuli. These recordings came from the
+                   CNeuroMod project and included 65 hours of training data,
+                   about 55 hours of Friends (seasons 1-6) plus four feature
+                   films (The Bourne Supremacy, Hidden Figures, Life, and The
+                   Wolf of Wall Street). The remaining data were used for
+                   validation: Season 7 of Friends for in-distribution tests,
+                   and the final winners for the Challenge were those who could
+                   best predict brain activity for six films in their held-out
+                   out-of-distribution (OOD) set. The winners were just
+                   announced and the top team reports are now publicly
+                   available. As members of the MedARC team which placed 4th in
+                   the competition, we reflect on the approaches that worked,
+                   what they reveal about the current state of brain encoding,
+                   and what might come next.",
+  month         =  aug,
+  year          =  2025,
+  archivePrefix = "arXiv",
+  primaryClass  = "q-bio.NC"
+}
+
+@ARTICLE{Boudreau2025-ji,
+  title     = "Longitudinal reproducibility of brain and spinal cord
+               quantitative {MRI} biomarkers",
+  author    = "Boudreau, Mathieu and Karakuzu, Agah and Boré, Arnaud and
+               Pinsard, Basile and Zelenkovski, Kiril and Alonso-Ortiz, Eva and
+               Boyle, Julie and Bellec, Lune and Cohen-Adad, Julien",
+  journal   = "Imaging Neurosci. (Camb.)",
+  publisher = "direct.mit.edu",
+  volume    =  3,
+  abstract  = "Quantitative MRI (qMRI) promises better specificity, accuracy,
+               repeatability, and reproducibility relative to its
+               clinically-used qualitative MRI counterpart. Longitudinal
+               reproducibility is particularly important in qMRI. The goal is to
+               reliably quantify tissue properties that may be assessed in
+               longitudinal clinical studies throughout disease progression or
+               during treatment. In this work, we present the initial data
+               release of the quantitative MRI portion of the Courtois project
+               on neural modelling (CNeuroMod), where the brain and cervical
+               spinal cord of six participants were scanned at regular intervals
+               over the course of several years. This first release includes 3
+               years of data collection and up to 10 sessions per participant
+               using quantitative MRI imaging protocols (T1, magnetization
+               transfer (MTR, MTsat), and diffusion). In the brain, T1 MP2RAGE,
+               fractional anisotropy (FA), mean diffusivity (MD), and radial
+               diffusivity (RD) all exhibited high longitudinal reproducibility
+               (intraclass correlation coefficient - ICC ≃ 1 and within-subject
+               coefficient of variations - wCV < 1\%). The spinal cord
+               cross-sectional area (CSA) computed using T2w images and T1
+               MTsatexhibited the best longitudinal reproducibility (ICC ≃ 1 and
+               0.7 respectively, and wCV 2.4\% and 6.9\%). Results from this
+               work show the level of longitudinal reproducibility that can be
+               expected from qMRI protocols in the brain and spinal cord in the
+               absence of hardware and software upgrades, and could help in the
+               design of future longitudinal clinical studies.",
+  month     =  jan,
+  year      =  2025,
+  keywords  = "biomarker; brain; longitudinal; quantitative MRI;
+               reproducibility; spinal cord",
+  language  = "en"
+}
+
+@ARTICLE{Freteault2025-tx,
+  title     = "Alignment of auditory artificial networks with massive individual
+               {fMRI} brain data leads to generalizable improvements in brain
+               encoding and downstream tasks",
+  author    = "Freteault, Maelle and Le Clei, Maximilien and Tetrel, Loic and
+               Bellec, Pierre and Farrugia, Nicolas",
+  journal   = "Imaging Neuroscience",
+  publisher = "MIT Press",
+  abstract  = "Abstract Artificial neural networks trained in the field of
+               artificial intelligence (AI) have emerged as key tools to model
+               brain processes, sparking the idea of aligning network
+               representations with brain dynamics to enhance performance on AI
+               tasks. While this concept has gained support in the visual
+               domain, we investigate here the feasibility of creating auditory
+               artificial neural models directly aligned with individual brain
+               activity. This objective raises major computational challenges,
+               as models have to be trained directly with brain data, which is
+               typically collected at a much smaller scale than data used to
+               train AI models. We aimed to answer two key questions: (1) Can
+               brain alignment of auditory models lead to improved brain
+               encoding for novel, previously unseen stimuli? (2) Can brain
+               alignment lead to generalisable representations of auditory
+               signals that are useful for solving a variety of complex auditory
+               tasks? To answer these questions, we relied on two massive
+               datasets: a deep phenotyping dataset from the Courtois neuronal
+               modelling project, where six subjects watched four seasons (36
+               hours) of the Friends TV series in functional magnetic resonance
+               imaging and the HEAR benchmark, a large battery of downstream
+               auditory tasks. We fine-tuned SoundNet, a small pretrained
+               convolutional neural network with ~2.5M parameters. Aligning
+               SoundNet with brain data from three seasons of Friends led to
+               substantial improvement in brain encoding in the fourth season,
+               extending beyond auditory and visual cortices. We also observed
+               consistent performance gains on the HEAR benchmark, particularly
+               for tasks with limited training data, where brain-aligned models
+               performed comparably to the best-performing models regardless of
+               size. We finally compared individual and group models, finding
+               that individual models often matched or outperformed group models
+               in both brain encoding and downstream task performance,
+               highlighting the data efficiency of fine-tuning with individual
+               brain data. Our results demonstrate the feasibility of aligning
+               artificial neural network representations with individual brain
+               activity during auditory processing, and suggest that this
+               alignment is particularly beneficial for tasks with limited
+               training data. Future research is needed to establish whether
+               larger models can achieve even better performance and whether the
+               observed gains extend to other tasks, particularly in the context
+               of few shot learning.",
+  month     =  mar,
+  year      =  2025,
+  language  = "en"
+}
+
+@ARTICLE{Ahmadi2024-ez,
+  title         = "Training compute-optimal vision transformers for brain
+                   encoding",
+  author        = "Ahmadi, Sana and Paugam, Francois and Glatard, Tristan and
+                   Bellec, Pierre Lune",
+  journal       = "arXiv [eess.IV]",
+  abstract      = "The optimal training of a vision transformer for brain
+                   encoding depends on three factors: model size, data size, and
+                   computational resources. This study investigates these three
+                   pillars, focusing on the effects of data scaling, model
+                   scaling, and high-performance computing on brain encoding
+                   results. Using VideoGPT to extract efficient spatiotemporal
+                   features from videos and training a Ridge model to predict
+                   brain activity based on these features, we conducted
+                   benchmark experiments with varying data sizes (10k, 100k, 1M,
+                   6M) and different model configurations of GPT-2, including
+                   hidden layer dimensions, number of layers, and number of
+                   attention heads. We also evaluated the effects of training
+                   models with 32-bit vs 16-bit floating point representations.
+                   Our results demonstrate that increasing the hidden layer
+                   dimensions significantly improves brain encoding performance,
+                   as evidenced by higher Pearson correlation coefficients
+                   across all subjects. In contrast, the number of attention
+                   heads does not have a significant effect on the encoding
+                   results. Additionally, increasing the number of layers shows
+                   some improvement in brain encoding correlations, but the
+                   trend is not as consistent as that observed with hidden layer
+                   dimensions. The data scaling results show that larger
+                   training datasets lead to improved brain encoding
+                   performance, with the highest Pearson correlation
+                   coefficients observed for the largest dataset size (6M).
+                   These findings highlight that the effects of data scaling are
+                   more significant compared to model scaling in enhancing brain
+                   encoding performance. Furthermore, we explored the impact of
+                   floating-point precision by comparing 32-bit and 16-bit
+                   representations. Training with 16-bit precision yielded the
+                   same brain encoding accuracy as 32-bit, while reducing
+                   training time by 1.17 times, demonstrating its efficiency for
+                   high-performance computing tasks.",
+  month         =  oct,
+  year          =  2024,
+  archivePrefix = "arXiv",
+  primaryClass  = "eess.IV"
+}
+
+@ARTICLE{Paugam2024-jo,
+  title     = "A benchmark of individual auto-regressive models in a massive
+               {fMRI} dataset",
+  author    = "Paugam, François and Pinsard, Basile and Lajoie, Guillaume and
+               Bellec, Pierre",
+  journal   = "Imaging Neuroscience",
+  publisher = "MIT Press",
+  volume    =  2,
+  pages     = "1--23",
+  abstract  = "Abstract Dense functional magnetic resonance imaging datasets
+               open new avenues to create auto-regressive models of brain
+               activity. Individual idiosyncrasies are obscured by group models,
+               but can be captured by purely individual models given sufficient
+               amounts of training data. In this study, we compared several deep
+               and shallow individual models on the temporal auto-regression of
+               BOLD time-series recorded during a natural video-watching task.
+               The best performing models were then analyzed in terms of their
+               data requirements and scaling, subject specificity, and the
+               space-time structure of their predicted dynamics. We found the
+               Chebnets, a type of graph convolutional neural network, to be
+               best suited for temporal BOLD auto-regression, closely followed
+               by linear models. Chebnets demonstrated an increase in
+               performance with increasing amounts of data, with no complete
+               saturation at 9 h of training data. Good generalization to other
+               kinds of video stimuli and to resting-state data marked the
+               Chebnets’ ability to capture intrinsic brain dynamics rather than
+               only stimulus-specific autocorrelation patterns. Significant
+               subject specificity was found at short prediction time lags. The
+               Chebnets were found to capture lower frequencies at longer
+               prediction time lags, and the spatial correlations in predicted
+               dynamics were found to match traditional functional connectivity
+               networks. Overall, these results demonstrate that large
+               individual functional magnetic resonance imaging (fMRI) datasets
+               can be used to efficiently train purely individual
+               auto-regressive models of brain activity, and that massive
+               amounts of individual data are required to do so. The excellent
+               performance of the Chebnets likely reflects their ability to
+               combine spatial and temporal interactions on large time scales at
+               a low complexity cost. The non-linearities of the models did not
+               appear as a key advantage. In fact, surprisingly, linear versions
+               of the Chebnets appeared to outperform the original non-linear
+               ones. Individual temporal auto-regressive models have the
+               potential to improve the predictability of the BOLD signal. This
+               study is based on a massive, publicly-available dataset, which
+               can serve for future benchmarks of individual auto-regressive
+               modeling.",
+  month     =  jul,
+  year      =  2024,
+  language  = "en"
+}
+
+@ARTICLE{Toneva2022-bf,
+  title    = "Combining computational controls with natural text reveals aspects
+              of meaning composition",
+  author   = "Toneva, Mariya and Mitchell, Tom M and Wehbe, Leila",
+  journal  = "Nat Comput Sci",
+  volume   =  2,
+  number   =  11,
+  pages    = "745--757",
+  abstract = "To study a core component of human intelligence-our ability to
+              combine the meaning of words-neuroscientists have looked to
+              linguistics. However, linguistic theories are insufficient to
+              account for all brain responses reflecting linguistic composition.
+              In contrast, we adopt a data-driven approach to study the composed
+              meaning of words beyond their individual meaning, which we term
+              'supra-word meaning'. We construct a computational representation
+              for supra-word meaning and study its brain basis through brain
+              recordings from two complementary imaging modalities. Using
+              functional magnetic resonance imaging, we reveal that hubs that
+              are thought to process lexical meaning also maintain supra-word
+              meaning, suggesting a common substrate for lexical and
+              combinatorial semantics. Surprisingly, we cannot detect supra-word
+              meaning in magnetoencephalography, which suggests that composed
+              meaning might be maintained through a different neural mechanism
+              than the synchronized firing of pyramidal cells. This sensitivity
+              difference has implications for past neuroimaging results and
+              future wearable neurotechnology.",
+  month    =  nov,
+  year     =  2022,
+  language = "en"
+}
+
+@ARTICLE{Borghesani2023-me,
+  title     = "The Three Terms Task - an open benchmark to compare human and
+               artificial semantic representations",
+  author    = "Borghesani, V and Armoza, J and Hebart, M N and Bellec, P and
+               Brambati, S M",
+  journal   = "Scientific Data",
+  publisher = "Nature Publishing Group",
+  volume    =  10,
+  number    =  1,
+  pages     = "1--13",
+  abstract  = "Word processing entails retrieval of a unitary yet
+               multidimensional semantic representation (e.g., a lemon’s colour,
+               flavour, possible use) and has been investigated in both
+               cognitive neuroscience and artificial intelligence. To enable the
+               direct comparison of human and artificial semantic
+               representations, and to support the use of natural language
+               processing (NLP) for computational modelling of human
+               understanding, a critical challenge is the development of
+               benchmarks of appropriate size and complexity. Here we present a
+               dataset probing semantic knowledge with a three-terms semantic
+               associative task: which of two target words is more closely
+               associated with a given anchor (e.g., is lemon closer to squeezer
+               or sour?). The dataset includes both abstract and concrete nouns
+               for a total of 10,107 triplets. For the 2,255 triplets with
+               varying levels of agreement among NLP word embeddings, we
+               additionally collected behavioural similarity judgments from
+               1,322 human raters. We hope that this openly available,
+               large-scale dataset will be a useful benchmark for both
+               computational and neuroscientific investigations of semantic
+               knowledge.",
+  month     =  mar,
+  year      =  2023,
+  language  = "en"
+}
+
+@ARTICLE{Kemtur2023-px,
+  title    = "Behavioral Imitation with Artificial Neural Networks Leads to
+              Personalized Models of Brain Dynamics During Videogame Play",
+  author   = "Kemtur, Anirudha and Paugam, Francois and Pinsard, Basile and
+              Sainath, Pravish and Le Clei, Maximilien and Boyle, Julie and
+              Jerbi, Karim and Bellec, Pierre",
+  journal  = "bioRxiv",
+  pages    = "2023.10.28.564546",
+  abstract = "Artificial Neural networks (ANN) trained on complex tasks are
+              increasingly used in neuroscience to model brain dynamics, a
+              process called brain encoding. Videogames have been extensively
+              studied in the field of artificial intelligence, but have hardly
+              been used yet for brain encoding. Videogames provide a promising
+              framework to understand brain activity in a rich, engaging, and
+              active environment. A major challenge raised by complex videogames
+              is that individual behavior is highly variable across subjects,
+              and we hypothesized that ANNs need to account for subject-specific
+              behavior in order to properly capture brain dynamics. In this
+              study, we used ANNs to model functional magnetic resonance imaging
+              (fMRI) and behavioral gameplay data, both collected while subjects
+              played the Shinobi III videogame. Using imitation learning, we
+              trained an ANN to play the game while closely replicating the
+              unique gameplay style of individual participants. We found that
+              hidden layers of our imitation learning model successfully encoded
+              task-relevant neural representations, and predicted individual
+              brain dynamics with higher accuracy than models trained on other
+              subjects' gameplay or control models. The highest correlations
+              between layer activations and brain signals were observed in
+              biologically plausible brain areas, i.e. somatosensory, attention,
+              and visual networks. Our results highlight the potential of
+              combining imitation learning, brain imaging, and videogames to
+              uncover idiosyncratic aspects of behavior and how those relate
+              with individual brain activity. \#\#\# Competing Interest
+              Statement The authors have declared no competing interest.",
+  month    =  nov,
+  year     =  2023,
+  language = "en"
+}
+
+@ARTICLE{Rastegarnia2023-qz,
+  title     = "Brain decoding of the Human Connectome Project tasks in a dense
+               individual {fMRI} dataset",
+  author    = "Rastegarnia, Shima and St-Laurent, Marie and DuPre, Elizabeth and
+               Pinsard, Basile and Bellec, Pierre",
+  journal   = "Neuroimage",
+  publisher = "Elsevier",
+  volume    =  283,
+  pages     =  120395,
+  abstract  = "Brain decoding aims to infer cognitive states from patterns of
+               brain activity. Substantial inter-individual variations in
+               functional brain organization challenge accurate decoding
+               performed at the group level. In this paper, we tested whether
+               accurate brain decoding models can be trained entirely at the
+               individual level. We trained several classifiers on a dense
+               individual functional magnetic resonance imaging (fMRI) dataset
+               for which six participants completed the entire Human Connectome
+               Project (HCP) task battery >13 times over ten separate fMRI
+               sessions. We evaluated nine decoding methods, from Support Vector
+               Machines (SVM) and Multi-Layer Perceptron (MLP) to Graph
+               Convolutional Neural Networks (GCN). All decoders were trained to
+               classify single fMRI volumes into 21 experimental conditions
+               simultaneously, using ∼7 h of fMRI data per participant. The best
+               prediction accuracies were achieved with GCN and MLP models,
+               whose performance (57-67 \% accuracy) approached state-of-the-art
+               accuracy (76 \%) with models trained at the group level on >1 K
+               hours of data from the original HCP sample. Our SVM model also
+               performed very well (54-62 \% accuracy). Feature importance maps
+               derived from MLP -our best-performing model- revealed informative
+               features in regions relevant to particular cognitive domains,
+               notably in the motor cortex. We also observed that inter-subject
+               classification achieved substantially lower accuracy than
+               subject-specific models, indicating that our decoders learned
+               individual-specific features. This work demonstrates that
+               densely-sampled neuroimaging datasets can be used to train
+               accurate brain decoding models at the individual level. We expect
+               this work to become a useful benchmark for techniques that
+               improve model generalization across multiple subjects and
+               acquisition conditions.",
+  month     =  dec,
+  year      =  2023,
+  keywords  = "Individual brain models; decoding cognitive states; deep
+               learning; dense sampling; fMRI; machine learning",
+  language  = "en"
+}
+
+@ARTICLE{Paugam2023-tf,
+  title    = "A benchmark of individual auto-regressive models in a massive
+              {fMRI} dataset",
+  author   = "Paugam, François and Pinsard, Basile and Lajoie, Guillaume and
+              Bellec, Pierre",
+  journal  = "PsyArXiv",
+  abstract = "Dense functional magnetic resonance imaging datasets open new
+              avenues to create auto-regressive models of brain activity.
+              Individual idiosyncrasies are obscured by group models, but can be
+              captured by purely individual models given sufficient amounts of
+              training data. In this study, we compared several deep and shallow
+              individual models on the auto-regression of BOLD time series
+              recorded during a natural video watching task. The best performing
+              models were then analyzed in terms of their data requirements and
+              scaling, subject specificity and the space-time structure of their
+              predicted dynamics.We found the Chebnets, a type of graph
+              convolutional neural network, to be best suited for BOLD
+              auto-regression, closely followed by linear models. Chebnets
+              demonstrated an increase in performance with increasing amounts of
+              data, with no complete saturation at 9 h of training data.
+              Significant subject specificity was found at short prediction time
+              lags. The Chebnets were found to capture lower frequencies at
+              longer prediction time lags, and the spatial correlations in
+              predicted dynamics were found to match traditional functional
+              connectivity networks.Overall, these results demonstrate that
+              large individual fMRI datasets can be used to efficiently train
+              purely individual auto-regressive models of brain activity, and
+              that massive amounts of individual data are required to do so. The
+              excellent performance of the Chebnets likely reflects their
+              ability to combine spatial and temporal interactions on large time
+              scales at a low complexity cost. Individual auto-regressive models
+              have the potential to improve our understanding of the functional
+              interactions in the human brain. This study is based on a massive,
+              publicly-available dataset, which can serve for future benchmarks
+              of individual auto-regressive modeling.",
+  month    =  feb,
+  year     =  2023
+}
+
+@INPROCEEDINGS{Kemtur2022-ds,
+  title     = "{AI}-based modeling of brain and behavior: Combining
+               neuroimaging, imitation learning and video games",
+  author    = "Kemtur, A and Paugam, F and Pinsard, B and Sainath, P and Harel,
+               Y and Le clei, M and Boyle, J A and Jerbi, K and Bellec, P",
+  booktitle = "2022 Conference on Cognitive Computational Neuroscience",
+  pages     =  1303,
+  year      =  2022
+}

@@ -1,0 +1,71 @@
+{
+  "projectName": "anat",
+  "contributors": [
+    {
+      "login": "FrancoisPgm",
+      "name": "François Paugam",
+      "profile": "https://github.com/FrancoisPgm",
+      "contributions": ["data"]
+    },
+    {
+      "login": "bamal",
+      "name": "Amal Boukhdhir",
+      "profile": "https://github.com/bamal",
+      "contributions": ["data"]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile Pinsard",
+      "profile": "https://github.com/bpinsard",
+      "contributions": ["design", "ideas", "data"]
+    },
+    {
+      "login": "jcohenadad",
+      "name": "Julien Cohen-Adad",
+      "profile": "http://www.neuro.polymtl.ca",
+      "contributions": ["design", "ideas", "data"]
+    },
+    {
+      "login": "emilie-dessureault",
+      "name": "Emilie Dessureault",
+      "profile": "https://github.com/emilie-dessureault",
+      "contributions": ["design", "ideas", "projectManagement", "data"]
+    },
+    {
+      "login": "julieaboyle1",
+      "name": "Julie Boyle",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": ["design", "ideas", "projectManagement", "data"]
+    },
+    {
+      "login": "me-pic",
+      "name": "Marie-Eve Picard",
+      "profile": "https://github.com/me-pic",
+      "contributions": ["data"]
+    },
+    {
+      "login": "lunebellec",
+      "name": "Lune Bellec",
+      "profile": "https://github.com/lunebellec",
+      "contributions": ["design", "ideas"]
+    },
+    {
+      "login": "pravishsainath",
+      "name": "Pravish Sainath",
+      "profile": "https://github.com/pravishsainath",
+      "contributions": ["data"]
+    },
+    {
+      "login": "sangfrois",
+      "name": "François Lespinasse",
+      "profile": "https://github.com/sangfrois",
+      "contributions": ["data"]
+    },
+    {
+      "login": "arnaudbore",
+      "name": "Arnaud Bore",
+      "profile": "https://github.com/arnaudbore",
+      "contributions": ["design", "data"]
+    }
+  ]
+}

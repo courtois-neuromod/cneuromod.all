@@ -1,0 +1,31 @@
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 5.8
+      per_subject_h: 1.4
+  tasks:
+    controlled:
+      total_h: 5.8
+      per_subject_h: 1.4
+    contrasts: 12
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: not_collected }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: not_collected }
+
+tasks:
+  - emoji: "👁️"
+    label: "Retinotopy — ring, bar and wedge apertures"
+    note: "5–6 sessions × 3 runs; HCP retinotopy stimuli; fixation task with colour-change detection; pRF maps and 12 visual ROIs (V1–V3, hV4, VO1/2, LO1/2, TO1/2, V3a/b)"
+
+modalities:
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: not_collected }
+      - { label: pupillometry, status: not_collected }

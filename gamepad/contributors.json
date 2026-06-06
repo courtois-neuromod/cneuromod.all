@@ -1,0 +1,57 @@
+{
+  "projectName": "gamepad",
+  "contributors": [
+    {
+      "login": "hyruuk",
+      "name": "Yann Harel",
+      "profile": "https://github.com/hyruuk",
+      "contributions": ["design", "data", "ideas"]
+    },
+    {
+      "name": "André Cyr",
+      "contributions": ["design", "code"]
+    },
+    {
+      "login": "julieaboyle1",
+      "name": "Julie A. Boyle",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": ["data", "projectManagement"]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile Pinsard",
+      "profile": "https://github.com/bpinsard",
+      "contributions": ["design", "data"]
+    },
+    {
+      "name": "Jeremy Bernard",
+      "contributions": ["data"]
+    },
+    {
+      "name": "Marie-France Fourcade",
+      "contributions": ["data"]
+    },
+    {
+      "name": "Himanshu Aggarwal",
+      "contributions": ["design"]
+    },
+    {
+      "name": "Ana Fernanda Ponce",
+      "contributions": ["design"]
+    },
+    {
+      "name": "Bertrand Thirion",
+      "contributions": ["design", "ideas"]
+    },
+    {
+      "name": "Karim Jerbi",
+      "contributions": ["design"]
+    },
+    {
+      "login": "lunebellec",
+      "name": "Lune Bellec",
+      "profile": "https://github.com/lunebellec",
+      "contributions": ["design", "projectManagement", "ideas", "financial"]
+    }
+  ]
+}

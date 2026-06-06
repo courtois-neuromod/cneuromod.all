@@ -1,0 +1,85 @@
+{
+  "files": [
+    "README"
+  ],
+  "projectName": "movie10",
+  "projectOwner": "courtois-neuromod",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "contributors": [
+    {
+      "login": "julieaboyle1",
+      "name": "jboyle",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39348727?v=4",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": [
+        "design",
+        "data",
+        "projectManagement",
+        "doc"
+      ]
+    },
+    {
+      "login": "lunebellec",
+      "name": "Lune Bellec",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1670887?v=4",
+      "profile": "https://github.com/lunebellec",
+      "contributions": [
+        "design",
+        "doc"
+      ]
+    },
+    {
+      "login": "emilie-dessureault",
+      "name": "emilie-dessureault",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61021023?v=4",
+      "profile": "https://github.com/emilie-dessureault",
+      "contributions": [
+        "data",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1155388?v=4",
+      "profile": "https://github.com/bpinsard",
+      "contributions": [
+        "design",
+        "code",
+        "data"
+      ]
+    },
+    {
+      "login": "bamal",
+      "name": "Amal ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10996072?v=4",
+      "profile": "https://github.com/bamal",
+      "contributions": [
+        "data",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "emdupre",
+      "name": "Elizabeth DuPre",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15017191?v=4",
+      "profile": "http://emdupre.me",
+      "contributions": [
+        "review",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "me-pic",
+      "name": "Marie-Eve Picard",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77584086?v=4",
+      "profile": "https://github.com/me-pic",
+      "contributions": [
+        "data"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

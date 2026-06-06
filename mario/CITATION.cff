@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+type: dataset
+title: "CNeuroMod-Mario — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Paugam
+      given-names: François
+    - family-names: Pinsard
+      given-names: Basile
+    - family-names: St-Laurent
+      given-names: Marie
+    - family-names: Lajoie
+      given-names: Guillaume
+    - family-names: Bellec
+      given-names: Lune
+  title: "Training neural networks from scratch in a videogame leads to brittle brain encoding"
+  year: 2025
+  doi: "10.1101/2025.11.28.691119"
+  notes: "bioRxiv preprint"

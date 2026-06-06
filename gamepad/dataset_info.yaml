@@ -1,0 +1,41 @@
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 2.67
+      per_subject_h: 0.67
+  tasks:
+    controlled:
+      total_h: 2.67
+      per_subject_h: 0.67
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: not_collected }
+  - { id: sub-05, status: not_collected }
+  - { id: sub-06, status: available }
+
+tasks:
+  - emoji: "🎮"
+    label: "Cued-response button press — MRI controller validation"
+    note: "4 MRI sessions × 2 runs per subject; participants pressed various controller buttons for short and long durations (5 blocs of 10 trials per condition); MRI-compatible controller compared against a commercial SNES-like controller across alternating mock-scanner sessions"
+
+modalities:
+  - emoji: "🕹️"
+    label: "Behavioural sessions (mock scanner)"
+    components:
+      - { label: "button press events (.tsv)", status: available }
+  - emoji: "🫀"
+    label: "Physiology"
+    components:
+      - { label: "ECG",            status: collected_not_released }
+      - { label: "respiration",    status: collected_not_released }
+      - { label: "plethysmograph", status: collected_not_released }
+      - { label: "EDA",            status: collected_not_released }
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: collected_not_released }
+      - { label: pupillometry, status: collected_not_released }

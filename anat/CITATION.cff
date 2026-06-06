@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+type: dataset
+title: "Anat — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Boudreau
+      given-names: Mathieu
+    - family-names: Karakuzu
+      given-names: Agah
+    - family-names: Boré
+      given-names: Arnaud
+    - family-names: Pinsard
+      given-names: Basile
+    - family-names: Zelenkovski
+      given-names: Kiril
+    - family-names: Alonso-Ortiz
+      given-names: Eva
+    - family-names: Boyle
+      given-names: Julie
+    - family-names: Bellec
+      given-names: Lune
+    - family-names: Cohen-Adad
+      given-names: Julien
+  title: "Longitudinal reproducibility of brain and spinal cord quantitative MRI biomarkers"
+  journal: Imaging Neuroscience
+  year: 2025
+  volume: 3
+  doi: "10.1162/imag_a_00409"

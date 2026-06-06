@@ -1,0 +1,57 @@
+stats:
+  subjects_n: 6
+  neuroimaging:
+    fmri:
+      total_h: 60.0
+      per_subject_h: 10.0
+  physiology:
+    ecg:
+      total_h: 60.0
+      per_subject_h: 10.0
+    respiration:
+      total_h: 60.0
+      per_subject_h: 10.0
+    plethysmograph:
+      total_h: 60.0
+      per_subject_h: 10.0
+    eda:
+      total_h: 60.0
+      per_subject_h: 10.0
+  tasks:
+    video:
+      total_unique: 7.3
+      per_subject_unique: 7.3
+      total_with_repetition: 60.0
+      per_subject_with_repetition: 10.0
+    audio:
+      total_unique: 7.3
+      per_subject_unique: 7.3
+      total_with_repetition: 60.0
+      per_subject_with_repetition: 10.0
+    speech_listening:
+      total_unique: 7.3
+      per_subject_unique: 7.3
+      total_with_repetition: 60.0
+      per_subject_with_repetition: 10.0
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: available }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: available }
+
+tasks:
+  - emoji: "🎬"
+    label: "4 feature films (~7.3 h unique content)"
+    note: "The Bourne Supremacy, The Wolf of Wall Street, Hidden Figures, Life (BBC)"
+
+modalities:
+  - stats_key: "neuroimaging.fmri"
+  - stats_key: "tasks.video"
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: not_collected }
+      - { label: pupillometry, status: not_collected }

@@ -1,0 +1,63 @@
+stats:
+  subjects_n: 5
+  neuroimaging:
+    fmri:
+      total_h: 84.0
+      per_subject_h: 16.8
+  tasks:
+    game:
+      total_h: 84.0
+      per_subject_h: 16.8
+    video:
+      total_unique: 84.0
+      per_subject_unique: 16.8
+      total_with_repetition: 84.0
+      per_subject_with_repetition: 16.8
+    audio:
+      total_unique: 84.0
+      per_subject_unique: 16.8
+      total_with_repetition: 84.0
+      per_subject_with_repetition: 16.8
+  physiology:
+    ecg:
+      total_h: 84.0
+      per_subject_h: 16.8
+    respiration:
+      total_h: 84.0
+      per_subject_h: 16.8
+    plethysmograph:
+      total_h: 84.0
+      per_subject_h: 16.8
+    eda:
+      total_h: 84.0
+      per_subject_h: 16.8
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: not_collected }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: available }
+
+tasks:
+  - emoji: "🎮"
+    label: "Super Mario Bros — in-scanner gameplay"
+    note: "22 levels (excluding water and boss levels); discovery phase (all levels in order, unlimited attempts) then practice phase (random level per run); 3374 total level attempts across 5 participants; ~16.8 h fMRI per participant"
+
+modalities:
+  - emoji: "🕹️"
+    label: "Game logs"
+    components:
+      - { label: "annotated events (.tsv)", status: available, note: "includes button presses and game events aligned to the fMRI" }
+      - { label: "game replay (.bk2)",  status: available }
+      - { label: "video replay (.mp4)", status: available }
+      - { label: "replay summary (.json)", status: available }
+      - { label: "mapped RAM variables (.json)", status: available }
+      - { label: "low-level features (.npy)", status: available }
+      - { label: "scene annotations",   status: available, note: "313 scenes across 22 levels, annotated with 29 design patterns (mario.scenes submodule)" }
+  - emoji: "👁️"
+    label: "Eyetracking"
+    components:
+      - { label: gaze,         status: collected_not_released }
+      - { label: pupillometry, status: collected_not_released }
