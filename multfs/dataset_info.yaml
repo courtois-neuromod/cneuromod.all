@@ -5,7 +5,7 @@ stats:
       total_h: 43.8
       per_subject_h: 8.8
   tasks:
-    game:
+    controlled:
       total_h: 43.8
       per_subject_h: 8.8
 
