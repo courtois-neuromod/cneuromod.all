@@ -43,7 +43,7 @@
 
 /* dataset name column — wide, upright */
 #datasets table th:first-child {
-    width: 120px;
+    width: 165px;
     height: auto;
 }
 
@@ -128,7 +128,19 @@
     margin: 0;
 }
 
-#datasets table td + td:empty,
-#datasets table td + td:has(> p:empty) {
+[data-theme="light"] #datasets table td + td:empty,
+[data-theme="light"] #datasets table td + td:has(> p:empty) {
     background-color: #f0f0f0;
+}
+
+[data-theme="light"] #datasets table.docutils td,
+[data-theme="light"] #datasets table.docutils th {
+  border-left-color: #aaa;
+  border-right-color: #aaa;
+  border-bottom-color: #aaa;
+  border-top-color: #aaa;
+}
+
+#datasets table.docutils th {
+  background-color: transparent;
 }
