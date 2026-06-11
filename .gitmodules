@@ -525,3 +525,8 @@
 	path = triplets/tsnr
 	url = ./triplets/tsnr
 	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
+[submodule "emotion-videos/eyetrackprep"]
+	path = emotion-videos/eyetrackprep
+	url = git@github.com:courtois-neuromod/emotion-videos.eyetrackprep.git
+	datalad-id = 3b3efa3a-bc37-4516-b5c6-8de711f3021a
+	datalad-url = git@github.com:courtois-neuromod/emotion-videos.eyetrackprep.git
