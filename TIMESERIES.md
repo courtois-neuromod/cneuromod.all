@@ -1,7 +1,7 @@
 # timeseries
 
 ## Overview
-fMRI timeseries derived from {dset}.fmriprep derivative datasets extracted with the [cneuromod_extract_tseries library](https://github.com/courtois-neuromod/cneuromod_extract_tseries). {dset}.timeseries sub-datasets contain fMRI timeseries that capture local fluctuations in the BOLD response over time. Signal is standardized, detrended, smoothed, masked, vectorized and saved into 2D arrays that can easily be integrated into machine-learning pipelines.
+fMRI timeseries that capture local fluctuations in the BOLD response over time. <dset>.timeseries are extracted with the [cneuromod_extract_tseries library](https://github.com/courtois-neuromod/cneuromod_extract_tseries) from <dset>.fmriprep derivative datasets. BOLD signal is standardized, detrended, smoothed, masked, vectorized and saved into 2D arrays that can easily be integrated into machine-learning pipelines.
 
 ## Outputs
 We extracted four kinds of timeseries:
@@ -16,9 +16,9 @@ We extracted four kinds of timeseries:
 fMRI timeseries are extracted with scripts from the [cneuromod_extract_tseries library](https://github.com/courtois-neuromod/cneuromod_extract_tseries) installed as a submodule under `./code` inside {dset}.timeseries repositories.
 
 Timeseries extraction steps are the following:
-- **build an EPI mask per subject for every dataset run.** This mask reconciles anatomical specifications (e.g., grey matter mask) and functional signal properties (run-specific fmrprep masks).
+- **build an EPI mask per subject applied to every dataset run.** This mask reconciles anatomical specifications (e.g., grey matter mask) and functional signal properties (run-specific fmriprep masks).
 - **customize the parcellation atlas for each subject**. i.e., resample the parcellation atlas and mask it with the subject' EPI mask to exclude no-signal voxels from parcel signal averaging (parcel-extraction only).
-- **denoise, standardize and smooth EPI volumes**. Use the Niftimasker to mask EPI volumes with the EPI mask, standardize (z-score), smooth (fwhm=5.0) and denoise the run's signal. Denoising is performed by selecting fmriprep confounds with nilearn [load_confounds](https://nilearn.github.io/dev/modules/generated/nilearn.interfaces.fmriprep.load_confounds_strategy.html) to do high pass filtering and regress out 24 motion parameters (6 translation/rotation parameters, their quadratic terms and derivatives), global signal and average white matter and CSF signal.
+- **denoise, standardize and smooth EPI volumes**. Use Niftimasker to mask EPI volumes with the EPI mask, standardize (z-score), smooth (fwhm=5.0) and denoise each run's signal. Denoising is performed by selecting fmriprep confounds with nilearn [load_confounds](https://nilearn.github.io/dev/modules/generated/nilearn.interfaces.fmriprep.load_confounds_strategy.html) to do high pass filtering and regress out 24 motion parameters (6 translation/rotation parameters, their quadratic terms and derivatives), global signal and average white matter and CSF signal.
 - **extract timeseries**. For each pre-processed EPI volumes, vectorize the signal per voxel (with Niftimasker) or averaged per parcel (with NiftiLabelMasker).
 - **save timeseries**. Save each run's timeseries into a nested HDF5 File organized per run and per session for each subject.
 
