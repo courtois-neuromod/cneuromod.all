@@ -525,3 +525,8 @@
 	path = triplets/tsnr
 	url = ./triplets/tsnr
 	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
+[submodule "hcptrt/timeseries"]
+	path = hcptrt/timeseries
+	url = git@github.com:courtois-neuromod/hcptrt.timeseries.git
+	datalad-id = 7485df89-3336-42da-a189-5d6b31ad2e28
+	datalad-url = git@github.com:courtois-neuromod/hcptrt.timeseries.git
