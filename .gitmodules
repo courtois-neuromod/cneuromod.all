@@ -545,3 +545,8 @@
 	url = git@github.com:courtois-neuromod/things.timeseries.git
 	datalad-id = 87f0b9c3-219d-4f12-b64e-a73c2a0219fb
 	datalad-url = git@github.com:courtois-neuromod/things.timeseries.git
+[submodule "friends/timeseries"]
+	path = friends/timeseries
+	url = git@github.com:courtois-neuromod/friends.timeseries.git
+	datalad-id = 888ca6f3-41bc-41b5-9b5f-8f0d965775ff
+	datalad-url = git@github.com:courtois-neuromod/friends.timeseries.git
