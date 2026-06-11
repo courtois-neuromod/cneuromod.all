@@ -540,3 +540,8 @@
 	url = git@github.com:courtois-neuromod/shinobi.timeseries.git
 	datalad-id = 31f6a23d-5308-454e-b4e0-e56e023b8861
 	datalad-url = git@github.com:courtois-neuromod/shinobi.timeseries.git
+[submodule "things/timeseries"]
+	path = things/timeseries
+	url = git@github.com:courtois-neuromod/things.timeseries.git
+	datalad-id = 87f0b9c3-219d-4f12-b64e-a73c2a0219fb
+	datalad-url = git@github.com:courtois-neuromod/things.timeseries.git
