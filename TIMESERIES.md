@@ -1,7 +1,7 @@
 # timeseries
 
 ## Overview
-fMRI timeseries that capture local fluctuations in the BOLD response over time. <dset>.timeseries are extracted with the [cneuromod_extract_tseries library](https://github.com/courtois-neuromod/cneuromod_extract_tseries) from <dset>.fmriprep derivative datasets. BOLD signal is standardized, detrended, smoothed, masked, vectorized and saved into 2D arrays that can easily be integrated into machine-learning pipelines.
+fMRI timeseries that capture local fluctuations in the BOLD response over time. `<dset>.timeseries` are extracted with the [cneuromod_extract_tseries library](https://github.com/courtois-neuromod/cneuromod_extract_tseries) from `<dset>.fmriprep` derivative datasets. BOLD signal is standardized, detrended, smoothed, masked, vectorized and saved into 2D arrays that can easily be integrated into machine-learning pipelines.
 
 ## Outputs
 We extracted four kinds of timeseries:
