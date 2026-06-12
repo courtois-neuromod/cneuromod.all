@@ -1,6 +1,6 @@
 # retinotopy
 
-Three participants (`sub-01`, `sub-02`, `sub-03`, `sub-05`) completed multiple sessions (6 for `sub-01`, `sub-02` and `sub-05`, 5 for `sub-03`) of a retinotopy task adapted from [Kay et al. (2013)](https://doi.org/10.1152/jn.00105.2013) and implemented in PsychoPy. This task was designed to derive population receptive field (pFR) properties at the voxel level and to delineate ROIs from the early visual cortex.
+Four participants (`sub-01`, `sub-02`, `sub-03`, `sub-05`) completed multiple sessions (6 for `sub-01`, `sub-02` and `sub-05`, 5 for `sub-03`) of a retinotopy task adapted from [Kay et al. (2013)](https://doi.org/10.1152/jn.00105.2013) and implemented in PsychoPy. This task was designed to derive population receptive field (pFR) properties at the voxel level and to delineate ROIs from the early visual cortex.
 
 Each session included three 5-minutes functional runs, each of which used a different aperture shape : `ring`, `bar` or `wedge`. A run included eight cycles during which an aperture moved slowly across the stimulated visual field to reveal a portion of visual pattern designed to drive both low-level and high-level visual areas. Patterns were drawn randomly at a rate of 15 fps from the [Human Connectome Project retinotopy stimuli](https://doi.org/10.1167/18.13.23) (downloaded [here](http://kendrickkay.net/analyzePRF)).
 
