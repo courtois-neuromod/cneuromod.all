@@ -316,132 +316,68 @@
 	datalad-url = https://github.com/courtois-neuromod/hearing.git
 [submodule "anat/mriqc"]
 	path = anat/mriqc
-	url = ./anat/mriqc
+	url = https://github.com/courtois-neuromod/anat.mriqc
 	datalad-id = 62c1eb6f-1d46-41fe-ad28-f311d4c63ab3
 [submodule "emotion-videos/mriqc"]
 	path = emotion-videos/mriqc
-	url = ./emotion-videos/mriqc
+	url = https://github.com/courtois-neuromod/emotion-videos.mriqc
 	datalad-id = 8177380d-cc3c-4aaf-9d76-b075547198eb
 [submodule "gamepad/mriqc"]
 	path = gamepad/mriqc
-	url = ./gamepad/mriqc
+	url = https://github.com/courtois-neuromod/gamepad.mriqc
 	datalad-id = 40fb4f11-a831-4aea-b450-26f1e97f44ca
 [submodule "harrypotter/mriqc"]
 	path = harrypotter/mriqc
-	url = ./harrypotter/mriqc
+	url = https://github.com/courtois-neuromod/harrypotter.mriqc
 	datalad-id = 9a213897-4b34-4d4f-ac56-ad8e85a90b6a
 [submodule "hcptrt/mriqc"]
 	path = hcptrt/mriqc
-	url = ./hcptrt/mriqc
+	url = https://github.com/courtois-neuromod/hcptrt.mriqc
 	datalad-id = 1bc1c774-8a7e-45ef-8a11-217e53123c59
 [submodule "langlocalizer/mriqc"]
 	path = langlocalizer/mriqc
-	url = ./langlocalizer/mriqc
+	url = https://github.com/courtois-neuromod/langlocalizer.mriqc
 	datalad-id = f7bd0fda-b5ca-43b1-a1cd-6db37a01cc38
 [submodule "mario3/mriqc"]
 	path = mario3/mriqc
-	url = ./mario3/mriqc
+	url = https://github.com/courtois-neuromod/mario3.mriqc
 	datalad-id = 17837b2a-cad6-432b-9fc8-f9572a9c41a9
 [submodule "mario/mriqc"]
 	path = mario/mriqc
-	url = ./mario/mriqc
+	url = https://github.com/courtois-neuromod/mario.mriqc
 	datalad-id = e02df18d-02d2-4f28-b6d1-c0905f160ab3
 [submodule "mariostars/mriqc"]
 	path = mariostars/mriqc
-	url = ./mariostars/mriqc
+	url = https://github.com/courtois-neuromod/mariostars.mriqc
 	datalad-id = 1a798430-3fc1-4caa-9810-57185453c769
 [submodule "multfs/mriqc"]
 	path = multfs/mriqc
-	url = ./multfs/mriqc
+	url = https://github.com/courtois-neuromod/multfs.mriqc
 	datalad-id = 59933f80-0f9b-4332-a77d-5b2c6e320068
 [submodule "mutemusic/mriqc"]
 	path = mutemusic/mriqc
-	url = ./mutemusic/mriqc
+	url = https://github.com/courtois-neuromod/mutemusic.mriqc
 	datalad-id = e436b8e1-f3ba-40cf-b76c-530f568d7930
 [submodule "narratives/mriqc"]
 	path = narratives/mriqc
-	url = ./narratives/mriqc
+	url = https://github.com/courtois-neuromod/narratives.mriqc
 	datalad-id = 07631845-399d-469f-92cc-ad120bc1dee3
 [submodule "ood/mriqc"]
 	path = ood/mriqc
-	url = ./ood/mriqc
+	url = https://github.com/courtois-neuromod/ood.mriqc
 	datalad-id = 35c52e6a-94bf-4058-8416-ca5095d30a9d
 [submodule "petit-prince/mriqc"]
 	path = petit-prince/mriqc
-	url = ./petit-prince/mriqc
+	url = https://github.com/courtois-neuromod/petit-prince.mriqc
 	datalad-id = 66e43d0b-b3c9-4a36-a3b6-291619c22dbe
 [submodule "retinotopy/mriqc"]
 	path = retinotopy/mriqc
-	url = ./retinotopy/mriqc
+	url = https://github.com/courtois-neuromod/retinotopy.mriqc
 	datalad-id = fc3ba9b6-4d2b-4fbf-938a-4db0374487d9
 [submodule "triplets/mriqc"]
 	path = triplets/mriqc
-	url = ./triplets/mriqc
+	url = https://github.com/courtois-neuromod/triplets.mriqc
 	datalad-id = b377e381-2a6e-4e46-9e17-4be95273cf00
-[submodule "anat/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "emotion-videos/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "gamepad/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "harrypotter/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "hcptrt/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "langlocalizer/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "mario3/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "mario/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "mariostars/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "multfs/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "mutemusic/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "narratives/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "ood/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "petit-prince/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "retinotopy/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "triplets/mriqc/containers"]
-	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "anat/mriqc/sourcedata/anat"]
-	datalad-url = git@github.com:courtois-neuromod/anat.git
-[submodule "emotion-videos/mriqc/sourcedata/emotion-videos"]
-	datalad-url = git@github.com:courtois-neuromod/emotion-videos
-[submodule "gamepad/mriqc/sourcedata/gamepad"]
-	datalad-url = git@github.com:courtois-neuromod/gamepad.git
-[submodule "harrypotter/mriqc/sourcedata/harrypotter"]
-	datalad-url = git@github.com:courtois-neuromod/harrypotter.git
-[submodule "hcptrt/mriqc/sourcedata/hcptrt"]
-	datalad-url = git@github.com:courtois-neuromod/hcptrt.git
-[submodule "langlocalizer/mriqc/sourcedata/langlocalizer"]
-	datalad-url = git@github.com:courtois-neuromod/langlocalizer
-[submodule "mario3/mriqc/sourcedata/mario3"]
-	datalad-url = git@github.com:courtois-neuromod/mario3
-[submodule "mario/mriqc/sourcedata/mario"]
-	datalad-url = git@github.com:courtois-neuromod/mario.git
-[submodule "mariostars/mriqc/sourcedata/mariostars"]
-	datalad-url = git@github.com:courtois-neuromod/mariostars
-[submodule "multfs/mriqc/sourcedata/multfs"]
-	datalad-url = git@github.com:courtois-neuromod/multfs
-[submodule "mutemusic/mriqc/sourcedata/mutemusic"]
-	datalad-url = git@github.com:courtois-neuromod/mutemusic
-[submodule "narratives/mriqc/sourcedata/narratives"]
-	datalad-url = git@github.com:courtois-neuromod/narratives
-[submodule "ood/mriqc/sourcedata/ood"]
-	datalad-url = git@github.com:courtois-neuromod/ood
-[submodule "petit-prince/mriqc/sourcedata/petit-prince"]
-	datalad-url = git@github.com:courtois-neuromod/petit-prince.git
-[submodule "retinotopy/mriqc/sourcedata/retinotopy"]
-	datalad-url = git@github.com:courtois-neuromod/retinotopy.git
-[submodule "triplets/mriqc/sourcedata/triplets"]
-	datalad-url = git@github.com:courtois-neuromod/triplets
 [submodule "things/tsnr"]
 	path = things/tsnr
 	url = https://github.com/courtois-neuromod/things.tsnr
@@ -463,65 +399,65 @@
 	datalad-url = https://github.com/courtois-neuromod/emotion-videos.tsnr
 [submodule "friends/tsnr"]
 	path = friends/tsnr
-	url = ./friends/tsnr
+	url = https://github.com/courtois-neuromod/friends.tsnr
 	datalad-id = 6e0b6bc6-23a5-4f3d-8496-0531291f7812
 [submodule "gamepad/tsnr"]
 	path = gamepad/tsnr
-	url = ./gamepad/tsnr
+	url = https://github.com/courtois-neuromod/gamepad.tsnr
 	datalad-id = be860568-a99c-461f-86cf-d88be55e3378
 [submodule "harrypotter/tsnr"]
 	path = harrypotter/tsnr
-	url = ./harrypotter/tsnr
+	url = https://github.com/courtois-neuromod/harrypotter.tsnr
 	datalad-id = 748dfca8-3b6a-4685-8d06-b5c3d3c8e99d
 [submodule "hcptrt/tsnr"]
 	path = hcptrt/tsnr
-	url = ./hcptrt/tsnr
+	url = https://github.com/courtois-neuromod/hcptrt.tsnr
 	datalad-id = 3facd844-cf53-4a82-a0bc-22a0806b7a04
 [submodule "langlocalizer/tsnr"]
 	path = langlocalizer/tsnr
-	url = ./langlocalizer/tsnr
+	url = https://github.com/courtois-neuromod/langlocalizer.tsnr
 	datalad-id = 7f9d54a6-b746-431d-bf4b-c0b88464d47f
 [submodule "mario/tsnr"]
 	path = mario/tsnr
-	url = ./mario/tsnr
+	url = https://github.com/courtois-neuromod/mario.tsnr
 	datalad-id = 3de43c64-eee5-424c-8941-903f53a9947f
 [submodule "mario3/tsnr"]
 	path = mario3/tsnr
-	url = ./mario3/tsnr
+	url = https://github.com/courtois-neuromod/mario3.tsnr
 	datalad-id = 275cf9bd-0028-45fe-8730-3b547955a21a
 [submodule "mariostars/tsnr"]
 	path = mariostars/tsnr
-	url = ./mariostars/tsnr
+	url = https://github.com/courtois-neuromod/mariostars.tsnr
 	datalad-id = 2c5ac5e4-9b9a-446e-ae52-b3a3f4ea0566
 [submodule "movie10/tsnr"]
 	path = movie10/tsnr
-	url = ./movie10/tsnr
+	url = https://github.com/courtois-neuromod/movie10.tsnr
 	datalad-id = 28602d3c-53e2-4c3a-9ee8-84b6b964fbf0
 [submodule "multfs/tsnr"]
 	path = multfs/tsnr
-	url = ./multfs/tsnr
+	url = https://github.com/courtois-neuromod/multfs.tsnr
 	datalad-id = d5ae8da2-20f9-48c0-9062-ee0b3a0194bb
 [submodule "mutemusic/tsnr"]
 	path = mutemusic/tsnr
-	url = ./mutemusic/tsnr
+	url = https://github.com/courtois-neuromod/mutemusic.tsnr
 	datalad-id = 3d5adc8a-b993-4a1b-925d-a642e3feb523
 [submodule "narratives/tsnr"]
 	path = narratives/tsnr
-	url = ./narratives/tsnr
+	url = https://github.com/courtois-neuromod/narratives.tsnr
 	datalad-id = f8fcd20c-7c59-4986-97dc-822d56b34a6e
 [submodule "ood/tsnr"]
 	path = ood/tsnr
-	url = ./ood/tsnr
+	url = https://github.com/courtois-neuromod/ood.tsnr
 	datalad-id = 63ff1d46-c4c8-406a-86dc-2c5339e1e60e
 [submodule "petit-prince/tsnr"]
 	path = petit-prince/tsnr
-	url = ./petit-prince/tsnr
+	url = https://github.com/courtois-neuromod/petit-prince.tsnr
 	datalad-id = 03a096b3-d9e4-48af-b56b-049d9c5c1417
 [submodule "shinobi/tsnr"]
 	path = shinobi/tsnr
-	url = ./shinobi/tsnr
+	url = https://github.com/courtois-neuromod/shinobi.tsnr
 	datalad-id = caf6a190-ea07-45b3-8882-62eae16708de
 [submodule "triplets/tsnr"]
 	path = triplets/tsnr
-	url = ./triplets/tsnr
+	url = https://github.com/courtois-neuromod/triplets.tsnr
 	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
