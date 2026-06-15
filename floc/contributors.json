@@ -1,0 +1,57 @@
+{
+  "projectName": "floc",
+  "contributors": [
+    {
+      "login": "MarieStLaurent",
+      "name": "Marie St-Laurent",
+      "profile": "https://github.com/MarieStLaurent",
+      "contributions": ["code", "data", "design", "doc", "review"]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile Pinsard",
+      "profile": "https://github.com/bpinsard",
+      "contributions": ["ideas", "projectManagement", "code", "data", "design"]
+    },
+    {
+      "login": "oliver-contier",
+      "name": "Oliver Contier",
+      "profile": "https://github.com/oliver-contier",
+      "contributions": ["code", "data", "design", "review"]
+    },
+    {
+      "login": "emdupre",
+      "name": "Elizabeth DuPre",
+      "profile": "https://github.com/emdupre",
+      "contributions": ["code", "data", "review"]
+    },
+    {
+      "login": "seelikat",
+      "name": "Katja Seeliger",
+      "profile": "https://github.com/seelikat",
+      "contributions": ["code", "review"]
+    },
+    {
+      "name": "Valentina Borghesani",
+      "contributions": ["ideas", "design"]
+    },
+    {
+      "login": "julieaboyle1",
+      "name": "Julie A. Boyle",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": ["ideas", "financial", "projectManagement", "data", "review"]
+    },
+    {
+      "login": "lunebellec",
+      "name": "Lune Bellec",
+      "profile": "https://github.com/lunebellec",
+      "contributions": ["ideas", "financial", "projectManagement", "data", "design", "review"]
+    },
+    {
+      "login": "martinhebart",
+      "name": "Martin N. Hebart",
+      "profile": "https://github.com/martinhebart",
+      "contributions": ["ideas", "financial", "mentoring", "code", "data", "design", "doc", "review"]
+    }
+  ]
+}

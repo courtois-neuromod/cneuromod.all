@@ -1,0 +1,128 @@
+{
+  "files": [
+    "README"
+  ],
+  "projectName": "shinobi",
+  "projectOwner": "courtois-neuromod",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "contributors": [
+    {
+      "login": "julieaboyle1",
+      "name": "Julie A. Boyle",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39348727?v=4",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": [
+        "design",
+        "data",
+        "projectManagement",
+        "doc"
+      ]
+    },
+    {
+      "login": "lunebellec",
+      "name": "Lune Bellec",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1670887?v=4",
+      "profile": "https://github.com/lunebellec",
+      "contributions": [
+        "design",
+        "doc"
+      ]
+    },
+    {
+      "login": "emilie-dessureault",
+      "name": "emilie-dessureault",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61021023?v=4",
+      "profile": "https://github.com/emilie-dessureault",
+      "contributions": [
+        "data",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1155388?v=4",
+      "profile": "https://github.com/bpinsard",
+      "contributions": [
+        "design",
+        "code",
+        "data"
+      ]
+    },
+    {
+      "login": "bamal",
+      "name": "Amal ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10996072?v=4",
+      "profile": "https://github.com/bamal",
+      "contributions": [
+        "data",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "hyruuk",
+      "name": "Yann Harel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36450529?v=4",
+      "profile": "https://github.com/hyruuk",
+      "contributions": [
+        "design",
+        "ideas",
+        "review",
+        "bug",
+        "content",
+        "talk"
+      ]
+    },
+    {
+      "login": "cyrand",
+      "name": "cyrand",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50246550?v=4",
+      "profile": "https://github.com/cyrand",
+      "contributions": [
+        "infra",
+        "data",
+        "tool"
+      ]
+    },
+    {
+      "login": "FrancoisPgm",
+      "name": "François Paugam",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35327799?v=4",
+      "profile": "https://github.com/FrancoisPgm",
+      "contributions": [
+        "data",
+        "review"
+      ]
+    },
+    {
+      "login": "pravishsainath",
+      "name": "Pravish Sainath",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13696562?v=4",
+      "profile": "https://github.com/pravishsainath",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "sangfrois",
+      "name": "François Lespinasse",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38385719?v=4",
+      "profile": "https://github.com/sangfrois",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "me-pic",
+      "name": "Marie-Eve Picard",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77584086?v=4",
+      "profile": "https://github.com/me-pic",
+      "contributions": [
+        "data"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

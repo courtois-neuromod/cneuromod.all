@@ -1,0 +1,146 @@
+_CONTRIB_EMOJI = {
+    'audio':             '🔊',
+    'bug':               '🐛',
+    'code':              '💻',
+    'data':              '🔣',
+    'design':            '🎨',
+    'doc':               '📖',
+    'financial':         '💰',
+    'fundingFinding':    '🔍',
+    'ideas':             '🤔',
+    'infra':             '🚇',
+    'maintenance':       '🚧',
+    'mentoring':         '🧑‍🏫',
+    'projectManagement': '📆',
+    'question':          '💬',
+    'research':          '🔬',
+    'review':            '👀',
+    'security':          '🛡️',
+    'talk':              '📢',
+    'test':              '⚠️',
+    'tool':              '🔧',
+    'translation':       '🌍',
+    'tutorial':          '✅',
+    'userTesting':       '📓',
+    'video':             '📹',
+}
+
+_CONTRIB_LABEL = {
+    'audio':             'audio',
+    'bug':               'bug reports',
+    'code':              'code',
+    'data':              'data',
+    'design':            'design',
+    'doc':               'documentation',
+    'financial':         'funding',
+    'fundingFinding':    'funding finding',
+    'ideas':             'ideas',
+    'infra':             'infrastructure',
+    'maintenance':       'maintenance',
+    'mentoring':         'mentoring',
+    'projectManagement': 'project management',
+    'question':          'questions',
+    'research':          'research',
+    'review':            'review',
+    'security':          'security',
+    'talk':              'talks',
+    'test':              'tests',
+    'tool':              'tools',
+    'translation':       'translation',
+    'tutorial':          'tutorials',
+    'userTesting':       'user testing',
+    'video':             'video',
+}
+
+_STATS_EMOJI = {
+    'neuroimaging.fmri':      '🧠',
+    'tasks.images':           '🖼️',
+    'tasks.video':            '🎬',
+    'tasks.audio':            '🔊',
+    'tasks.speech_listening': '🗣️',
+    'tasks.text_reading':     '📖',
+    'tasks.resting_state':    '💤',
+    'tasks.game':             '🎮',
+    'tasks.controlled':       '📊',
+    'tasks.contrasts':        '📐',
+    'physiology.ecg':         '🫀',
+    'physiology.respiration': '🫁',
+    'physiology.plethysmograph': '🫀',
+    'physiology.eda':         '😓',
+    'physiology.eye_tracking': '👁️',
+}
+
+_STATS_LABEL = {
+    'neuroimaging.fmri':      'Neuroimaging (fMRI)',
+    'tasks.images':           'Images',
+    'tasks.video':            'Naturalistic video',
+    'tasks.audio':            'Audio',
+    'tasks.speech_listening': 'Speech listening',
+    'tasks.text_reading':     'Text reading',
+    'tasks.resting_state':    'Resting state',
+    'tasks.game':             'Gameplay',
+    'tasks.controlled':       'Behavior (controlled task)',
+    'tasks.contrasts':        'Contrasts',
+    'physiology.ecg':         'ECG',
+    'physiology.respiration': 'Respiration',
+    'physiology.plethysmograph': 'Pulse',
+    'physiology.eda':         'Skin conductance (EDA)',
+    'physiology.eye_tracking': 'Eye tracking',
+}
+
+_STATS_UNIT = {
+    'tasks.images':           'unique images/subject',
+    'tasks.video':            'h',
+    'tasks.audio':            'h',
+    'tasks.speech_listening': 'h',
+    'tasks.text_reading':     'h',
+    'tasks.resting_state':    'h',
+    'tasks.game':             'h',
+    'tasks.controlled':       'h',
+    'tasks.contrasts':        'contrasts',
+}
+
+_STATUS_ICON = {
+    'available':              '✅',
+    'partial':                '🟡',
+    'pending':                '⬜',
+    'not_collected':          '❌',
+    'collected_not_released': '🔒',
+}
+
+_COMPONENT_ICON = {
+    'bids':        '📁',
+    'fmriprep':    '🧠',
+    'mriqc':       '📊',
+    'smriprep':    '🏗️',
+    'physprep':    '🫀',
+    'freesurfer':  '🗺️',
+    'atlases':     '📍🗺️',
+    'pycortex':    '🖥️',
+    'rois':        '📍',
+    'prf':         '👁️',
+    'behaviour':   '🎮',
+    'glm':         '📉',
+    'glmsingle':   '📉',
+    'training':    '🕹️',
+    'scenes':      '🗺️',
+}
+
+_DATASET_EMOJI = {
+    'anat':        '💀',
+    'floc':        '🎯',
+    'friends':     '📺',
+    'gamepad':     '🎮',
+    'harrypotter': '📚',
+    'hcptrt':      '🎭',
+    'mario':       '🕹️',
+    'movie10':     '🎬',
+    'retinotopy':  '👁️',
+    'shinobi':     '🥷',
+    'things':      '🖼️',
+}
+
+# Uppercase .md files at the repo root excluded from auto-discovery entirely
+_ROOT_MD_EXCLUDE = {'README.md', 'CLAUDE.md'}
+# Uppercase .md files that are symlinked but hardcoded in index.rst (kept out of the placeholder)
+_ROOT_MD_MANUAL = {'DOWNLOADING.md'}

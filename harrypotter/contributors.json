@@ -1,0 +1,53 @@
+{
+  "projectName": "harrypotter",
+  "contributors": [
+    {
+      "login": "FrancoisPgm",
+      "name": "François Paugam",
+      "profile": "https://github.com/FrancoisPgm",
+      "contributions": ["code", "design", "userTesting", "data"]
+    },
+    {
+      "login": "julieaboyle1",
+      "name": "Julie A. Boyle",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": ["data", "projectManagement"]
+    },
+    {
+      "login": "mtoneva",
+      "name": "Mariya Toneva",
+      "profile": "https://github.com/mtoneva",
+      "contributions": ["design", "ideas"]
+    },
+    {
+      "login": "lwehbe",
+      "name": "lwehbe",
+      "profile": "https://github.com/lwehbe",
+      "contributions": ["design", "ideas"]
+    },
+    {
+      "login": "pravishsainath",
+      "name": "Pravish Sainath",
+      "profile": "https://github.com/pravishsainath",
+      "contributions": ["data"]
+    },
+    {
+      "login": "sangfrois",
+      "name": "François Lespinasse",
+      "profile": "https://github.com/sangfrois",
+      "contributions": ["data"]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile Pinsard",
+      "profile": "https://github.com/bpinsard",
+      "contributions": ["design", "code", "data", "review"]
+    },
+    {
+      "login": "me-pic",
+      "name": "Marie-Eve Picard",
+      "profile": "https://github.com/me-pic",
+      "contributions": ["data"]
+    }
+  ]
+}

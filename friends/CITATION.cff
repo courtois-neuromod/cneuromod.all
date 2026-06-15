@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+type: dataset
+title: "Friends — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Gifford
+      given-names: Alessandro T.
+    - family-names: Bersch
+      given-names: Domenic
+    - family-names: St-Laurent
+      given-names: Marie
+    - family-names: Pinsard
+      given-names: Basile
+    - family-names: Boyle
+      given-names: Julie
+    - family-names: Bellec
+      given-names: Lune
+    - family-names: Oliva
+      given-names: Aude
+    - family-names: Roig
+      given-names: Gemma
+    - family-names: Cichy
+      given-names: Radoslaw M.
+  title: "The Algonauts Project 2025 Challenge: How the Human Brain Makes Sense of Multimodal Movies"
+  year: 2025
+  url: "https://arxiv.org/abs/2501.00504"

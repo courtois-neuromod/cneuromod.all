@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+type: dataset
+title: "HCP-TRT — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Rastegarnia
+      given-names: Shima
+    - family-names: St-Laurent
+      given-names: Marie
+    - family-names: DuPre
+      given-names: Elizabeth
+    - family-names: Pinsard
+      given-names: Basile
+    - family-names: Bellec
+      given-names: Lune
+  title: "Brain decoding of the Human Connectome Project tasks in a dense individual fMRI dataset"
+  journal: NeuroImage
+  year: 2023
+  volume: 283
+  pages: "120395"
+  doi: "10.1016/j.neuroimage.2023.120395"

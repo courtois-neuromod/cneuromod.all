@@ -1,0 +1,51 @@
+stats:
+  subjects_n: 6
+  neuroimaging:
+    fmri:
+      total_h: 368
+      per_subject_h: 65.0
+  tasks:
+    video:
+      total_unique: 65.0
+      per_subject_unique: 65.0
+      total_with_repetition: 390.0
+      per_subject_with_repetition: 65.0
+    audio:
+      total_unique: 65.0
+      per_subject_unique: 65.0
+      total_with_repetition: 390.0
+      per_subject_with_repetition: 65.0
+    speech_listening:
+      total_unique: 65.0
+      per_subject_unique: 65.0
+      total_with_repetition: 390.0
+      per_subject_with_repetition: 65.0
+  physiology:
+    ecg:
+      total_h: 368
+      per_subject_h: 65
+    respiration:
+      total_h: 368
+      per_subject_h: 65
+    plethysmograph:
+      total_h: 368
+      per_subject_h: 65
+    eda:
+      total_h: 368
+      per_subject_h: 65
+    eye_tracking:
+      total_h: 110
+      per_subject_h: 22
+
+subjects:
+  - { id: sub-01, status: available }
+  - { id: sub-02, status: available }
+  - { id: sub-03, status: available }
+  - { id: sub-04, status: partial, note: "seasons 1–4 only" }
+  - { id: sub-05, status: available }
+  - { id: sub-06, status: available }
+
+tasks:
+  - emoji: "📺"
+    label: "Friends seasons 1–7 (~170 episodes)"
+    note: "~65 hours of naturalistic movie watching per subject"

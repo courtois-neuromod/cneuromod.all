@@ -1,0 +1,54 @@
+{
+  "projectName": "hcptrt",
+  "contributors": [
+    {
+      "login": "lunebellec",
+      "name": "Lune Bellec",
+      "profile": "http://github.com/lunebellec",
+      "contributions": ["design", "doc"]
+    },
+    {
+      "login": "julieaboyle1",
+      "name": "Julie Boyle",
+      "profile": "https://github.com/julieaboyle1",
+      "contributions": ["data", "projectManagement", "doc", "ideas", "design"]
+    },
+    {
+      "login": "arnaudbore",
+      "name": "Arnaud Bore",
+      "profile": "https://github.com/arnaudbore",
+      "contributions": ["code", "data"]
+    },
+    {
+      "name": "Valentina Borghesani",
+      "profile": "http://valentina.borghesani.org/",
+      "contributions": ["review", "question", "mentoring", "doc", "bug", "userTesting"]
+    },
+    {
+      "login": "bamal",
+      "name": "Amal Boukhdhir",
+      "profile": "https://github.com/bamal",
+      "contributions": ["data", "review", "doc"]
+    },
+    {
+      "login": "emdupre",
+      "name": "Elizabeth DuPre",
+      "profile": "http://github.com/emdupre",
+      "contributions": ["review", "userTesting", "bug"]
+    },
+    {
+      "login": "bpinsard",
+      "name": "Basile Pinsard",
+      "profile": "https://github.com/bpinsard",
+      "contributions": ["data", "review", "maintenance", "code"]
+    },
+    {
+      "name": "Claude Godbout",
+      "contributions": ["data"]
+    },
+    {
+      "name": "Courtois Foundation",
+      "contributions": ["financial"]
+    }
+  ]
+}
