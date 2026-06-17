@@ -529,3 +529,7 @@
 	path = petit-prince/annotations
 	url = git@github.com:courtois-neuromod/petit-prince.annotations.git
 	datalad-url = git@github.com:courtois-neuromod/petit-prince.annotations.git
+[submodule "movie10/annotations"]
+	path = movie10/annotations
+	url = git@github.com:courtois-neuromod/movie10.annotations.git
+	datalad-url = git@github.com:courtois-neuromod/movie10.annotations.git
