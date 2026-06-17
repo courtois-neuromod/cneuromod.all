@@ -525,3 +525,7 @@
 	path = triplets/tsnr
 	url = ./triplets/tsnr
 	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
+[submodule "petit-prince/annotations"]
+	path = petit-prince/annotations
+	url = git@github.com:courtois-neuromod/petit-prince.annotations.git
+	datalad-url = git@github.com:courtois-neuromod/petit-prince.annotations.git
