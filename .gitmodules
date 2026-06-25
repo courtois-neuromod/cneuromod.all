@@ -575,3 +575,8 @@
 	url = git@github.com:courtois-neuromod/retinotopy.timeseries.git
 	datalad-id = e7598ae4-d9f3-4a64-842a-f33b0d735a2d
 	datalad-url = git@github.com:courtois-neuromod/retinotopy.timeseries.git
+[submodule "mariostars/timeseries"]
+	path = mariostars/timeseries
+	url = git@github.com:courtois-neuromod/mariostars.timeseries.git
+	datalad-id = 5adaccfd-32c1-46c9-a403-5c4e75f27a19
+	datalad-url = git@github.com:courtois-neuromod/mariostars.timeseries.git
