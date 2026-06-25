@@ -550,3 +550,8 @@
 	url = git@github.com:courtois-neuromod/friends.timeseries.git
 	datalad-id = 888ca6f3-41bc-41b5-9b5f-8f0d965775ff
 	datalad-url = git@github.com:courtois-neuromod/friends.timeseries.git
+[submodule "floc/timeseries"]
+	path = floc/timeseries
+	url = git@github.com:courtois-neuromod/floc.timeseries.git
+	datalad-id = d7088c09-bb69-4e53-9e51-56308f0b076a
+	datalad-url = git@github.com:courtois-neuromod/floc.timeseries.git
