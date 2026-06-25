@@ -565,3 +565,8 @@
 	url = git@github.com:courtois-neuromod/mario.timeseries.git
 	datalad-id = ff9f415c-e6ba-47a3-9be2-27d5762fbc61
 	datalad-url = git@github.com:courtois-neuromod/mario.timeseries.git
+[submodule "petit-prince/timeseries"]
+	path = petit-prince/timeseries
+	url = git@github.com:courtois-neuromod/petit-prince.timeseries.git
+	datalad-id = 60fc32d1-6e47-44fb-8b41-be11fbd60189
+	datalad-url = git@github.com:courtois-neuromod/petit-prince.timeseries.git
