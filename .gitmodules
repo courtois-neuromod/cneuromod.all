@@ -555,3 +555,8 @@
 	url = git@github.com:courtois-neuromod/floc.timeseries.git
 	datalad-id = d7088c09-bb69-4e53-9e51-56308f0b076a
 	datalad-url = git@github.com:courtois-neuromod/floc.timeseries.git
+[submodule "harrypotter/timeseries"]
+	path = harrypotter/timeseries
+	url = git@github.com:courtois-neuromod/harrypotter.timeseries.git
+	datalad-id = 6ca182aa-af1c-4c7e-902f-593134129dcb
+	datalad-url = git@github.com:courtois-neuromod/harrypotter.timeseries.git
