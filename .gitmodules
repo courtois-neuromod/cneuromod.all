@@ -570,3 +570,8 @@
 	url = git@github.com:courtois-neuromod/petit-prince.timeseries.git
 	datalad-id = 60fc32d1-6e47-44fb-8b41-be11fbd60189
 	datalad-url = git@github.com:courtois-neuromod/petit-prince.timeseries.git
+[submodule "retinotopy/timeseries"]
+	path = retinotopy/timeseries
+	url = git@github.com:courtois-neuromod/retinotopy.timeseries.git
+	datalad-id = e7598ae4-d9f3-4a64-842a-f33b0d735a2d
+	datalad-url = git@github.com:courtois-neuromod/retinotopy.timeseries.git
