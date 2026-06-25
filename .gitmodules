@@ -580,3 +580,8 @@
 	url = git@github.com:courtois-neuromod/mariostars.timeseries.git
 	datalad-id = 5adaccfd-32c1-46c9-a403-5c4e75f27a19
 	datalad-url = git@github.com:courtois-neuromod/mariostars.timeseries.git
+[submodule "mario3/timeseries"]
+	path = mario3/timeseries
+	url = git@github.com:courtois-neuromod/mario3.timeseries.git
+	datalad-id = f0a9f6e3-6940-4a94-96f2-c379120e2386
+	datalad-url = git@github.com:courtois-neuromod/mario3.timeseries.git
