@@ -6,6 +6,15 @@ from pathlib import Path
 from .constants import _COMPONENT_ICON, _CONTRIB_EMOJI, _CONTRIB_LABEL, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
 
 
+def _render_unreleased_warning():
+    msg = (
+        "This dataset has been collected but has not yet been finalized and publicly released. "
+        "The CNeuroMod team is working hard to finalize and release all datasets, "
+        "but good things take time."
+    )
+    return f"\n\n:::{{warning}}\n{msg}\n:::\n"
+
+
 def _render_citation(cff_path):
     with open(cff_path, encoding='utf-8') as f:
         data = yaml.safe_load(f)
@@ -43,7 +52,7 @@ def _render_citation(cff_path):
     if doi:
         citation_line += f" [doi: {doi}](https://doi.org/{doi})"
 
-    return f"\n\n:::{{tip}}\nIf you use this dataset, please cite:\n\n{citation_line}\n:::\n"
+    return f"\n\n:::{{admonition}} How to cite\n:class: tip\n\n{citation_line}\n:::\n"
 
 
 def _render_contributors(rc_path):
@@ -75,7 +84,7 @@ def _render_contributors(rc_path):
     legend = ' · '.join(legend_parts)
 
     contributors_str = ' · '.join(entries)
-    return f"\n\n## Contributors\n\n{contributors_str}\n\n_{legend}_\n"
+    return f"\n\n:::{{admonition}} Contributors\n:class: note\n\n{contributors_str}\n\n<hr style=\"margin: 0.3em 0;\"/>\n\n_{legend}_\n:::\n"
 
 
 def _resolve_stats_key(stats, dotted_key):
@@ -277,9 +286,39 @@ def _render_dataset_table(discovery):
         components = discovery._dataset_components.get(name, [])
         with open(info_path, encoding='utf-8') as f:
             data = yaml.safe_load(f)
-            print(data)
             df.append({
                 "dataset": f"`{_DATASET_EMOJI[name]} {name} <../datasets/{name}.html>`__",
-                "n_subjects": data['stats']['subjects_n'],
-            } | {cpnt[0]:f"`{_COMPONENT_ICON.get(cpnt[0].lower(), _DATASET_EMOJI.get(name, '📦'))} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
+            } | {cpnt[0]: f"`{_COMPONENT_ICON.get(cpnt[0].lower(), _DATASET_EMOJI.get(name, '📦'))} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
+
+    all_cols = [k for k in dict.fromkeys(k for row in df for k in row) if k != 'dataset']
+    single_cols = [col for col in all_cols if sum(1 for row in df if row.get(col)) == 1]
+    multi_cols = [col for col in all_cols if col not in single_cols]
+
+    merged = []
+    for row in df:
+        new_row = {'dataset': row['dataset']}
+        for col in multi_cols:
+            new_row[col] = row.get(col, '')
+        other_parts = [row[col] for col in single_cols if row.get(col)]
+        new_row['other'] = ' · '.join(other_parts)
+        merged.append(new_row)
+    return merged
+
+
+def _render_dataset_stats_table(discovery):
+    stream_keys = [k for k in _STATS_EMOJI if not k.startswith('physiology.')]
+    df = []
+    for name, info_path in discovery._dataset_info.items():
+        with open(info_path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+        stats = data.get('stats', {})
+        row = {'Dataset': f"`{_DATASET_EMOJI.get(name, '')} {name} <../datasets/{name}.html>`__"}
+        for key in stream_keys:
+            val = _resolve_stats_key(stats, key)
+            if key == 'neuroimaging.fmri':
+                col = 'fMRI (h/sub)'
+                row[col] = str(val['per_subject_h']) if isinstance(val, dict) and 'per_subject_h' in val else ('—' if val else '')
+            else:
+                row[_STATS_LABEL[key]] = _STATS_EMOJI[key] if val else ''
+        df.append(row)
     return df

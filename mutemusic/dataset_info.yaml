@@ -1,0 +1,26 @@
+stats:
+  subjects_n: 5
+  neuroimaging:
+    fmri:
+      total_h: 16.6
+      per_subject_h: 3.3
+  tasks:
+    audio:
+      total_unique: 1.1
+      per_subject_unique: 1.1
+      total_with_repetition: 16.5
+      per_subject_with_repetition: 3.3
+
+subjects:
+- id: sub-01
+  status: available
+- id: sub-02
+  status: available
+- id: sub-03
+  status: available
+- id: sub-04
+  status: not_collected
+- id: sub-05
+  status: available
+- id: sub-06
+  status: available

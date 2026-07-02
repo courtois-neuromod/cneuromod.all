@@ -1,0 +1,15 @@
+stats:
+  subjects_n: 3
+subjects:
+- id: sub-01
+  status: available
+- id: sub-02
+  status: available
+- id: sub-03
+  status: available
+- id: sub-04
+  status: not_collected
+- id: sub-05
+  status: not_collected
+- id: sub-06
+  status: not_collected

@@ -1,0 +1,32 @@
+stats:
+  subjects_n: 4
+  neuroimaging:
+    fmri:
+      total_h: 31.2
+      per_subject_h: 7.8
+  tasks:
+    text_reading:
+      total_unique: 2.6
+      per_subject_unique: 2.6
+      total_with_repetition: 31.2
+      per_subject_with_repetition: 7.8
+
+tasks:
+- emoji: "🔺"
+  label: "Word triplets — semantic odd-one-out judgment"
+  note: "Single words shown in triplets; participants select the semantic odd one
+    out. Each unique word shown ~3× per subject; stimuli shared across subjects. Designed
+    for representational similarity analysis and brain encoding models."
+subjects:
+- id: sub-01
+  status: available
+- id: sub-02
+  status: available
+- id: sub-03
+  status: available
+- id: sub-04
+  status: not_collected
+- id: sub-05
+  status: not_collected
+- id: sub-06
+  status: available

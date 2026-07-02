@@ -13,6 +13,7 @@ _local_components = []    # [(stem, path, dataset_name), ...] — dataset-specif
 _dataset_citation = {}
 _dataset_contributors = {}
 _dataset_info = {}
+_dataset_readme = {}      # name -> path, only for datasets with a real README.md
 _dataset_components = {}  # name -> [(stem, path, kind), ...] where kind='page'|'section'
 
 
@@ -52,7 +53,7 @@ def _discover_dataset_components(dataset_path, global_stems):
 
 def _auto_discover_datasets(app):
     global _discovered_datasets, _global_components, _local_components
-    global _dataset_citation, _dataset_contributors, _dataset_info, _dataset_components
+    global _dataset_citation, _dataset_contributors, _dataset_info, _dataset_readme, _dataset_components
 
     conf_dir = os.path.dirname(os.path.abspath(__file__))
     # _ext/ is one level below source/, which is two levels below the repo root
@@ -81,6 +82,7 @@ def _auto_discover_datasets(app):
     citation = {}
     contributors = {}
     info = {}
+    readme = {}
     components = {}
 
     for name in sorted(os.listdir(repo_root)):
@@ -89,13 +91,27 @@ def _auto_discover_datasets(app):
             continue
         if name.startswith('.') or name in skip:
             continue
-        readme = os.path.join(full_path, 'README.md')
-        if not os.path.isfile(readme):
+        info_path = os.path.join(full_path, 'dataset_info.yaml')
+        readme_path = os.path.join(full_path, 'README.md')
+        if not os.path.isfile(info_path) and not os.path.isfile(readme_path):
             continue
 
-        link_path = Path(datasets_dir) / (name + '.md')
-        _symlink(link_path, Path(readme), datasets_dir)
+        page_path = Path(datasets_dir) / (name + '.md')
+        if os.path.isfile(readme_path):
+            _symlink(page_path, Path(readme_path), datasets_dir)
+            readme[name] = readme_path
+        else:
+            stub = f'# {name}\n\n'
+            if not page_path.is_symlink() and page_path.exists() and page_path.read_text(encoding='utf-8') == stub:
+                pass
+            else:
+                if page_path.is_symlink():
+                    page_path.unlink()
+                page_path.write_text(stub, encoding='utf-8')
         found.append(name)
+
+        if os.path.isfile(info_path):
+            info[name] = info_path
 
         cff_path = os.path.join(full_path, 'CITATION.cff')
         if os.path.isfile(cff_path):
@@ -104,10 +120,6 @@ def _auto_discover_datasets(app):
         rc_path = os.path.join(full_path, 'contributors.json')
         if os.path.isfile(rc_path):
             contributors[name] = rc_path
-
-        info_path = os.path.join(full_path, 'dataset_info.yaml')
-        if os.path.isfile(info_path):
-            info[name] = info_path
 
         comps = _discover_dataset_components(full_path, global_comps)
         if comps:
@@ -132,6 +144,7 @@ def _auto_discover_datasets(app):
     _dataset_citation = citation
     _dataset_contributors = contributors
     _dataset_info = info
+    _dataset_readme = readme
     _dataset_components = components
     _local_components = local_comps
 

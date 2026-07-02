@@ -2,8 +2,8 @@ stats:
   subjects_n: 6
   neuroimaging:
     fmri:
-      total_h: 368
-      per_subject_h: 65.0
+      total_h: 371.5
+      per_subject_h: 61.9
   tasks:
     video:
       total_unique: 65.0
@@ -38,14 +38,14 @@ stats:
       per_subject_h: 22
 
 subjects:
-  - { id: sub-01, status: available }
-  - { id: sub-02, status: available }
-  - { id: sub-03, status: available }
-  - { id: sub-04, status: partial, note: "seasons 1–4 only" }
-  - { id: sub-05, status: available }
-  - { id: sub-06, status: available }
+- {id: sub-01, status: available}
+- {id: sub-02, status: available}
+- {id: sub-03, status: available}
+- {id: sub-04, status: partial, note: "seasons 1–4 only"}
+- {id: sub-05, status: available}
+- {id: sub-06, status: available}
 
 tasks:
-  - emoji: "📺"
-    label: "Friends seasons 1–7 (~170 episodes)"
-    note: "~65 hours of naturalistic movie watching per subject"
+- emoji: "📺"
+  label: "Friends seasons 1–7 (~170 episodes)"
+  note: "~65 hours of naturalistic movie watching per subject"

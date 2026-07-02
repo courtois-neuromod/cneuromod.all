@@ -237,6 +237,7 @@
 	path = multfs/bids
 	url = git@github.com:courtois-neuromod/multfs
 	datalad-url = https://github.com/courtois-neuromod/multfs
+	branch = events
 [submodule "narratives/bids"]
 	path = narratives/bids
 	url = git@github.com:courtois-neuromod/narratives
@@ -246,6 +247,7 @@
 	url = git@github.com:courtois-neuromod/triplets
 	datalad-id = 76c5e7cf-b8eb-4a0e-97b5-d6fdf029924a
 	datalad-url = https://github.com/courtois-neuromod/triplets
+	branch = dev
 [submodule "langlocalizer/fmriprep"]
 	path = langlocalizer/fmriprep
 	url = git@github.com:courtois-neuromod/langlocalizer.fmriprep
@@ -272,6 +274,7 @@
 	url = git@github.com:courtois-neuromod/triplets.fmriprep
 	datalad-id = 6eb11d57-4cd5-4220-b22e-0b628c382a7c
 	datalad-url = https://github.com/courtois-neuromod/triplets.fmriprep
+	branch = dev
 [submodule "emotion-videos/fmriprep"]
 	path = emotion-videos/fmriprep
 	url = git@github.com:courtois-neuromod/emotion-videos.fmriprep
@@ -305,10 +308,12 @@
 	path = mutemusic/fmriprep
 	url = git@github.com:courtois-neuromod/mutemusic.fmriprep
 	datalad-url = https://github.com/courtois-neuromod/mutemusic.fmriprep
+	branch = dev
 [submodule "mutemusic/bids"]
 	path = mutemusic/bids
 	url = git@github.com:courtois-neuromod/mutemusic
 	datalad-url = https://github.com/courtois-neuromod/mutemusic
+	branch = dev
 [submodule "hearing/bids"]
 	path = hearing/bids
 	url = git@github.com:courtois-neuromod/hearing.git
@@ -461,3 +466,6 @@
 	path = triplets/tsnr
 	url = https://github.com/courtois-neuromod/triplets.tsnr
 	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
+[submodule "analysis/cneuromod.all.statistics"]
+	path = analysis/cneuromod.all.statistics
+	url = git@github.com:courtois-neuromod/cneuromod.all.statistics.git
