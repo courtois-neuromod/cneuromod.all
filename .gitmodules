@@ -339,6 +339,7 @@
 	path = hcptrt/mriqc
 	url = ./hcptrt/mriqc
 	datalad-id = 1bc1c774-8a7e-45ef-8a11-217e53123c59
+	datalad-url = https://github.com/courtois-neuromod/hcptrt.mriqc.git
 [submodule "langlocalizer/mriqc"]
 	path = langlocalizer/mriqc
 	url = ./langlocalizer/mriqc
