@@ -2,44 +2,44 @@ stats:
   subjects_n: 5
   neuroimaging:
     fmri:
-      total_h: 5.8
-      per_subject_h: 1.17
+      total_h: 7.0
+      per_subject_h: 1.4
   tasks:
     text_reading:
-      total_unique: 1.17
-      per_subject_unique: 1.17
-      total_with_repetition: 5.83
-      per_subject_with_repetition: 1.17
+      total_unique: 1.4
+      per_subject_unique: 1.4
+      total_with_repetition: 7.0
+      per_subject_with_repetition: 1.4
   physiology:
     ecg:
-      total_h: 5.8
-      per_subject_h: 1.17
+      total_h: 7.0
+      per_subject_h: 1.4
     respiration:
-      total_h: 5.8
-      per_subject_h: 1.17
+      total_h: 7.0
+      per_subject_h: 1.4
     plethysmograph:
-      total_h: 5.8
-      per_subject_h: 1.17
+      total_h: 7.0
+      per_subject_h: 1.4
     eda:
-      total_h: 5.8
-      per_subject_h: 1.17
+      total_h: 7.0
+      per_subject_h: 1.4
 
 subjects:
-  - { id: sub-01, status: available }
-  - { id: sub-02, status: available }
-  - { id: sub-03, status: available }
-  - { id: sub-04, status: not_collected }
-  - { id: sub-05, status: available }
-  - { id: sub-06, status: available }
+- {id: sub-01, status: available}
+- {id: sub-02, status: available}
+- {id: sub-03, status: available}
+- {id: sub-04, status: not_collected}
+- {id: sub-05, status: available}
+- {id: sub-06, status: available}
 
 tasks:
-  - emoji: "📖"
-    label: "Harry Potter and the Sorcerer's Stone — Chapter 9"
-    note: "word-by-word text at 2 Hz; 7 runs × ~10 min; 1 session per participant"
+- emoji: "📖"
+  label: "Harry Potter and the Sorcerer's Stone — Chapter 9"
+  note: "word-by-word text at 2 Hz; 7 runs × ~10 min; 1 session per participant"
 
 modalities:
-  - emoji: "👁️"
-    label: "Eyetracking"
-    components:
-      - { label: gaze,         status: not_collected }
-      - { label: pupillometry, status: not_collected }
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: not_collected}
+  - {label: pupillometry, status: not_collected}
