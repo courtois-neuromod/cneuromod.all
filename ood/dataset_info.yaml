@@ -1,8 +1,8 @@
 stats:
-  subjects_n: 3
+  subjects_n: 4
   neuroimaging:
     fmri:
-      total_h: 6.1
+      total_h: 8.1
       per_subject_h: 2.0
   tasks:
     video:
@@ -22,7 +22,7 @@ stats:
       per_subject_with_repetition: 6.1
 subjects:
 - id: sub-01
-  status: not_collected
+  status: available
 - id: sub-02
   status: available
 - id: sub-03
