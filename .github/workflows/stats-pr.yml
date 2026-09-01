@@ -1,0 +1,179 @@
+name: Refresh statistics (PR)
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: stats-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  stats:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          submodules: false
+          fetch-depth: 0
+
+      - name: Set up SSH key for private submodules
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ github.event.repository.private && secrets.CNEUROMOD_BOT_SSH_KEY || secrets.CNEUROMOD_USER_BOT_SSH_KEY }}
+
+      - name: Trust github.com host key
+        run: mkdir -p ~/.ssh && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
+      - name: Install datalad + git-annex
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git-annex
+          pip install datalad
+
+      - name: Cache installed */bids trees
+        uses: actions/cache@v4
+        with:
+          path: |
+            */bids
+          key: bids-trees-${{ hashFiles('.gitmodules') }}
+
+      - name: Install the statistics submodule (tree only)
+        run: datalad get -n analysis/cneuromod.all.statistics
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Sync statistics submodule deps
+        working-directory: analysis/cneuromod.all.statistics
+        run: uv sync
+
+      - name: Install every dataset's bids tree (safe on a fresh checkout)
+        working-directory: analysis/cneuromod.all.statistics
+        run: |
+          uv run invoke fetch-cneuromod --source "$GITHUB_WORKSPACE"
+          uv run invoke fetch-bids
+
+      - name: Regenerate statistics TSVs (no figures)
+        id: run_stats
+        run: ./analysis/run_statistics.sh --no-figures
+
+      - name: Sync docs deps
+        working-directory: docs
+        run: uv sync
+
+      - name: Propagate stats into dataset_info.yaml
+        id: propagate
+        working-directory: docs
+        run: |
+          {
+            echo 'changelog<<EOF'
+            uv run python update_dataset_stats.py
+            echo 'EOF'
+          } | tee -a "$GITHUB_OUTPUT"
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if [ -n "$(git status --porcelain '*/dataset_info.yaml')" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push corrected dataset_info.yaml
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "Lune Bellec"
+          git config user.email "lune.bellec@gmail.com"
+          git add -- '*/dataset_info.yaml'
+          git commit -m "Auto-update dataset_info.yaml statistics"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+
+      - name: Capture diff stat
+        if: steps.diff.outputs.changed == 'true'
+        id: diffstat
+        run: |
+          {
+            echo 'stat<<EOF'
+            git diff --stat HEAD~1 -- '*/dataset_info.yaml'
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Post or refresh stats comment
+        uses: actions/github-script@v7
+        env:
+          CHANGED: ${{ steps.diff.outputs.changed }}
+          CHANGELOG: ${{ steps.propagate.outputs.changelog }}
+          DIFFSTAT: ${{ steps.diffstat.outputs.stat }}
+        with:
+          script: |
+            const marker = '<!-- stats-pr-check -->';
+            const changed = process.env.CHANGED === 'true';
+            const body = changed
+              ? [
+                  marker,
+                  '### 📊 Statistics updated',
+                  '',
+                  'The stats pipeline found drift and pushed a correcting commit to this branch.',
+                  '',
+                  '```',
+                  process.env.CHANGELOG,
+                  '```',
+                  '',
+                  '```',
+                  process.env.DIFFSTAT,
+                  '```',
+                ].join('\n')
+              : [
+                  marker,
+                  '✅ Statistics check: `dataset_info.yaml` files are already up to date.',
+                ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  skip-fork:
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment — skipped for fork PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: 'ℹ️ Statistics check skipped — forks have no access to the private dataset repositories.',
+            });
