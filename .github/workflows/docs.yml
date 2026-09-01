@@ -17,10 +17,12 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs in progress for the same branch
+# Every push to main fires this workflow twice: once directly, and once via the
+# workflow_run chain after the stats commit. Both build the same commit range, so
+# cancel the earlier, pre-stats run and let the later, stats-fresh one deploy.
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
