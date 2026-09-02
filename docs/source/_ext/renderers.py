@@ -322,3 +322,78 @@ def _render_dataset_stats_table(discovery):
                 row[_STATS_LABEL[key]] = _STATS_EMOJI[key] if val else ''
         df.append(row)
     return df
+
+
+# Directory holding per-dataset gallery artwork; a dataset without a file here
+# falls back to its _DATASET_EMOJI tile.
+_GALLERY_IMG_DIR = Path(__file__).parent.parent / '_static' / 'datasets'
+_GALLERY_IMG_EXT = ('.jpg', '.png')
+
+
+def _gallery_image(name):
+    """Return the _static-relative path of a dataset's artwork, or None."""
+    for ext in _GALLERY_IMG_EXT:
+        if (_GALLERY_IMG_DIR / f'{name}{ext}').is_file():
+            return f'_static/datasets/{name}{ext}'
+    return None
+
+
+def _gallery_blurb(data):
+    """One-line dataset description: explicit `description`, else the first task label."""
+    description = data.get('description')
+    if description:
+        return description.strip()
+    for task in data.get('tasks', []) or []:
+        label = task.get('label')
+        if label:
+            return label.strip()
+    return ''
+
+
+def _render_dataset_gallery(discovery):
+    """Render the landing-page dataset gallery as a sphinx-design grid.
+
+    Every discovered dataset gets one card: an artwork tile when
+    `_static/datasets/<name>.{jpg,png}` exists, a big-emoji tile otherwise. Tiles are
+    emitted as raw HTML rather than `:img-top:` so both kinds share the same markup and
+    the same `.ds-tile` sizing rules in custom.css.
+    """
+    cards = []
+    for name in sorted(discovery._dataset_info):
+        with open(discovery._dataset_info[name], encoding='utf-8') as f:
+            data = yaml.safe_load(f) or {}
+
+        img = _gallery_image(name)
+        if img:
+            tile = f'<div class="ds-tile"><img src="{img}" alt=""></div>'
+        else:
+            emoji = _DATASET_EMOJI.get(name, '📦')
+            tile = f'<div class="ds-tile ds-tile--emoji">{emoji}</div>'
+
+        card = [
+            '   .. grid-item-card::',
+            f'      :link: datasets/{name}.html',
+            '      :link-type: url',
+            '      :class-card: ds-card',
+            '',
+            '      .. raw:: html',
+            '',
+            f'         {tile}',
+            '',
+            f'      **{name}**',
+        ]
+        blurb = _gallery_blurb(data)
+        if blurb:
+            card += ['', f'      {blurb}']
+        cards.append('\n'.join(card))
+
+    if not cards:
+        return ''
+
+    header = [
+        '.. grid:: 2 2 3 4',
+        '   :gutter: 3',
+        '   :class-container: ds-gallery',
+        '',
+    ]
+    return '\n'.join(header) + '\n' + '\n\n'.join(cards) + '\n'

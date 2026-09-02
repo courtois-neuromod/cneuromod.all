@@ -1,3 +1,7 @@
+description: >-
+  Functional localizer mapping category-sensitive visual regions from five classes of visual
+  stimuli.
+
 stats:
   subjects_n: 3
   neuroimaging:

@@ -119,7 +119,13 @@ def _emit_redirects(app, exception):
     if exception is not None or app.builder.format != 'html':
         return
     prefixes, pages = _load_redirects()
-    written = _write_stubs(app.outdir, prefixes, pages)
+    # Take the real page list from the build env rather than scanning the output
+    # directory: on a rebuild that directory still holds the previous run's stubs, and
+    # treating those as real pages nests prefixes inside prefixes without bound
+    # (en/latest/en/latest/...), multiplying the output on every build.
+    existing = {f'{docname}.html' for docname in app.env.found_docs}
+    existing |= {'genindex.html', 'search.html'}  # builder-generated, not docnames
+    written = _write_stubs(app.outdir, prefixes, pages, existing=existing)
     logger.info('redirects: wrote %d legacy URL stubs', len(written))
 
 

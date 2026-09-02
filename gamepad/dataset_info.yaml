@@ -1,3 +1,7 @@
+description: >-
+  Cued button-press task validating the CNeuroMod MRI-compatible videogame controller
+  against a commercial gamepad.
+
 stats:
   subjects_n: 4
   neuroimaging:

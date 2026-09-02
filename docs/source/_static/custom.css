@@ -1,9 +1,21 @@
-/* logo cards: uniform height regardless of image aspect ratio */
-#overview .sd-card-img-top {
+/* Funder logo cards. NB `.. div:: overview` renders as class="overview", not an id.
+
+   Uniform height regardless of aspect ratio, on a white plate: logo_ciusss.png is
+   near-black on transparent (invisible on a dark card) and logo_udem.png is an opaque
+   near-white raster that cannot be inverted, so a white plate is the only treatment
+   that works for both in either theme. Round it so it reads as a deliberate plate
+   rather than a raw slab in dark mode. */
+.overview .sd-card-img-top {
     height: 120px;
     object-fit: contain;
     padding: 1rem;
     background: white;
+    border-radius: 6px;
+}
+
+/* these cards carry no text; drop the empty body so the card is just the plate */
+.overview .sd-card-body {
+    display: none;
 }
 
 /* key-facts table: allow cell wrapping */
@@ -143,4 +155,62 @@
 
 #datasets table.docutils th {
   background-color: transparent;
+}
+
+/* ---------------------------------------------------------------- *
+ * landing-page dataset gallery                                      *
+ * ---------------------------------------------------------------- */
+
+#dataset-gallery .ds-card {
+    height: 100%;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#dataset-gallery .ds-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#dataset-gallery .ds-card .sd-card-body {
+    padding: 0.75rem;
+}
+
+#dataset-gallery .ds-card p {
+    margin: 0 0 0.35rem;
+    line-height: 1.4;
+}
+
+#dataset-gallery .ds-card p:last-child {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: var(--color-foreground-secondary);
+}
+
+#dataset-gallery a,
+#dataset-gallery .sd-stretched-link::after {
+    text-decoration: none;
+}
+
+/* uniform tile: artwork varies from 110x232 to 600x259 with baked-in white, black
+   and grey backgrounds, so contain it and let the letterbox follow the theme */
+.ds-tile {
+    height: 140px;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--color-background-secondary);
+}
+
+.ds-tile img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.ds-tile--emoji {
+    font-size: 3.5rem;
+    line-height: 1;
 }

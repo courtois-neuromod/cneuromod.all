@@ -9,6 +9,7 @@ from .renderers import (
     _render_components_row,
     _render_contributors,
     _render_key_facts,
+    _render_dataset_gallery,
     _render_dataset_table,
     _render_dataset_stats_table,
     _render_unreleased_warning,
@@ -16,7 +17,14 @@ from .renderers import (
 
 
 def _inject_index(app, docname, source):
-    pass
+    if docname != 'index':
+        return
+    if discovery._dataset_info:
+        source[0] = source[0].replace(
+            '_datasets_gallery_placeholder_', _render_dataset_gallery(discovery)
+        )
+    else:
+        source[0] = source[0].replace('\n_datasets_gallery_placeholder_', '')
 
 
 def _inject_datasets_index(app, docname, source):

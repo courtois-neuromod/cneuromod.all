@@ -1,3 +1,6 @@
+description: >-
+  Roughly 4000 images from 720 THINGS categories, each shown three times per subject.
+
 stats:
   subjects_n: 4
   neuroimaging:
