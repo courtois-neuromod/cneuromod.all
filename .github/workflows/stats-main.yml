@@ -1,0 +1,137 @@
+name: Refresh statistics (main)
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1' # weekly, Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats-main
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          submodules: false
+          fetch-depth: 0
+
+      - name: Set up SSH key for private submodules
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ github.event.repository.private && secrets.CNEUROMOD_BOT_SSH_KEY || secrets.CNEUROMOD_USER_BOT_SSH_KEY }}
+
+      - name: Trust github.com host key
+        run: mkdir -p ~/.ssh && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
+      - name: Install datalad + git-annex
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git-annex
+          pip install datalad
+
+      - name: Cache installed */bids trees
+        uses: actions/cache@v4
+        with:
+          path: |
+            */bids
+          key: bids-trees-${{ hashFiles('.gitmodules') }}
+
+      - name: Install the statistics submodule (tree only)
+        run: datalad get -n analysis/cneuromod.all.statistics
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Sync statistics submodule deps
+        working-directory: analysis/cneuromod.all.statistics
+        run: uv sync
+
+      - name: Install every dataset's bids tree
+        working-directory: analysis/cneuromod.all.statistics
+        run: |
+          uv run invoke fetch-cneuromod --source "$GITHUB_WORKSPACE"
+          uv run invoke fetch-bids
+
+      - name: Run full pipeline (incl. notebooks/figures)
+        working-directory: analysis/cneuromod.all.statistics
+        run: uv run invoke run --force
+
+      - name: Commit and push statistics outputs
+        id: stats_commit
+        working-directory: analysis/cneuromod.all.statistics
+        run: |
+          git config user.name "CNeuromod Bot"
+          git config user.email "courtois.neuromod@gmail.com"
+          git add output_data/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Auto-update statistics outputs"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sync docs deps
+        working-directory: docs
+        run: uv sync
+
+      - name: Propagate stats into dataset_info.yaml
+        id: propagate
+        working-directory: docs
+        run: |
+          {
+            echo 'changelog<<EOF'
+            uv run python update_dataset_stats.py
+            echo 'EOF'
+          } | tee -a "$GITHUB_OUTPUT"
+
+      - name: Stage dataset_info.yaml and the submodule pointer bump
+        id: diff
+        run: |
+          git add -- '*/dataset_info.yaml'
+          if [ "${{ steps.stats_commit.outputs.changed }}" = "true" ]; then
+            git add analysis/cneuromod.all.statistics
+          fi
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push to main
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "Lune Bellec"
+          git config user.email "lune.bellec@gmail.com"
+          git commit -m "Auto-update dataset_info.yaml statistics"
+          git push origin HEAD:main
+
+      - name: Job summary
+        run: |
+          {
+            echo "## Statistics refresh"
+            echo
+            echo '```'
+            echo "${{ steps.propagate.outputs.changelog }}"
+            echo '```'
+            if [ "${{ steps.diff.outputs.changed }}" = "true" ]; then
+              echo "Pushed a correcting commit to main."
+            else
+              echo "No drift found — dataset_info.yaml already up to date."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

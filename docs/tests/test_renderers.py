@@ -9,6 +9,7 @@ from _ext.renderers import (
     _render_citation,
     _render_contributors,
     _render_key_facts,
+    _render_unreleased_warning,
     _shift_headings,
 )
 
@@ -21,7 +22,7 @@ class TestRenderCitation:
         assert 'A great paper' in result
         assert '**NeuroImage**' in result
         assert '10.1234/test' in result
-        assert ':::{tip}' in result
+        assert ':class: tip' in result
 
     def test_many_authors_et_al(self, citation_cff_many_authors):
         result = _render_citation(citation_cff_many_authors)
@@ -38,7 +39,7 @@ class TestRenderContributors:
         result = _render_contributors(contributorsrc)
         assert 'Alice Smith' in result
         assert 'Bob Jones' in result
-        assert '## Contributors' in result
+        assert 'Contributors' in result
         # emojis for data, code, doc should appear
         assert '🔣' in result  # data
         assert '💻' in result  # code
@@ -162,3 +163,15 @@ class TestShiftHeadings:
     def test_negative_shift_is_noop(self):
         text = '# Title'
         assert _shift_headings(text, -1) == text
+
+
+class TestRenderUnreleasedWarning:
+    def test_is_warning_admonition(self):
+        result = _render_unreleased_warning()
+        assert ':::{warning}' in result
+        assert ':::' in result
+
+    def test_contains_key_message(self):
+        result = _render_unreleased_warning()
+        assert 'not yet been finalized' in result
+        assert 'publicly released' in result

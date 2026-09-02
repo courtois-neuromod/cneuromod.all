@@ -1,9 +1,7 @@
 How to Cite
 ===========
 
-.. tip::
-
-   **Required acknowledgement text**
+.. admonition:: Required acknowledgement text
 
    We kindly ask that all publications using the CNeuroMod data include the
    following paragraph in their acknowledgement section:
@@ -16,15 +14,19 @@ How to Cite
       institutions involved. See the CNeuroMod documentation for an up-to-date list
       of contributors (https://docs.cneuromod.ca)."*
 
-Key Paper
----------
+.. admonition:: Key reference
 
-Boyle, J.A., Pinsard, B., et al. (2025). *CNeuroMod Data Collection Complete:
-200h of individual fMRI Across Diverse Naturalistic and Controlled Tasks to build
-NeuroAI models.* Abstract presented at the Conference on Cognitive Computational
-Neuroscience (CCN 2025).
+   Boyle, J.A., Pinsard, B., et al. (2025). *CNeuroMod Data Collection Complete:
+   200h of individual fMRI Across Diverse Naturalistic and Controlled Tasks to build
+   NeuroAI models.* Abstract presented at the Conference on Cognitive Computational
+   Neuroscience (CCN 2025).
 
-`Download CCN 2025 abstract <https://2025.ccneuro.org/abstract_pdf/Boyle_2025_CNeuroMod_Data_Collection_Complete_200h_individual.pdf>`_
+   `Download CCN 2025 abstract <https://2025.ccneuro.org/abstract_pdf/Boyle_2025_CNeuroMod_Data_Collection_Complete_200h_individual.pdf>`_
+
+.. note::
+
+   For each dataset in the CNeuroMod collection, the documentation page of that
+   dataset recommends a specific reference to cite when using that dataset.
 
 Naming the Data Release
 -----------------------
@@ -34,9 +36,7 @@ We encourage including the name of the CNeuroMod release used in your analysis
 Although some journals flag reproductions of technical documentation as plagiarism,
 using standardised wording aids consistency and reproducibility. Please reproduce
 this documentation verbatim to the greatest extent possible and justify to the editor
-that this practice does not constitute plagiarism. Multiple versioned editions of
-this documentation exist — one per release — so make sure you cite the version that
-matches the data used in your analysis.
+that this practice does not constitute plagiarism.
 
 License
 -------

@@ -2,8 +2,8 @@ stats:
   subjects_n: 6
   neuroimaging:
     fmri:
-      total_h: 54.6
-      per_subject_h: 9.1
+      total_h: 44.0
+      per_subject_h: 7.3
   tasks:
     resting_state:
       total_h: 7.5
@@ -14,31 +14,31 @@ stats:
     contrasts: 36
 
 subjects:
-  - { id: sub-01, status: available }
-  - { id: sub-02, status: available }
-  - { id: sub-03, status: available }
-  - { id: sub-04, status: available }
-  - { id: sub-05, status: available }
-  - { id: sub-06, status: available }
+- {id: sub-01, status: available}
+- {id: sub-02, status: available}
+- {id: sub-03, status: available}
+- {id: sub-04, status: available}
+- {id: sub-05, status: available}
+- {id: sub-06, status: available}
 
 tasks:
-  - emoji: "🎭"
-    label: "7 HCP task localizers (36 contrasts)"
-    note: "13–18 repetitions per participant"
-  - emoji: "💤"
-    label: "resting state"
-    note: "4–6 repetitions per participant"
+- emoji: "🎭"
+  label: "7 HCP task localizers (36 contrasts)"
+  note: "13–18 repetitions per participant"
+- emoji: "💤"
+  label: "resting state"
+  note: "4–6 repetitions per participant"
 
 modalities:
-  - emoji: "📈"
-    label: "Physiology"
-    components:
-      - { label: ECG,              status: not_collected }
-      - { label: pulse,            status: not_collected }
-      - { label: respiration,      status: not_collected }
-      - { label: skin conductance, status: not_collected }
-  - emoji: "👁️"
-    label: "Eyetracking"
-    components:
-      - { label: Gaze,         status: not_collected }
-      - { label: pupillometry, status: not_collected }
+- emoji: "📈"
+  label: "Physiology"
+  components:
+  - {label: ECG, status: not_collected}
+  - {label: pulse, status: not_collected}
+  - {label: respiration, status: not_collected}
+  - {label: skin conductance, status: not_collected}
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: Gaze, status: not_collected}
+  - {label: pupillometry, status: not_collected}

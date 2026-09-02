@@ -42,7 +42,7 @@ For each run, a `_events.tsv` file lists the timing of each repetition. A richer
 
 Companion `.bk2` replays, `.mp4` videos, `.json` summaries, mapped RAM variables, and low-level visual features are provided alongside the events files.
 
-In addition, the 22 levels are split into 313 short **scenes** annotated with 29 design patterns (23 from Dahlskog & Togelius, 2012, plus 6 contextual ones). See [`SCENES.md`](./SCENES.md) and the [`mario.scenes`](https://github.com/courtois-neuromod/mario.scenes) submodule for details and tooling to generate clip-level metadata, video, and memory dumps for each scene attempt.
+In addition, the 22 levels are split into 313 short **scenes** annotated with 29 design patterns (23 from Dahlskog & Togelius, 2012, plus 6 contextual ones). See {doc}`SCENES.md </contents/scenes>` and the [`mario.scenes`](https://github.com/courtois-neuromod/mario.scenes) submodule for details and tooling to generate clip-level metadata, video, and memory dumps for each scene attempt.
 
 ## Tutorials
 The [`mario.tutorials`](https://github.com/courtois-neuromod/mario.tutorials) repository provides a set of Colab-ready Jupyter notebooks that illustrate end-to-end use of the dataset on a single participant / single session, suitable for running on a laptop:

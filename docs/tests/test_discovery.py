@@ -4,7 +4,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'source'))
 
-from _ext.discovery import _discover_dataset_components, _symlink
+from _ext.discovery import _auto_discover_datasets, _discover_dataset_components, _symlink
+import _ext.discovery as discovery
 
 
 class TestSymlink:
@@ -90,3 +91,60 @@ class TestDiscoverDatasetComponents:
         stem, path, kind = result[0]
         assert kind == 'section'  # local overrides global
         assert path == local_md
+
+
+class TestAutoDiscoverDatasets:
+    def _run_discovery(self, repo_root, monkeypatch):
+        """Run _auto_discover_datasets with a patched conf dir pointing at repo_root.
+
+        Mirror the real layout: repo_root/docs/source/_ext/discovery.py
+        so that conf_dir/../../.. resolves back to repo_root.
+        """
+        fake_ext_dir = repo_root / 'docs' / 'source' / '_ext'
+        fake_ext_dir.mkdir(parents=True, exist_ok=True)
+        monkeypatch.setattr(discovery, '__file__', str(fake_ext_dir / 'discovery.py'))
+        discovery._auto_discover_datasets(None)
+
+    def test_readme_dataset_uses_symlink(self, tmp_path, monkeypatch):
+        ds = tmp_path / 'myds'
+        ds.mkdir()
+        (ds / 'README.md').write_text('# My Dataset\n\nContent.')
+        (ds / 'dataset_info.yaml').write_text('{}')
+
+        self._run_discovery(tmp_path, monkeypatch)
+
+        page = tmp_path / 'docs' / 'source' / 'datasets' / 'myds.md'
+        assert page.is_symlink()
+        assert 'myds' in discovery._discovered_datasets
+        assert 'myds' in discovery._dataset_readme
+
+    def test_info_only_dataset_writes_stub(self, tmp_path, monkeypatch):
+        ds = tmp_path / 'myds'
+        ds.mkdir()
+        (ds / 'dataset_info.yaml').write_text('{}')
+
+        self._run_discovery(tmp_path, monkeypatch)
+
+        page = tmp_path / 'docs' / 'source' / 'datasets' / 'myds.md'
+        assert page.exists() and not page.is_symlink()
+        assert page.read_text(encoding='utf-8') == '# myds\n'
+        assert 'myds' in discovery._discovered_datasets
+        assert 'myds' not in discovery._dataset_readme
+
+    def test_no_info_no_readme_skipped(self, tmp_path, monkeypatch):
+        ds = tmp_path / 'myds'
+        ds.mkdir()
+
+        self._run_discovery(tmp_path, monkeypatch)
+
+        assert 'myds' not in discovery._discovered_datasets
+
+    def test_readme_only_still_discovered(self, tmp_path, monkeypatch):
+        ds = tmp_path / 'myds'
+        ds.mkdir()
+        (ds / 'README.md').write_text('# My Dataset\n')
+
+        self._run_discovery(tmp_path, monkeypatch)
+
+        assert 'myds' in discovery._discovered_datasets
+        assert 'myds' in discovery._dataset_readme

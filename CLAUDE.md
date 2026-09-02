@@ -56,6 +56,18 @@ Defined in `docs/schema.json`; auto-rendered labels/emoji are in `docs/source/_e
 
 **`subjects` section** — list of `{id, status}` objects; valid statuses: `available`, `partial`, `pending`, `not_collected`, `collected_not_released`.
 
+### Machine-generated fields — do not hand-edit
+
+`stats.subjects_n`, `stats.neuroimaging.fmri.*`, and `subjects[*].status` are recomputed by
+CI on every PR and on every push to `main` (`.github/workflows/stats-pr.yml` /
+`stats-main.yml`), driven by `analysis/run_statistics.sh` and
+`docs/update_dataset_stats.py`. Edit the underlying data or the pipeline, not these fields
+directly — a manual edit will simply be overwritten by the next PR's stats check.
+`update_dataset_stats.py` never overwrites the `partial` / `pending` /
+`collected_not_released` statuses, so those remain hand-set. Everything else in
+`dataset_info.yaml` (`tasks`, `physiology`, `modalities`, notes, etc.) is untouched by the
+pipeline and remains fully hand-maintained.
+
 ## Submodule structure
 
 | Path | Type | GitHub repo |

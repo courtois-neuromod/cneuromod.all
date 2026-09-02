@@ -22,6 +22,7 @@ html_theme = 'furo'
 html_theme_options = {
     'navigation_with_keys': True,
 }
+html_title = 'docs @latest'
 html_short_title = 'CNeuroMod'
 html_logo = 'img/logo_neuromod_black.png'
 html_favicon = 'img/logo_neuromod_small.png'
