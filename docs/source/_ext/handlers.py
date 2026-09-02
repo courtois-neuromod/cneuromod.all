@@ -2,6 +2,7 @@ from tabulate import tabulate
 import yaml
 
 from . import discovery
+from . import redirects
 from .renderers import (
     _render_citation,
     _render_component_sections,
@@ -137,3 +138,4 @@ def setup(app):
     app.connect('source-read', _inject_dataset_stats_table)
     app.connect('source-read', _inject_dataset_metadata)
     app.connect('env-get-outdated', _always_reread_index)
+    redirects.setup(app)
