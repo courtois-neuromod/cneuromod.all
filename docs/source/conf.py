@@ -27,6 +27,8 @@ html_short_title = 'CNeuroMod'
 html_logo = 'img/logo_neuromod_black.png'
 html_favicon = 'img/logo_neuromod_small.png'
 html_static_path = ['_static']
+# CNAME, .nojekyll and the 404 catch-all, copied verbatim to the site root
+html_extra_path = ['_extra']
 html_css_files = ['custom.css']
 
 myst_enable_extensions = [

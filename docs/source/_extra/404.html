@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Courtois NeuroMod</title>
+<meta name="robots" content="noindex">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 4rem auto; max-width: 40rem;
+         padding: 0 1.5rem; line-height: 1.6; }
+  code { background: rgba(127,127,127,.15); padding: .1em .3em; border-radius: 3px; }
+</style>
+<script>
+// Catch-all for legacy ReadTheDocs URLs that have no generated stub. Strips the
+// version prefix (/en/latest/, /2020-alpha/, ...) and maps the old page names
+// onto their current home; anything else lands on the documentation root.
+(function () {
+  var LEGACY = {
+    "ACCESS.html": "contents/access.html",
+    "AUTHORS.html": "AUTHORS.html",
+    "DATASETS.html": "contents/datasets.html",
+    "DERIVATIVES.html": "contents/components.html",
+    "MEG.html": "contents/mri.html",
+    "MRI.html": "contents/mri.html",
+    "index.html": "index.html"
+  };
+  var DATASET_ANCHORS = {
+    "anat": "datasets/anat.html", "floc": "datasets/floc.html",
+    "friends": "datasets/friends.html", "harrypotter": "datasets/harrypotter.html",
+    "hcptrt": "datasets/hcptrt.html", "movie10": "datasets/movie10.html",
+    "retinotopy": "datasets/retinotopy.html", "shinobi": "datasets/shinobi.html",
+    "shinobi-training": "contents/training.html", "things": "datasets/things.html"
+  };
+  var VERSIONS = /^(latest|stable|\d{4}-alpha\d*)$/;
+
+  // Site root: "/" on docs.cneuromod.ca, "/<repo>/" on *.github.io project pages.
+  var base = "/";
+  if (window.location.hostname.endsWith("github.io")) {
+    var first = window.location.pathname.split("/")[1];
+    if (first) { base = "/" + first + "/"; }
+  }
+
+  var parts = window.location.pathname.slice(base.length).split("/").filter(Boolean);
+  var depth = parts.length;
+  if (parts[0] === "en") { parts.shift(); }
+  if (parts.length && VERSIONS.test(parts[0])) { parts.shift(); }
+  var versioned = parts.length !== depth;
+
+  var rest = parts.join("/") || "index.html";
+  var hash = window.location.hash.replace(/^#/, "");
+  var target;
+
+  if (LEGACY[rest]) {
+    target = (rest === "DATASETS.html" && DATASET_ANCHORS[hash]) ? DATASET_ANCHORS[hash]
+           : (hash ? LEGACY[rest] + "#" + hash : LEGACY[rest]);
+  } else if (versioned) {
+    // a versioned path such as /latest/contents/access.html -> same page at the root
+    target = hash ? rest + "#" + hash : rest;
+  }
+
+  if (target) { window.location.replace(base + target); }
+})();
+</script>
+</head>
+<body>
+<h1>Page not found</h1>
+<p>The CNeuroMod documentation moved from ReadTheDocs to
+<a href="/">docs.cneuromod.ca</a>, and this address no longer matches a page.</p>
+<p>Try the <a href="/">documentation home</a> or the <a href="/search.html">search page</a>.</p>
+</body>
+</html>
