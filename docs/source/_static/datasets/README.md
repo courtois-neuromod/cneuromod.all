@@ -17,19 +17,21 @@ site's inception.
 |---|---|---|
 | `anat.jpg` | `anat.jpg` | unchanged |
 | `floc.jpg` | `floc.jpg` | unchanged |
-| `friends.jpg` | `friends-s01.jpg` | **placeholder** — season 1 cover standing in for the whole dataset; replace with a dedicated image |
-| `harrypotter.jpg` | `harrypotter.jpg` | unchanged |
 | `hcptrt.png` | `hcptrt.png` | unchanged |
 | `movie10.jpg` | `hiddenfigures.jpg` | downscaled 1800×776 → 600×259 |
 | `retinotopy.jpg` | `retinotopy.jpg` | unchanged |
-| `shinobi.jpg` | `shinobi.jpg` | unchanged |
 | `things.jpg` | `things.jpg` | unchanged |
 
 Several of these are third-party cover art for the stimuli used in the corresponding
-experiments (Friends DVD, *Harry Potter and the Philosopher's Stone*, *Shinobi III*,
-*Hidden Figures*). They illustrate the stimulus material and are reproduced here as they
-already appear on the project website.
+experiments (*Hidden Figures*). They illustrate the stimulus material and are reproduced
+here as they already appear on the project website.
 
 Aspect ratios and background colours vary widely; the `.ds-tile` rules in
 `../custom.css` normalise them (fixed tile height, `object-fit: contain`, theme-aware
 letterbox background), so images need no cropping or flattening before being added.
+
+## Licensing
+
+Per-image copyright and reuse notes are tracked in [`LICENSES.md`](LICENSES.md) in this
+directory. Add an entry there for every new tile — these are all third-party cover art
+used to illustrate experiment stimuli, not project-owned images, so provenance matters.
