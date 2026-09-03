@@ -6,9 +6,9 @@ file tracks, per image, where it came from and under what basis it's being reuse
 reasoning doesn't need to be reconstructed later.
 
 Entries for the images retrieved on 2026-09-02 from the legacy cneuromod.ca gallery
-(`anat.jpg`, `floc.jpg`, `hcptrt.png`, `movie10.jpg`, `retinotopy.jpg`, `things.jpg`) are
-not yet individually documented here — see `README.md` in this directory for their
-provenance table. New images added from here on should get a full entry below.
+(`floc.jpg`, `hcptrt.png`, `movie10.jpg`, `retinotopy.jpg`, `things.jpg`) are not yet
+individually documented here — see `README.md` in this directory for their provenance
+table. New images added from here on should get a full entry below.
 
 ## friends.jpg
 
@@ -96,7 +96,7 @@ provenance table. New images added from here on should get a full entry below.
 
 ## mariostars.png
 
-- **Depicts:** The same [`mario.png`](#mariopng) mushroom artwork (transparent
+- **Depicts:** The same [`mario.png`](#img-mariopng) mushroom artwork (transparent
   background) with a yellow five-point star badge (drawn programmatically, solid fill
   with a dark outline) composited in the upper-right corner, to visually distinguish
   the `mariostars` dataset's gallery tile from `mario`/`mario3`/`mario_eeg`.
@@ -107,7 +107,7 @@ provenance table. New images added from here on should get a full entry below.
 
 ## mario3.png
 
-- **Depicts:** The same [`mario.png`](#mariopng) mushroom artwork (transparent
+- **Depicts:** The same [`mario.png`](#img-mariopng) mushroom artwork (transparent
   background) with a yellow circular badge containing a bold white "3" (drawn
   programmatically) composited in the upper-right corner, to visually distinguish the
   `mario3` dataset's gallery tile from `mario`/`mariostars`/`mario_eeg`.
@@ -133,9 +133,37 @@ provenance table. New images added from here on should get a full entry below.
 
   <a href="https://www.magnific.com">designed by pikisuperstar - Magnific.com</a>
 
+## ood.jpg
+
+- **Depicts:** A publicity still of Charlie Chaplin in his "Tramp" costume (bowler hat,
+  cane), from the 1915 Essanay Studios film *The Tramp*, used as the gallery tile for the
+  `ood` dataset (out-of-distribution audiovisual stimuli held out to test generalization
+  of brain encoding models).
+- **Author:** P.D Jankens.
+- **Source:** [Wikimedia Commons / Wikipedia, `File:Charlie_Chaplin.jpg`](https://en.wikipedia.org/wiki/File:Charlie_Chaplin.jpg),
+  uploaded by Fred Chess, retrieved 2026-09-03. Original 1280×1600 (JPEG); downscaled to
+  600×743 for the gallery tile.
+- **License:** Public domain in the United States (published before January 1, 1931;
+  `PD-US-expired`/`PD-1923`). No attribution required.
+
+## anat.jpg
+
+- **Depicts:** A montage of anatomical and quantitative MRI acquisitions (T1w, T2w,
+  MP2RAGE, ME-GRE, magnetization transfer, diffusion-weighted imaging) with labels for
+  the morphometry/demyelination/axon-degeneration measures each protocol targets, used as
+  the gallery tile for the `anat` dataset.
+- **Author:** Mathieu Boudreau, Agah Karakuzu, Arnaud Boré, Basile Pinsard, Kiril
+  Zelenkovski, Eva Alonso-Ortiz, Julie Boyle, Lune Bellec, Julien Cohen-Adad — the authors
+  of the dataset's preferred-citation paper (see `anat/CITATION.cff`), "Longitudinal
+  reproducibility of brain and spinal cord quantitative MRI biomarkers", Imaging
+  Neuroscience, 2025.
+- **Source:** Figure from the above paper, carried over unchanged from the legacy
+  cneuromod.ca gallery (retrieved 2026-09-02; see `README.md` in this directory).
+- **License:** CC-BY 4.0, per the authors of the paper.
+
 ## mario_eeg.png
 
-- **Depicts:** The same [`mario.png`](#mariopng) mushroom artwork (transparent
+- **Depicts:** The same [`mario.png`](#img-mariopng) mushroom artwork (transparent
   background) with a white circular badge, dark outline, containing a yellow jagged
   waveform evoking an EEG trace (drawn programmatically) composited in the upper-right
   corner, used as the gallery tile for the `mario_eeg` dataset.
@@ -143,3 +171,17 @@ provenance table. New images added from here on should get a full entry below.
   the base artwork's provenance and license. The badge and waveform are original
   shapes with no external source.
 - **Attribution:** mushroom icon via Vecteezy.com.
+
+## narratives.jpg
+
+- **Depicts:** Title-page illustration for *The Orphant Annie Book* (James Whitcomb
+  Riley, 1908) showing a group of children gathered around a woman telling them a story,
+  used as the gallery tile for the `narratives` dataset (fMRI listening to spoken
+  narratives).
+- **Author:** Ethel Franklin Betts (1877–1959).
+- **Source:** [Wikimedia Commons, `File:Orphant Annie Book – Title page.jpg`](https://commons.wikimedia.org/wiki/File:Orphant_Annie_Book_%E2%80%93_Title_page.jpg),
+  from *The Orphant Annie Book*, Bobbs-Merrill Co., Indianapolis, 1908 (via Internet
+  Archive), retrieved 2026-09-03. Original 1776×1121; downscaled to 600×379 for the
+  gallery tile.
+- **License:** Public domain in the United States (published before January 1, 1931;
+  `PD-US-expired`/`PD-1923`). No attribution required.
