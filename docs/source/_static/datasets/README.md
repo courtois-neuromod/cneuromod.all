@@ -17,7 +17,6 @@ site's inception.
 |---|---|---|
 | `anat.jpg` | `anat.jpg` | unchanged |
 | `floc.jpg` | `floc.jpg` | unchanged |
-| `hcptrt.png` | `hcptrt.png` | unchanged |
 | `retinotopy.jpg` | `retinotopy.jpg` | unchanged |
 | `things.jpg` | `things.jpg` | unchanged |
 

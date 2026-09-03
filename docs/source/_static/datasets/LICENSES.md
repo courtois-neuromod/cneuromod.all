@@ -6,9 +6,9 @@ file tracks, per image, where it came from and under what basis it's being reuse
 reasoning doesn't need to be reconstructed later.
 
 Entries for the images retrieved on 2026-09-02 from the legacy cneuromod.ca gallery
-(`floc.jpg`, `hcptrt.png`, `movie10.jpg`, `retinotopy.jpg`, `things.jpg`) are not yet
-individually documented here — see `README.md` in this directory for their provenance
-table. New images added from here on should get a full entry below.
+(`floc.jpg`, `movie10.jpg`, `retinotopy.jpg`, `things.jpg`) are not yet individually
+documented here — see `README.md` in this directory for their provenance table. New
+images added from here on should get a full entry below.
 
 ## friends.jpg
 
@@ -216,3 +216,19 @@ table. New images added from here on should get a full entry below.
   gallery tile.
 - **License:** Public domain in the United States (published before January 1, 1931;
   `PD-US-expired`/`PD-1923`). No attribution required.
+
+## hcptrt.png
+
+- **Depicts:** A lateral-view brain connectivity/decoding network diagram (coloured nodes
+  and connecting edges over a brain silhouette), used as the gallery tile for the `hcptrt`
+  dataset. Replaces the earlier legacy tile of the same filename carried over from the old
+  cneuromod.ca gallery (retrieved 2026-09-02; undocumented provenance).
+- **Author:** Shima Rastegarnia, Marie St-Laurent, Elizabeth DuPre, Basile Pinsard, Pierre
+  Bellec — authors of the dataset's preferred-citation paper (see `hcptrt/CITATION.cff`),
+  "Brain decoding of the Human Connectome Project tasks in a dense individual fMRI
+  dataset", *NeuroImage*, vol. 283, 2023.
+- **Source:** Figure from the above paper,
+  [doi:10.1016/j.neuroimage.2023.120395](https://doi.org/10.1016/j.neuroimage.2023.120395),
+  retrieved 2026-09-03. 544×460 PNG with transparent background.
+- **License:** CC BY 4.0, per the publisher (confirmed via Crossref metadata and the
+  article page license link, `creativecommons.org/licenses/by/4.0/`).
