@@ -18,7 +18,6 @@ site's inception.
 | `anat.jpg` | `anat.jpg` | unchanged |
 | `floc.jpg` | `floc.jpg` | unchanged |
 | `hcptrt.png` | `hcptrt.png` | unchanged |
-| `movie10.jpg` | `hiddenfigures.jpg` | downscaled 1800×776 → 600×259 |
 | `retinotopy.jpg` | `retinotopy.jpg` | unchanged |
 | `things.jpg` | `things.jpg` | unchanged |
 

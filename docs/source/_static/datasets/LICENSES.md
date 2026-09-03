@@ -146,6 +146,22 @@ table. New images added from here on should get a full entry below.
 - **License:** Public domain in the United States (published before January 1, 1931;
   `PD-US-expired`/`PD-1923`). No attribution required.
 
+## movie10.jpg
+
+- **Depicts:** Portrait photograph of mathematician Katherine Johnson, taken at NASA in
+  1983, used as the gallery tile for the `movie10` dataset (fMRI viewing of ten feature
+  films, including *Hidden Figures*, the biographical drama about Johnson and her
+  colleagues). Replaces the earlier legacy tile (an unlicensed *Hidden Figures* DVD/poster
+  cover scan carried over from the old cneuromod.ca gallery).
+- **Author:** NASA.
+- **Source:** [Wikimedia Commons / Wikipedia, `File:Katherine_Johnson_1983.jpg`](https://en.wikipedia.org/wiki/Katherine_Johnson#/media/File:Katherine_Johnson_1983.jpg)
+  (original at [NASA's historic archive, 1983-L-04373.jpg](https://crgis.ndc.nasa.gov/historic/File:1983-L-04373.jpg)),
+  retrieved 2026-09-03. Original 2400×3000 grayscale JPG; downscaled to 600×750 for the
+  gallery tile.
+- **License:** Public domain (`PD-USGov`/`PD-NASA`) — NASA material is not protected by
+  copyright unless explicitly noted. No attribution required, though NASA is credited
+  above as a courtesy.
+
 ## anat.jpg
 
 - **Depicts:** A montage of anatomical and quantitative MRI acquisitions (T1w, T2w,
@@ -171,6 +187,21 @@ table. New images added from here on should get a full entry below.
   the base artwork's provenance and license. The badge and waveform are original
   shapes with no external source.
 - **Attribution:** mushroom icon via Vecteezy.com.
+
+## langlocalizer.png
+
+- **Depicts:** Figure from the paper illustrating the language localizer task (sentences
+  vs. degraded/nonword controls), used as the gallery tile for the `langlocalizer`
+  dataset.
+- **Author:** Benjamin Lipkin, Greta Tuckute, Josef Affourtit, Hannah Small, Zachary
+  Mineroff, Hope Kean, Olessia Jouravlev, Lara Rakocevic, Brianna Pritchett, Matthew
+  Siegelman, Caitlyn Hoeflin, Alvincé Pongos, Idan A. Blank, Melissa Kline Struhl, Anna
+  Ivanova, Steven Shannon, Aalok Sathe, Malte Hoffmann, Alfonso Nieto-Castañón, and
+  Evelina Fedorenko — "Probabilistic atlas for the language network based on precision
+  fMRI data from >800 individuals", *Scientific Data*, 2022.
+- **Source:** [doi:10.1038/s41597-022-01645-3](https://doi.org/10.1038/s41597-022-01645-3),
+  retrieved 2026-09-03.
+- **License:** CC BY 4.0, per the journal (*Scientific Data*).
 
 ## narratives.jpg
 
