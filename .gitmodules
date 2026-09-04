@@ -530,3 +530,8 @@
 	url = git@github.com:courtois-neuromod/mario3.timeseries.git
 	datalad-id = f0a9f6e3-6940-4a94-96f2-c379120e2386
 	datalad-url = git@github.com:courtois-neuromod/mario3.timeseries.git
+[submodule "gamepad/timeseries"]
+	path = gamepad/timeseries
+	url = git@github.com:courtois-neuromod/gamepad.timeseries.git
+	datalad-id = f02103ec-447e-4861-baa6-8b0ec01e3321
+	datalad-url = git@github.com:courtois-neuromod/gamepad.timeseries.git
