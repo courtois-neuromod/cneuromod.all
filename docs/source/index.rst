@@ -1,8 +1,5 @@
 .. include:: OVERVIEW.rst
 
-Dataset gallery
----------------
-
 _datasets_gallery_placeholder_
 
 .. toctree::
@@ -10,6 +7,7 @@ _datasets_gallery_placeholder_
    :caption: Contents:
 
    contents/access
+   contents/license
    contents/downloading
    contents/participants
    contents/mri

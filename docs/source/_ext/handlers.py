@@ -12,6 +12,7 @@ from .renderers import (
     _render_dataset_gallery,
     _render_dataset_table,
     _render_dataset_stats_table,
+    _render_image_licenses,
     _render_unreleased_warning,
 )
 
@@ -35,6 +36,12 @@ def _inject_datasets_index(app, docname, source):
         source[0] = source[0].replace('   _datasets_toc_placeholder_', f'   {entries}')
     else:
         source[0] = source[0].replace('\n   _datasets_toc_placeholder_', '')
+
+
+def _inject_license_page(app, docname, source):
+    if docname != 'contents/license':
+        return
+    source[0] = source[0].replace('_image_licenses_placeholder_', _render_image_licenses())
 
 
 def _inject_datasets_tables(app, docname, source):
@@ -80,7 +87,7 @@ def _inject_dataset_metadata(app, docname, source):
 
     key_facts = ''
     if name in discovery._dataset_info:
-        key_facts = _render_key_facts(discovery._dataset_info[name])
+        key_facts = _render_key_facts(discovery._dataset_info[name], name)
 
     comp_row = _render_components_row(components) if components else ''
     if comp_row:
@@ -116,7 +123,7 @@ def _always_reread_index(app, env, added, changed, removed):
     # Force re-read of index, component pages, and dataset pages with metadata,
     # so content stays current on incremental builds.
     seen = set()
-    force = ['index', 'contents/components', 'contents/datasets']
+    force = ['index', 'contents/license', 'contents/components', 'contents/datasets']
     force += [f'contents/{stem.lower()}' for stem, _ in discovery._global_components]
     force += [f'contents/{stem.lower()}' for stem, _, _ in discovery._local_components]
     for name in discovery._dataset_citation:
@@ -140,6 +147,7 @@ def _always_reread_index(app, env, added, changed, removed):
 def setup(app):
     app.connect('builder-inited', discovery._auto_discover_datasets)
     app.connect('source-read', _inject_index)
+    app.connect('source-read', _inject_license_page)
     app.connect('source-read', _inject_components_index)
     app.connect('source-read', _inject_datasets_index)
     app.connect('source-read', _inject_datasets_tables)
