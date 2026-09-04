@@ -27,20 +27,27 @@ images added from here on should get a full entry below.
 
   <a href="https://www.magnific.com">designed by rawpixel.com - Magnific.com</a>
 
-## petit-prince.jpg
+## petit-prince.png
 
-- **Depicts:** Photograph of a physical copy of *Le Petit Prince* (Antoine de
-  Saint-Exupéry), the audiobook used as the stimulus for the `petit-prince` dataset.
-- **Author:** Fayza Blz.
-- **Source:** [Wikimedia Commons, `File:Livre petit prince.jpg`](https://commons.wikimedia.org/wiki/File:Livre_petit_prince.jpg)
-  (also embedded on the [French Wikipedia article](https://fr.wikipedia.org/wiki/Le_Petit_Prince#/media/Fichier:Livre_petit_prince.jpg)),
-  retrieved 2026-09-03. Original 2988×5312; cropped to the book cover (removing the
-  surrounding table background) and downscaled to 600×953 for the gallery tile.
-- **License:** CC BY-SA 4.0 (own work, uploaded by the photographer). Free to share and
-  adapt with attribution; derivatives must carry the same or a compatible license.
-  Attribution: photograph © Fayza Blz, CC BY-SA 4.0.
-- **Note:** this replaces an earlier candidate (an English Wikipedia fair-use-only book
-  cover scan) that was swapped out in favour of this freely-licensed photo.
+- **Depicts:** A boy sitting atop a cratered moon among stars, an illustration evoking
+  the Little Prince without reproducing any book artwork, used as the gallery tile for
+  the `petit-prince` dataset (fMRI listening to the audiobook of Antoine de
+  Saint-Exupéry's *Le Petit Prince*).
+- **Author:** Freepik, via Magnific.com (Freepik Company, S.L.U.).
+- **Source:** [Magnific.com, "nice background of boy sitting on the moon"](https://www.magnific.com/free-vector/nice-background-boy-sitting-moon_1105157.htm),
+  retrieved 2026-09-03. Original 2000×2000 transparent PNG; the "designed by
+  freepik.com" watermark baked into the artwork was cropped off, then the image was
+  trimmed to content and downscaled to 552×600 for the gallery tile.
+- **License:** Magnific/Freepik "Free for commercial use WITH ATTRIBUTION" license
+  (license certificate on file). Permits web use and derivative works; requires
+  attribution "designed by Freepik - Magnific.com", credited below.
+
+  <a href="https://www.magnific.com">designed by Freepik - Magnific.com</a>
+
+- **Note:** this replaces an earlier candidate, a Wikimedia Commons photo of a physical
+  copy of the book labelled CC BY-SA 4.0 as the photographer's "own work". That license
+  covers only the photograph, not the commercial book cover/illustration depicted in it
+  — a Wikipedia licensing oversight — so it was pulled.
 
 ## emotion-videos.jpg
 
