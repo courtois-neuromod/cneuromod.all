@@ -545,3 +545,8 @@
 	url = git@github.com:courtois-neuromod/multfs.timeseries.git
 	datalad-id = 2e3ab2c2-9f3e-4289-9547-01df4f59b2b2
 	datalad-url = git@github.com:courtois-neuromod/multfs.timeseries.git
+[submodule "mutemusic/timeseries"]
+	path = mutemusic/timeseries
+	url = git@github.com:courtois-neuromod/mutemusic.timeseries.git
+	datalad-id = 2618d9f4-0220-4d1a-b1c5-dd76dc36f14c
+	datalad-url = git@github.com:courtois-neuromod/mutemusic.timeseries.git
