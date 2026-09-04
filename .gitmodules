@@ -530,3 +530,38 @@
 	url = git@github.com:courtois-neuromod/mario3.timeseries.git
 	datalad-id = f0a9f6e3-6940-4a94-96f2-c379120e2386
 	datalad-url = git@github.com:courtois-neuromod/mario3.timeseries.git
+[submodule "gamepad/timeseries"]
+	path = gamepad/timeseries
+	url = git@github.com:courtois-neuromod/gamepad.timeseries.git
+	datalad-id = f02103ec-447e-4861-baa6-8b0ec01e3321
+	datalad-url = git@github.com:courtois-neuromod/gamepad.timeseries.git
+[submodule "langlocalizer/timeseries"]
+	path = langlocalizer/timeseries
+	url = git@github.com:courtois-neuromod/langlocalizer.timeseries.git
+	datalad-id = c7652c67-1682-453e-b2a4-a814009b4934
+	datalad-url = git@github.com:courtois-neuromod/langlocalizer.timeseries.git
+[submodule "multfs/timeseries"]
+	path = multfs/timeseries
+	url = git@github.com:courtois-neuromod/multfs.timeseries.git
+	datalad-id = 2e3ab2c2-9f3e-4289-9547-01df4f59b2b2
+	datalad-url = git@github.com:courtois-neuromod/multfs.timeseries.git
+[submodule "mutemusic/timeseries"]
+	path = mutemusic/timeseries
+	url = git@github.com:courtois-neuromod/mutemusic.timeseries.git
+	datalad-id = 2618d9f4-0220-4d1a-b1c5-dd76dc36f14c
+	datalad-url = git@github.com:courtois-neuromod/mutemusic.timeseries.git
+[submodule "narratives/timeseries"]
+	path = narratives/timeseries
+	url = git@github.com:courtois-neuromod/narratives.timeseries.git
+	datalad-id = 701f54f0-acb0-4736-a6ef-2ec2bb691387
+	datalad-url = git@github.com:courtois-neuromod/narratives.timeseries.git
+[submodule "ood/timeseries"]
+	path = ood/timeseries
+	url = git@github.com:courtois-neuromod/ood.timeseries.git
+	datalad-id = 0190f2ed-c4fb-4436-b8e8-ec18474008d0
+	datalad-url = git@github.com:courtois-neuromod/ood.timeseries.git
+[submodule "triplets/timeseries"]
+	path = triplets/timeseries
+	url = git@github.com:courtois-neuromod/triplets.timeseries.git
+	datalad-id = 9100f32b-934e-4bc2-8c1d-a695bc5c6ba5
+	datalad-url = git@github.com:courtois-neuromod/triplets.timeseries.git
