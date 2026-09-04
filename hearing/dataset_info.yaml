@@ -1,3 +1,7 @@
+description: >-
+  Clinical audiology tests administered around MRI sessions to track the participants'
+  hearing over the project.
+
 stats:
   subjects_n: 6
 subjects:

@@ -32,17 +32,28 @@ Always use **Julie A. Boyle** (login: `julieaboyle1`, profile: `https://github.c
 
 ## Per-dataset metadata
 
-Each top-level dataset folder (e.g. `hcptrt/`, `anat/`) may contain two metadata files that are auto-rendered into the Sphinx documentation at build time:
+Each top-level dataset folder (e.g. `hcptrt/`, `anat/`) may contain metadata files that are auto-rendered into the Sphinx documentation at build time:
 
 - **`CITATION.cff`** — Citation File Format 1.2.0 (`type: dataset`). The `preferred-citation` block points to the paper(s) users should cite. This renders as a "How to cite" tip admonition on the dataset's doc page. Citation and contributor lists are kept separate because the key reference for a dataset (often an analysis paper) may have different authors than the people who collected/curated the data.
 
+- **`dataset_info.yaml`** — structured facts (see the schema section below). Its
+  `description` supplies the dataset's blurb in the landing-page gallery, and an image at
+  `docs/source/_static/datasets/<dataset>.{jpg,png}` supplies the gallery tile; without one,
+  the card falls back to the dataset's emoji in `docs/source/_ext/constants.py`.
+
 - **`contributors.json`** — allcontributors JSON schema. Lists contributors with `contributions` role keys (`data`, `code`, `doc`, `design`, `review`, `maintenance`, `projectManagement`, `ideas`, `mentoring`, `bug`, `userTesting`, `financial`, `question`). Renders as a "Contributors" section with emoji annotations. People without GitHub accounts omit `login`; organizations are supported.
 
-The Sphinx pipeline in `docs/source/conf.py` discovers both files automatically — no manual wiring needed. Add a `README.md` to a dataset folder and it appears in the docs; add `CITATION.cff` and/or `contributors.json` alongside it and the citation/contributor blocks render automatically.
+The Sphinx pipeline in `docs/source/conf.py` discovers these files automatically — no manual wiring needed. Add a `README.md` to a dataset folder and it appears in the docs; add `CITATION.cff` and/or `contributors.json` alongside it and the citation/contributor blocks render automatically.
 
 ### `dataset_info.yaml` schema
 
 Defined in `docs/schema.json`; auto-rendered labels/emoji are in `docs/source/_ext/constants.py`. Key rules:
+
+**`description` (top level)** — a one-line plain-text summary of the dataset, used as the
+blurb on the landing-page dataset gallery. Keep it to a single sentence and do **not** put
+subject counts or hours in it: those are machine-generated into `stats` and would drift.
+It falls back to the first `tasks[].label` when absent. `docs/schema.json` describes the
+`stats` object only, so this key needs no schema change.
 
 **`stats` section** — all numeric data goes here and is auto-rendered. Valid keys:
 - `subjects_n` (integer)

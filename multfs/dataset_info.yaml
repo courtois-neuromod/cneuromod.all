@@ -1,3 +1,7 @@
+description: >-
+  Visual working-memory task quizzing combinations of stimulus features across a range of
+  difficulty levels.
+
 stats:
   subjects_n: 5
   neuroimaging:

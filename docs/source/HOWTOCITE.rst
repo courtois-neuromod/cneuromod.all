@@ -42,6 +42,6 @@ License
 -------
 
 Data are shared by the CNeuroMod team under a
-`CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_.
-Exceptions apply for copyrighted stimuli — see the README of each dataset for
-details.
+`CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_, with
+some exceptions (e.g. copyrighted stimuli, and the `sub-04` subject data which requires
+a Data Transfer Agreement). See :doc:`contents/license` for full details.
