@@ -18,7 +18,6 @@ site's inception.
 | `anat.jpg` | `anat.jpg` | unchanged |
 | `floc.jpg` | `floc.jpg` | unchanged |
 | `retinotopy.jpg` | `retinotopy.jpg` | unchanged |
-| `things.jpg` | `things.jpg` | unchanged |
 
 Several of these are third-party cover art for the stimuli used in the corresponding
 experiments (*Hidden Figures*). They illustrate the stimulus material and are reproduced
