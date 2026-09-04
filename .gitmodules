@@ -540,3 +540,8 @@
 	url = git@github.com:courtois-neuromod/langlocalizer.timeseries.git
 	datalad-id = c7652c67-1682-453e-b2a4-a814009b4934
 	datalad-url = git@github.com:courtois-neuromod/langlocalizer.timeseries.git
+[submodule "multfs/timeseries"]
+	path = multfs/timeseries
+	url = git@github.com:courtois-neuromod/multfs.timeseries.git
+	datalad-id = 2e3ab2c2-9f3e-4289-9547-01df4f59b2b2
+	datalad-url = git@github.com:courtois-neuromod/multfs.timeseries.git
