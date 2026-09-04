@@ -560,3 +560,8 @@
 	url = git@github.com:courtois-neuromod/ood.timeseries.git
 	datalad-id = 0190f2ed-c4fb-4436-b8e8-ec18474008d0
 	datalad-url = git@github.com:courtois-neuromod/ood.timeseries.git
+[submodule "triplets/timeseries"]
+	path = triplets/timeseries
+	url = git@github.com:courtois-neuromod/triplets.timeseries.git
+	datalad-id = 9100f32b-934e-4bc2-8c1d-a695bc5c6ba5
+	datalad-url = git@github.com:courtois-neuromod/triplets.timeseries.git
