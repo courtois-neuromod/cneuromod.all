@@ -1,2 +1,11 @@
 * annex.backend=MD5E
 **/.git* annex.largefiles=nothing
+*.yaml  annex.largefiles=nothing
+*.sh    annex.largefiles=nothing
+*.py    annex.largefiles=nothing
+*.rst   annex.largefiles=nothing
+*.md    annex.largefiles=nothing
+*.toml  annex.largefiles=nothing
+*.json  annex.largefiles=nothing
+*.txt   annex.largefiles=nothing
+*.lock  annex.largefiles=nothing

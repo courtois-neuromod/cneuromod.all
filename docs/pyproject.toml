@@ -12,6 +12,7 @@ dependencies = [
     "sphinxcontrib-bibtex>=2.6.5",
     "tabulate",
     "wcwidth",
+    "ruamel.yaml>=0.18",
 ]
 
 [project.optional-dependencies]

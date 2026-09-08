@@ -2,19 +2,30 @@ from tabulate import tabulate
 import yaml
 
 from . import discovery
+from . import redirects
 from .renderers import (
     _render_citation,
     _render_component_sections,
     _render_components_row,
-    _render_components_table,
     _render_contributors,
     _render_key_facts,
+    _render_dataset_gallery,
     _render_dataset_table,
+    _render_dataset_stats_table,
+    _render_image_licenses,
+    _render_unreleased_warning,
 )
 
 
 def _inject_index(app, docname, source):
-    pass
+    if docname != 'index':
+        return
+    if discovery._dataset_info:
+        source[0] = source[0].replace(
+            '_datasets_gallery_placeholder_', _render_dataset_gallery(discovery)
+        )
+    else:
+        source[0] = source[0].replace('\n_datasets_gallery_placeholder_', '')
 
 
 def _inject_datasets_index(app, docname, source):
@@ -27,16 +38,21 @@ def _inject_datasets_index(app, docname, source):
         source[0] = source[0].replace('\n   _datasets_toc_placeholder_', '')
 
 
+def _inject_license_page(app, docname, source):
+    if docname != 'contents/license':
+        return
+    source[0] = source[0].replace('_image_licenses_placeholder_', _render_image_licenses())
+
+
 def _inject_datasets_tables(app, docname, source):
-    if docname != 'contents/datasets':
+    if docname != 'contents/components':
         return
     if discovery._discovered_datasets:
         df = _render_dataset_table(discovery)
         rst_table = tabulate(df, headers='keys', tablefmt='rst')
-        print(rst_table)
-        source[0] = source[0].replace('_datasets_table_placeholder_', f'{rst_table}')
+        source[0] = source[0].replace('_components_table_placeholder_', f'{rst_table}')
     else:
-        source[0] = source[0].replace('\n_datasets_table_placeholder_', '')
+        source[0] = source[0].replace('\n_components_table_placeholder_', '')
 
 def _inject_components_index(app, docname, source):
     if docname != 'contents/components':
@@ -52,19 +68,15 @@ def _inject_components_index(app, docname, source):
         source[0] = source[0].replace('\n   _components_toc_placeholder_', '')
 
 
-def _inject_components_table(app, docname, source):
-    if docname != 'contents/components':
+def _inject_dataset_stats_table(app, docname, source):
+    if docname != 'contents/datasets':
         return
-    rows = _render_components_table(
-        list(discovery._global_components),
-        discovery._dataset_components,
-        local_components=discovery._local_components,
-    )
-    if rows:
-        rst_table = tabulate(rows, headers='keys', tablefmt='rst')
-        source[0] = source[0].replace('_components_table_placeholder_', rst_table)
+    if discovery._discovered_datasets:
+        df = _render_dataset_stats_table(discovery)
+        rst_table = tabulate(df, headers='keys', tablefmt='rst')
+        source[0] = source[0].replace('_datasets_table_placeholder_', rst_table)
     else:
-        source[0] = source[0].replace('\n_components_table_placeholder_', '')
+        source[0] = source[0].replace('\n_datasets_table_placeholder_', '')
 
 
 def _inject_dataset_metadata(app, docname, source):
@@ -75,7 +87,7 @@ def _inject_dataset_metadata(app, docname, source):
 
     key_facts = ''
     if name in discovery._dataset_info:
-        key_facts = _render_key_facts(discovery._dataset_info[name])
+        key_facts = _render_key_facts(discovery._dataset_info[name], name)
 
     comp_row = _render_components_row(components) if components else ''
     if comp_row:
@@ -102,13 +114,16 @@ def _inject_dataset_metadata(app, docname, source):
     if sections:
         source[0] = source[0].rstrip('\n') + sections
 
+    if name not in discovery._dataset_readme:
+        source[0] = source[0].rstrip('\n') + _render_unreleased_warning()
+
 
 
 def _always_reread_index(app, env, added, changed, removed):
     # Force re-read of index, component pages, and dataset pages with metadata,
     # so content stays current on incremental builds.
     seen = set()
-    force = ['index', 'contents/components', 'contents/datasets']
+    force = ['index', 'contents/license', 'contents/components', 'contents/datasets']
     force += [f'contents/{stem.lower()}' for stem, _ in discovery._global_components]
     force += [f'contents/{stem.lower()}' for stem, _, _ in discovery._local_components]
     for name in discovery._dataset_citation:
@@ -132,9 +147,11 @@ def _always_reread_index(app, env, added, changed, removed):
 def setup(app):
     app.connect('builder-inited', discovery._auto_discover_datasets)
     app.connect('source-read', _inject_index)
+    app.connect('source-read', _inject_license_page)
     app.connect('source-read', _inject_components_index)
-    app.connect('source-read', _inject_components_table)
     app.connect('source-read', _inject_datasets_index)
     app.connect('source-read', _inject_datasets_tables)
+    app.connect('source-read', _inject_dataset_stats_table)
     app.connect('source-read', _inject_dataset_metadata)
     app.connect('env-get-outdated', _always_reread_index)
+    redirects.setup(app)
