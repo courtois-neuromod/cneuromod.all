@@ -34,10 +34,12 @@ jobs:
         run: mkdir -p ~/.ssh && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
       - name: Install datalad + git-annex
+        run: pip install datalad git-annex
+
+      - name: setup git id
         run: |
-#          sudo apt-get update
-#          sudo apt-get install -y git-annex
-          pip install datalad git-annex
+          git config --global user.email "bot@cneuromod.ca"
+          git config --global user.name "CNeuroMod Bot"
 
       - name: Cache installed */bids trees
         uses: actions/cache@v4
