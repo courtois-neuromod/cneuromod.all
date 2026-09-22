@@ -33,9 +33,9 @@ jobs:
 
       - name: Install datalad + git-annex
         run: |
-          sudo apt-get update
-          sudo apt-get install -y git-annex
-          pip install datalad
+#          sudo apt-get update
+#          sudo apt-get install -y git-annex
+          pip install datalad git-annex
 
       - name: Cache installed */bids trees
         uses: actions/cache@v4
