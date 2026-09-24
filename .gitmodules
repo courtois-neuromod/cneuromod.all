@@ -469,7 +469,7 @@
 	datalad-id = b6644ccf-406e-4bee-a948-dc27fe4340b6
 [submodule "analysis/cneuromod.all.statistics"]
 	path = analysis/cneuromod.all.statistics
-	url = git@github.com:courtois-neuromod/cneuromod.all.statistics.git
+	url = https://github.com/courtois-neuromod/cneuromod.all.statistics.git
 [submodule "hcptrt/timeseries"]
 	path = hcptrt/timeseries
 	url = git@github.com:courtois-neuromod/hcptrt.timeseries.git
