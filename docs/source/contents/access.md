@@ -19,10 +19,13 @@ If you have any question regarding the access form, send us an email at [courtoi
 
 ### Before you apply
 
-We encourage anyone who wants to apply to read the databank management rules and procedures (data management plan, version of March 17, 2026) beforehand. This document is a reference to understand how the CNeuroMod databank operates. It is available, along with the ethics approvals and consent forms, on the [Ethics](ethics) page.
+We encourage anyone who wants to apply to read the databank management rules and procedures (data management plan, version of March 17, 2026) beforehand. This document is a reference to understand how the CNeuroMod databank operates.
+
+  * [Databank management rules and procedures](../_static/policies/cneuromod_management_policies_en_2026-03-17.pdf) (English version).
+  * [Cadre de gestion](../_static/policies/cneuromod_cadre_gestion_fr_2026-03-17.pdf) (version française).
 
 The data transfer agreement template is not published yet. A completed version of the agreement will be forwarded to you for signature after the scientific project is approved.
 
 ## Ethics
 
-Ethics approvals, consent forms and the databank management plan have moved to the [Ethics](ethics) page.
+Ethics approvals and consent forms are on the [Ethics](ethics) page.
