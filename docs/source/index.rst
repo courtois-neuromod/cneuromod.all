@@ -7,6 +7,7 @@ _datasets_gallery_placeholder_
    :caption: Contents:
 
    contents/access
+   contents/ethics
    contents/license
    contents/downloading
    contents/participants

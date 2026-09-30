@@ -29,6 +29,6 @@ letterbox background), so images need no cropping or flattening before being add
 
 ## Licensing
 
-Per-image copyright and reuse notes are tracked in [`LICENSES.md`](LICENSES.md) in this
-directory. Add an entry there for every new tile — these are all third-party cover art
+Per-image copyright and reuse notes are tracked in `docs/unpublished/image_licenses.md` (not published yet).
+Add an entry there for every new tile — these are all third-party cover art
 used to illustrate experiment stimuli, not project-owned images, so provenance matters.

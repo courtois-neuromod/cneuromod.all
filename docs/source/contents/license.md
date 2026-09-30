@@ -26,16 +26,14 @@ upstream to clarify licensing, and this page will be updated once that is resolv
 
 The documentation site itself also carries a small number of third-party assets that are
 not CNeuroMod data and are not covered by the CC0 grant above. Each is used under its own
-license or a fair-use rationale, tracked individually below.
-
-As more third-party assets are added to the site, they should be listed here with their
-source, author and license details.
+license or a fair-use rationale, tracked individually. The detailed list of licenses and
+credits will be published on this page.
 
 ### Dataset gallery artwork
 
 The cover images on the [landing-page dataset gallery](../index) (e.g. movie/book covers
 standing in for stimulus material, or illustrative artwork for datasets without stimulus
-cover art). Each dataset page links back to its image's entry below from the credit line
-under its gallery tile.
+cover art). The per-image license details are being verified and will be listed here
+once published.
 
 _image_licenses_placeholder_
