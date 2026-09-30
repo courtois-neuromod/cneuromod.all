@@ -349,7 +349,12 @@ def _gallery_image(name):
     return None
 
 
-_LICENSES_PATH = _GALLERY_IMG_DIR / 'LICENSES.md'
+_LICENSES_PATH = Path(__file__).parent.parent.parent / 'unpublished' / 'image_licenses.md'
+# The detailed per-image license list is kept out of the published docs until the
+# licenses have been checked. Flip to True to embed it in contents/license.md again
+# (and restore the credit links on the dataset pages). The file lives in docs/unpublished/,
+# outside the Sphinx source tree, so it is not copied into the built site.
+_PUBLISH_IMAGE_LICENSES = False
 
 
 def _license_anchor(filename):
@@ -359,7 +364,7 @@ def _license_anchor(filename):
 
 def _gallery_image_license_note(img):
     """Markdown credit line for a gallery image, if LICENSES.md documents it."""
-    if not img:
+    if not img or not _PUBLISH_IMAGE_LICENSES:
         return ''
     filename = img.rsplit('/', 1)[-1]
     if not _LICENSES_PATH.is_file():
@@ -373,7 +378,7 @@ def _gallery_image_license_note(img):
 
 def _render_image_licenses():
     """Embed LICENSES.md's per-image entries into contents/license.md, headings demoted to h3 and anchored to match `_license_anchor`."""
-    if not _LICENSES_PATH.is_file():
+    if not _PUBLISH_IMAGE_LICENSES or not _LICENSES_PATH.is_file():
         return ''
     content = _LICENSES_PATH.read_text(encoding='utf-8')
     parts = re.split(r'(?m)^##\s+(.+?)\s*$', content)
