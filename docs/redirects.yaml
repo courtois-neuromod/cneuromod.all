@@ -1,0 +1,52 @@
+# Legacy URL map — see docs/source/_ext/redirects.py
+#
+# The docs used to be served by ReadTheDocs at docs.cneuromod.ca under versioned
+# prefixes (/en/latest/, /latest/, /en/2020-alpha/, ...).  GitHub Pages has no
+# server-side redirects, so the Sphinx build emits a small stub page at every
+# legacy URL.  Add an entry here when a page is renamed or moved.
+
+# Version prefixes legacy URLs may carry.  "" means the bare, unprefixed path.
+version_prefixes:
+  - ""
+  - en/latest
+  - en/stable
+  - en/2020-alpha
+  - en/2020-alpha2
+  - latest
+  - stable
+  - 2020-alpha
+  - 2020-alpha2
+
+# Legacy page name -> current page.  `anchors` overrides the target for a
+# specific fragment: the 2020-alpha docs were a handful of long pages whose
+# sections are now standalone pages.
+pages:
+  index.html:
+    to: index.html
+  ACCESS.html:
+    to: contents/access.html
+  AUTHORS.html:
+    to: AUTHORS.html
+  DERIVATIVES.html:
+    to: contents/components.html
+  MEG.html:
+    to: contents/mri.html
+  MRI.html:
+    to: contents/mri.html
+    anchors:
+      mri: contents/mri.html
+      physiological-measures: contents/mri.html#physiological-measures
+  DATASETS.html:
+    to: contents/datasets.html
+    anchors:
+      datasets: contents/datasets.html
+      anat: datasets/anat.html
+      floc: datasets/floc.html
+      friends: datasets/friends.html
+      harrypotter: datasets/harrypotter.html
+      hcptrt: datasets/hcptrt.html
+      movie10: datasets/movie10.html
+      retinotopy: datasets/retinotopy.html
+      shinobi: datasets/shinobi.html
+      shinobi-training: contents/training.html
+      things: datasets/things.html

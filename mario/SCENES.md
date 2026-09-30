@@ -1,6 +1,6 @@
 # Mario scenes 
 
-The 22 *Super Mario Bros.* levels used in the [`mario`](./README.md) dataset are partitioned into 313 short **scenes** (≈ 15 per level), each annotated with a set of game design patterns. Scenes act as atomic units of gameplay and are intended as the unit of analysis for behavioral and neural studies of mario gameplay.
+The 22 *Super Mario Bros.* levels used in the {doc}`mario </datasets/mario>` dataset are partitioned into 313 short **scenes** (≈ 15 per level), each annotated with a set of game design patterns. Scenes act as atomic units of gameplay and are intended as the unit of analysis for behavioral and neural studies of mario gameplay.
 
 Scene partitioning, design-pattern annotations, and accompanying assets are released as a standalone, citable resource on Zenodo:
 

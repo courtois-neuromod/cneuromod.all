@@ -6,6 +6,15 @@ from pathlib import Path
 from .constants import _COMPONENT_ICON, _CONTRIB_EMOJI, _CONTRIB_LABEL, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
 
 
+def _render_unreleased_warning():
+    msg = (
+        "This dataset has been collected but has not yet been finalized and publicly released. "
+        "The CNeuroMod team is working hard to finalize and release all datasets, "
+        "but good things take time."
+    )
+    return f"\n\n:::{{warning}}\n{msg}\n:::\n"
+
+
 def _render_citation(cff_path):
     with open(cff_path, encoding='utf-8') as f:
         data = yaml.safe_load(f)
@@ -43,7 +52,7 @@ def _render_citation(cff_path):
     if doi:
         citation_line += f" [doi: {doi}](https://doi.org/{doi})"
 
-    return f"\n\n:::{{tip}}\nIf you use this dataset, please cite:\n\n{citation_line}\n:::\n"
+    return f"\n\n:::{{admonition}} How to cite\n:class: tip\n\n{citation_line}\n:::\n"
 
 
 def _render_contributors(rc_path):
@@ -75,7 +84,7 @@ def _render_contributors(rc_path):
     legend = ' · '.join(legend_parts)
 
     contributors_str = ' · '.join(entries)
-    return f"\n\n## Contributors\n\n{contributors_str}\n\n_{legend}_\n"
+    return f"\n\n:::{{admonition}} Contributors\n:class: note\n\n{contributors_str}\n\n<hr style=\"margin: 0.3em 0;\"/>\n\n_{legend}_\n:::\n"
 
 
 def _resolve_stats_key(stats, dotted_key):
@@ -85,7 +94,7 @@ def _resolve_stats_key(stats, dotted_key):
     return val
 
 
-def _render_key_facts(info_path):
+def _render_key_facts(info_path, name=None):
     with open(info_path, encoding='utf-8') as f:
         data = yaml.safe_load(f)
 
@@ -173,7 +182,18 @@ def _render_key_facts(info_path):
     if not rows:
         return ''
 
-    lines = ['', '', '## Key facts', '', '| | |', '|---|---|']
+    lines = ['', '']
+    img = name and _gallery_image(name)
+    if img:
+        credit = _gallery_image_license_note(img)
+        lines += [
+            '```{raw} html',
+            f'<div class="ds-hero"><img src="../{img}" alt=""></div>',
+            credit,
+            '```',
+            '',
+        ]
+    lines += ['| | |', '|---|---|']
     for field, cell in rows:
         lines.append(f'| {field} | {cell} |')
     lines.append('')
@@ -277,9 +297,151 @@ def _render_dataset_table(discovery):
         components = discovery._dataset_components.get(name, [])
         with open(info_path, encoding='utf-8') as f:
             data = yaml.safe_load(f)
-            print(data)
             df.append({
                 "dataset": f"`{_DATASET_EMOJI[name]} {name} <../datasets/{name}.html>`__",
-                "n_subjects": data['stats']['subjects_n'],
-            } | {cpnt[0]:f"`{_COMPONENT_ICON.get(cpnt[0].lower(), _DATASET_EMOJI.get(name, '📦'))} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
+            } | {cpnt[0]: f"`{_COMPONENT_ICON.get(cpnt[0].lower(), _DATASET_EMOJI.get(name, '📦'))} <https://github.com/courtois-neuromod/{name}.{cpnt[0].lower().replace('bids','git')}>`__" for cpnt in components})
+
+    all_cols = [k for k in dict.fromkeys(k for row in df for k in row) if k != 'dataset']
+    single_cols = [col for col in all_cols if sum(1 for row in df if row.get(col)) == 1]
+    multi_cols = [col for col in all_cols if col not in single_cols]
+
+    merged = []
+    for row in df:
+        new_row = {'dataset': row['dataset']}
+        for col in multi_cols:
+            new_row[col] = row.get(col, '')
+        other_parts = [row[col] for col in single_cols if row.get(col)]
+        new_row['other'] = ' · '.join(other_parts)
+        merged.append(new_row)
+    return merged
+
+
+def _render_dataset_stats_table(discovery):
+    stream_keys = [k for k in _STATS_EMOJI if not k.startswith('physiology.')]
+    df = []
+    for name, info_path in discovery._dataset_info.items():
+        with open(info_path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+        stats = data.get('stats', {})
+        row = {'Dataset': f"`{_DATASET_EMOJI.get(name, '')} {name} <../datasets/{name}.html>`__"}
+        for key in stream_keys:
+            val = _resolve_stats_key(stats, key)
+            if key == 'neuroimaging.fmri':
+                col = 'fMRI (h/sub)'
+                row[col] = str(val['per_subject_h']) if isinstance(val, dict) and 'per_subject_h' in val else ('—' if val else '')
+            else:
+                row[_STATS_LABEL[key]] = _STATS_EMOJI[key] if val else ''
+        df.append(row)
     return df
+
+
+# Directory holding per-dataset gallery artwork; a dataset without a file here
+# falls back to its _DATASET_EMOJI tile.
+_GALLERY_IMG_DIR = Path(__file__).parent.parent / '_static' / 'datasets'
+_GALLERY_IMG_EXT = ('.jpg', '.png')
+
+
+def _gallery_image(name):
+    """Return the _static-relative path of a dataset's artwork, or None."""
+    for ext in _GALLERY_IMG_EXT:
+        if (_GALLERY_IMG_DIR / f'{name}{ext}').is_file():
+            return f'_static/datasets/{name}{ext}'
+    return None
+
+
+_LICENSES_PATH = _GALLERY_IMG_DIR / 'LICENSES.md'
+
+
+def _license_anchor(filename):
+    """Anchor id for a `## <filename>` entry, mirrored onto its embedded heading in contents/license.md."""
+    return 'img-' + re.sub(r'[^a-z0-9\- ]', '', filename.lower()).replace(' ', '-')
+
+
+def _gallery_image_license_note(img):
+    """Markdown credit line for a gallery image, if LICENSES.md documents it."""
+    if not img:
+        return ''
+    filename = img.rsplit('/', 1)[-1]
+    if not _LICENSES_PATH.is_file():
+        return ''
+    content = _LICENSES_PATH.read_text(encoding='utf-8')
+    if not re.search(rf'^##\s+{re.escape(filename)}\s*$', content, flags=re.MULTILINE):
+        return ''
+    anchor = _license_anchor(filename)
+    return f'<p class="ds-hero-credit">Image license & credit: <a href="../contents/license.html#{anchor}">License page</a></p>'
+
+
+def _render_image_licenses():
+    """Embed LICENSES.md's per-image entries into contents/license.md, headings demoted to h3 and anchored to match `_license_anchor`."""
+    if not _LICENSES_PATH.is_file():
+        return ''
+    content = _LICENSES_PATH.read_text(encoding='utf-8')
+    parts = re.split(r'(?m)^##\s+(.+?)\s*$', content)
+    lines = []
+    for i in range(1, len(parts), 2):
+        filename = parts[i].strip()
+        body = parts[i + 1].strip('\n')
+        anchor = _license_anchor(filename)
+        lines.append(f'\n({anchor})=\n### {filename}\n\n{body}\n')
+    return '\n'.join(lines)
+
+
+def _gallery_blurb(data):
+    """One-line dataset description: explicit `description`, else the first task label."""
+    description = data.get('description')
+    if description:
+        return description.strip()
+    for task in data.get('tasks', []) or []:
+        label = task.get('label')
+        if label:
+            return label.strip()
+    return ''
+
+
+def _render_dataset_gallery(discovery):
+    """Render the landing-page dataset gallery as a sphinx-design grid.
+
+    Every discovered dataset gets one card: an artwork tile when
+    `_static/datasets/<name>.{jpg,png}` exists, a big-emoji tile otherwise. Tiles are
+    emitted as raw HTML rather than `:img-top:` so both kinds share the same markup and
+    the same `.ds-tile` sizing rules in custom.css.
+    """
+    cards = []
+    for name in sorted(discovery._dataset_info):
+        with open(discovery._dataset_info[name], encoding='utf-8') as f:
+            data = yaml.safe_load(f) or {}
+
+        img = _gallery_image(name)
+        if img:
+            tile = f'<div class="ds-tile"><img src="{img}" alt=""></div>'
+        else:
+            emoji = _DATASET_EMOJI.get(name, '📦')
+            tile = f'<div class="ds-tile ds-tile--emoji">{emoji}</div>'
+
+        card = [
+            '   .. grid-item-card::',
+            f'      :link: datasets/{name}.html',
+            '      :link-type: url',
+            '      :class-card: ds-card',
+            '',
+            '      .. raw:: html',
+            '',
+            f'         {tile}',
+            '',
+            f'      **{name}**',
+        ]
+        blurb = _gallery_blurb(data)
+        if blurb:
+            card += ['', f'      {blurb}']
+        cards.append('\n'.join(card))
+
+    if not cards:
+        return ''
+
+    header = [
+        '.. grid:: 2 2 3 4',
+        '   :gutter: 3',
+        '   :class-container: ds-gallery',
+        '',
+    ]
+    return '\n'.join(header) + '\n' + '\n\n'.join(cards) + '\n'

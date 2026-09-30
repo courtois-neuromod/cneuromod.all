@@ -6,9 +6,12 @@ sys.path.insert(0, str(Path(__file__).parent.parent / 'source'))
 
 from _ext.renderers import (
     _extract_component_title,
+    _gallery_blurb,
+    _render_dataset_gallery,
     _render_citation,
     _render_contributors,
     _render_key_facts,
+    _render_unreleased_warning,
     _shift_headings,
 )
 
@@ -21,7 +24,7 @@ class TestRenderCitation:
         assert 'A great paper' in result
         assert '**NeuroImage**' in result
         assert '10.1234/test' in result
-        assert ':::{tip}' in result
+        assert ':class: tip' in result
 
     def test_many_authors_et_al(self, citation_cff_many_authors):
         result = _render_citation(citation_cff_many_authors)
@@ -38,7 +41,7 @@ class TestRenderContributors:
         result = _render_contributors(contributorsrc)
         assert 'Alice Smith' in result
         assert 'Bob Jones' in result
-        assert '## Contributors' in result
+        assert 'Contributors' in result
         # emojis for data, code, doc should appear
         assert '🔣' in result  # data
         assert '💻' in result  # code
@@ -162,3 +165,75 @@ class TestShiftHeadings:
     def test_negative_shift_is_noop(self):
         text = '# Title'
         assert _shift_headings(text, -1) == text
+
+
+class TestRenderUnreleasedWarning:
+    def test_is_warning_admonition(self):
+        result = _render_unreleased_warning()
+        assert ':::{warning}' in result
+        assert ':::' in result
+
+    def test_contains_key_message(self):
+        result = _render_unreleased_warning()
+        assert 'not yet been finalized' in result
+        assert 'publicly released' in result
+
+
+class _FakeDiscovery:
+    def __init__(self, dataset_info):
+        self._dataset_info = dataset_info
+
+
+class TestGalleryBlurb:
+    def test_prefers_description(self):
+        data = {'description': '  A one-liner.  ', 'tasks': [{'label': 'Task label'}]}
+        assert _gallery_blurb(data) == 'A one-liner.'
+
+    def test_falls_back_to_first_task_label(self):
+        data = {'tasks': [{'label': 'Task label'}, {'label': 'Second'}]}
+        assert _gallery_blurb(data) == 'Task label'
+
+    def test_empty_when_nothing_available(self):
+        assert _gallery_blurb({}) == ''
+        assert _gallery_blurb({'tasks': None}) == ''
+
+
+class TestRenderDatasetGallery:
+    @staticmethod
+    def _discovery(tmp_path, names):
+        info = {}
+        for name in names:
+            path = tmp_path / f'{name}.yaml'
+            path.write_text(f'description: blurb for {name}\n', encoding='utf-8')
+            info[name] = path
+        return _FakeDiscovery(info)
+
+    def test_empty_when_no_datasets(self):
+        assert _render_dataset_gallery(_FakeDiscovery({})) == ''
+
+    def test_one_card_per_dataset_sorted(self, tmp_path):
+        result = _render_dataset_gallery(self._discovery(tmp_path, ['zzz', 'aaa']))
+        assert result.count('.. grid-item-card::') == 2
+        assert result.index('**aaa**') < result.index('**zzz**')
+
+    def test_blank_line_after_grid_options(self, tmp_path):
+        # docutils rejects the directive if the option block runs into the content
+        result = _render_dataset_gallery(self._discovery(tmp_path, ['aaa']))
+        assert ':class-container: ds-gallery\n\n   .. grid-item-card::' in result
+
+    def test_links_and_blurb(self, tmp_path):
+        result = _render_dataset_gallery(self._discovery(tmp_path, ['aaa']))
+        assert ':link: datasets/aaa.html' in result
+        assert 'blurb for aaa' in result
+
+    def test_image_tile_for_dataset_with_artwork(self, tmp_path):
+        # `friends` ships artwork under _static/datasets/
+        result = _render_dataset_gallery(self._discovery(tmp_path, ['friends']))
+        assert '<img src="_static/datasets/friends.jpg" alt="">' in result
+        assert 'ds-tile--emoji' not in result
+
+    def test_emoji_tile_for_dataset_without_artwork(self, tmp_path):
+        # `triplets` has no artwork, so it falls back to its _DATASET_EMOJI
+        result = _render_dataset_gallery(self._discovery(tmp_path, ['triplets']))
+        assert '<div class="ds-tile ds-tile--emoji">🔺</div>' in result
+        assert '<img' not in result
