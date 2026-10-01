@@ -34,6 +34,11 @@ jobs:
       - name: Install datalad + git-annex
         run: pip install datalad git-annex
 
+      - name: setup git id
+        run: |
+          git config --global user.email "bot@cneuromod.ca"
+          git config --global user.name "CNeuroMod Bot"
+
       - name: Cache installed */bids trees
         uses: actions/cache@v4
         with:
