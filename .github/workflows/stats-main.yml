@@ -76,6 +76,8 @@ jobs:
       - name: Commit and push statistics outputs
         id: stats_commit
         working-directory: analysis/cneuromod.all.statistics
+        env:
+          STATS_DEPLOY_KEY: ${{ secrets.STATS_DEPLOY_KEY }}
         run: |
           git config user.name "CNeuromod Bot"
           git config user.email "courtois.neuromod@gmail.com"
@@ -85,7 +87,13 @@ jobs:
           else
             git commit -m "Auto-update statistics outputs"
             git remote set-url --push origin git@github.com:courtois-neuromod/cneuromod.all.statistics.git
-            git push origin HEAD:main
+            # Push with the write deploy key only; the ssh-agent holds a
+            # different key that GitHub would otherwise authenticate first.
+            key="$RUNNER_TEMP/stats_deploy_key"
+            (umask 077; printf '%s\n' "$STATS_DEPLOY_KEY" > "$key")
+            GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o IdentityAgent=none" \
+              git push origin HEAD:main
+            rm -f "$key"
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 

@@ -48,19 +48,16 @@ subjects:
 tasks:
 - emoji: "🎮"
   label: "Shinobi III: Return of the Ninja Master — in-scanner gameplay"
-  note: "3 levels cycled (1, 4, 5); 4–5 runs × ~10 min per session; 11–12 sessions
-    per participant; ~8 h fMRI per participant"
+  note: "3 levels cycled (1, 4, 5); 4–5 runs × ~10 min per session; 11–12 sessions per participant; ~8 h fMRI per participant"
 - emoji: "🏠"
   label: "Shinobi III — at-home behavioral training (shinobi/training submodule)"
-  note: "Behavioral only; free-choice training regimen before scanner sessions; total
-    gameplay per participant (training + in-scanner) exceeds fMRI acquisition time"
+  note: "Behavioral only; free-choice training regimen before scanner sessions; total gameplay per participant (training + in-scanner) exceeds fMRI acquisition time"
 
 modalities:
 - emoji: "🕹️"
   label: "Game logs"
   components:
-  - {label: "annotated events (.tsv)", status: available, note: "includes button presses
-      and game events aligned to the fMRI"}
+  - {label: "annotated events (.tsv)", status: available, note: "includes button presses and game events aligned to the fMRI"}
   - {label: "game replay (.bk2)", status: partial, note: "some files lost during acquisition"}
   - {label: "video replay (.mp4)", status: available}
   - {label: "replay summary (.json)", status: available}

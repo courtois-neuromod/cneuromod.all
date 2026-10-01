@@ -82,6 +82,7 @@ def skeleton_yaml(stat_name, subjects_n, subj_sessions, has_fmri):
 def update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri):
     yaml = YAML()
     yaml.preserve_quotes = True
+    yaml.width = 4096  # don't re-wrap hand-written folded descriptions
 
     active_ids = (
         {s for s, v in subj_fmri.items() if v["total_runs"] > 0}
