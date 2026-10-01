@@ -1,6 +1,5 @@
 description: >-
-  Out-of-distribution audiovisual stimuli, held out to test the generalization of
-  brain
+  Out-of-distribution audiovisual stimuli, held out to test the generalization of brain
   encoding models.
 
 stats:
