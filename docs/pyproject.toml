@@ -28,3 +28,6 @@ testpaths = ["tests"]
 dev = [
     "pytest>=9.0.3",
 ]
+
+[tool.setuptools]
+packages = []
