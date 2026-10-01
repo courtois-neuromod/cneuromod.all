@@ -32,10 +32,7 @@ jobs:
         run: mkdir -p ~/.ssh && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
       - name: Install datalad + git-annex
-        run: |
-#          sudo apt-get update
-#          sudo apt-get install -y git-annex
-          pip install datalad git-annex
+        run: pip install datalad git-annex
 
       - name: Cache installed */bids trees
         uses: actions/cache@v4
