@@ -24,10 +24,7 @@ subjects:
 tasks:
 - emoji: "🎮"
   label: "Cued-response button press — MRI controller validation"
-  note: "4 MRI sessions × 2 runs per subject; participants pressed various controller
-    buttons for short and long durations (5 blocs of 10 trials per condition); MRI-compatible
-    controller compared against a commercial SNES-like controller across alternating
-    mock-scanner sessions"
+  note: "4 MRI sessions × 2 runs per subject; participants pressed various controller buttons for short and long durations (5 blocs of 10 trials per condition); MRI-compatible controller compared against a commercial SNES-like controller across alternating mock-scanner sessions"
 
 modalities:
 - emoji: "🕹️"
