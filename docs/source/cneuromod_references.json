@@ -1,5 +1,5 @@
 {
-  "SearchDate": "2026-05-04",
+  "SearchDate": "2026-10-03",
   "Sources": [
     {
       "Database": "Google Scholar",
@@ -8,6 +8,57 @@
         "algonauts 2025"
       ],
       "DateFilter": "published since 2025"
+    },
+    {
+      "Database": "Europe PMC",
+      "Queries": [
+        "cneuromod"
+      ],
+      "DateFilter": "published since 2026-05-04"
+    },
+    {
+      "Database": "OpenAlex",
+      "Queries": [
+        "cneuromod"
+      ],
+      "DateFilter": "published since 2026-05-04"
+    },
+    {
+      "Database": "arXiv",
+      "Queries": [
+        "cneuromod"
+      ],
+      "DateFilter": "published since 2026-05-04"
+    },
+    {
+      "Database": "Europe PMC",
+      "Queries": [
+        "cneuromod",
+        "Courtois NeuroMod",
+        "cneuromod.ca",
+        "algonauts 2025"
+      ],
+      "DateFilter": "published since 2026-05-04"
+    },
+    {
+      "Database": "OpenAlex",
+      "Queries": [
+        "cneuromod",
+        "Courtois NeuroMod",
+        "cneuromod.ca",
+        "algonauts 2025"
+      ],
+      "DateFilter": "published since 2026-05-04"
+    },
+    {
+      "Database": "arXiv",
+      "Queries": [
+        "cneuromod",
+        "Courtois NeuroMod",
+        "cneuromod.ca",
+        "algonauts 2025"
+      ],
+      "DateFilter": "published since 2026-05-04"
     }
   ],
   "CurationMethod": "Automated search followed by manual verification"
