@@ -530,3 +530,8 @@
 	url = git@github.com:courtois-neuromod/emotion-videos.eyetrackprep.git
 	datalad-id = 3b3efa3a-bc37-4516-b5c6-8de711f3021a
 	datalad-url = git@github.com:courtois-neuromod/emotion-videos.eyetrackprep.git
+[submodule "multfs/eyetrackprep"]
+	path = multfs/eyetrackprep
+	url = git@github.com:courtois-neuromod/multfs.eyetrackprep.git
+	datalad-id = c1eb69be-0184-4485-a2b1-be682ff887dd
+	datalad-url = git@github.com:courtois-neuromod/multfs.eyetrackprep.git
