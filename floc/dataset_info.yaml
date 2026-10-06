@@ -25,8 +25,5 @@ subjects:
 
 tasks:
 - emoji: "👁️"
-  label: "Functional localizer — 5 visual categories (faces, bodies, places, objects,
-    characters)"
-  note: "6 sessions × 2 runs; rapid 12-trial blocks; one-back repetition detection
-    task; 9 GLM contrasts; subject-specific ROIs for FFA, OFA, pSTS, PPA, OPA, MPA
-    and EBA"
+  label: "Functional localizer — 5 visual categories (faces, bodies, places, objects, characters)"
+  note: "6 sessions × 2 runs; rapid 12-trial blocks; one-back repetition detection task; 9 GLM contrasts; subject-specific ROIs for FFA, OFA, pSTS, PPA, OPA, MPA and EBA"

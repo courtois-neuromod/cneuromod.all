@@ -26,14 +26,12 @@ subjects:
   status: not_collected
 - id: sub-05
   status: not_collected
-- {id: sub-06, status: available, note: "3840 unique images (vs 4320); ses-019–026
-    administered out of planned order"}
+- {id: sub-06, status: available, note: "3840 unique images (vs 4320); ses-019–026 administered out of planned order"}
 
 tasks:
 - emoji: "🖼️"
   label: "Continuous visual recognition — 720 THINGS object categories"
-  note: "33–36 sessions × up to 6 runs; ~4320 unique images; each image shown 3× across
-    sessions; confidence rating on each trial"
+  note: "33–36 sessions × up to 6 runs; ~4320 unique images; each image shown 3× across sessions; confidence rating on each trial"
 
 modalities:
 - emoji: "📈"

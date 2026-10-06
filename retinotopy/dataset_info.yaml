@@ -24,8 +24,7 @@ subjects:
 tasks:
 - emoji: "👁️"
   label: "Retinotopy — ring, bar and wedge apertures"
-  note: "5–6 sessions × 3 runs; HCP retinotopy stimuli; fixation task with colour-change
-    detection; pRF maps and 12 visual ROIs (V1–V3, hV4, VO1/2, LO1/2, TO1/2, V3a/b)"
+  note: "5–6 sessions × 3 runs; HCP retinotopy stimuli; fixation task with colour-change detection; pRF maps and 12 visual ROIs (V1–V3, hV4, VO1/2, LO1/2, TO1/2, V3a/b)"
 
 modalities:
 - emoji: "👁️"
