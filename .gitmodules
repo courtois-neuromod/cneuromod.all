@@ -535,3 +535,8 @@
 	url = git@github.com:courtois-neuromod/multfs.eyetrackprep.git
 	datalad-id = c1eb69be-0184-4485-a2b1-be682ff887dd
 	datalad-url = git@github.com:courtois-neuromod/multfs.eyetrackprep.git
+[submodule "triplets/eyetrackprep"]
+	path = triplets/eyetrackprep
+	url = git@github.com:courtois-neuromod/triplets.eyetrackprep.git
+	datalad-id = 76039288-1307-498a-a0f0-f7b9684b6187
+	datalad-url = git@github.com:courtois-neuromod/triplets.eyetrackprep.git
