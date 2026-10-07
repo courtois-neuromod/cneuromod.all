@@ -1,5 +1,5 @@
 {
-  "SearchDate": "2026-10-03",
+  "SearchDate": "2026-10-06",
   "Sources": [
     {
       "Database": "Google Scholar",
@@ -59,6 +59,13 @@
         "algonauts 2025"
       ],
       "DateFilter": "published since 2026-05-04"
+    },
+    {
+      "Database": "Web search (agent)",
+      "Queries": [
+        "user-supplied (arXiv 2605.29850)"
+      ],
+      "DateFilter": "published since last search"
     }
   ],
   "CurationMethod": "Automated search followed by manual verification"
