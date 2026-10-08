@@ -1,5 +1,5 @@
 {
-  "SearchDate": "2026-10-03",
+  "SearchDate": "2026-10-08",
   "Sources": [
     {
       "Database": "Google Scholar",
@@ -64,6 +64,13 @@
       "Database": "Web search (agent)",
       "Queries": [
         "user-supplied (arXiv 2605.29850)"
+      ],
+      "DateFilter": "published since last search"
+    },
+    {
+      "Database": "Web search (agent)",
+      "Queries": [
+        "user-supplied (bioRxiv 10.64898/2026.05.31.729141)"
       ],
       "DateFilter": "published since last search"
     }
