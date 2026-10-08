@@ -73,6 +73,13 @@
         "user-supplied (bioRxiv 10.64898/2026.05.31.729141)"
       ],
       "DateFilter": "published since last search"
+    },
+    {
+      "Database": "Web search (agent)",
+      "Queries": [
+        "user-supplied (PLoS One 10.1371/journal.pone.0290158)"
+      ],
+      "DateFilter": "published since last search"
     }
   ],
   "CurationMethod": "Automated search followed by manual verification"
