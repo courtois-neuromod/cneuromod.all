@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CNeuroMod AUTHORS.yaml",
+  "type": "object",
+  "required": [
+    "authors"
+  ],
+  "properties": {
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "first_name",
+          "last_name"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "orcid": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+          },
+          "gitid": {
+            "type": "string"
+          },
+          "affiliations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "profile": {
+            "type": "string"
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

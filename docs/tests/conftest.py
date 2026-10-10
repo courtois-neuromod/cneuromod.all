@@ -59,19 +59,44 @@ def citation_cff_no_preferred(tmp_path):
 
 
 @pytest.fixture
+def authors_index():
+    alice = {'id': 'asmith', 'first_name': 'Alice', 'last_name': 'Smith',
+             'orcid': '0000-0001-2345-6789', 'gitid': 'asmith'}
+    bob = {'id': 'bjones', 'first_name': 'Bob', 'last_name': 'Jones', 'gitid': 'bjones'}
+    carol = {'id': 'carol', 'first_name': 'Carol', 'last_name': 'Lee',
+             'profile': 'https://carol.example.org'}
+    dan = {'id': 'dan', 'first_name': 'Dan', 'last_name': 'Roe'}
+    index = {}
+    for a in (alice, bob, carol, dan):
+        for key in ('id', 'gitid', 'orcid'):
+            if a.get(key):
+                index[a[key]] = a
+    return index
+
+
+@pytest.fixture
+def authors_yaml(tmp_path):
+    data = {'authors': [
+        {'id': 'asmith', 'first_name': 'Alice', 'last_name': 'Smith',
+         'orcid': '0000-0001-2345-6789', 'gitid': 'asmith', 'verified': False},
+        {'id': 'bjones', 'first_name': 'Bob', 'last_name': 'Jones', 'gitid': 'bjones'},
+    ]}
+    p = tmp_path / 'AUTHORS.yaml'
+    p.write_text(yaml.dump(data), encoding='utf-8')
+    return p
+
+
+@pytest.fixture
 def contributorsrc(tmp_path):
     data = {
+        'projectName': 'demo',
         'contributors': [
-            {
-                'name': 'Alice Smith',
-                'profile': 'https://github.com/asmith',
-                'contributions': ['data', 'code'],
-            },
-            {
-                'name': 'Bob Jones',
-                'contributions': ['doc'],
-            },
+            {'orcid': '0000-0001-2345-6789', 'roles': ['Investigation', 'Software']},
+            {'gitid': 'bjones', 'roles': ['Software', 'Writing – review & editing']},
+            {'id': 'carol', 'roles': ['Validation']},
+            {'id': 'dan', 'roles': ['Validation']},
         ],
+        'funding': [{'name': 'Courtois Foundation'}],
     }
     p = tmp_path / 'contributors.json'
     p.write_text(json.dumps(data), encoding='utf-8')
@@ -81,6 +106,17 @@ def contributorsrc(tmp_path):
 @pytest.fixture
 def contributorsrc_empty(tmp_path):
     data = {'contributors': []}
+    p = tmp_path / 'contributors.json'
+    p.write_text(json.dumps(data), encoding='utf-8')
+    return p
+
+
+@pytest.fixture
+def contributorsrc_bad(tmp_path):
+    data = {'contributors': [
+        {'gitid': 'asmith', 'roles': ['Wizardry']},
+        {'gitid': 'ghost', 'roles': ['Software']},
+    ]}
     p = tmp_path / 'contributors.json'
     p.write_text(json.dumps(data), encoding='utf-8')
     return p

@@ -12,6 +12,7 @@ _global_components = []   # [(stem, path), ...] — root-level component pages
 _local_components = []    # [(stem, path, dataset_name), ...] — dataset-specific component pages
 _dataset_citation = {}
 _dataset_contributors = {}
+_authors = {}            # gitid / orcid / id -> author entry from the root AUTHORS.yaml
 _dataset_info = {}
 _dataset_readme = {}      # name -> path, only for datasets with a real README.md
 _dataset_components = {}  # name -> [(stem, path, kind), ...] where kind='page'|'section'
@@ -53,7 +54,7 @@ def _discover_dataset_components(dataset_path, global_stems):
 
 def _auto_discover_datasets(app):
     global _discovered_datasets, _global_components, _local_components
-    global _dataset_citation, _dataset_contributors, _dataset_info, _dataset_readme, _dataset_components
+    global _authors, _dataset_citation, _dataset_contributors, _dataset_info, _dataset_readme, _dataset_components
 
     conf_dir = os.path.dirname(os.path.abspath(__file__))
     # _ext/ is one level below source/, which is two levels below the repo root
@@ -72,6 +73,8 @@ def _auto_discover_datasets(app):
         if f.name not in _ROOT_MD_MANUAL:
             global_comps.append((f.stem, f))
     _global_components = global_comps
+
+    _authors = _validator.load_authors(os.path.join(repo_root, 'AUTHORS.yaml'))
 
     # --- dataset pages ---
     datasets_dir = os.path.join(source_dir, 'datasets')
@@ -152,3 +155,11 @@ def _auto_discover_datasets(app):
     for name, info_path in info.items():
         for err in _validator.validate_dataset_info(info_path, schema):
             logger.warning(f"[{name}] dataset_info.yaml stats: {err}")
+
+    authors_path = os.path.join(repo_root, 'AUTHORS.yaml')
+    if os.path.isfile(authors_path):
+        for err in _validator.validate_authors(authors_path):
+            logger.warning(f"AUTHORS.yaml: {err}")
+    for name, rc_path in contributors.items():
+        for err in _validator.validate_contributors(rc_path, _authors):
+            logger.warning(f"[{name}] contributors.json: {err}")

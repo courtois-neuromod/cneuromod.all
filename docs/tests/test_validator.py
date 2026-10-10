@@ -7,7 +7,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'source'))
 
-from _ext.validator import validate_dataset_info, _load_schema
+from _ext.validator import validate_dataset_info, _load_schema, load_authors, validate_authors, validate_contributors
 
 
 class TestValidateDatasetInfo:
@@ -43,3 +43,21 @@ class TestValidateDatasetInfo:
         assert isinstance(schema, dict)
         assert '$schema' in schema
         assert 'properties' in schema
+
+
+class TestContributors:
+    def test_valid(self, contributorsrc, authors_index):
+        assert validate_contributors(contributorsrc, authors_index) == []
+
+    def test_invalid_role_and_unknown_id(self, contributorsrc_bad, authors_index):
+        errors = validate_contributors(contributorsrc_bad, authors_index)
+        assert any('Wizardry' in e for e in errors)
+        assert any("'ghost' not found" in e for e in errors)
+
+    def test_authors_yaml(self, authors_yaml):
+        assert validate_authors(authors_yaml) == []
+        index = load_authors(authors_yaml)
+        assert index['0000-0001-2345-6789'] is index['asmith']
+
+    def test_load_authors_missing_file(self, tmp_path):
+        assert load_authors(tmp_path / 'nope.yaml') == {}

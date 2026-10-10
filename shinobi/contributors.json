@@ -1,128 +1,49 @@
 {
-  "files": [
-    "README"
-  ],
   "projectName": "shinobi",
-  "projectOwner": "courtois-neuromod",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "skipCi": true,
   "contributors": [
     {
-      "login": "julieaboyle1",
-      "name": "Julie A. Boyle",
-      "avatar_url": "https://avatars.githubusercontent.com/u/39348727?v=4",
-      "profile": "https://github.com/julieaboyle1",
-      "contributions": [
-        "design",
-        "data",
-        "projectManagement",
-        "doc"
-      ]
+      "gitid": "julieaboyle1",
+      "roles": ["Methodology", "Investigation", "Data curation", "Project administration", "Writing – review & editing"]
     },
     {
-      "login": "lunebellec",
-      "name": "Lune Bellec",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1670887?v=4",
-      "profile": "https://github.com/lunebellec",
-      "contributions": [
-        "design",
-        "doc"
-      ]
+      "gitid": "lunebellec",
+      "roles": ["Methodology", "Writing – review & editing"]
     },
     {
-      "login": "emilie-dessureault",
-      "name": "emilie-dessureault",
-      "avatar_url": "https://avatars.githubusercontent.com/u/61021023?v=4",
-      "profile": "https://github.com/emilie-dessureault",
-      "contributions": [
-        "data",
-        "projectManagement"
-      ]
+      "gitid": "emilie-dessureault",
+      "roles": ["Investigation", "Data curation", "Project administration"]
     },
     {
-      "login": "bpinsard",
-      "name": "Basile",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1155388?v=4",
-      "profile": "https://github.com/bpinsard",
-      "contributions": [
-        "design",
-        "code",
-        "data"
-      ]
+      "gitid": "bpinsard",
+      "roles": ["Methodology", "Software", "Investigation", "Data curation"]
     },
     {
-      "login": "bamal",
-      "name": "Amal ",
-      "avatar_url": "https://avatars.githubusercontent.com/u/10996072?v=4",
-      "profile": "https://github.com/bamal",
-      "contributions": [
-        "data",
-        "userTesting"
-      ]
+      "gitid": "bamal",
+      "roles": ["Investigation", "Data curation", "Validation"]
     },
     {
-      "login": "hyruuk",
-      "name": "Yann Harel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/36450529?v=4",
-      "profile": "https://github.com/hyruuk",
-      "contributions": [
-        "design",
-        "ideas",
-        "review",
-        "bug",
-        "content",
-        "talk"
-      ]
+      "gitid": "hyruuk",
+      "roles": ["Methodology", "Conceptualization", "Validation", "Writing – review & editing"]
     },
     {
-      "login": "cyrand",
-      "name": "cyrand",
-      "avatar_url": "https://avatars.githubusercontent.com/u/50246550?v=4",
-      "profile": "https://github.com/cyrand",
-      "contributions": [
-        "infra",
-        "data",
-        "tool"
-      ]
+      "gitid": "cyrand",
+      "roles": ["Resources", "Investigation", "Data curation", "Software"]
     },
     {
-      "login": "FrancoisPgm",
-      "name": "François Paugam",
-      "avatar_url": "https://avatars.githubusercontent.com/u/35327799?v=4",
-      "profile": "https://github.com/FrancoisPgm",
-      "contributions": [
-        "data",
-        "review"
-      ]
+      "gitid": "FrancoisPgm",
+      "roles": ["Investigation", "Data curation", "Validation"]
     },
     {
-      "login": "pravishsainath",
-      "name": "Pravish Sainath",
-      "avatar_url": "https://avatars.githubusercontent.com/u/13696562?v=4",
-      "profile": "https://github.com/pravishsainath",
-      "contributions": [
-        "data"
-      ]
+      "gitid": "pravishsainath",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "sangfrois",
-      "name": "François Lespinasse",
-      "avatar_url": "https://avatars.githubusercontent.com/u/38385719?v=4",
-      "profile": "https://github.com/sangfrois",
-      "contributions": [
-        "data"
-      ]
+      "gitid": "sangfrois",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "me-pic",
-      "name": "Marie-Eve Picard",
-      "avatar_url": "https://avatars.githubusercontent.com/u/77584086?v=4",
-      "profile": "https://github.com/me-pic",
-      "contributions": [
-        "data"
-      ]
+      "gitid": "me-pic",
+      "roles": ["Investigation", "Data curation"]
     }
-  ],
-  "contributorsPerLine": 7
+  ]
 }

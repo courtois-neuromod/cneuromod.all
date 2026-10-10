@@ -100,7 +100,7 @@ def _inject_dataset_metadata(app, docname, source):
     if name in discovery._dataset_citation:
         extra += _render_citation(discovery._dataset_citation[name])
     if name in discovery._dataset_contributors:
-        extra += _render_contributors(discovery._dataset_contributors[name])
+        extra += _render_contributors(discovery._dataset_contributors[name], discovery._authors)
 
     sections = _render_component_sections(components)
 
