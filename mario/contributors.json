@@ -1,109 +1,45 @@
 {
-  "files": [
-    "README"
-  ],
-  "commitType": "docs",
-  "commitConvention": "angular",
-  "contributorsPerLine": 7,
+  "projectName": "mario",
   "contributors": [
     {
-      "login": "FrancoisPgm",
-      "name": "François Paugam",
-      "avatar_url": "https://avatars.githubusercontent.com/u/35327799?v=4",
-      "profile": "https://github.com/FrancoisPgm",
-      "contributions": [
-        "data",
-        "userTesting"
-      ]
+      "gitid": "FrancoisPgm",
+      "roles": ["Investigation", "Data curation", "Validation"]
     },
     {
-      "login": "RainyFields",
-      "name": "RainyFields",
-      "avatar_url": "https://avatars.githubusercontent.com/u/44264329?v=4",
-      "profile": "https://github.com/RainyFields",
-      "contributions": [
-        "data"
-      ]
+      "gitid": "RainyFields",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "bpinsard",
-      "name": "Basile",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1155388?v=4",
-      "profile": "https://github.com/bpinsard",
-      "contributions": [
-        "design",
-        "projectManagement",
-        "data"
-      ]
+      "gitid": "bpinsard",
+      "roles": ["Methodology", "Project administration", "Investigation", "Data curation"]
     },
     {
-      "login": "emilie-dessureault",
-      "name": "emilie-dessureault",
-      "avatar_url": "https://avatars.githubusercontent.com/u/61021023?v=4",
-      "profile": "https://github.com/emilie-dessureault",
-      "contributions": [
-        "data",
-        "projectManagement"
-      ]
+      "gitid": "emilie-dessureault",
+      "roles": ["Investigation", "Data curation", "Project administration"]
     },
     {
-      "login": "hyruuk",
-      "name": "Yann Harel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/36450529?v=4",
-      "profile": "https://github.com/hyruuk",
-      "contributions": [
-        "design",
-        "data",
-        "userTesting"
-      ]
+      "gitid": "hyruuk",
+      "roles": ["Methodology", "Investigation", "Data curation", "Validation"]
     },
     {
-      "login": "julieaboyle1",
-      "name": "Julie A. Boyle",
-      "avatar_url": "https://avatars.githubusercontent.com/u/39348727?v=4",
-      "profile": "https://github.com/julieaboyle1",
-      "contributions": [
-        "design",
-        "projectManagement"
-      ]
+      "gitid": "julieaboyle1",
+      "roles": ["Methodology", "Project administration"]
     },
     {
-      "login": "maelleF",
-      "name": "maelleF",
-      "avatar_url": "https://avatars.githubusercontent.com/u/29599311?v=4",
-      "profile": "https://github.com/maelleF",
-      "contributions": [
-        "data"
-      ]
+      "gitid": "maelleF",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "me-pic",
-      "name": "Marie-Eve Picard",
-      "avatar_url": "https://avatars.githubusercontent.com/u/77584086?v=4",
-      "profile": "https://github.com/me-pic",
-      "contributions": [
-        "data"
-      ]
+      "gitid": "me-pic",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "motahareh-pourrahimi",
-      "name": "Motahareh",
-      "avatar_url": "https://avatars.githubusercontent.com/u/81639625?v=4",
-      "profile": "https://github.com/motahareh-pourrahimi",
-      "contributions": [
-        "data"
-      ]
+      "gitid": "motahareh-pourrahimi",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "lunebellec",
-      "name": "Lune Bellec",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1670887?v=4",
-      "profile": "https://github.com/lunebellec",
-      "contributions": [
-        "design"
-      ]
+      "gitid": "lunebellec",
+      "roles": ["Methodology"]
     }
-  ],
-  "projectName": "mario",
-  "projectOwner": "courtois-neuromod"
+  ]
 }

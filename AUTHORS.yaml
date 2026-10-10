@@ -1,0 +1,199 @@
+# Central author registry for CNeuroMod. Referenced by */contributors.json via gitid, orcid or id.
+# Entries are auto-compiled (ORCIDs from CNeuroMod publications via Crossref, otherwise ORCID search);
+# each author should confirm their entry and flip `verified` to true.
+authors:
+- id: himanshu-aggarwal
+  first_name: Himanshu
+  last_name: Aggarwal
+  verified: false
+- id: lunebellec
+  first_name: Lune
+  last_name: Bellec
+  orcid: 0000-0002-9111-0699
+  gitid: lunebellec
+  affiliations:
+  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  verified: false
+- id: jeremy-bernard
+  first_name: Jeremy
+  last_name: Bernard
+  verified: false
+- id: arnaudbore
+  first_name: Arnaud
+  last_name: Bore
+  gitid: arnaudbore
+  verified: false
+- id: valentina-borghesani
+  first_name: Valentina
+  last_name: Borghesani
+  orcid: 0000-0002-7909-8631
+  affiliations:
+  - Swiss National Centre of Competence in Research, University of Geneva, Geneva, Switzerland
+  profile: http://valentina.borghesani.org/
+  verified: false
+- id: bamal
+  first_name: Amal
+  last_name: Boukhdhir
+  gitid: bamal
+  verified: false
+- id: julieaboyle1
+  first_name: Julie A.
+  last_name: Boyle
+  orcid: 0000-0001-5927-221X
+  gitid: julieaboyle1
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  - Unité de Neuroimagerie Fonctionnelle (UNF), Centre de Recherche de l'Institut Universitaire de Gériatrie
+    de Montréal (CRIUGM), Montréal, Canada
+  verified: false
+- id: jcohenadad
+  first_name: Julien
+  last_name: Cohen-Adad
+  orcid: 0000-0003-3662-9532
+  gitid: jcohenadad
+  affiliations:
+  - NeuroPoly, Polytechnique Montréal
+  verified: false
+- id: oliver-contier
+  first_name: Oliver
+  last_name: Contier
+  orcid: 0000-0002-2983-4709
+  gitid: oliver-contier
+  affiliations:
+  - Max Planck Institute for Human Cognitive and Brain Sciences
+  verified: false
+- id: cyrand
+  first_name: André
+  last_name: Cyr
+  gitid: cyrand
+  verified: false
+- id: emilie-dessureault
+  first_name: Emilie
+  last_name: Dessureault
+  gitid: emilie-dessureault
+  verified: false
+- id: emdupre
+  first_name: Elizabeth
+  last_name: DuPre
+  orcid: 0000-0003-1358-196X
+  gitid: emdupre
+  verified: false
+- id: marie-france-fourcade
+  first_name: Marie-France
+  last_name: Fourcade
+  verified: false
+- id: maelleF
+  first_name: Maëlle
+  last_name: Freteault
+  orcid: 0009-0003-7950-0744
+  gitid: maelleF
+  affiliations:
+  - Ecole nationale supérieure Mines-Télécom Atlantique Bretagne Pays de la Loire
+  verified: false
+- id: claude-godbout
+  first_name: Claude
+  last_name: Godbout
+  verified: false
+- id: hyruuk
+  first_name: Yann
+  last_name: Harel
+  orcid: 0000-0002-8970-1983
+  gitid: hyruuk
+  affiliations:
+  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  verified: false
+- id: martinhebart
+  first_name: Martin N.
+  last_name: Hebart
+  orcid: 0000-0001-7257-428X
+  gitid: martinhebart
+  verified: false
+- id: karim-jerbi
+  first_name: Karim
+  last_name: Jerbi
+  orcid: 0000-0002-3790-9651
+  affiliations:
+  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Mila – Quebec AI Institute, Montréal, Canada
+  verified: false
+- id: RainyFields
+  first_name: Xiao-Xuan
+  last_name: Lei
+  gitid: RainyFields
+  verified: false
+- id: sangfrois
+  first_name: François
+  last_name: Lespinasse
+  gitid: sangfrois
+  verified: false
+- id: FrancoisPgm
+  first_name: François
+  last_name: Paugam
+  orcid: 0000-0002-8161-7699
+  gitid: FrancoisPgm
+  verified: false
+- id: me-pic
+  first_name: Marie-Eve
+  last_name: Picard
+  gitid: me-pic
+  verified: false
+- id: bpinsard
+  first_name: Basile
+  last_name: Pinsard
+  orcid: 0000-0002-4391-3075
+  gitid: bpinsard
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  - Unité de Neuroimagerie Fonctionnelle (UNF), Centre de Recherche de l'Institut Universitaire de Gériatrie
+    de Montréal (CRIUGM), Montréal, Canada
+  verified: false
+- id: ana-fernanda-ponce
+  first_name: Ana Fernanda
+  last_name: Ponce
+  verified: false
+- id: motahareh-pourrahimi
+  first_name: Motahareh
+  last_name: Pourrahimi
+  gitid: motahareh-pourrahimi
+  verified: false
+- id: pravishsainath
+  first_name: Pravish
+  last_name: Sainath
+  gitid: pravishsainath
+  verified: false
+- id: seelikat
+  first_name: Katja
+  last_name: Seeliger
+  orcid: 0000-0002-5343-0595
+  gitid: seelikat
+  verified: false
+- id: MarieStLaurent
+  first_name: Marie
+  last_name: St-Laurent
+  orcid: 0000-0003-1777-4857
+  gitid: MarieStLaurent
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  - Centre de recherche de l'Institut universitaire de gériatrie de Montréal, Montréal, Canada
+  verified: false
+- id: bertrand-thirion
+  first_name: Bertrand
+  last_name: Thirion
+  orcid: 0000-0001-5018-7895
+  verified: false
+- id: mtoneva
+  first_name: Mariya
+  last_name: Toneva
+  orcid: 0000-0002-2407-9871
+  gitid: mtoneva
+  verified: false
+- id: lwehbe
+  first_name: Leila
+  last_name: Wehbe
+  orcid: 0000-0001-8545-2062
+  gitid: lwehbe
+  affiliations:
+  - Stanford University
+  verified: false

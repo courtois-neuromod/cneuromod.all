@@ -2,56 +2,48 @@
   "projectName": "gamepad",
   "contributors": [
     {
-      "login": "hyruuk",
-      "name": "Yann Harel",
-      "profile": "https://github.com/hyruuk",
-      "contributions": ["design", "data", "ideas"]
+      "gitid": "hyruuk",
+      "roles": ["Methodology", "Investigation", "Data curation", "Conceptualization"]
     },
     {
-      "name": "André Cyr",
-      "contributions": ["design", "code"]
+      "gitid": "cyrand",
+      "roles": ["Methodology", "Software"]
     },
     {
-      "login": "julieaboyle1",
-      "name": "Julie A. Boyle",
-      "profile": "https://github.com/julieaboyle1",
-      "contributions": ["data", "projectManagement"]
+      "gitid": "julieaboyle1",
+      "roles": ["Investigation", "Data curation", "Project administration"]
     },
     {
-      "login": "bpinsard",
-      "name": "Basile Pinsard",
-      "profile": "https://github.com/bpinsard",
-      "contributions": ["design", "data"]
+      "gitid": "bpinsard",
+      "roles": ["Methodology", "Investigation", "Data curation"]
     },
     {
-      "name": "Jeremy Bernard",
-      "contributions": ["data"]
+      "id": "jeremy-bernard",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "name": "Marie-France Fourcade",
-      "contributions": ["data"]
+      "id": "marie-france-fourcade",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "name": "Himanshu Aggarwal",
-      "contributions": ["design"]
+      "id": "himanshu-aggarwal",
+      "roles": ["Methodology"]
     },
     {
-      "name": "Ana Fernanda Ponce",
-      "contributions": ["design"]
+      "id": "ana-fernanda-ponce",
+      "roles": ["Methodology"]
     },
     {
-      "name": "Bertrand Thirion",
-      "contributions": ["design", "ideas"]
+      "orcid": "0000-0001-5018-7895",
+      "roles": ["Methodology", "Conceptualization"]
     },
     {
-      "name": "Karim Jerbi",
-      "contributions": ["design"]
+      "orcid": "0000-0002-3790-9651",
+      "roles": ["Methodology"]
     },
     {
-      "login": "lunebellec",
-      "name": "Lune Bellec",
-      "profile": "https://github.com/lunebellec",
-      "contributions": ["design", "projectManagement", "ideas", "financial"]
+      "gitid": "lunebellec",
+      "roles": ["Methodology", "Project administration", "Conceptualization"]
     }
   ]
 }
