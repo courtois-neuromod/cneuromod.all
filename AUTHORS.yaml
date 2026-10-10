@@ -2,11 +2,6 @@
 # Entries are auto-compiled (ORCIDs from CNeuroMod publications via Crossref, otherwise ORCID search);
 # each author should confirm their entry and flip `verified` to true.
 authors:
-- id: RainyFields
-  first_name: RainyFields
-  last_name: ''
-  gitid: RainyFields
-  verified: false
 - id: himanshu-aggarwal
   first_name: Himanshu
   last_name: Aggarwal
@@ -121,6 +116,11 @@ authors:
   affiliations:
   - Department of Psychology, University of Montréal, Montréal, Canada
   - Mila – Quebec AI Institute, Montréal, Canada
+  verified: false
+- id: RainyFields
+  first_name: Xiao-Xuan
+  last_name: Lei
+  gitid: RainyFields
   verified: false
 - id: sangfrois
   first_name: François
