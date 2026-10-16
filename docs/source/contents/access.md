@@ -2,7 +2,7 @@
 
 ## Partial fully unrestricted data access
 
-Five of the six CNeuroMod subjects (`sub-01`, `sub-02`, `sub-03`, `sub-05` and `sub-06`) have chosen to openly share their data via the Canadian Open Neuroscience Platform ([CONP](https://portal.conp.ca/dataset?id=projects/cneuromod)). These data are distributed under a liberal Creative Commons data license, in particular authorizing re-sharing of derivates. Note that you can use the instructions in this guide directly - the command will retrieve all the CONP data and simply raise warnings about the other subjects, which require an access key to download (see next Section for full access).
+Five of the six CNeuroMod subjects (`sub-01`, `sub-02`, `sub-03`, `sub-05` and `sub-06`) have chosen to openly share their data via the Canadian Open Neuroscience Platform ([CONP](https://portal.conp.ca/dataset?id=projects/cneuromod)). These data are distributed under a liberal Creative Commons data license, in particular authorizing re-sharing of derivates. Note that you can use the instructions in this guide directly - the command will retrieve all the CONP data and simply raise warnings about the other subjects, which require an access key to download (see next Section for full access). Participants gave this open-sharing consent through the [CONP Citizen Science Consent Tool](https://doi.org/10.5281/zenodo.23168975); see the [Ethics](ethics) page.
 
 ## Complete CNeuroMod databank via Data Transfer Agreement (DTA)
 

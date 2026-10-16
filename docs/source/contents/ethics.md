@@ -4,6 +4,8 @@ The MRI component of the Courtois NeuroMod project has been approved by the inst
 
 The MEG component of the project, conducted at the Department of Psychology of the University of Montreal, was approved on July 2, 2026 by the Comité d’éthique de la recherche en éducation et en psychologie (CEREP) of the University of Montreal (project 2026-8307). Ethics follow-up is carried out jointly by the two committees, each for the activities under its jurisdiction.
 
+Open sharing of the data of the 5 consenting participants through the Canadian Open Neuroscience Platform (CONP) is covered by a separate instrument, the [CONP Citizen Science Consent Tool](https://doi.org/10.5281/zenodo.23168975) (v1.0.1). This tool makes CONP the custodian of existing data; it is not a research consent form and was not reviewed by a research ethics board.
+
 The consent forms signed by participants, the project description and the intake questionnaires are available below. The formal approval letters from the ethics committees are available upon request.
 
   * [courtois_neuromod_project_description.pdf](../_static/ethics/courtois_neuromod_project_description.pdf): scientific overview of the Courtois NeuroMod project (in English).
@@ -11,3 +13,4 @@ The consent forms signed by participants, the project description and the intake
   * [consent_form_french.pdf](../_static/ethics/consent_form_french.pdf): the informed consent form signed by participants (French version, March 17, 2026).
   * [questionnaire_english.pdf](../_static/ethics/questionnaire_english.pdf): the intake questionnaire completed by participants (English version).
   * [questionnaire_french.pdf](../_static/ethics/questionnaire_french.pdf): the intake questionnaire completed by participants (French version).
+  * [CONP Citizen Science Consent Tool v1.0.1](https://doi.org/10.5281/zenodo.23168975): the consent instrument used by participants to share their data openly through the CONP (English, CC-BY 4.0).
