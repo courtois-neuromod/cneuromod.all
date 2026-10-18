@@ -13,4 +13,4 @@ The consent forms signed by participants, the project description and the intake
   * [consent_form_french.pdf](../_static/ethics/consent_form_french.pdf): the informed consent form signed by participants (French version, March 17, 2026).
   * [questionnaire_english.pdf](../_static/ethics/questionnaire_english.pdf): the intake questionnaire completed by participants (English version).
   * [questionnaire_french.pdf](../_static/ethics/questionnaire_french.pdf): the intake questionnaire completed by participants (French version).
-  * [CONP Citizen Science Consent Tool v1.0.1](https://doi.org/10.5281/zenodo.23168975): the consent instrument used by participants to share their data openly through the CONP (English, CC-BY 4.0).
+  * [CONP Citizen Science Consent Tool](https://doi.org/10.5281/zenodo.23168974) ([v1.0.1](https://zenodo.org/records/23168975)): the instrument participants used to share their data openly through the CONP (English, CC BY 4.0).
