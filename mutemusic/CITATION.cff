@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+type: dataset
+title: "CNeuroMod-Mutemusic — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: thesis
+  authors:
+    - family-names: Freteault
+      given-names: Maëlle
+  title: "Neuro-inspired artificial intelligence applied to auditory perception and imagination of natural scenes"
+  institution:
+    name: "Université de Montréal"
+  year: 2026

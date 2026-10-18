@@ -27,6 +27,9 @@ def _symlink(link_path, target_path, base_dir):
             os.remove(link)
             os.symlink(rel, link)
     else:
+        if os.path.exists(link):
+            # Replace a stub page generated before the README existed
+            os.remove(link)
         os.symlink(rel, link)
 
 

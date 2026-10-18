@@ -79,6 +79,14 @@ authors:
   orcid: 0000-0003-1358-196X
   gitid: emdupre
   verified: false
+- id: nicofarr
+  first_name: Nicolas
+  last_name: Farrugia
+  orcid: 0000-0002-1159-3513
+  gitid: nicofarr
+  affiliations:
+  - IMT Atlantique
+  verified: false
 - id: marie-france-fourcade
   first_name: Marie-France
   last_name: Fourcade
