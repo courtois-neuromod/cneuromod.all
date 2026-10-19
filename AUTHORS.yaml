@@ -2,6 +2,11 @@
 # Entries are auto-compiled (ORCIDs from CNeuroMod publications via Crossref, otherwise ORCID search);
 # each author should confirm their entry and flip `verified` to true.
 authors:
+# TODO: identify DA (initials from the emotion-videos draft data paper)
+- id: placeholder-da
+  first_name: "D."
+  last_name: "A."
+  verified: false
 - id: himanshu-aggarwal
   first_name: Himanshu
   last_name: Aggarwal
@@ -143,7 +148,7 @@ authors:
   gitid: FrancoisPgm
   verified: false
 - id: me-pic
-  first_name: Marie-Eve
+  first_name: Marie-Ève
   last_name: Picard
   gitid: me-pic
   verified: false
@@ -165,6 +170,13 @@ authors:
   first_name: Motahareh
   last_name: Pourrahimi
   gitid: motahareh-pourrahimi
+  verified: false
+- id: pierre-rainville
+  first_name: Pierre
+  last_name: Rainville
+  affiliations:
+  - Université de Montréal
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
   verified: false
 - id: pravishsainath
   first_name: Pravish
