@@ -248,3 +248,17 @@ authors:
   affiliations:
   - Stanford University
   verified: false
+- id: eddy-fortier
+  first_name: Eddy
+  last_name: Fortier
+  affiliations:
+  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  verified: false
+- id: adrian-fuente
+  first_name: Adrian
+  last_name: Fuente
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  - School of Speech-Language Pathology and Audiology, University of Montréal, Montréal, Canada
+  verified: false
