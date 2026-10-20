@@ -123,6 +123,20 @@ authors:
   orcid: 0000-0001-7257-428X
   gitid: martinhebart
   verified: false
+- id: pouya-bashivan
+  first_name: Pouya
+  last_name: Bashivan
+  affiliations:
+  - Department of Physiology, McGill University, Montréal, Canada
+  - Mila, Université de Montréal, Montréal, Canada
+  - Department of Computer Science, McGill University, Montréal, Canada
+  verified: false
+- id: takuya-ito
+  first_name: Takuya
+  last_name: Ito
+  affiliations:
+  - IBM Research, Yorktown Heights, USA
+  verified: false
 - id: karim-jerbi
   first_name: Karim
   last_name: Jerbi
@@ -135,6 +149,9 @@ authors:
   first_name: Xiao-Xuan
   last_name: Lei
   gitid: RainyFields
+  affiliations:
+  - Department of Physiology, McGill University, Montréal, Canada
+  - Mila, Université de Montréal, Montréal, Canada
   verified: false
 - id: sangfrois
   first_name: François
