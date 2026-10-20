@@ -24,6 +24,13 @@ authors:
   first_name: Jeremy
   last_name: Bernard
   verified: false
+- id: isil-bilgin
+  first_name: Isil P.
+  last_name: Bilgin
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  - Faculty of Electrical Engineering and Computer Science, Technical University of Berlin, Berlin, Germany
+  verified: false
 - id: arnaudbore
   first_name: Arnaud
   last_name: Bore
@@ -41,6 +48,13 @@ authors:
   first_name: Amal
   last_name: Boukhdhir
   gitid: bamal
+  verified: false
+- id: simona-brambati
+  first_name: Simona M.
+  last_name: Brambati
+  affiliations:
+  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
   verified: false
 - id: julieaboyle1
   first_name: Julie A.
