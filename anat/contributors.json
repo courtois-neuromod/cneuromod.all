@@ -2,70 +2,48 @@
   "projectName": "anat",
   "contributors": [
     {
-      "login": "FrancoisPgm",
-      "name": "François Paugam",
-      "profile": "https://github.com/FrancoisPgm",
-      "contributions": ["data"]
+      "gitid": "FrancoisPgm",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "bamal",
-      "name": "Amal Boukhdhir",
-      "profile": "https://github.com/bamal",
-      "contributions": ["data"]
+      "gitid": "bamal",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "bpinsard",
-      "name": "Basile Pinsard",
-      "profile": "https://github.com/bpinsard",
-      "contributions": ["design", "ideas", "data"]
+      "gitid": "bpinsard",
+      "roles": ["Methodology", "Conceptualization", "Investigation", "Data curation"]
     },
     {
-      "login": "jcohenadad",
-      "name": "Julien Cohen-Adad",
-      "profile": "http://www.neuro.polymtl.ca",
-      "contributions": ["design", "ideas", "data"]
+      "gitid": "jcohenadad",
+      "roles": ["Methodology", "Conceptualization", "Investigation", "Data curation"]
     },
     {
-      "login": "emilie-dessureault",
-      "name": "Emilie Dessureault",
-      "profile": "https://github.com/emilie-dessureault",
-      "contributions": ["design", "ideas", "projectManagement", "data"]
+      "gitid": "emilie-dessureault",
+      "roles": ["Methodology", "Conceptualization", "Project administration", "Investigation", "Data curation"]
     },
     {
-      "login": "julieaboyle1",
-      "name": "Julie Boyle",
-      "profile": "https://github.com/julieaboyle1",
-      "contributions": ["design", "ideas", "projectManagement", "data"]
+      "gitid": "julieaboyle1",
+      "roles": ["Methodology", "Conceptualization", "Project administration", "Investigation", "Data curation"]
     },
     {
-      "login": "me-pic",
-      "name": "Marie-Eve Picard",
-      "profile": "https://github.com/me-pic",
-      "contributions": ["data"]
+      "gitid": "me-pic",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "lunebellec",
-      "name": "Lune Bellec",
-      "profile": "https://github.com/lunebellec",
-      "contributions": ["design", "ideas"]
+      "gitid": "lunebellec",
+      "roles": ["Methodology", "Conceptualization"]
     },
     {
-      "login": "pravishsainath",
-      "name": "Pravish Sainath",
-      "profile": "https://github.com/pravishsainath",
-      "contributions": ["data"]
+      "gitid": "pravishsainath",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "sangfrois",
-      "name": "François Lespinasse",
-      "profile": "https://github.com/sangfrois",
-      "contributions": ["data"]
+      "gitid": "sangfrois",
+      "roles": ["Investigation", "Data curation"]
     },
     {
-      "login": "arnaudbore",
-      "name": "Arnaud Bore",
-      "profile": "https://github.com/arnaudbore",
-      "contributions": ["design", "data"]
+      "gitid": "arnaudbore",
+      "roles": ["Methodology", "Investigation", "Data curation"]
     }
   ]
 }

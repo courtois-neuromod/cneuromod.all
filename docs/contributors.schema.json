@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dataset contributors (CRediT)",
+  "type": "object",
+  "required": [
+    "contributors"
+  ],
+  "properties": {
+    "projectName": {
+      "type": "string"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "roles"
+        ],
+        "minProperties": 2,
+        "additionalProperties": false,
+        "properties": {
+          "gitid": {
+            "type": "string"
+          },
+          "orcid": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+          },
+          "id": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "Conceptualization",
+                "Data curation",
+                "Formal analysis",
+                "Funding acquisition",
+                "Investigation",
+                "Methodology",
+                "Project administration",
+                "Resources",
+                "Software",
+                "Supervision",
+                "Validation",
+                "Visualization",
+                "Writing – original draft",
+                "Writing – review & editing"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "gitid"
+            ]
+          },
+          {
+            "required": [
+              "orcid"
+            ]
+          },
+          {
+            "required": [
+              "id"
+            ]
+          }
+        ]
+      }
+    },
+    "funding": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "projectName": "hearing",
+  "contributors": [
+    {
+      "id": "eddy-fortier",
+      "roles": ["Formal analysis", "Investigation", "Methodology", "Project administration", "Software", "Visualization", "Writing – original draft", "Writing – review & editing"]
+    },
+    {
+      "id": "adrian-fuente",
+      "roles": ["Conceptualization", "Investigation", "Methodology", "Supervision", "Writing – review & editing"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Conceptualization", "Funding acquisition", "Methodology", "Project administration", "Resources", "Writing – review & editing"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Funding acquisition", "Methodology", "Supervision", "Writing – review & editing"]
+    }
+  ],
+  "funding": [
+    {"name": "Courtois Foundation"}
+  ]
+}

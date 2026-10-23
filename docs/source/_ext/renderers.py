@@ -3,7 +3,7 @@ import re
 import yaml
 from pathlib import Path
 
-from .constants import _COMPONENT_ICON, _CONTRIB_EMOJI, _CONTRIB_LABEL, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
+from .constants import _COMPONENT_ICON, _CREDIT_ROLES, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
 
 
 def _render_unreleased_warning():
@@ -55,36 +55,60 @@ def _render_citation(cff_path):
     return f"\n\n:::{{admonition}} How to cite\n:class: tip\n\n{citation_line}\n:::\n"
 
 
-def _render_contributors(rc_path):
+def _author_name(author, key):
+    if not author:
+        return key
+    return f"{author.get('first_name', '')} {author.get('last_name', '')}".strip() or key
+
+
+def _author_link(author):
+    if not author:
+        return ''
+    if author.get('orcid'):
+        return f"https://orcid.org/{author['orcid']}"
+    if author.get('gitid'):
+        return f"https://github.com/{author['gitid']}"
+    return author.get('profile', '')
+
+
+def _render_contributors(rc_path, authors=None):
+    """Render the Contributors admonition, grouped by CRediT role.
+
+    ``authors`` is the index built by ``validator.load_authors``. Contributors
+    that do not resolve fall back to their raw identifier (the validator
+    reports them as warnings).
+    """
+    authors = authors or {}
     with open(rc_path, encoding='utf-8') as f:
         data = json.load(f)
     contributors = data.get('contributors', [])
-    if not contributors:
+    funding = data.get('funding', [])
+    if not contributors and not funding:
         return ''
 
-    roles_seen = set()
-    entries = []
+    by_role = {}
     for c in contributors:
-        name = c.get('name', '')
-        profile = c.get('profile', '')
-        contributions = c.get('contributions', [])
-        emojis = ''.join(_CONTRIB_EMOJI.get(r, '') for r in contributions)
-        roles_seen.update(contributions)
-        if profile:
-            entry = f"[{name}]({profile}) {emojis}"
-        else:
-            entry = f"{name} {emojis}"
-        entries.append(entry)
+        key = c.get('gitid') or c.get('orcid') or c.get('id') or ''
+        author = authors.get(key)
+        name = _author_name(author, key)
+        link = _author_link(author)
+        entry = f"[{name}]({link})" if link else name
+        for role in c.get('roles', []):
+            by_role.setdefault(role, []).append(entry)
 
-    legend_parts = [
-        f"{_CONTRIB_EMOJI[r]} {_CONTRIB_LABEL[r]}"
-        for r in _CONTRIB_LABEL
-        if r in roles_seen and r in _CONTRIB_EMOJI
+    lines = [
+        f"**{role}:** {' · '.join(by_role[role])}"
+        for role in _CREDIT_ROLES
+        if role in by_role
     ]
-    legend = ' · '.join(legend_parts)
+    if funding:
+        funders = ' · '.join(
+            f"[{f['name']}]({f['url']})" if f.get('url') else f['name'] for f in funding
+        )
+        lines.append(f"**Funding:** {funders}")
 
-    contributors_str = ' · '.join(entries)
-    return f"\n\n:::{{admonition}} Contributors\n:class: note\n\n{contributors_str}\n\n<hr style=\"margin: 0.3em 0;\"/>\n\n_{legend}_\n:::\n"
+    body = '\n\n'.join(lines)
+    return f"\n\n:::{{admonition}} Contributors\n:class: note\n\n{body}\n:::\n"
 
 
 def _resolve_stats_key(stats, dotted_key):

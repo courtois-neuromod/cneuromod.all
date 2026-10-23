@@ -1,0 +1,25 @@
+{
+  "projectName": "mutemusic",
+  "contributors": [
+    {
+      "gitid": "maelleF",
+      "roles": ["Conceptualization", "Methodology", "Software", "Investigation", "Data curation", "Formal analysis", "Writing – original draft"]
+    },
+    {
+      "gitid": "nicofarr",
+      "roles": ["Conceptualization", "Supervision", "Methodology"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Conceptualization", "Supervision", "Methodology", "Funding acquisition"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Investigation", "Data curation", "Project administration"]
+    },
+    {
+      "gitid": "bpinsard",
+      "roles": ["Software", "Data curation"]
+    }
+  ]
+}

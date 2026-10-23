@@ -26,7 +26,7 @@ datalad save -m "description of change"
 
 ## Contributor naming convention
 
-Always use **Lune Bellec** (login: `lunebellec`, profile: `https://github.com/lunebellec`) in `contributors.json` files. Never use "Pierre Bellec" or login `pbellec`.
+Always use **Lune Bellec** (login: `lunebellec`, profile: `https://github.com/lunebellec`) in `AUTHORS.yaml`. Never use "Pierre Bellec" or login `pbellec`.
 
 Always use **Julie A. Boyle** (login: `julieaboyle1`, profile: `https://github.com/julieaboyle1`) — never the short form "jboyle".
 
@@ -41,7 +41,7 @@ Each top-level dataset folder (e.g. `hcptrt/`, `anat/`) may contain metadata fil
   `docs/source/_static/datasets/<dataset>.{jpg,png}` supplies the gallery tile; without one,
   the card falls back to the dataset's emoji in `docs/source/_ext/constants.py`.
 
-- **`contributors.json`** — allcontributors JSON schema. Lists contributors with `contributions` role keys (`data`, `code`, `doc`, `design`, `review`, `maintenance`, `projectManagement`, `ideas`, `mentoring`, `bug`, `userTesting`, `financial`, `question`). Renders as a "Contributors" section with emoji annotations. People without GitHub accounts omit `login`; organizations are supported.
+- **`contributors.json`** — per-dataset contributors using the [CRediT](https://credit.niso.org/) taxonomy. Each entry is `{"gitid" | "orcid" | "id": ..., "roles": [...]}`; the person must resolve to an entry in the root **`AUTHORS.yaml`** (name, affiliations, ORCID, GitHub ID, `verified` flag). `roles` uses the 14 official CRediT terms (e.g. `Investigation`, `Data curation`, `Software`, `Writing – review & editing`). Funders go in a separate `funding: [{"name": ...}]` list, not in `contributors`. Renders as a "Contributors" admonition grouped by CRediT role, with names linked to ORCID, then GitHub, then `profile`. Schemas: `docs/contributors.schema.json` and `docs/authors.schema.json`; unresolved IDs or invalid roles raise Sphinx warnings.
 
 The Sphinx pipeline in `docs/source/conf.py` discovers these files automatically — no manual wiring needed. Add a `README.md` to a dataset folder and it appears in the docs; add `CITATION.cff` and/or `contributors.json` alongside it and the citation/contributor blocks render automatically.
 

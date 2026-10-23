@@ -2,53 +2,41 @@
   "projectName": "hcptrt",
   "contributors": [
     {
-      "login": "lunebellec",
-      "name": "Lune Bellec",
-      "profile": "http://github.com/lunebellec",
-      "contributions": ["design", "doc"]
+      "gitid": "lunebellec",
+      "roles": ["Methodology", "Writing – review & editing"]
     },
     {
-      "login": "julieaboyle1",
-      "name": "Julie Boyle",
-      "profile": "https://github.com/julieaboyle1",
-      "contributions": ["data", "projectManagement", "doc", "ideas", "design"]
+      "gitid": "julieaboyle1",
+      "roles": ["Investigation", "Data curation", "Project administration", "Writing – review & editing", "Conceptualization", "Methodology"]
     },
     {
-      "login": "arnaudbore",
-      "name": "Arnaud Bore",
-      "profile": "https://github.com/arnaudbore",
-      "contributions": ["code", "data"]
+      "gitid": "arnaudbore",
+      "roles": ["Software", "Investigation", "Data curation"]
     },
     {
-      "name": "Valentina Borghesani",
-      "profile": "http://valentina.borghesani.org/",
-      "contributions": ["review", "question", "mentoring", "doc", "bug", "userTesting"]
+      "orcid": "0000-0002-7909-8631",
+      "roles": ["Validation", "Supervision", "Writing – review & editing"]
     },
     {
-      "login": "bamal",
-      "name": "Amal Boukhdhir",
-      "profile": "https://github.com/bamal",
-      "contributions": ["data", "review", "doc"]
+      "gitid": "bamal",
+      "roles": ["Investigation", "Data curation", "Validation", "Writing – review & editing"]
     },
     {
-      "login": "emdupre",
-      "name": "Elizabeth DuPre",
-      "profile": "http://github.com/emdupre",
-      "contributions": ["review", "userTesting", "bug"]
+      "gitid": "emdupre",
+      "roles": ["Validation"]
     },
     {
-      "login": "bpinsard",
-      "name": "Basile Pinsard",
-      "profile": "https://github.com/bpinsard",
-      "contributions": ["data", "review", "maintenance", "code"]
+      "gitid": "bpinsard",
+      "roles": ["Investigation", "Data curation", "Validation", "Resources", "Software"]
     },
     {
-      "name": "Claude Godbout",
-      "contributions": ["data"]
-    },
+      "id": "claude-godbout",
+      "roles": ["Investigation", "Data curation"]
+    }
+  ],
+  "funding": [
     {
-      "name": "Courtois Foundation",
-      "contributions": ["financial"]
+      "name": "Courtois Foundation"
     }
   ]
 }

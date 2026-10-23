@@ -37,24 +37,29 @@ class TestRenderCitation:
 
 
 class TestRenderContributors:
-    def test_entries_and_legend(self, contributorsrc):
-        result = _render_contributors(contributorsrc)
-        assert 'Alice Smith' in result
-        assert 'Bob Jones' in result
+    def test_grouped_by_role_in_credit_order(self, contributorsrc, authors_index):
+        result = _render_contributors(contributorsrc, authors_index)
         assert 'Contributors' in result
-        # emojis for data, code, doc should appear
-        assert '🔣' in result  # data
-        assert '💻' in result  # code
-        assert '📖' in result  # doc
+        assert '**Investigation:** [Alice Smith]' in result
+        assert '**Software:** [Alice Smith](https://orcid.org/0000-0001-2345-6789) · [Bob Jones](https://github.com/bjones)' in result
+        order = [result.index(f'**{r}:**') for r in ('Investigation', 'Software', 'Validation', 'Writing – review & editing')]
+        assert order == sorted(order)
 
-    def test_profile_link(self, contributorsrc):
-        result = _render_contributors(contributorsrc)
-        assert '[Alice Smith](https://github.com/asmith)' in result
+    def test_link_fallback(self, contributorsrc, authors_index):
+        result = _render_contributors(contributorsrc, authors_index)
+        assert '[Alice Smith](https://orcid.org/0000-0001-2345-6789)' in result   # ORCID
+        assert '[Bob Jones](https://github.com/bjones)' in result                 # GitHub
+        assert '[Carol Lee](https://carol.example.org)' in result                 # profile
+        assert 'Dan Roe' in result and '[Dan Roe]' not in result                   # plain name
 
-    def test_no_profile_plain_name(self, contributorsrc):
-        result = _render_contributors(contributorsrc)
-        assert 'Bob Jones' in result
-        assert '[Bob Jones]' not in result
+    def test_funding_line_last(self, contributorsrc, authors_index):
+        result = _render_contributors(contributorsrc, authors_index)
+        assert '**Funding:** Courtois Foundation' in result
+        assert result.index('**Funding:**') > result.index('**Validation:**')
+
+    def test_unresolved_id_falls_back_to_raw_id(self, contributorsrc):
+        result = _render_contributors(contributorsrc, {})
+        assert 'bjones' in result
 
     def test_empty_contributors(self, contributorsrc_empty):
         assert _render_contributors(contributorsrc_empty) == ''

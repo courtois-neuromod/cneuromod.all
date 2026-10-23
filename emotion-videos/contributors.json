@@ -1,0 +1,42 @@
+{
+  "projectName": "emotion-videos",
+  "contributors": [
+    {
+      "gitid": "me-pic",
+      "roles": ["Conceptualization", "Data curation", "Formal analysis", "Investigation", "Methodology", "Software", "Visualization", "Writing – original draft", "Writing – review & editing"]
+    },
+    {
+      "gitid": "MarieStLaurent",
+      "roles": ["Data curation", "Software", "Visualization", "Writing – review & editing"]
+    },
+    {
+      "id": "placeholder-da",
+      "roles": ["Data curation", "Software", "Visualization"]
+    },
+    {
+      "gitid": "emdupre",
+      "roles": ["Formal analysis"]
+    },
+    {
+      "gitid": "bpinsard",
+      "roles": ["Conceptualization", "Data curation", "Project administration"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Conceptualization", "Funding acquisition", "Project administration", "Resources"]
+    },
+    {
+      "id": "pierre-rainville",
+      "roles": ["Conceptualization", "Supervision"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Conceptualization", "Supervision", "Funding acquisition", "Resources", "Project administration"]
+    }
+  ],
+  "funding": [
+    {"name": "Courtois Foundation"},
+    {"name": "NSERC (RGPIN-2025-06022)"},
+    {"name": "FRQNT (scholarship to Marie-Ève Picard)"}
+  ]
+}
