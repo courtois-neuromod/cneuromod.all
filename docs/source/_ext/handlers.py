@@ -4,6 +4,7 @@ import yaml
 from . import discovery
 from . import redirects
 from .renderers import (
+    _render_authors_list,
     _render_citation,
     _render_component_sections,
     _render_components_row,
@@ -36,6 +37,12 @@ def _inject_datasets_index(app, docname, source):
         source[0] = source[0].replace('   _datasets_toc_placeholder_', f'   {entries}')
     else:
         source[0] = source[0].replace('\n   _datasets_toc_placeholder_', '')
+
+
+def _inject_authors_page(app, docname, source):
+    if docname != 'AUTHORS':
+        return
+    source[0] = source[0].replace('_authors_list_placeholder_', _render_authors_list(discovery))
 
 
 def _inject_license_page(app, docname, source):
@@ -123,7 +130,7 @@ def _always_reread_index(app, env, added, changed, removed):
     # Force re-read of index, component pages, and dataset pages with metadata,
     # so content stays current on incremental builds.
     seen = set()
-    force = ['index', 'contents/license', 'contents/components', 'contents/datasets']
+    force = ['index', 'AUTHORS', 'contents/license', 'contents/components', 'contents/datasets']
     force += [f'contents/{stem.lower()}' for stem, _ in discovery._global_components]
     force += [f'contents/{stem.lower()}' for stem, _, _ in discovery._local_components]
     for name in discovery._dataset_citation:
@@ -147,6 +154,7 @@ def _always_reread_index(app, env, added, changed, removed):
 def setup(app):
     app.connect('builder-inited', discovery._auto_discover_datasets)
     app.connect('source-read', _inject_index)
+    app.connect('source-read', _inject_authors_page)
     app.connect('source-read', _inject_license_page)
     app.connect('source-read', _inject_components_index)
     app.connect('source-read', _inject_datasets_index)

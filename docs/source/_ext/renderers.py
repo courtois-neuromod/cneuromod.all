@@ -111,6 +111,49 @@ def _render_contributors(rc_path, authors=None):
     return f"\n\n:::{{admonition}} Contributors\n:class: note\n\n{body}\n:::\n"
 
 
+def _render_authors_list(discovery):
+    """Render the table of all registered authors (AUTHORS.yaml), alphabetical,
+    with the datasets each one contributed to and their CRediT roles."""
+    unique = {}
+    for a in discovery._authors.values():
+        unique[a['id']] = a
+    contributions = {}  # author id -> {dataset: [roles]}
+    for ds, path in discovery._dataset_contributors.items():
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+        for c in data.get('contributors', []):
+            a = discovery._authors.get(c.get('gitid') or c.get('orcid') or c.get('id') or '')
+            if a:
+                roles = contributions.setdefault(a['id'], {}).setdefault(ds, [])
+                roles.extend(r for r in c.get('roles', []) if r not in roles)
+
+    ordered = sorted(
+        unique.values(),
+        key=lambda a: (a.get('last_name', '').lower(), a.get('first_name', '').lower()),
+    )
+    aff_index = {}  # affiliation -> number, in order of first appearance
+    for a in ordered:
+        for aff in a.get('affiliations') or []:
+            aff_index.setdefault(aff, len(aff_index) + 1)
+
+    rows = ['| Name | Contributions |', '|---|---|']
+    for a in ordered:
+        name = _author_name(a, a['id'])
+        link = _author_link(a)
+        name = f"[{name}]({link})" if link else name
+        nums = ','.join(str(aff_index[aff]) for aff in a.get('affiliations') or [])
+        if nums:
+            name += f"{{sup}}`{nums}`"
+        contrib = '; '.join(
+            f"{ds} ({', '.join(roles)})" for ds, roles in sorted(contributions.get(a['id'], {}).items())
+        )
+        rows.append(f"| {name} | {contrib} |")
+
+    aff_rows = ['| | Affiliation |', '|---|---|']
+    aff_rows += [f"| {n} | {aff} |" for aff, n in aff_index.items()]
+    return '\n'.join(rows) + '\n\n### Affiliations\n\n' + '\n'.join(aff_rows) + '\n'
+
+
 def _resolve_stats_key(stats, dotted_key):
     val = stats
     for part in dotted_key.split('.'):
