@@ -2,14 +2,14 @@
 # Entries are auto-compiled (ORCIDs from CNeuroMod publications via Crossref, otherwise ORCID search);
 # each author should confirm their entry and flip `verified` to true.
 authors:
-# TODO: identify DA (initials from the emotion-videos draft data paper)
-- id: placeholder-da
-  first_name: "D."
-  last_name: "A."
-  verified: false
 - id: himanshu-aggarwal
   first_name: Himanshu
   last_name: Aggarwal
+  verified: false
+- id: Delphine-A-22
+  first_name: Delphine
+  last_name: Aguiar
+  gitid: Delphine-A-22
   verified: false
 - id: lunebellec
   first_name: Lune
