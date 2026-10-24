@@ -35,6 +35,8 @@ authors:
   first_name: Arnaud
   last_name: Bore
   gitid: arnaudbore
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
   verified: false
 - id: valentina-borghesani
   first_name: Valentina
@@ -48,6 +50,9 @@ authors:
   first_name: Amal
   last_name: Boukhdhir
   gitid: bamal
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  - Department of Computer Science and Operations Research (DIRO), University of Montréal, Montréal, Canada
   verified: false
 - id: simona-brambati
   first_name: Simona M.
@@ -72,7 +77,7 @@ authors:
   orcid: 0000-0003-3662-9532
   gitid: jcohenadad
   affiliations:
-  - NeuroPoly, Polytechnique Montréal
+  - NeuroPoly, Polytechnique Montréal, Montréal, Canada
   verified: false
 - id: oliver-contier
   first_name: Oliver
@@ -80,12 +85,14 @@ authors:
   orcid: 0000-0002-2983-4709
   gitid: oliver-contier
   affiliations:
-  - Max Planck Institute for Human Cognitive and Brain Sciences
+  - Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany
   verified: false
 - id: cyrand
   first_name: André
   last_name: Cyr
   gitid: cyrand
+  affiliations:
+  - Unité de Neuroimagerie Fonctionnelle (UNF), Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
   verified: false
 - id: emilie-dessureault
   first_name: Emilie
@@ -97,6 +104,8 @@ authors:
   last_name: DuPre
   orcid: 0000-0003-1358-196X
   gitid: emdupre
+  affiliations:
+  - McGill University, Montréal, Canada
   verified: false
 - id: nicofarr
   first_name: Nicolas
@@ -104,7 +113,7 @@ authors:
   orcid: 0000-0002-1159-3513
   gitid: nicofarr
   affiliations:
-  - IMT Atlantique
+  - IMT Atlantique, France
   verified: false
 - id: marie-france-fourcade
   first_name: Marie-France
@@ -116,7 +125,7 @@ authors:
   orcid: 0009-0003-7950-0744
   gitid: maelleF
   affiliations:
-  - Ecole nationale supérieure Mines-Télécom Atlantique Bretagne Pays de la Loire
+  - IMT Atlantique, France
   verified: false
 - id: claude-godbout
   first_name: Claude
@@ -136,13 +145,15 @@ authors:
   last_name: Hebart
   orcid: 0000-0001-7257-428X
   gitid: martinhebart
+  affiliations:
+  - Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany
   verified: false
 - id: pouya-bashivan
   first_name: Pouya
   last_name: Bashivan
   affiliations:
   - Department of Physiology, McGill University, Montréal, Canada
-  - Mila, Université de Montréal, Montréal, Canada
+  - Mila – Quebec AI Institute, Montréal, Canada
   - Department of Computer Science, McGill University, Montréal, Canada
   verified: false
 - id: takuya-ito
@@ -165,18 +176,23 @@ authors:
   gitid: RainyFields
   affiliations:
   - Department of Physiology, McGill University, Montréal, Canada
-  - Mila, Université de Montréal, Montréal, Canada
+  - Mila – Quebec AI Institute, Montréal, Canada
   verified: false
 - id: sangfrois
   first_name: François
   last_name: Lespinasse
   gitid: sangfrois
+  affiliations:
+  - Department of Psychology, University of Montréal, Montréal, Canada
   verified: false
 - id: FrancoisPgm
   first_name: François
   last_name: Paugam
   orcid: 0000-0002-8161-7699
   gitid: FrancoisPgm
+  affiliations:
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  - Department of Computer Science and Operations Research (DIRO), University of Montréal, Montréal, Canada
   verified: false
 - id: me-pic
   first_name: Marie-Ève
@@ -213,12 +229,17 @@ authors:
   first_name: Pravish
   last_name: Sainath
   gitid: pravishsainath
+  affiliations:
+  - Department of Computer Science and Operations Research (DIRO), University of Montréal, Montréal, Canada
+  - Mila – Quebec AI Institute, Montréal, Canada
   verified: false
 - id: seelikat
   first_name: Katja
   last_name: Seeliger
   orcid: 0000-0002-5343-0595
   gitid: seelikat
+  affiliations:
+  - Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany
   verified: false
 - id: MarieStLaurent
   first_name: Marie
@@ -227,7 +248,6 @@ authors:
   gitid: MarieStLaurent
   affiliations:
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
-  - Centre de recherche de l'Institut universitaire de gériatrie de Montréal, Montréal, Canada
   verified: false
 - id: bertrand-thirion
   first_name: Bertrand
@@ -239,6 +259,8 @@ authors:
   last_name: Toneva
   orcid: 0000-0002-2407-9871
   gitid: mtoneva
+  affiliations:
+  - Carnegie Mellon University, Pittsburgh, USA
   verified: false
 - id: lwehbe
   first_name: Leila
@@ -246,7 +268,7 @@ authors:
   orcid: 0000-0001-8545-2062
   gitid: lwehbe
   affiliations:
-  - Stanford University
+  - Stanford University, Stanford, USA
   verified: false
 - id: eddy-fortier
   first_name: Eddy
