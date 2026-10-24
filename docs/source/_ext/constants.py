@@ -16,6 +16,9 @@ _CREDIT_ROLES = [
     'Writing – review & editing',
 ]
 
+# Public alias for code outside the Sphinx extension (e.g. the paper build).
+CREDIT_ROLES = _CREDIT_ROLES
+
 _STATS_EMOJI = {
     'neuroimaging.fmri':      '🧠',
     'tasks.images':           '🖼️',

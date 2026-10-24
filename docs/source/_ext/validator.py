@@ -64,6 +64,30 @@ def load_authors(authors_path):
     return index
 
 
+def contributor_key(contributor):
+    """Identifier of a contributors.json entry: gitid, else orcid, else id ('' if none)."""
+    return contributor.get('gitid') or contributor.get('orcid') or contributor.get('id') or ''
+
+
+def collect_contributions(contributors_paths, authors):
+    """Resolve every dataset's contributors.json against the ``authors`` index.
+
+    ``contributors_paths`` maps dataset name to a contributors.json path and
+    ``authors`` is the index built by ``load_authors``. Returns
+    ``{dataset: [(author or None, key, roles)]}`` in file order; ``author`` is
+    None when the contributor does not resolve.
+    """
+    out = {}
+    for dataset, path in contributors_paths.items():
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+        out[dataset] = [
+            (authors.get(contributor_key(c)), contributor_key(c), c.get('roles', []))
+            for c in data.get('contributors', [])
+        ]
+    return out
+
+
 def _validate_against(data, schema_name):
     try:
         import jsonschema
@@ -96,7 +120,7 @@ def validate_contributors(contributors_path, authors):
         data = json.load(f)
     errors = _validate_against(data, 'contributors.schema.json')
     for c in data.get('contributors', []):
-        key = c.get('gitid') or c.get('orcid') or c.get('id')
+        key = contributor_key(c)
         if key and key not in authors:
             errors.append(f"contributor '{key}' not found in AUTHORS.yaml")
     return errors
