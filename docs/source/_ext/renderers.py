@@ -4,6 +4,7 @@ import yaml
 from pathlib import Path
 
 from .constants import _COMPONENT_ICON, _CREDIT_ROLES, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
+from .validator import collect_contributions, contributor_key
 
 
 def _render_unreleased_warning():
@@ -88,7 +89,7 @@ def _render_contributors(rc_path, authors=None):
 
     by_role = {}
     for c in contributors:
-        key = c.get('gitid') or c.get('orcid') or c.get('id') or ''
+        key = contributor_key(c)
         author = authors.get(key)
         name = _author_name(author, key)
         link = _author_link(author)
@@ -118,14 +119,11 @@ def _render_authors_list(discovery):
     for a in discovery._authors.values():
         unique[a['id']] = a
     contributions = {}  # author id -> {dataset: [roles]}
-    for ds, path in discovery._dataset_contributors.items():
-        with open(path, encoding='utf-8') as f:
-            data = json.load(f)
-        for c in data.get('contributors', []):
-            a = discovery._authors.get(c.get('gitid') or c.get('orcid') or c.get('id') or '')
+    for ds, entries in collect_contributions(discovery._dataset_contributors, discovery._authors).items():
+        for a, _key, c_roles in entries:
             if a:
                 roles = contributions.setdefault(a['id'], {}).setdefault(ds, [])
-                roles.extend(r for r in c.get('roles', []) if r not in roles)
+                roles.extend(r for r in c_roles if r not in roles)
 
     ordered = sorted(
         unique.values(),
