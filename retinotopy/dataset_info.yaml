@@ -1,6 +1,10 @@
 description: >-
   Retinotopic mapping of visual cortex from travelling-wave and bar-aperture stimuli.
 
+maturity:
+  level: stable
+  validation: [St-Laurent2026-zc]
+
 stats:
   subjects_n: 4
   neuroimaging:

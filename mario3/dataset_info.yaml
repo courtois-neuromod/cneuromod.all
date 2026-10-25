@@ -3,6 +3,9 @@ description: >-
   every
   play.
 
+maturity:
+  level: alpha
+
 stats:
   subjects_n: 5
   neuroimaging:

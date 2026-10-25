@@ -75,6 +75,30 @@ _STATUS_ICON = {
     'collected_not_released': '🔒',
 }
 
+# Dataset maturity ladder (`maturity.level` in dataset_info.yaml), most to least mature.
+# reference: validation paper and substantial reuse; stable: validation paper or substantial
+# reuse; beta: complete (all planned participants released, fMRIPrep, README) but neither;
+# alpha: anything short of beta.
+_MATURITY = {
+    'reference': {
+        'emoji': '🏆', 'label': 'Reference',
+        'description': 'Formal validation paper and substantial reuse.',
+    },
+    'stable': {
+        'emoji': '🟢', 'label': 'Stable',
+        'description': 'Formal validation paper or substantial reuse.',
+    },
+    'beta': {
+        'emoji': '🟡', 'label': 'Beta',
+        'description': 'Complete (all planned participants released, fMRIPrep derivatives, README) '
+                       'but neither validated nor substantially reused yet.',
+    },
+    'alpha': {
+        'emoji': '🟠', 'label': 'Alpha',
+        'description': 'Not fully acquired or released, or missing a README.',
+    },
+}
+
 _COMPONENT_ICON = {
     'bids':        '📁',
     'fmriprep':    '🧠',

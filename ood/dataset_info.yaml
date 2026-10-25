@@ -3,6 +3,10 @@ description: >-
   brain
   encoding models.
 
+maturity:
+  level: alpha
+  note: No README yet; used as the Algonauts test set
+
 stats:
   subjects_n: 4
   neuroimaging:

@@ -7,6 +7,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent / 'source'))
 from _ext.renderers import (
     _extract_component_title,
     _gallery_blurb,
+    _maturity_badge,
+    _render_maturity_cell,
     _render_dataset_gallery,
     _render_citation,
     _render_contributors,
@@ -242,3 +244,16 @@ class TestRenderDatasetGallery:
         result = _render_dataset_gallery(self._discovery(tmp_path, ['triplets']))
         assert '<div class="ds-tile ds-tile--emoji">🔺</div>' in result
         assert '<img' not in result
+
+
+class TestMaturity:
+    def test_badge(self):
+        assert _maturity_badge('stable') == '🟢 Stable'
+        assert _maturity_badge('bogus') == ''
+
+    def test_cell(self):
+        cell = _render_maturity_cell({'level': 'stable', 'validation': ['A1'], 'reuse': ['B', 'C'], 'note': 'n'})
+        assert 'Stable' in cell and '{cite:t}`A1`' in cell and 'Reused in 2 papers' in cell and '_(n)_' in cell
+
+    def test_cell_unknown_level_empty(self):
+        assert _render_maturity_cell({'level': 'bogus'}) == ''

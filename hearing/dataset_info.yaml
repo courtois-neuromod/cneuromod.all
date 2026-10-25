@@ -2,6 +2,10 @@ description: >-
   Clinical audiology tests administered around MRI sessions to track the participants'
   hearing over the project.
 
+maturity:
+  level: stable
+  validation: [Fortier2025-bo]
+
 stats:
   subjects_n: 6
 subjects:

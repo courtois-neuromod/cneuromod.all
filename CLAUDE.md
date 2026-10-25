@@ -67,6 +67,20 @@ It falls back to the first `tasks[].label` when absent. `docs/schema.json` descr
 
 **`subjects` section** — list of `{id, status}` objects; valid statuses: `available`, `partial`, `pending`, `not_collected`, `collected_not_released`.
 
+**`maturity` section** — hand-maintained trust level, rendered as a badge in the gallery and a
+**Maturity** row on the dataset page. Shape: `{level, validation: [bibkeys], reuse: [bibkeys], note}`.
+Bibkeys must exist in `docs/source/cneuromod_references.bib` (unknown keys raise a Sphinx warning,
+as does an unknown level). Levels:
+- `reference` — formal validation paper **and** substantial reuse
+- `stable` — formal validation paper **or** substantial reuse
+- `beta` — complete (all planned participants released, fMRIPrep derivatives, docs README) but neither validated nor substantially reused
+- `alpha` — anything short of `beta`
+
+*Validation* = a dedicated paper testing that the dataset carries its intended signal (general
+QC metrics alone do not count). *Substantial reuse* = at least 3 papers using the data to answer
+a research question, excluding the dataset's own validation paper. Not named `status`, which
+already means availability in `subjects[]`/`modalities[]`.
+
 ### Machine-generated fields — do not hand-edit
 
 `stats.subjects_n`, `stats.neuroimaging.fmri.*`, and `subjects[*].status` are recomputed by

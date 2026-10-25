@@ -1,8 +1,11 @@
 import copy
 import json
+import re
 from pathlib import Path
 
 import yaml
+
+from .constants import _MATURITY
 
 
 def _load_schema():
@@ -123,4 +126,41 @@ def validate_contributors(contributors_path, authors):
         key = contributor_key(c)
         if key and key not in authors:
             errors.append(f"contributor '{key}' not found in AUTHORS.yaml")
+    return errors
+
+
+def load_bibkeys(bib_path):
+    """Return the set of citation keys defined in a .bib file (empty if missing)."""
+    path = Path(bib_path)
+    if not path.is_file():
+        return set()
+    with open(path, encoding='utf-8') as f:
+        return set(re.findall(r'^@\w+\s*\{\s*([^,\s]+)\s*,', f.read(), flags=re.M))
+
+
+def validate_maturity(info_path, bibkeys=None):
+    """Validate the optional ``maturity`` block of a dataset_info.yaml.
+
+    Checks that ``level`` is one of the known levels and that every key in
+    ``validation`` / ``reuse`` exists in ``bibkeys`` (skipped when None).
+    Returns a list of error strings, empty if valid or absent.
+    """
+    with open(info_path, encoding='utf-8') as f:
+        data = yaml.safe_load(f) or {}
+    maturity = data.get('maturity')
+    if maturity is None:
+        return []
+    if not isinstance(maturity, dict):
+        return ["maturity: must be a mapping"]
+    errors = []
+    level = maturity.get('level')
+    if level not in _MATURITY:
+        errors.append(f"maturity.level: '{level}' is not one of {sorted(_MATURITY)}")
+    for field in ('validation', 'reuse'):
+        keys = maturity.get(field) or []
+        if not isinstance(keys, list):
+            errors.append(f"maturity.{field}: must be a list of bibkeys")
+            continue
+        if bibkeys is not None:
+            errors += [f"maturity.{field}: unknown bibkey '{k}'" for k in keys if k not in bibkeys]
     return errors

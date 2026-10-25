@@ -240,3 +240,17 @@
     font-size: 0.8rem;
     color: var(--color-foreground-secondary);
 }
+
+/* dataset maturity badges (gallery cards) */
+.ds-maturity {
+  display: inline-block;
+  padding: 0 0.5em;
+  margin-bottom: 0.3em;
+  border-radius: 1em;
+  font-size: 0.75em;
+  border: 1px solid currentColor;
+}
+.ds-maturity--reference { color: #8a6d00; }
+.ds-maturity--stable { color: #1a7f37; }
+.ds-maturity--beta { color: #9a6700; }
+.ds-maturity--alpha { color: #bc4c00; }

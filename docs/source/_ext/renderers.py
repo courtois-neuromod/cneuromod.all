@@ -3,7 +3,7 @@ import re
 import yaml
 from pathlib import Path
 
-from .constants import _COMPONENT_ICON, _CREDIT_ROLES, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
+from .constants import _COMPONENT_ICON, _CREDIT_ROLES, _DATASET_EMOJI, _MATURITY, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
 from .validator import collect_contributions, contributor_key
 
 
@@ -159,6 +159,30 @@ def _resolve_stats_key(stats, dotted_key):
     return val
 
 
+def _maturity_badge(level):
+    """Inline badge for a maturity level, or '' if the level is unknown."""
+    m = _MATURITY.get(level)
+    return f"{m['emoji']} {m['label']}" if m else ''
+
+
+def _render_maturity_cell(maturity):
+    """Facts-table cell: badge, level definition, validation citations and reuse count."""
+    badge = _maturity_badge(maturity.get('level'))
+    if not badge:
+        return ''
+    cell = f"{badge} — {_MATURITY[maturity['level']]['description']}"
+    validation = maturity.get('validation') or []
+    if validation:
+        cell += ' Validated in ' + ', '.join(f"{{cite:t}}`{k}`" for k in validation) + '.'
+    reuse = maturity.get('reuse') or []
+    if reuse:
+        cell += f" Reused in {len(reuse)} paper{'s' if len(reuse) != 1 else ''}."
+    note = (maturity.get('note') or '').strip()
+    if note:
+        cell += f" _({note})_"
+    return cell
+
+
 def _render_key_facts(info_path, name=None):
     with open(info_path, encoding='utf-8') as f:
         data = yaml.safe_load(f)
@@ -178,6 +202,12 @@ def _render_key_facts(info_path, name=None):
         if subjects_n is not None:
             cells = f"{subjects_n} — {cells}"
         rows.append(('**Subjects**', cells))
+
+    maturity = data.get('maturity')
+    if isinstance(maturity, dict):
+        cell = _render_maturity_cell(maturity)
+        if cell:
+            rows.append(('**Maturity**', cell))
 
     tasks = data.get('tasks', [])
     for i, task in enumerate(tasks):
@@ -500,6 +530,10 @@ def _render_dataset_gallery(discovery):
             '',
             f'      **{name}**',
         ]
+        badge = _maturity_badge((data.get('maturity') or {}).get('level'))
+        if badge:
+            level = data['maturity']['level']
+            card += ['', f'      .. raw:: html', '', f'         <span class="ds-maturity ds-maturity--{level}">{badge}</span>']
         blurb = _gallery_blurb(data)
         if blurb:
             card += ['', f'      {blurb}']

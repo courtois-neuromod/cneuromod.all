@@ -3,6 +3,9 @@ description: >-
   of
   difficulty levels.
 
+maturity:
+  level: beta
+
 stats:
   subjects_n: 5
   neuroimaging:

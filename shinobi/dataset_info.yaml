@@ -3,6 +3,11 @@ description: >-
   Ninja
   Master.
 
+maturity:
+  level: stable
+  validation: [Harel2026-hr]
+  reuse: [Kemtur2023-px]
+
 stats:
   subjects_n: 4
   neuroimaging:

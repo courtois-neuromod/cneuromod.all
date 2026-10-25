@@ -2,6 +2,9 @@ description: >-
   Short silent video clips selected to evoke emotion, with concurrent cardiac, respiratory,
   electrodermal and eye-tracking recordings.
 
+maturity:
+  level: alpha
+
 stats:
   subjects_n: 5
   neuroimaging:
