@@ -165,6 +165,15 @@ def _maturity_badge(level):
     return f"{m['emoji']} {m['label']}" if m else ''
 
 
+def _maturity_pill(level, extra_class=''):
+    """HTML pill wrapping the maturity badge, or '' if the level is unknown."""
+    badge = _maturity_badge(level)
+    if not badge:
+        return ''
+    classes = f'ds-maturity ds-maturity--{level} {extra_class}'.strip()
+    return f'<span class="{classes}">{badge}</span>'
+
+
 def _render_maturity_cell(maturity):
     """Facts-table cell: badge, level definition, validation citations and reuse count."""
     badge = _maturity_badge(maturity.get('level'))
@@ -179,7 +188,7 @@ def _render_maturity_cell(maturity):
         cell += f" Reused in {len(reuse)} paper{'s' if len(reuse) != 1 else ''}."
     note = (maturity.get('note') or '').strip()
     if note:
-        cell += f" _({note})_"
+        cell += f" _{note[0].upper() + note[1:]}{'' if note[-1] in '.!?' else '.'}_"
     return cell
 
 
@@ -419,6 +428,7 @@ def _render_dataset_stats_table(discovery):
             data = yaml.safe_load(f)
         stats = data.get('stats', {})
         row = {'Dataset': f"`{_DATASET_EMOJI.get(name, '')} {name} <../datasets/{name}.html>`__"}
+        row['Maturity'] = _MATURITY.get((data.get('maturity') or {}).get('level'), {}).get('emoji', '')
         for key in stream_keys:
             val = _resolve_stats_key(stats, key)
             if key == 'neuroimaging.fmri':
@@ -518,6 +528,7 @@ def _render_dataset_gallery(discovery):
             emoji = _DATASET_EMOJI.get(name, '📦')
             tile = f'<div class="ds-tile ds-tile--emoji">{emoji}</div>'
 
+        pill = _maturity_pill((data.get('maturity') or {}).get('level'))
         card = [
             '   .. grid-item-card::',
             f'      :link: datasets/{name}.html',
@@ -528,12 +539,10 @@ def _render_dataset_gallery(discovery):
             '',
             f'         {tile}',
             '',
-            f'      **{name}**',
+            '      .. raw:: html',
+            '',
+            f'         <p class="ds-card-title"><strong>{name}</strong> {pill}</p>',
         ]
-        badge = _maturity_badge((data.get('maturity') or {}).get('level'))
-        if badge:
-            level = data['maturity']['level']
-            card += ['', f'      .. raw:: html', '', f'         <span class="ds-maturity ds-maturity--{level}">{badge}</span>']
         blurb = _gallery_blurb(data)
         if blurb:
             card += ['', f'      {blurb}']

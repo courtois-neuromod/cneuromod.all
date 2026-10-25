@@ -8,6 +8,8 @@ from _ext.renderers import (
     _extract_component_title,
     _gallery_blurb,
     _maturity_badge,
+    _maturity_pill,
+    _render_dataset_stats_table,
     _render_maturity_cell,
     _render_dataset_gallery,
     _render_citation,
@@ -221,7 +223,7 @@ class TestRenderDatasetGallery:
     def test_one_card_per_dataset_sorted(self, tmp_path):
         result = _render_dataset_gallery(self._discovery(tmp_path, ['zzz', 'aaa']))
         assert result.count('.. grid-item-card::') == 2
-        assert result.index('**aaa**') < result.index('**zzz**')
+        assert result.index('<strong>aaa</strong>') < result.index('<strong>zzz</strong>')
 
     def test_blank_line_after_grid_options(self, tmp_path):
         # docutils rejects the directive if the option block runs into the content
@@ -253,7 +255,62 @@ class TestMaturity:
 
     def test_cell(self):
         cell = _render_maturity_cell({'level': 'stable', 'validation': ['A1'], 'reuse': ['B', 'C'], 'note': 'n'})
-        assert 'Stable' in cell and '{cite:t}`A1`' in cell and 'Reused in 2 papers' in cell and '_(n)_' in cell
+        assert 'Stable' in cell and '{cite:t}`A1`' in cell and 'Reused in 2 papers' in cell and '_N._' in cell
 
     def test_cell_unknown_level_empty(self):
         assert _render_maturity_cell({'level': 'bogus'}) == ''
+
+
+class TestMaturityPill:
+    def test_known_level(self):
+        pill = _maturity_pill('stable', 'ds-maturity--title')
+        assert 'ds-maturity--stable' in pill and 'ds-maturity--title' in pill and 'Stable' in pill
+
+    def test_unknown_level(self):
+        assert _maturity_pill('bogus') == ''
+        assert _maturity_pill(None) == ''
+
+    def test_gallery_card_title_with_pill(self, tmp_path):
+        path = tmp_path / 'aaa.yaml'
+        path.write_text('description: d\nmaturity: {level: beta}\n', encoding='utf-8')
+        result = _render_dataset_gallery(_FakeDiscovery({'aaa': path}))
+        line = next(l for l in result.splitlines() if 'ds-card-title' in l)
+        assert '<strong>aaa</strong>' in line and 'ds-maturity--beta' in line
+
+    def test_gallery_card_without_maturity(self, tmp_path):
+        path = tmp_path / 'aaa.yaml'
+        path.write_text('description: d\n', encoding='utf-8')
+        result = _render_dataset_gallery(_FakeDiscovery({'aaa': path}))
+        assert 'ds-card-title' in result and 'ds-maturity' not in result
+
+    def test_stats_table_maturity_column(self, tmp_path):
+        path = tmp_path / 'aaa.yaml'
+        path.write_text('maturity: {level: stable}\n', encoding='utf-8')
+        rows = _render_dataset_stats_table(_FakeDiscovery({'aaa': path}))
+        assert list(rows[0])[:2] == ['Dataset', 'Maturity']
+        assert rows[0]['Maturity'] == '🟢'
+
+
+class TestTitleHandler:
+    @staticmethod
+    def _tree():
+        from docutils import nodes
+        title = nodes.title('', 'x')
+        root = nodes.container()
+        root += nodes.section('', title)
+        return root, title
+
+    def test_appends_only_for_dataset_pages(self, tmp_path):
+        from _ext import discovery, handlers
+        path = tmp_path / 'x.yaml'
+        path.write_text('maturity: {level: beta}\n', encoding='utf-8')
+        discovery._dataset_info['x'] = path
+        try:
+            tree, title = self._tree()
+            handlers._add_title_maturity_badge(None, tree, 'datasets/x')
+            assert 'ds-maturity--beta' in title.children[-1].astext()
+            tree2, title2 = self._tree()
+            handlers._add_title_maturity_badge(None, tree2, 'contents/x')
+            assert len(title2.children) == 1
+        finally:
+            discovery._dataset_info.pop('x', None)

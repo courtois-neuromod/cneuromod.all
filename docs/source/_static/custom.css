@@ -241,16 +241,32 @@
     color: var(--color-foreground-secondary);
 }
 
-/* dataset maturity badges (gallery cards) */
+/* dataset maturity badges */
 .ds-maturity {
-  display: inline-block;
-  padding: 0 0.5em;
-  margin-bottom: 0.3em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.1em 0.5em;
   border-radius: 1em;
-  font-size: 0.75em;
+  font-size: 0.68em;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
   border: 1px solid currentColor;
 }
+.ds-maturity--title { font-size: 0.35em; font-weight: normal; margin-left: 0.4em; }
+.ds-gallery .ds-card p.ds-card-title { margin: 0 0 0.35rem; }
 .ds-maturity--reference { color: #8a6d00; }
 .ds-maturity--stable { color: #1a7f37; }
 .ds-maturity--beta { color: #9a6700; }
 .ds-maturity--alpha { color: #bc4c00; }
+body[data-theme="dark"] .ds-maturity--reference { color: #e3b341; }
+body[data-theme="dark"] .ds-maturity--stable { color: #56d364; }
+body[data-theme="dark"] .ds-maturity--beta { color: #d29922; }
+body[data-theme="dark"] .ds-maturity--alpha { color: #ffa657; }
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) .ds-maturity--reference { color: #e3b341; }
+  body:not([data-theme="light"]) .ds-maturity--stable { color: #56d364; }
+  body:not([data-theme="light"]) .ds-maturity--beta { color: #d29922; }
+  body:not([data-theme="light"]) .ds-maturity--alpha { color: #ffa657; }
+}
