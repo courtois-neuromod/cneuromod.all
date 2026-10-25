@@ -1,3 +1,4 @@
+from docutils import nodes
 from tabulate import tabulate
 import yaml
 
@@ -13,6 +14,7 @@ from .renderers import (
     _render_dataset_gallery,
     _render_dataset_table,
     _render_dataset_stats_table,
+    _maturity_pill,
     _render_image_licenses,
     _render_unreleased_warning,
 )
@@ -126,6 +128,27 @@ def _inject_dataset_metadata(app, docname, source):
 
 
 
+def _add_title_maturity_badge(app, doctree, docname):
+    # Done at doctree-resolved so the badge stays out of the sidebar TOC and <title>.
+    if not docname.startswith('datasets/'):
+        return
+    name = docname[len('datasets/'):]
+    path = discovery._dataset_info.get(name)
+    if not path:
+        return
+    with open(path, encoding='utf-8') as f:
+        data = yaml.safe_load(f) or {}
+    pill = _maturity_pill((data.get('maturity') or {}).get('level'), 'ds-maturity--title')
+    if not pill:
+        return
+    section = next(doctree.findall(nodes.section), None)
+    title = next(section.findall(nodes.title), None) if section is not None else None
+    if title is None:
+        return
+    title += nodes.Text(' ')
+    title += nodes.raw('', pill, format='html')
+
+
 def _always_reread_index(app, env, added, changed, removed):
     # Force re-read of index, component pages, and dataset pages with metadata,
     # so content stays current on incremental builds.
@@ -161,5 +184,6 @@ def setup(app):
     app.connect('source-read', _inject_datasets_tables)
     app.connect('source-read', _inject_dataset_stats_table)
     app.connect('source-read', _inject_dataset_metadata)
+    app.connect('doctree-resolved', _add_title_maturity_badge)
     app.connect('env-get-outdated', _always_reread_index)
     redirects.setup(app)
