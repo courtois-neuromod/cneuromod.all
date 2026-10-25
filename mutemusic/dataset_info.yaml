@@ -1,6 +1,9 @@
 description: >-
   Listening to familiar and unfamiliar music with silent gaps, to study auditory imagery.
 
+maturity:
+  level: beta
+
 stats:
   subjects_n: 5
   neuroimaging:

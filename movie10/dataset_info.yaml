@@ -3,6 +3,10 @@ description: >-
   them
   repeated.
 
+maturity:
+  level: stable
+  note: Heavily reused (Algonauts 2025 and follow-ups); validated by the common QC metrics only
+
 stats:
   subjects_n: 6
   neuroimaging:

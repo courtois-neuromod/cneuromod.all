@@ -159,6 +159,11 @@ def _auto_discover_datasets(app):
         for err in _validator.validate_dataset_info(info_path, schema):
             logger.warning(f"[{name}] dataset_info.yaml stats: {err}")
 
+    bibkeys = _validator.load_bibkeys(os.path.join(repo_root, 'docs', 'source', 'cneuromod_references.bib'))
+    for name, info_path in info.items():
+        for err in _validator.validate_maturity(info_path, bibkeys or None):
+            logger.warning(f"[{name}] dataset_info.yaml: {err}")
+
     authors_path = os.path.join(repo_root, 'AUTHORS.yaml')
     if os.path.isfile(authors_path):
         for err in _validator.validate_authors(authors_path):

@@ -1,6 +1,9 @@
 description: >-
   Word triplets in which participants pick the semantic odd one out.
 
+maturity:
+  level: alpha
+
 stats:
   subjects_n: 4
   neuroimaging:

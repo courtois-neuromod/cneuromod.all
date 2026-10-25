@@ -1,6 +1,9 @@
 description: >-
   Listening to spoken narratives in the scanner.
 
+maturity:
+  level: alpha
+
 stats:
   subjects_n: 5
   neuroimaging:

@@ -2,6 +2,11 @@ description: >-
   In-scanner gameplay of Super Mario Bros. (1985) across a discovery phase and a longer
   practice phase.
 
+maturity:
+  level: stable
+  reuse: [Paugam2025-oq, Harel2025-gl]
+  note: Reused in several papers beyond its own data paper
+
 stats:
   subjects_n: 5
   neuroimaging:
