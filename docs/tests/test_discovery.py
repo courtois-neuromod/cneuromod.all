@@ -127,7 +127,7 @@ class TestAutoDiscoverDatasets:
 
         page = tmp_path / 'docs' / 'source' / 'datasets' / 'myds.md'
         assert page.exists() and not page.is_symlink()
-        assert page.read_text(encoding='utf-8') == '# myds\n'
+        assert page.read_text(encoding='utf-8') == '# myds\n\n'
         assert 'myds' in discovery._discovered_datasets
         assert 'myds' not in discovery._dataset_readme
 

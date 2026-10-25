@@ -87,9 +87,9 @@ class TestRenderKeyFacts:
     def test_empty_yaml(self, dataset_info_yaml_empty):
         assert _render_key_facts(dataset_info_yaml_empty) == ''
 
-    def test_key_facts_heading(self, dataset_info_yaml):
+    def test_key_facts_is_a_table(self, dataset_info_yaml):
         result = _render_key_facts(dataset_info_yaml)
-        assert '## Key facts' in result
+        assert '| | |' in result and '|---|---|' in result
 
     def test_stats_subjects_count(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)
@@ -109,8 +109,8 @@ class TestRenderKeyFacts:
 
     def test_stats_controlled_hours(self, dataset_info_yaml_with_stats):
         result = _render_key_facts(dataset_info_yaml_with_stats)
-        lines = [l for l in result.splitlines() if 'Behavior' in l]
-        assert lines, "No Behavior row found"
+        lines = [l for l in result.splitlines() if 'Controlled' in l]
+        assert lines, "No Controlled row found"
         assert '7.85 h/subject' in lines[0]
 
     def test_stats_contrasts_count(self, dataset_info_yaml_with_stats):
