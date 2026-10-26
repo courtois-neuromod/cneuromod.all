@@ -29,17 +29,17 @@ stats:
 
 subjects:
 - id: sub-01
-  status: collected_not_released
+  status: available
 - id: sub-02
-  status: collected_not_released
+  status: available
 - id: sub-03
-  status: collected_not_released
+  status: available
 - id: sub-04
   status: not_collected
 - id: sub-05
-  status: collected_not_released
+  status: available
 - id: sub-06
-  status: collected_not_released
+  status: available
 
 tasks:
 - emoji: "🎮"
