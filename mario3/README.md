@@ -18,12 +18,10 @@ The experiment was structured in two phases:
 - **Discovery** — every level was played once, in game order, with one repetition per level: the participant moved on to the next level after the repetition, whether or not the level was completed.
 - **Practice** — the remaining sessions used levels in pseudo-random order, so that every level is played once before any level is repeated.
 
-`sub-03` restarted the discovery phase from the first level in their second session, and `sub-05` replayed part of World 5 during discovery.
+A few deviations from this design are visible in the data. During discovery, `sub-03` replayed the first 13 levels at the start of their second session before resuming where they had stopped, and `sub-05` replayed 7 levels (World 5 Airship to 6-4). During practice, the level order was occasionally restarted, for instance after an interrupted session, so some levels were repeated before the full cycle of 80 was completed: five times for `sub-01` and twice for `sub-05`.
 
 ### Lives, not repetitions, are the unit of the files
 Unlike `mario` and `mariostars`, where one `.bk2` file holds one three-life repetition, in `mario3` **each life is stored as its own `.bk2` file** and has its own `gym-retro_game` row in the events files. Nothing in the files groups lives into repetitions: the `rep-` index in file names counts the lives played on a level within a session. To recover repetitions, group consecutive `gym-retro_game` rows of the same run on the same level; a new repetition starts after a completed level or after a third life. See [mario3#95](https://github.com/courtois-neuromod/mario3/issues/95).
-
-The `Phase` field of the `*_summary.json` files does not follow the definition above and should not be relied on; the summary below derives phases from the order of play.
 
 ## Levels
 80 levels, identified as `level-w<world>l<level>` in file names, with names for special stages (`Fortress`, `Tower`, `Airship`, `PiranhaPlant`, numbered when a world has several):
@@ -48,7 +46,7 @@ At the end of each run, participants completed the same questionnaire as in `mar
 Some `.bk2` files were lost during acquisition, which explains part of the differences in the number of lives across participants; quality control of the behavioural files is ongoing. In the events files, a lost replay is marked by `Missing file` in `stim_file`, with no events inside its window.
 
 ## Per-subject summary
-Repetitions are reconstructed from consecutive lives as described above. A repetition counts as a success when the level is completed in any of its lives. Durations sum the available lives.
+Repetitions are reconstructed from consecutive lives as described above. The discovery phase ends with the first play of the last level in game order (World 8 Fortress). A repetition counts as a success when the level is completed in any of its lives. Durations sum the available lives.
 
 | Subject   | Repetitions (Discovery) | Repetitions (Practice) | Duration (Discovery) | Duration (Practice) | Success rate (Discovery) | Success rate (Practice) | Repetitions (Total) | Lives (Total) | Success rate (Total) | Duration (Total) |
 |-----------|------------------------:|-----------------------:|---------------------:|--------------------:|-------------------------:|------------------------:|--------------------:|--------------:|---------------------:|-----------------:|
