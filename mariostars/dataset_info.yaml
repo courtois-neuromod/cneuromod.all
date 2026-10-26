@@ -40,3 +40,31 @@ subjects:
   status: available
 - id: sub-06
   status: available
+
+tasks:
+- emoji: "🎮"
+  label: "Super Mario All-Stars (Super Mario Bros. remake) — in-scanner gameplay"
+  note: "Same 22 levels as mario, played after it; practice-style pseudo-random level order only (no discovery phase); 1232 repetitions across 5 participants"
+
+modalities:
+- emoji: "🕹️"
+  label: "Game logs"
+  components:
+  - {label: "annotated events (.tsv)", status: available, note: "includes button presses and game events aligned to the fMRI"}
+  - {label: "game replay (.bk2)", status: available}
+  - {label: "video replay (.mp4)", status: available}
+  - {label: "replay summary (.json)", status: available}
+  - {label: "mapped RAM variables (.json)", status: available}
+  - {label: "low-level features (.npy)", status: available}
+- emoji: "🫀"
+  label: "Physiology"
+  components:
+  - {label: "ECG", status: collected_not_released}
+  - {label: "respiration", status: collected_not_released}
+  - {label: "plethysmograph", status: collected_not_released}
+  - {label: "EDA", status: collected_not_released}
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: collected_not_released}
+  - {label: pupillometry, status: collected_not_released}
