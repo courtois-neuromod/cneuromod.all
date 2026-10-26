@@ -44,7 +44,7 @@ subjects:
 tasks:
 - emoji: "🎮"
   label: "Super Mario All-Stars (Super Mario Bros. remake) — in-scanner gameplay"
-  note: "Same 22 levels as mario, played after it; practice-style pseudo-random level order only (no discovery phase); 1232 repetitions across 5 participants"
+  note: "Same 22 levels as mario, played after it; practice-style pseudo-random level order only (no discovery phase); 1232 repetitions across 5 participants; fMRI for a subset of levels/runs is held out as the Algonauts 2027 test set until the challenge ends"
 
 modalities:
 - emoji: "🕹️"

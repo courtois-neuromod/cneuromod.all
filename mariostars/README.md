@@ -3,7 +3,9 @@
 ## Overview
 The `mariostars` dataset contains in-scanner gameplay of the *Super Mario Bros.* remake included in *Super Mario All-Stars* (Nintendo, 1993) for five CNeuroMod participants (`sub-01`, `sub-02`, `sub-03`, `sub-05`, `sub-06`). Participants played the same 22 levels as in the {doc}`mario </datasets/mario>` dataset, which they had completed beforehand. The level layouts are essentially unchanged while the graphics and sound are entirely redone, so the dataset tests how brain and behavioural models generalize across visual and auditory renderings of the same game.
 
-`mariostars` is currently withheld for the Algonauts Project 2027 Challenge.
+:::{important}
+Part of `mariostars` is held out as the test set of the [Algonauts Project 2027 Challenge](https://algonautsproject.com/): fMRI responses for a subset of levels/runs are withheld, while the corresponding game logs and replays are part of the dataset. The withheld fMRI data will be released once the challenge ends.
+:::
 
 ## Game environment
 Participants used the CNeuroMod fiber-optic MRI controller described in [Harel et al. (2023)](https://doi.org/10.1371/journal.pone.0290158). The game ran on a Super Nintendo emulator via OpenAI's [gym-retro](https://github.com/openai/retro) (`SuperMarioAllStars-Snes`), recorded at 60 Hz. Because the game is fully deterministic, only player inputs were stored; the `.bk2` replay files allow exact reconstruction of every play.
