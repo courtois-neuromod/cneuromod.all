@@ -1,0 +1,45 @@
+{
+  "projectName": "mario3",
+  "contributors": [
+    {
+      "gitid": "FrancoisPgm",
+      "roles": ["Investigation", "Data curation", "Validation"]
+    },
+    {
+      "gitid": "RainyFields",
+      "roles": ["Investigation", "Data curation"]
+    },
+    {
+      "gitid": "bpinsard",
+      "roles": ["Methodology", "Project administration", "Investigation", "Data curation"]
+    },
+    {
+      "gitid": "emilie-dessureault",
+      "roles": ["Investigation", "Data curation", "Project administration"]
+    },
+    {
+      "gitid": "hyruuk",
+      "roles": ["Methodology", "Investigation", "Data curation", "Validation"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Methodology", "Project administration"]
+    },
+    {
+      "gitid": "maelleF",
+      "roles": ["Investigation", "Data curation"]
+    },
+    {
+      "gitid": "me-pic",
+      "roles": ["Investigation", "Data curation"]
+    },
+    {
+      "gitid": "motahareh-pourrahimi",
+      "roles": ["Investigation", "Data curation"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Methodology"]
+    }
+  ]
+}

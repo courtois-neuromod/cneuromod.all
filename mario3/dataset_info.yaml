@@ -29,14 +29,42 @@ stats:
 
 subjects:
 - id: sub-01
-  status: available
+  status: collected_not_released
 - id: sub-02
-  status: available
+  status: collected_not_released
 - id: sub-03
-  status: available
+  status: collected_not_released
 - id: sub-04
   status: not_collected
 - id: sub-05
-  status: available
+  status: collected_not_released
 - id: sub-06
-  status: available
+  status: collected_not_released
+
+tasks:
+- emoji: "🎮"
+  label: "Super Mario Bros. 3 — in-scanner gameplay"
+  note: "80 levels across 8 worlds, including fortresses and airships; discovery phase (each level once in game order, one set of up to 3 lives) then practice phase (pseudo-random order); each life is a separate replay; 1630 repetitions (4063 lives) across 5 participants; fMRI for a subset of levels/runs is held out as the Algonauts 2027 test set until the challenge ends"
+
+modalities:
+- emoji: "🕹️"
+  label: "Game logs"
+  components:
+  - {label: "annotated events (.tsv)", status: available, note: "includes button presses and game events aligned to the fMRI"}
+  - {label: "game replay (.bk2)", status: partial, note: "one file per life; some files lost during acquisition, QC ongoing"}
+  - {label: "video replay (.mp4)", status: available}
+  - {label: "replay summary (.json)", status: available}
+  - {label: "mapped RAM variables (.json)", status: available}
+  - {label: "low-level features (.npy)", status: available}
+- emoji: "🫀"
+  label: "Physiology"
+  components:
+  - {label: "ECG", status: collected_not_released}
+  - {label: "respiration", status: collected_not_released}
+  - {label: "plethysmograph", status: collected_not_released}
+  - {label: "EDA", status: collected_not_released}
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: collected_not_released}
+  - {label: pupillometry, status: collected_not_released}
