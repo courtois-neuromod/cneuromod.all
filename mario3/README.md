@@ -5,7 +5,9 @@ The `mario3` dataset contains in-scanner gameplay of *Super Mario Bros. 3* (Nint
 
 Compared with `mario`, the game keeps the same character and core controls but adds new mechanics — suits with new abilities (Raccoon flight, Tanooki, Frog and Hammer suits, Kuribo's Shoe), P-Switches, auto-scrolling levels — as well as longer, more varied levels and boss fights. The dataset therefore tests how brain and behavioural models generalize to new game mechanics and more complex levels.
 
-`mario3` is currently withheld for the Algonauts Project 2027 Challenge.
+:::{important}
+Part of `mario3` is held out as the test set of the [Algonauts Project 2027 Challenge](https://algonautsproject.com/): fMRI responses for a subset of levels/runs are withheld, while the corresponding game logs and replays are part of the dataset. The withheld fMRI data will be released once the challenge ends.
+:::
 
 ## Game environment
 Participants used the CNeuroMod fiber-optic MRI controller described in [Harel et al. (2023)](https://doi.org/10.1371/journal.pone.0290158). The game ran on a console emulator via OpenAI's [gym-retro](https://github.com/openai/retro) (`SuperMarioBros3-Nes`), recorded at 60 Hz. Each level was loaded directly, skipping the world map. Because the game is fully deterministic, only player inputs were stored; the `.bk2` replay files allow exact reconstruction of every play.

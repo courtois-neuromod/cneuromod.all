@@ -44,7 +44,7 @@ subjects:
 tasks:
 - emoji: "🎮"
   label: "Super Mario Bros. 3 — in-scanner gameplay"
-  note: "80 levels across 8 worlds, including fortresses and airships; discovery phase (each level once in game order, one set of up to 3 lives) then practice phase (pseudo-random order); each life is a separate replay; 1630 repetitions (4063 lives) across 5 participants"
+  note: "80 levels across 8 worlds, including fortresses and airships; discovery phase (each level once in game order, one set of up to 3 lives) then practice phase (pseudo-random order); each life is a separate replay; 1630 repetitions (4063 lives) across 5 participants; fMRI for a subset of levels/runs is held out as the Algonauts 2027 test set until the challenge ends"
 
 modalities:
 - emoji: "🕹️"
