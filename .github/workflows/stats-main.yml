@@ -90,10 +90,14 @@ jobs:
             # Push with the write deploy key only; the ssh-agent holds a
             # different key that GitHub would otherwise authenticate first.
             key="$RUNNER_TEMP/stats_deploy_key"
-            (umask 077; printf '%s\n' "$STATS_DEPLOY_KEY" > "$key")
+            trap 'rm -f "$key"' EXIT
+            (umask 077; printf '%s\n' "$STATS_DEPLOY_KEY" | tr -d '\r' > "$key")
+            if ! ssh-keygen -y -P "" -f "$key" > /dev/null; then
+              echo "::error::STATS_DEPLOY_KEY is not a valid unencrypted private key"
+              exit 1
+            fi
             GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o IdentityAgent=none" \
               git push origin HEAD:main
-            rm -f "$key"
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
