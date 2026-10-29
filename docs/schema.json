@@ -94,7 +94,7 @@
     },
     "physiology": {
       "type": "object",
-      "description": "Peripheral physiological recording modalities (hours). Each entry reports total acquisition time; coverage may be less than neuroimaging if sensors were only deployed for a subset of sessions, or more if some recording sessions are available without neuroimaging.",
+      "description": "Peripheral physiological recording modalities (hours). For ECG, respiration, plethysmograph and EDA, hours are usable hours after physprep quality control (run duration weighted by the fraction of valid windows), computed automatically; coverage may be less than neuroimaging if sensors were only deployed for a subset of sessions, or more if some recording sessions are available without neuroimaging.",
       "additionalProperties": false,
       "properties": {
         "ecg": {

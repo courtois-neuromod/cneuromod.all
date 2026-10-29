@@ -83,15 +83,25 @@ already means availability in `subjects[]`/`modalities[]`.
 
 ### Machine-generated fields — do not hand-edit
 
-`stats.subjects_n`, `stats.neuroimaging.fmri.*`, and `subjects[*].status` are recomputed by
-CI on every PR and on every push to `main` (`.github/workflows/stats-pr.yml` /
+`stats.subjects_n`, `stats.neuroimaging.fmri.*`,
+`stats.physiology.{ecg,respiration,plethysmograph,eda}.*` and `subjects[*].status` are
+recomputed by CI on every PR and on every push to `main` (`.github/workflows/stats-pr.yml` /
 `stats-main.yml`), driven by `analysis/run_statistics.sh` and
 `docs/update_dataset_stats.py`. Edit the underlying data or the pipeline, not these fields
 directly — a manual edit will simply be overwritten by the next PR's stats check.
+Physiology hours are *usable* hours per stream (Σ run duration × the fraction of valid
+windows in the physprep QC), written only for datasets with raw physio in their BIDS tree;
+`physiology.eye_tracking`, and physiology of datasets without raw physio, stay hand-set.
 `update_dataset_stats.py` never overwrites the `partial` / `pending` /
 `collected_not_released` statuses, so those remain hand-set. Everything else in
-`dataset_info.yaml` (`tasks`, `physiology`, `modalities`, notes, etc.) is untouched by the
+`dataset_info.yaml` (`tasks`, `modalities`, notes, etc.) is untouched by the
 pipeline and remains fully hand-maintained.
+
+`stats-main.yml` also runs the full statistics pipeline and pushes its outputs, including
+the release dashboard published at <https://stats.cneuromod.ca>, to
+`cneuromod.all.statistics`. It needs every source tree and the S3-backed timeseries index,
+so it refuses to run without the `STATS_AWS_ACCESS_KEY_ID` / `STATS_AWS_SECRET_ACCESS_KEY`
+secrets rather than push a degraded dashboard.
 
 ## Submodule structure
 
