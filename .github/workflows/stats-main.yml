@@ -51,6 +51,14 @@ jobs:
       - name: Install the statistics submodule (tree only)
         run: datalad get -n analysis/cneuromod.all.statistics
 
+      # Build on the latest statistics main, not the pinned commit, so the
+      # outputs commit fast-forwards; the pointer bump below records it.
+      - name: Move the statistics submodule to its latest main
+        working-directory: analysis/cneuromod.all.statistics
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -119,9 +127,7 @@ jobs:
         id: diff
         run: |
           git add -- '*/dataset_info.yaml'
-          if [ "${{ steps.stats_commit.outputs.changed }}" = "true" ]; then
-            git add analysis/cneuromod.all.statistics
-          fi
+          git add analysis/cneuromod.all.statistics
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
