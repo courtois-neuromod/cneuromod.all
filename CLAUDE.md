@@ -100,8 +100,9 @@ pipeline and remains fully hand-maintained.
 `stats-main.yml` also runs the full statistics pipeline and pushes its outputs, including
 the release dashboard published at <https://stats.cneuromod.ca>, to
 `cneuromod.all.statistics`. It needs every source tree and the S3-backed timeseries index,
-so it refuses to run without the `STATS_AWS_ACCESS_KEY_ID` / `STATS_AWS_SECRET_ACCESS_KEY`
-secrets rather than push a degraded dashboard.
+so it refuses to run without the `CNEUROMOD_BOT_S3_ACCESS_KEY` / `CNEUROMOD_BOT_S3_SECRET_KEY`
+secrets (passed as `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`) rather than push a degraded
+dashboard.
 
 ## Submodule structure
 

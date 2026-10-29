@@ -79,19 +79,19 @@ jobs:
       # and a degraded dashboard would be pushed, so refuse to run instead.
       - name: Check S3 credentials for the timeseries index
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.STATS_AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.STATS_AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.CNEUROMOD_BOT_S3_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CNEUROMOD_BOT_S3_SECRET_KEY }}
         run: |
           if [ -z "$AWS_ACCESS_KEY_ID" ] || [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
-            echo "::error::STATS_AWS_ACCESS_KEY_ID / STATS_AWS_SECRET_ACCESS_KEY are not set"
+            echo "::error::CNEUROMOD_BOT_S3_ACCESS_KEY / CNEUROMOD_BOT_S3_SECRET_KEY are not set"
             exit 1
           fi
 
       - name: Fetch all source data (trees + annex-location and timeseries indexes)
         working-directory: analysis/cneuromod.all.statistics
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.STATS_AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.STATS_AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.CNEUROMOD_BOT_S3_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CNEUROMOD_BOT_S3_SECRET_KEY }}
         run: uv run invoke fetch --source "$GITHUB_WORKSPACE"
 
       - name: Run full pipeline (incl. notebooks/figures)
