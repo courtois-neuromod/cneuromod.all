@@ -39,12 +39,13 @@ jobs:
           git config --global user.email "bot@cneuromod.ca"
           git config --global user.name "CNeuroMod Bot"
 
-      - name: Cache installed */bids trees
+      - name: Cache installed */bids and */physprep trees
         uses: actions/cache@v4
         with:
           path: |
             */bids
-          key: bids-trees-${{ hashFiles('.gitmodules') }}
+            */physprep
+          key: bids-physprep-trees-${{ hashFiles('.gitmodules') }}
 
       - name: Install the statistics submodule (tree only)
         run: datalad get -n analysis/cneuromod.all.statistics
@@ -61,11 +62,12 @@ jobs:
         working-directory: analysis/cneuromod.all.statistics
         run: uv sync
 
-      - name: Install every dataset's bids tree (safe on a fresh checkout)
+      - name: Install every dataset's bids and physprep trees (safe on a fresh checkout)
         working-directory: analysis/cneuromod.all.statistics
         run: |
           uv run invoke fetch-cneuromod --source "$GITHUB_WORKSPACE"
           uv run invoke fetch-bids
+          uv run invoke fetch-physprep
 
       - name: Regenerate statistics TSVs (no figures)
         id: run_stats

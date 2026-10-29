@@ -41,12 +41,13 @@ jobs:
           git config --global user.email "bot@cneuromod.ca"
           git config --global user.name "CNeuroMod Bot"
 
-      - name: Cache installed */bids trees
+      - name: Cache installed */bids and */physprep trees
         uses: actions/cache@v4
         with:
           path: |
             */bids
-          key: bids-trees-${{ hashFiles('.gitmodules') }}
+            */physprep
+          key: bids-physprep-trees-${{ hashFiles('.gitmodules') }}
 
       - name: Install the statistics submodule (tree only)
         run: datalad get -n analysis/cneuromod.all.statistics
@@ -71,11 +72,27 @@ jobs:
         working-directory: analysis/cneuromod.all.statistics
         run: uv sync
 
-      - name: Install every dataset's bids tree
-        working-directory: analysis/cneuromod.all.statistics
+      # The full run rebuilds the run tables and the release dashboard
+      # (deployed to stats.cneuromod.ca), which need every source tree and the
+      # annex-location and timeseries indexes. The timeseries index reads the
+      # private S3 bucket; without credentials those columns would come out NA
+      # and a degraded dashboard would be pushed, so refuse to run instead.
+      - name: Check S3 credentials for the timeseries index
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.CNEUROMOD_BOT_S3_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CNEUROMOD_BOT_S3_SECRET_KEY }}
         run: |
-          uv run invoke fetch-cneuromod --source "$GITHUB_WORKSPACE"
-          uv run invoke fetch-bids
+          if [ -z "$AWS_ACCESS_KEY_ID" ] || [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
+            echo "::error::CNEUROMOD_BOT_S3_ACCESS_KEY / CNEUROMOD_BOT_S3_SECRET_KEY are not set"
+            exit 1
+          fi
+
+      - name: Fetch all source data (trees + annex-location and timeseries indexes)
+        working-directory: analysis/cneuromod.all.statistics
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.CNEUROMOD_BOT_S3_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CNEUROMOD_BOT_S3_SECRET_KEY }}
+        run: uv run invoke fetch --source "$GITHUB_WORKSPACE"
 
       - name: Run full pipeline (incl. notebooks/figures)
         working-directory: analysis/cneuromod.all.statistics
