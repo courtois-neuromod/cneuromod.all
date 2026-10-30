@@ -143,6 +143,17 @@ jobs:
       - name: Stage dataset_info.yaml and the submodule pointer bump
         id: diff
         run: |
+          # A leftover index.lock from the long datalad/annex steps would
+          # make git add/commit fail; nothing else uses this workspace.
+          for _ in $(seq 60); do
+            [ -e .git/index.lock ] || break
+            sleep 1
+          done
+          if [ -e .git/index.lock ]; then
+            echo "::warning::stale .git/index.lock; removing"
+            ps -ef | grep -E 'git|datalad' | grep -v grep || true
+            rm -f .git/index.lock
+          fi
           git add -- '*/dataset_info.yaml'
           git add analysis/cneuromod.all.statistics
           if git diff --cached --quiet; then
@@ -154,6 +165,17 @@ jobs:
       - name: Commit and push to main
         if: steps.diff.outputs.changed == 'true'
         run: |
+          # A leftover index.lock from the long datalad/annex steps would
+          # make git add/commit fail; nothing else uses this workspace.
+          for _ in $(seq 60); do
+            [ -e .git/index.lock ] || break
+            sleep 1
+          done
+          if [ -e .git/index.lock ]; then
+            echo "::warning::stale .git/index.lock; removing"
+            ps -ef | grep -E 'git|datalad' | grep -v grep || true
+            rm -f .git/index.lock
+          fi
           git config user.name "Lune Bellec"
           git config user.email "lune.bellec@gmail.com"
           git commit -m "Auto-update dataset_info.yaml statistics"
