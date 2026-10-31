@@ -171,13 +171,10 @@ jobs:
     if: github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
     steps:
-      - name: Comment — skipped for fork PR
-        uses: actions/github-script@v7
-        with:
-          script: |
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body: 'ℹ️ Statistics check skipped — forks have no access to the private dataset repositories.',
-            });
+      # Fork PRs get a read-only GITHUB_TOKEN, so a PR comment would fail with
+      # 403; surface the skip as an annotation and job summary instead.
+      - name: Note — skipped for fork PR
+        run: |
+          msg="Statistics check skipped — forks have no access to the private dataset repositories."
+          echo "::notice::$msg"
+          echo "ℹ️ $msg" >> "$GITHUB_STEP_SUMMARY"
