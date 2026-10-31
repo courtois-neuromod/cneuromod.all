@@ -72,7 +72,7 @@ jobs:
         working-directory: analysis/cneuromod.all.statistics
         run: uv sync
 
-      # The full run rebuilds the run tables and the release dashboard
+      # A refresh rebuilds the run tables and the release dashboard
       # (deployed to stats.cneuromod.ca), which need every source tree and the
       # annex-location and timeseries indexes. The timeseries index reads the
       # private S3 bucket; without credentials those columns would come out NA
@@ -87,16 +87,15 @@ jobs:
             exit 1
           fi
 
-      - name: Fetch all source data (trees + annex-location and timeseries indexes)
+      # Only datasets whose source repos changed (or all of them, if the
+      # pipeline code or output_data/SOURCE_STATE.json changed) are rebuilt;
+      # the rest keep their committed run tables. See `invoke check-fresh`.
+      - name: Refresh statistics (fetch + rebuild stale datasets)
         working-directory: analysis/cneuromod.all.statistics
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.CNEUROMOD_BOT_S3_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.CNEUROMOD_BOT_S3_SECRET_KEY }}
-        run: uv run invoke fetch --source "$GITHUB_WORKSPACE"
-
-      - name: Run full pipeline (incl. notebooks/figures)
-        working-directory: analysis/cneuromod.all.statistics
-        run: uv run invoke run --force
+        run: uv run invoke refresh --source "$GITHUB_WORKSPACE"
 
       - name: Commit and push statistics outputs
         id: stats_commit

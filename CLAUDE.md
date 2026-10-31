@@ -97,7 +97,9 @@ windows in the physprep QC), written only for datasets with raw physio in their 
 `dataset_info.yaml` (`tasks`, `modalities`, notes, etc.) is untouched by the
 pipeline and remains fully hand-maintained.
 
-`stats-main.yml` also runs the full statistics pipeline and pushes its outputs, including
+`stats-main.yml` also runs `invoke refresh` (which rebuilds only the datasets whose
+source repos changed, tracked in `output_data/SOURCE_STATE.json`; the first run, or any
+change to the pipeline code, rebuilds everything) and pushes its outputs, including
 the release dashboard published at <https://stats.cneuromod.ca>, to
 `cneuromod.all.statistics`. It needs every source tree and the S3-backed timeseries index,
 so it refuses to run without the `CNEUROMOD_BOT_S3_ACCESS_KEY` / `CNEUROMOD_BOT_S3_SECRET_KEY`
