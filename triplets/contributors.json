@@ -1,0 +1,37 @@
+{
+  "projectName": "triplets",
+  "contributors": [
+    {
+      "gitid": "complexbrains",
+      "roles": ["Conceptualization", "Data curation", "Formal analysis", "Investigation", "Methodology", "Software", "Visualization", "Writing – original draft"]
+    },
+    {
+      "gitid": "vborghe",
+      "roles": ["Conceptualization", "Methodology", "Supervision", "Writing – review & editing"]
+    },
+    {
+      "id": "simona-brambati",
+      "roles": ["Conceptualization", "Supervision", "Writing – review & editing"]
+    },
+    {
+      "gitid": "MarieStLaurent",
+      "roles": ["Data curation", "Investigation", "Project administration", "Software"]
+    },
+    {
+      "gitid": "bpinsard",
+      "roles": ["Data curation", "Project administration", "Software"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Project administration", "Resources"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Conceptualization", "Supervision", "Funding acquisition", "Resources", "Project administration", "Writing – review & editing"]
+    }
+  ],
+  "funding": [
+    {"name": "Courtois Foundation"},
+    {"name": "Institut de valorisation des données (IVADO)"}
+  ]
+}
