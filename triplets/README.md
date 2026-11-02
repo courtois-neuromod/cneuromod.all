@@ -6,7 +6,7 @@ Four right-handed, English–French bilingual participants (`sub-01`, `sub-02`, 
 
 The stimuli comprise 1,588 unique English words spanning a broad range of lexical, psycholinguistic, perceptual, and conceptual features, organized into 709 triplets. The experimental design allows researchers to investigate how properties such as word length, frequency, orthographic complexity, concreteness, and sensorimotor features modulate brain responses to individual words, and how these representations relate to semantic decisions involving multiple words.
 
-The dataset is part of the CNeuroMod deep-phenotyping initiative and supports the study of individual variability in semantic representations and their organization across the cortex.The experimental paradigm and dataset are described in (Bilgin et al., in preparation). Preliminary analyses of these data were presented at OHBM 2023 (Licata et al., 2023).
+The dataset is part of the CNeuroMod deep-phenotyping initiative and supports the study of individual variability in semantic representations and their organization across the cortex. The experimental paradigm and dataset are described in (Bilgin et al., in preparation). Preliminary analyses of these data were presented at OHBM 2023 (Licata et al., 2023).
 
 ## Tasks
 The protocol comprises a behavioral word-reading preparation task and two fMRI tasks: single-word familiarity judgments and semantic association judgments involving triplets of words.
