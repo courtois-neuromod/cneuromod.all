@@ -3,14 +3,14 @@
 ## Overview
 Participants were asked to listen to (and perform two tasks on) the following sub-selection of stories from Nastase, S.A., Liu, YF., Hillman, H. et al. The “Narratives” fMRI dataset for evaluating models of naturalistic language comprehension. Sci Data 8, 250 (2021). https://doi.org/10.1038/s41597-021-01033-3
 
-“Lucy” - 9 min
-“The Man Who Forgot Ray Bradbury” - 14 min
-“I Knew You Were Black” - 13 min
-“It’s Not the Fall That Gets You” - 9 min
-“Slumlord” - 15 min
-“Pie Man” - 7 min
-“Pretty Mouth and Green My Eyes” - 11 min
-“Tunnel Under the World” - split in two - 2 blocks of 12 min each
+- “Lucy” : 9 min
+- “The Man Who Forgot Ray Bradbury” : 14 min
+- “I Knew You Were Black” :  13 min
+- “It’s Not the Fall That Gets You” : 9 min
+- “Slumlord” : 15 min
+- “Pie Man” : 7 min
+- “Pretty Mouth and Green My Eyes” : 11 min
+- “Tunnel Under the World” :  split in two blocks of 12 min each
 
 ## Tasks
 
