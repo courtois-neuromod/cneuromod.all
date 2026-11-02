@@ -29,17 +29,17 @@ stats:
       per_subject_with_repetition: 65.0
   physiology:
     ecg:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 312.6
+      per_subject_h: 52.1
     respiration:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 313.7
+      per_subject_h: 52.3
     plethysmograph:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 310.6
+      per_subject_h: 51.8
     eda:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 286.6
+      per_subject_h: 47.8
     eye_tracking:
       total_h: 110
       per_subject_h: 22

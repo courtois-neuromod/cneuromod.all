@@ -29,17 +29,17 @@ stats:
       per_subject_with_repetition: 18.4
   physiology:
     ecg:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 45.4
+      per_subject_h: 9.1
     respiration:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 91.2
+      per_subject_h: 18.2
     plethysmograph:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 68.0
+      per_subject_h: 13.6
     eda:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 87.2
+      per_subject_h: 17.4
 
 subjects:
 - {id: sub-01, status: available}

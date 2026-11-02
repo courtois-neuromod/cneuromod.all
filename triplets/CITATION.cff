@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+type: dataset
+title: "triplets — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: unpublished
+  authors:
+    - family-names: Bilgin
+      given-names: Isil P.
+    - family-names: Borghesani
+      given-names: Valentina
+    - family-names: St-Laurent
+      given-names: Marie
+    - family-names: Pinsard
+      given-names: Basile
+    - family-names: Boyle
+      given-names: Julie A.
+    - family-names: Bellec
+      given-names: Lune
+    - family-names: Brambati
+      given-names: Simona M.
+  title: "Deep phenotyping lexico-semantic processing: the cneuromod-triplets dataset"
+  year: 2027
