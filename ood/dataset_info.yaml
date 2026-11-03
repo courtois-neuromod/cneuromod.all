@@ -1,11 +1,10 @@
 description: >-
-  Out-of-distribution audiovisual stimuli, held out to test the generalization of
-  brain
-  encoding models.
+  Out-of-distribution films and TV excerpts, held out to test how brain encoding
+  models generalize.
 
 maturity:
-  level: alpha
-  note: No README yet; used as the Algonauts test set
+  level: beta
+  note: Held-out test set of the Algonauts 2025 challenge (out-of-distribution phase)
 
 stats:
   subjects_n: 4
@@ -17,18 +16,18 @@ stats:
     video:
       total_unique: 2.0
       per_subject_unique: 2.0
-      total_with_repetition: 6.1
-      per_subject_with_repetition: 6.1
+      total_with_repetition: 8.1
+      per_subject_with_repetition: 2.0
     audio:
       total_unique: 2.0
       per_subject_unique: 2.0
-      total_with_repetition: 6.1
-      per_subject_with_repetition: 6.1
+      total_with_repetition: 8.1
+      per_subject_with_repetition: 2.0
     speech_listening:
       total_unique: 2.0
       per_subject_unique: 2.0
-      total_with_repetition: 6.1
-      per_subject_with_repetition: 6.1
+      total_with_repetition: 8.1
+      per_subject_with_repetition: 2.0
 subjects:
 - id: sub-01
   status: available
@@ -42,3 +41,8 @@ subjects:
   status: available
 - id: sub-06
   status: not_collected
+
+tasks:
+- emoji: "🎬"
+  label: "6 out-of-distribution films and TV programmes (~2 h unique content)"
+  note: "Two ~10-min segments each from a Charlie Chaplin film, Princess Mononoke, Passe-Partout, Planet Earth, Pulp Fiction and World of Tomorrow; each segment shown once per subject."

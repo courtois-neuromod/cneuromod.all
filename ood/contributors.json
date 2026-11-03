@@ -1,0 +1,28 @@
+{
+  "projectName": "ood",
+  "contributors": [
+    {
+      "gitid": "MarieStLaurent",
+      "roles": ["Conceptualization", "Methodology", "Data curation", "Project administration"]
+    },
+    {
+      "gitid": "bpinsard",
+      "roles": ["Methodology", "Software", "Investigation", "Data curation"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Investigation", "Data curation", "Project administration"]
+    },
+    {
+      "gitid": "gifale95",
+      "roles": ["Conceptualization", "Methodology", "Data curation", "Validation"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Conceptualization", "Supervision", "Funding acquisition", "Writing – review & editing"]
+    }
+  ],
+  "funding": [
+    {"name": "Courtois Foundation"}
+  ]
+}
