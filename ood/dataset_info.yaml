@@ -3,8 +3,12 @@ description: >-
   models generalize.
 
 maturity:
-  level: beta
-  note: Held-out test set of the Algonauts 2025 challenge (out-of-distribution phase)
+  level: stable
+  reuse: [d-Ascoli2026-hf, Schad2025-nx, Eren2025-xi, Villanueva2025-xe, Corsico2025-si, Scholz2025-io, He2025-vt, Scotti2025-dn]
+  note: >-
+    Held-out test set of the Algonauts 2025 challenge (out-of-distribution phase),
+    still the active test set of the benchmark on Codabench; validated by the common
+    QC metrics only
 
 stats:
   subjects_n: 4
