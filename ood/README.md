@@ -34,10 +34,6 @@ For `sub-05`, the `passepartout` runs were acquired in `ses-002` instead of `ses
 The `ood` segments were the hidden test set of the Algonauts 2025 challenge. Teams never had access to the brain data during the challenge. If you compare your results to the challenge leaderboard, keep in mind that the official scores were computed on parcel-wise timeseries (Schaefer 1000 parcels, MNI152NLin2009cAsym, z-scored per run) produced with the challenge's preprocessing.
 :::
 
-## Acquisition
-
-Data were acquired on a Siemens Prisma Fit 3T scanner with a 64-channel head/neck coil at the Unité de Neuroimagerie Fonctionnelle (UNF), CRIUGM, Montréal, following the CNeuroMod protocol (TR = 1.49 s, 2 mm isotropic voxels, multiband acceleration factor 4).
-
 ## Preprocessing
 
 - `fmriprep`: fMRIPrep preprocessing.
