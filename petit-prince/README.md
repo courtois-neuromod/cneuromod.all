@@ -23,7 +23,7 @@ Each participant completed three sessions of six runs. Language order was counte
 
 | Participants | `ses-001` | `ses-002` | `ses-003` |
 |---|---|---|---|
-| `sub-01`, `sub-02` | FR 1–6 | EN 1–3, FR 7–9 | EN 4–9 |
+| `sub-01`, `sub-02` | FR 1–6 | FR 7–9, EN 1–3 | EN 4–9 |
 | `sub-03`, `sub-05` | EN 1–6 | EN 7–9, FR 1–3 | FR 4–9 |
 | `sub-06` | EN 1–5 | EN 6–9, FR 1–2 | FR 3–7 |
 
