@@ -27,4 +27,4 @@ Each participant completed three sessions of six runs. Language order was counte
 | `sub-03`, `sub-05` | EN 1–6 | EN 7–9, FR 1–3 | FR 4–9 |
 | `sub-06` | EN 1–5 | EN 6–9, FR 1–2 | FR 3–7 |
 
-`sub-06` is missing French sections 8 and 9 (16 runs in total). Functional runs are named `sub-<participant>_ses-<sess>_task-lpp<FR|EN>_run-<section>_part-<mag|phase>_bold.nii.gz`. Before each run, participants were told to listen carefully because they would be asked a few questions about the story at the end. Presentation used the `Story` task of the [task_stimuli](https://github.com/courtois-neuromod/task_stimuli) repository (`src/sessions/ses-petitprince.py`).
+`sub-06` is missing French runs 8 and 9 (2 runs in total). Functional runs are named `sub-<participant>_ses-<sess>_task-lpp<FR|EN>_run-<section>_part-<mag|phase>_bold.nii.gz`. Before each run, participants were told to listen carefully because they would be asked a few questions about the story at the end. Presentation used the `Story` task of the [task_stimuli](https://github.com/courtois-neuromod/task_stimuli) repository (`src/sessions/ses-petitprince.py`).
