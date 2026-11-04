@@ -12,6 +12,8 @@ stats:
       per_subject_h: 7.8
   tasks:
     text_reading:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 2.6
       per_subject_unique: 2.6
       total_with_repetition: 31.2

@@ -13,9 +13,11 @@ stats:
       per_subject_h: 5.2
   tasks:
     video:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 5.2
       per_subject_unique: 5.2
-      total_with_repetition: 26.0
+      total_with_repetition: 25.9
       per_subject_with_repetition: 5.2
   physiology:
     ecg:

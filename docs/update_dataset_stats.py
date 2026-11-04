@@ -13,6 +13,11 @@ processed. For each:
 Physiology hours are usable hours per stream: Σ run duration × the fraction of
 valid windows in the physprep QC. Streams without QC are left untouched.
 
+Stimulus blocks under stats.tasks carrying `source: $FMRI` are filled from the
+fMRI hours (all numeric fields of the block, or only those listed in
+`source_fields`); `total_*` gets fmri.total_h and `per_subject_*` gets
+fmri.per_subject_h.
+
 Statuses partial / pending / collected_not_released are never overwritten.
 Fields not derived from the pipeline (tasks, physiology.eye_tracking,
 modalities, etc.) are left untouched.
@@ -35,6 +40,57 @@ DEFAULT_STATS_DIR = (
 
 # Stats dataset name → folder name (only non-trivial overrides needed)
 STATS_TO_FOLDER = {}
+
+FMRI_REF = "$FMRI"
+STIMULUS_FIELDS = (
+    "total_unique",
+    "per_subject_unique",
+    "total_with_repetition",
+    "per_subject_with_repetition",
+)
+HOURS_FIELDS = ("total_h", "per_subject_h")
+ALL_REF_FIELDS = STIMULUS_FIELDS + HOURS_FIELDS
+
+
+def _ref_value(field, total_h, per_subject_h):
+    if field.startswith("total_"):
+        return total_h
+    if field.startswith("per_subject_"):
+        return per_subject_h
+    raise ValueError(f"source_fields entry {field!r} has no total_/per_subject_ prefix")
+
+
+def _marked_blocks(stats):
+    for name, block in (stats.get("tasks") or {}).items():
+        if hasattr(block, "get") and "source" in block:
+            yield name, block
+
+
+def has_fmri_refs(stats):
+    return any(True for _ in _marked_blocks(stats))
+
+
+def apply_fmri_refs(stats, total_h, per_subject_h):
+    """Fill tasks blocks marked `source: $FMRI`; return change lines."""
+    changes = []
+    for name, block in _marked_blocks(stats):
+        if block["source"] != FMRI_REF:
+            raise ValueError(f"tasks.{name}.source: unknown value {block['source']!r}")
+        if "source_fields" in block:
+            fields = list(block["source_fields"])
+            for f in fields:
+                _ref_value(f, total_h, per_subject_h)
+        else:
+            fields = [f for f in ALL_REF_FIELDS if f in block]
+            if "total_h" not in block and "total_unique" in block:
+                fields = [f for f in fields if f in STIMULUS_FIELDS]
+        for f in fields:
+            new = _ref_value(f, total_h, per_subject_h)
+            if block.get(f) != new:
+                changes.append(f"  tasks.{name}.{f}: {block.get(f)} → {new}")
+                block[f] = new
+    return changes
+
 
 PRESERVE_STATUSES = {"partial", "pending", "collected_not_released"}
 
@@ -169,6 +225,10 @@ def update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri, p
             changes.append(f"  neuroimaging.fmri.per_subject_h: {fmri.get('per_subject_h')} → {per_subject_h}")
         data["stats"]["neuroimaging"]["fmri"]["total_h"] = total_h
         data["stats"]["neuroimaging"]["fmri"]["per_subject_h"] = per_subject_h
+
+        changes += apply_fmri_refs(data["stats"], total_h, per_subject_h)
+    elif has_fmri_refs(data.get("stats", {})):
+        print(f"WARNING: {yaml_path}: $FMRI marker but no fMRI stats; left untouched", file=sys.stderr)
 
     for key, hours in (physio or {}).items():
         physiology = data["stats"].setdefault("physiology", {})
