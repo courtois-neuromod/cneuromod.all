@@ -130,6 +130,15 @@ authors:
   affiliations:
   - IMT Atlantique, France
   verified: false
+- id: gifale95
+  first_name: Alessandro T.
+  last_name: Gifford
+  orcid: 0000-0002-8923-9477
+  gitid: gifale95
+  profile: https://www.alegifford.com/
+  affiliations:
+  - Freie Universität Berlin, Berlin, Germany
+  verified: false
 - id: claude-godbout
   first_name: Claude
   last_name: Godbout
