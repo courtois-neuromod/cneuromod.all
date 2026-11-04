@@ -19,21 +19,21 @@ stats:
   tasks:
     video:
       source: $FMRI
-      source_fields: [total_with_repetition, per_subject_with_repetition]
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 2.0
       per_subject_unique: 2.0
       total_with_repetition: 8.1
       per_subject_with_repetition: 2.0
     audio:
       source: $FMRI
-      source_fields: [total_with_repetition, per_subject_with_repetition]
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 2.0
       per_subject_unique: 2.0
       total_with_repetition: 8.1
       per_subject_with_repetition: 2.0
     speech_listening:
       source: $FMRI
-      source_fields: [total_with_repetition, per_subject_with_repetition]
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 2.0
       per_subject_unique: 2.0
       total_with_repetition: 8.1
