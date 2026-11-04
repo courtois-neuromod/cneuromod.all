@@ -61,6 +61,7 @@ It falls back to the first `tasks[].label` when absent. `docs/schema.json` descr
 - `tasks`: `game`, `video`, `audio`, `speech_listening`, `text_reading`, `resting_state`, `controlled`, `contrasts`, `images`
   - `game` (not `gameplay`) — use `{total_h, per_subject_h}`
   - stimulus types (`video`, `audio`, `speech_listening`, `text_reading`, `images`) — use `{total_unique, per_subject_unique, total_with_repetition, per_subject_with_repetition}`
+- Any `tasks.*` block may carry `source: $FMRI` (optionally with `source_fields: [...]` to limit which fields): CI then writes the fMRI `total_h`/`per_subject_h` into the block's `total_*`/`per_subject_*` fields (all of them when `source_fields` is absent). The marker stays in the yaml.
 - `physiology`: `ecg`, `respiration`, `plethysmograph`, `eda`, `eye_tracking` — each a `{total_h, per_subject_h}` object. **All physiology in `stats` is auto-rendered; do not duplicate it in `modalities`.**
 
 **`modalities` section** — manual list for things not captured in `stats` (e.g. game log file types, eyetracking availability when `eye_tracking` is absent from stats). Do not list physiology signals here.
@@ -91,6 +92,7 @@ recomputed by CI on every PR and on every push to `main` (`.github/workflows/sta
 directly — a manual edit will simply be overwritten by the next PR's stats check.
 Physiology hours are *usable* hours per stream (Σ run duration × the fraction of valid
 windows in the physprep QC), written only for datasets with raw physio in their BIDS tree;
+`tasks.*` fields filled by a `source: $FMRI` marker are also CI-written.
 `physiology.eye_tracking`, and physiology of datasets without raw physio, stay hand-set.
 `update_dataset_stats.py` never overwrites the `partial` / `pending` /
 `collected_not_released` statuses, so those remain hand-set. Everything else in

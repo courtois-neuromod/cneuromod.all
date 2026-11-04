@@ -28,20 +28,26 @@ stats:
       per_subject_h: 9.5
   tasks:
     video:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 7.3
       per_subject_unique: 7.3
-      total_with_repetition: 60.0
-      per_subject_with_repetition: 10.0
+      total_with_repetition: 61.7
+      per_subject_with_repetition: 10.3
     audio:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 7.3
       per_subject_unique: 7.3
-      total_with_repetition: 60.0
-      per_subject_with_repetition: 10.0
+      total_with_repetition: 61.7
+      per_subject_with_repetition: 10.3
     speech_listening:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 7.3
       per_subject_unique: 7.3
-      total_with_repetition: 60.0
-      per_subject_with_repetition: 10.0
+      total_with_repetition: 61.7
+      per_subject_with_repetition: 10.3
 
 subjects:
 - {id: sub-01, status: available}

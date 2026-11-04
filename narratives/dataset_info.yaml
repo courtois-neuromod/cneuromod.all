@@ -12,11 +12,15 @@ stats:
       per_subject_h: 9.7
   tasks:
     audio:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 9.7
       per_subject_unique: 3.2
       total_with_repetition: 48.7
       per_subject_with_repetition: 9.7
     speech_listening:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 9.7
       per_subject_unique: 3.2
       total_with_repetition: 48.7

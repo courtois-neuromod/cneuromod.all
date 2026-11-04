@@ -14,14 +14,17 @@ stats:
       per_subject_h: 6.9
   tasks:
     game:
+      source: $FMRI
       total_h: 34.4
       per_subject_h: 6.9
     video:
+      source: $FMRI
       total_unique: 34.4
       per_subject_unique: 6.9
       total_with_repetition: 34.4
       per_subject_with_repetition: 6.9
     audio:
+      source: $FMRI
       total_unique: 34.4
       per_subject_unique: 6.9
       total_with_repetition: 34.4
