@@ -14,7 +14,7 @@ Each source was edited into two segments of roughly ten minutes (8–12 min), ea
 |---|---|---|---|
 | `chaplin1`, `chaplin2` | "The Pawn Shop" (Chaplin, 1916), a Charlie Chaplin film | 10.7, 10.1 min | Music, black-and-white; no speech |
 | `mononoke1`, `mononoke2` | [Princess Mononoke](https://en.wikipedia.org/wiki/Princess_Mononoke) (Miyazaki, 1997) | 10.5, 10.6 min | Hand-drawn animation |
-| `passepartout1`, `passepartout2` | [Passe-Partout](https://en.wikipedia.org/wiki/Passe-Partout), season 2, episodes 7–8 | 10.5, 10.8 min | French-language children's show from Québec |
+| `passepartout1`, `passepartout2` | [Passe-Partout](https://en.wikipedia.org/wiki/Passe-Partout) (Lachance, 1979), episode 94 "Bon Coup, Mauvais Coup" and episode 95 "Cause et Effet"| 10.5, 10.8 min | French-language children's show from Québec (Canada) featuring puppets and live-action|
 | `planetearth1`, `planetearth2` | [Planet Earth](https://en.wikipedia.org/wiki/Planet_Earth_(2006_TV_series)) (BBC, 2006), episode 2 "Mountains" | 10.8, 10.4 min | Originally a wildlife documentary with narration; scenes featuring wildlife were edited out to show only landscapes |
 | `pulpfiction1`, `pulpfiction2` | [Pulp Fiction](https://en.wikipedia.org/wiki/Pulp_Fiction) (Tarantino, 1994) | 11.6, 9.4 min | Neo-noir crime comedy |
 | `wot1`, `wot2` | [World of Tomorrow](https://en.wikipedia.org/wiki/World_of_Tomorrow_(film)) (Hertzfeldt, 2015) | 8.8, 8.0 min | Abstract, minimalist animated short |
