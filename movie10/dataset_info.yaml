@@ -3,6 +3,10 @@ description: >-
   them
   repeated.
 
+maturity:
+  level: stable
+  note: Heavily reused (Algonauts 2025 and follow-ups); validated by the common QC metrics only
+
 stats:
   subjects_n: 6
   neuroimaging:
@@ -11,33 +15,39 @@ stats:
       per_subject_h: 10.3
   physiology:
     ecg:
-      total_h: 60.0
-      per_subject_h: 10.0
+      total_h: 56.2
+      per_subject_h: 9.4
     respiration:
-      total_h: 60.0
-      per_subject_h: 10.0
+      total_h: 58.0
+      per_subject_h: 9.7
     plethysmograph:
-      total_h: 60.0
-      per_subject_h: 10.0
+      total_h: 46.0
+      per_subject_h: 7.7
     eda:
-      total_h: 60.0
-      per_subject_h: 10.0
+      total_h: 56.9
+      per_subject_h: 9.5
   tasks:
     video:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 7.3
       per_subject_unique: 7.3
-      total_with_repetition: 60.0
-      per_subject_with_repetition: 10.0
+      total_with_repetition: 61.7
+      per_subject_with_repetition: 10.3
     audio:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 7.3
       per_subject_unique: 7.3
-      total_with_repetition: 60.0
-      per_subject_with_repetition: 10.0
+      total_with_repetition: 61.7
+      per_subject_with_repetition: 10.3
     speech_listening:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 7.3
       per_subject_unique: 7.3
-      total_with_repetition: 60.0
-      per_subject_with_repetition: 10.0
+      total_with_repetition: 61.7
+      per_subject_with_repetition: 10.3
 
 subjects:
 - {id: sub-01, status: available}

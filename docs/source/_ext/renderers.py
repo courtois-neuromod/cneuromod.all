@@ -3,7 +3,8 @@ import re
 import yaml
 from pathlib import Path
 
-from .constants import _COMPONENT_ICON, _CREDIT_ROLES, _DATASET_EMOJI, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
+from .constants import _COMPONENT_ICON, _CREDIT_ROLES, _DATASET_EMOJI, _MATURITY, _STATS_EMOJI, _STATS_LABEL, _STATS_UNIT, _STATUS_ICON
+from .validator import collect_contributions, contributor_key
 
 
 def _render_unreleased_warning():
@@ -88,7 +89,7 @@ def _render_contributors(rc_path, authors=None):
 
     by_role = {}
     for c in contributors:
-        key = c.get('gitid') or c.get('orcid') or c.get('id') or ''
+        key = contributor_key(c)
         author = authors.get(key)
         name = _author_name(author, key)
         link = _author_link(author)
@@ -111,11 +112,84 @@ def _render_contributors(rc_path, authors=None):
     return f"\n\n:::{{admonition}} Contributors\n:class: note\n\n{body}\n:::\n"
 
 
+def _render_authors_list(discovery):
+    """Render the table of all registered authors (AUTHORS.yaml), alphabetical,
+    with the datasets each one contributed to and their CRediT roles."""
+    unique = {}
+    for a in discovery._authors.values():
+        unique[a['id']] = a
+    contributions = {}  # author id -> {dataset: [roles]}
+    for ds, entries in collect_contributions(discovery._dataset_contributors, discovery._authors).items():
+        for a, _key, c_roles in entries:
+            if a:
+                roles = contributions.setdefault(a['id'], {}).setdefault(ds, [])
+                roles.extend(r for r in c_roles if r not in roles)
+
+    ordered = sorted(
+        unique.values(),
+        key=lambda a: (a.get('last_name', '').lower(), a.get('first_name', '').lower()),
+    )
+    aff_index = {}  # affiliation -> number, in order of first appearance
+    for a in ordered:
+        for aff in a.get('affiliations') or []:
+            aff_index.setdefault(aff, len(aff_index) + 1)
+
+    rows = ['| Name | Contributions |', '|---|---|']
+    for a in ordered:
+        name = _author_name(a, a['id'])
+        link = _author_link(a)
+        name = f"[{name}]({link})" if link else name
+        nums = ','.join(str(aff_index[aff]) for aff in a.get('affiliations') or [])
+        if nums:
+            name += f"{{sup}}`{nums}`"
+        contrib = '; '.join(
+            f"{ds} ({', '.join(roles)})" for ds, roles in sorted(contributions.get(a['id'], {}).items())
+        )
+        rows.append(f"| {name} | {contrib} |")
+
+    aff_rows = ['| | Affiliation |', '|---|---|']
+    aff_rows += [f"| {n} | {aff} |" for aff, n in aff_index.items()]
+    return '\n'.join(rows) + '\n\n### Affiliations\n\n' + '\n'.join(aff_rows) + '\n'
+
+
 def _resolve_stats_key(stats, dotted_key):
     val = stats
     for part in dotted_key.split('.'):
         val = val.get(part, {}) if isinstance(val, dict) else {}
     return val
+
+
+def _maturity_badge(level):
+    """Inline badge for a maturity level, or '' if the level is unknown."""
+    m = _MATURITY.get(level)
+    return f"{m['emoji']} {m['label']}" if m else ''
+
+
+def _maturity_pill(level, extra_class=''):
+    """HTML pill wrapping the maturity badge, or '' if the level is unknown."""
+    badge = _maturity_badge(level)
+    if not badge:
+        return ''
+    classes = f'ds-maturity ds-maturity--{level} {extra_class}'.strip()
+    return f'<span class="{classes}">{badge}</span>'
+
+
+def _render_maturity_cell(maturity):
+    """Facts-table cell: badge, level definition, validation citations and reuse count."""
+    badge = _maturity_badge(maturity.get('level'))
+    if not badge:
+        return ''
+    cell = f"{badge} — {_MATURITY[maturity['level']]['description']}"
+    validation = maturity.get('validation') or []
+    if validation:
+        cell += ' Validated in ' + ', '.join(f"{{cite:t}}`{k}`" for k in validation) + '.'
+    reuse = maturity.get('reuse') or []
+    if reuse:
+        cell += f" Reused in {len(reuse)} paper{'s' if len(reuse) != 1 else ''}."
+    note = (maturity.get('note') or '').strip()
+    if note:
+        cell += f" _{note[0].upper() + note[1:]}{'' if note[-1] in '.!?' else '.'}_"
+    return cell
 
 
 def _render_key_facts(info_path, name=None):
@@ -137,6 +211,12 @@ def _render_key_facts(info_path, name=None):
         if subjects_n is not None:
             cells = f"{subjects_n} — {cells}"
         rows.append(('**Subjects**', cells))
+
+    maturity = data.get('maturity')
+    if isinstance(maturity, dict):
+        cell = _render_maturity_cell(maturity)
+        if cell:
+            rows.append(('**Maturity**', cell))
 
     tasks = data.get('tasks', [])
     for i, task in enumerate(tasks):
@@ -348,6 +428,7 @@ def _render_dataset_stats_table(discovery):
             data = yaml.safe_load(f)
         stats = data.get('stats', {})
         row = {'Dataset': f"`{_DATASET_EMOJI.get(name, '')} {name} <../datasets/{name}.html>`__"}
+        row['Maturity'] = _MATURITY.get((data.get('maturity') or {}).get('level'), {}).get('emoji', '')
         for key in stream_keys:
             val = _resolve_stats_key(stats, key)
             if key == 'neuroimaging.fmri':
@@ -447,6 +528,7 @@ def _render_dataset_gallery(discovery):
             emoji = _DATASET_EMOJI.get(name, '📦')
             tile = f'<div class="ds-tile ds-tile--emoji">{emoji}</div>'
 
+        pill = _maturity_pill((data.get('maturity') or {}).get('level'))
         card = [
             '   .. grid-item-card::',
             f'      :link: datasets/{name}.html',
@@ -457,7 +539,9 @@ def _render_dataset_gallery(discovery):
             '',
             f'         {tile}',
             '',
-            f'      **{name}**',
+            '      .. raw:: html',
+            '',
+            f'         <p class="ds-card-title"><strong>{name}</strong> {pill}</p>',
         ]
         blurb = _gallery_blurb(data)
         if blurb:

@@ -2,6 +2,9 @@ description: >-
   Language localizer contrasting sentences with degraded controls to map language-selective
   cortex.
 
+maturity:
+  level: beta
+
 stats:
   subjects_n: 4
   neuroimaging:

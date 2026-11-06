@@ -3,6 +3,9 @@ description: >-
   Bros.
   levels.
 
+maturity:
+  level: alpha
+
 stats:
   subjects_n: 5
   neuroimaging:
@@ -11,14 +14,17 @@ stats:
       per_subject_h: 6.9
   tasks:
     game:
+      source: $FMRI
       total_h: 34.4
       per_subject_h: 6.9
     video:
+      source: $FMRI
       total_unique: 34.4
       per_subject_unique: 6.9
       total_with_repetition: 34.4
       per_subject_with_repetition: 6.9
     audio:
+      source: $FMRI
       total_unique: 34.4
       per_subject_unique: 6.9
       total_with_repetition: 34.4
@@ -37,3 +43,31 @@ subjects:
   status: available
 - id: sub-06
   status: available
+
+tasks:
+- emoji: "🎮"
+  label: "Super Mario All-Stars (Super Mario Bros. remake) — in-scanner gameplay"
+  note: "Same 22 levels as mario, played after it; practice-style pseudo-random level order only (no discovery phase); 1232 repetitions across 5 participants; fMRI for a subset of levels/runs is held out as the Algonauts 2027 test set until the challenge ends"
+
+modalities:
+- emoji: "🕹️"
+  label: "Game logs"
+  components:
+  - {label: "annotated events (.tsv)", status: available, note: "includes button presses and game events aligned to the fMRI"}
+  - {label: "game replay (.bk2)", status: available}
+  - {label: "video replay (.mp4)", status: available}
+  - {label: "replay summary (.json)", status: available}
+  - {label: "mapped RAM variables (.json)", status: available}
+  - {label: "low-level features (.npy)", status: available}
+- emoji: "🫀"
+  label: "Physiology"
+  components:
+  - {label: "ECG", status: collected_not_released}
+  - {label: "respiration", status: collected_not_released}
+  - {label: "plethysmograph", status: collected_not_released}
+  - {label: "EDA", status: collected_not_released}
+- emoji: "👁️"
+  label: "Eyetracking"
+  components:
+  - {label: gaze, status: collected_not_released}
+  - {label: pupillometry, status: collected_not_released}

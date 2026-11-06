@@ -1,6 +1,10 @@
 description: >-
   About ten hours of fMRI per subject watching seasons 1 to 6 of the sitcom Friends.
 
+maturity:
+  level: stable
+  note: Heavily reused (Algonauts 2025 and follow-ups); validated by the common QC metrics only
+
 stats:
   subjects_n: 6
   neuroimaging:
@@ -9,33 +13,39 @@ stats:
       per_subject_h: 61.9
   tasks:
     video:
+      source: $FMRI
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 65.0
-      per_subject_unique: 65.0
-      total_with_repetition: 390.0
-      per_subject_with_repetition: 65.0
+      per_subject_unique: 61.9
+      total_with_repetition: 371.5
+      per_subject_with_repetition: 61.9
     audio:
+      source: $FMRI
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 65.0
-      per_subject_unique: 65.0
-      total_with_repetition: 390.0
-      per_subject_with_repetition: 65.0
+      per_subject_unique: 61.9
+      total_with_repetition: 371.5
+      per_subject_with_repetition: 61.9
     speech_listening:
+      source: $FMRI
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 65.0
-      per_subject_unique: 65.0
-      total_with_repetition: 390.0
-      per_subject_with_repetition: 65.0
+      per_subject_unique: 61.9
+      total_with_repetition: 371.5
+      per_subject_with_repetition: 61.9
   physiology:
     ecg:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 312.6
+      per_subject_h: 52.1
     respiration:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 313.7
+      per_subject_h: 52.3
     plethysmograph:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 310.6
+      per_subject_h: 51.8
     eda:
-      total_h: 368
-      per_subject_h: 65
+      total_h: 286.6
+      per_subject_h: 47.8
     eye_tracking:
       total_h: 110
       per_subject_h: 22

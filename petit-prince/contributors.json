@@ -1,0 +1,28 @@
+{
+  "projectName": "petit-prince",
+  "contributors": [
+    {
+      "gitid": "bpinsard",
+      "roles": ["Methodology", "Software", "Investigation", "Data curation"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Investigation", "Project administration"]
+    },
+    {
+      "gitid": "MarieStLaurent",
+      "roles": ["Data curation"]
+    },
+    {
+      "id": "bertrand-thirion",
+      "roles": ["Conceptualization", "Resources"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Conceptualization", "Supervision", "Funding acquisition"]
+    }
+  ],
+  "funding": [
+    {"name": "Courtois Foundation"}
+  ]
+}

@@ -3,6 +3,9 @@ description: >-
   Mario
   Bros.
 
+maturity:
+  level: alpha
+
 stats:
   subjects_n: 3
 subjects:

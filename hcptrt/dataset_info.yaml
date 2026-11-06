@@ -3,6 +3,10 @@ description: >-
   seven
   cognitive domains plus resting state.
 
+maturity:
+  level: stable
+  validation: [Rastegarnia2023-qz]
+
 stats:
   subjects_n: 6
   neuroimaging:

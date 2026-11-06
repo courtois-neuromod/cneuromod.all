@@ -1,8 +1,11 @@
 import copy
 import json
+import re
 from pathlib import Path
 
 import yaml
+
+from .constants import _MATURITY
 
 
 def _load_schema():
@@ -64,6 +67,30 @@ def load_authors(authors_path):
     return index
 
 
+def contributor_key(contributor):
+    """Identifier of a contributors.json entry: gitid, else orcid, else id ('' if none)."""
+    return contributor.get('gitid') or contributor.get('orcid') or contributor.get('id') or ''
+
+
+def collect_contributions(contributors_paths, authors):
+    """Resolve every dataset's contributors.json against the ``authors`` index.
+
+    ``contributors_paths`` maps dataset name to a contributors.json path and
+    ``authors`` is the index built by ``load_authors``. Returns
+    ``{dataset: [(author or None, key, roles)]}`` in file order; ``author`` is
+    None when the contributor does not resolve.
+    """
+    out = {}
+    for dataset, path in contributors_paths.items():
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+        out[dataset] = [
+            (authors.get(contributor_key(c)), contributor_key(c), c.get('roles', []))
+            for c in data.get('contributors', [])
+        ]
+    return out
+
+
 def _validate_against(data, schema_name):
     try:
         import jsonschema
@@ -96,7 +123,44 @@ def validate_contributors(contributors_path, authors):
         data = json.load(f)
     errors = _validate_against(data, 'contributors.schema.json')
     for c in data.get('contributors', []):
-        key = c.get('gitid') or c.get('orcid') or c.get('id')
+        key = contributor_key(c)
         if key and key not in authors:
             errors.append(f"contributor '{key}' not found in AUTHORS.yaml")
+    return errors
+
+
+def load_bibkeys(bib_path):
+    """Return the set of citation keys defined in a .bib file (empty if missing)."""
+    path = Path(bib_path)
+    if not path.is_file():
+        return set()
+    with open(path, encoding='utf-8') as f:
+        return set(re.findall(r'^@\w+\s*\{\s*([^,\s]+)\s*,', f.read(), flags=re.M))
+
+
+def validate_maturity(info_path, bibkeys=None):
+    """Validate the optional ``maturity`` block of a dataset_info.yaml.
+
+    Checks that ``level`` is one of the known levels and that every key in
+    ``validation`` / ``reuse`` exists in ``bibkeys`` (skipped when None).
+    Returns a list of error strings, empty if valid or absent.
+    """
+    with open(info_path, encoding='utf-8') as f:
+        data = yaml.safe_load(f) or {}
+    maturity = data.get('maturity')
+    if maturity is None:
+        return []
+    if not isinstance(maturity, dict):
+        return ["maturity: must be a mapping"]
+    errors = []
+    level = maturity.get('level')
+    if level not in _MATURITY:
+        errors.append(f"maturity.level: '{level}' is not one of {sorted(_MATURITY)}")
+    for field in ('validation', 'reuse'):
+        keys = maturity.get(field) or []
+        if not isinstance(keys, list):
+            errors.append(f"maturity.{field}: must be a list of bibkeys")
+            continue
+        if bibkeys is not None:
+            errors += [f"maturity.{field}: unknown bibkey '{k}'" for k in keys if k not in bibkeys]
     return errors

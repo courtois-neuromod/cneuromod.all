@@ -1,6 +1,9 @@
 description: >-
   Listening to familiar and unfamiliar music with silent gaps, to study auditory imagery.
 
+maturity:
+  level: beta
+
 stats:
   subjects_n: 5
   neuroimaging:
@@ -9,9 +12,11 @@ stats:
       per_subject_h: 3.3
   tasks:
     audio:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 1.1
       per_subject_unique: 1.1
-      total_with_repetition: 16.5
+      total_with_repetition: 16.6
       per_subject_with_repetition: 3.3
 
 subjects:

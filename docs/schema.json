@@ -94,7 +94,7 @@
     },
     "physiology": {
       "type": "object",
-      "description": "Peripheral physiological recording modalities (hours). Each entry reports total acquisition time; coverage may be less than neuroimaging if sensors were only deployed for a subset of sessions, or more if some recording sessions are available without neuroimaging.",
+      "description": "Peripheral physiological recording modalities (hours). For ECG, respiration, plethysmograph and EDA, hours are usable hours after physprep quality control (run duration weighted by the fraction of valid windows), computed automatically; coverage may be less than neuroimaging if sensors were only deployed for a subset of sessions, or more if some recording sessions are available without neuroimaging.",
       "additionalProperties": false,
       "properties": {
         "ecg": {
@@ -126,6 +126,15 @@
       "description": "Total acquisition volume for a recording modality, expressed in hours.",
       "additionalProperties": false,
       "properties": {
+        "source": {
+          "const": "$FMRI",
+          "description": "Only honoured under tasks. Marks the block as equal to the fMRI duration; numbers are written by CI."
+        },
+        "source_fields": {
+          "type": "array",
+          "description": "Only honoured under tasks. Restricts the $FMRI marker to these fields.",
+          "items": {"enum": ["total_unique", "per_subject_unique", "total_with_repetition", "per_subject_with_repetition", "total_h", "per_subject_h"]}
+        },
         "total_h": {
           "type": "number",
           "description": "Total hours pooled across all subjects and sessions."
@@ -142,6 +151,15 @@
       "required": ["total_unique", "per_subject_unique", "total_with_repetition", "per_subject_with_repetition"],
       "additionalProperties": false,
       "properties": {
+        "source": {
+          "const": "$FMRI",
+          "description": "Only honoured under tasks. Marks the block as equal to the fMRI duration; numbers are written by CI."
+        },
+        "source_fields": {
+          "type": "array",
+          "description": "Only honoured under tasks. Restricts the $FMRI marker to these fields.",
+          "items": {"enum": ["total_unique", "per_subject_unique", "total_with_repetition", "per_subject_with_repetition", "total_h", "per_subject_h"]}
+        },
         "total_unique": {
           "type": "number",
           "description": "Total unique stimulus volume across all subjects (images: count of distinct files; all others: hours of distinct content). Each stimulus item is counted once regardless of how many times it was shown."

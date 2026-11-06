@@ -1,7 +1,14 @@
 description: >-
-  Out-of-distribution audiovisual stimuli, held out to test the generalization of
-  brain
-  encoding models.
+  Out-of-distribution films and TV excerpts, held out to test how brain encoding
+  models generalize.
+
+maturity:
+  level: stable
+  reuse: [d-Ascoli2026-hf, Schad2025-nx, Eren2025-xi, Villanueva2025-xe, Corsico2025-si, Scholz2025-io, He2025-vt, Scotti2025-dn]
+  note: >-
+    Held-out test set of the Algonauts 2025 challenge (out-of-distribution phase),
+    still the active test set of the benchmark on Codabench; validated by the common
+    QC metrics only
 
 stats:
   subjects_n: 4
@@ -11,20 +18,26 @@ stats:
       per_subject_h: 2.0
   tasks:
     video:
+      source: $FMRI
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 2.0
       per_subject_unique: 2.0
-      total_with_repetition: 6.1
-      per_subject_with_repetition: 6.1
+      total_with_repetition: 8.1
+      per_subject_with_repetition: 2.0
     audio:
+      source: $FMRI
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 2.0
       per_subject_unique: 2.0
-      total_with_repetition: 6.1
-      per_subject_with_repetition: 6.1
+      total_with_repetition: 8.1
+      per_subject_with_repetition: 2.0
     speech_listening:
+      source: $FMRI
+      source_fields: [per_subject_unique, total_with_repetition, per_subject_with_repetition]
       total_unique: 2.0
       per_subject_unique: 2.0
-      total_with_repetition: 6.1
-      per_subject_with_repetition: 6.1
+      total_with_repetition: 8.1
+      per_subject_with_repetition: 2.0
 subjects:
 - id: sub-01
   status: available
@@ -38,3 +51,8 @@ subjects:
   status: available
 - id: sub-06
   status: not_collected
+
+tasks:
+- emoji: "🎬"
+  label: "6 out-of-distribution films and TV programmes (~2 h unique content)"
+  note: "Two ~8-12 min segments each from a Charlie Chaplin film, Princess Mononoke, Passe-Partout, Planet Earth, Pulp Fiction and World of Tomorrow; each segment shown once per subject."

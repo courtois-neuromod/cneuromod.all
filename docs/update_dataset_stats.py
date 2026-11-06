@@ -4,13 +4,23 @@
 Drives entirely from the statistics pipeline output — every dataset present
 in fmri_stats_per_subject.tsv or session_counts.tsv (with any sessions) is
 processed. For each:
-  - If dataset_info.yaml exists: update subjects_n, subjects[*].status, and
-    neuroimaging.fmri hours (when fMRI stats are available).
+  - If dataset_info.yaml exists: update subjects_n, subjects[*].status,
+    neuroimaging.fmri hours (when fMRI stats are available), and
+    physiology.{ecg,respiration,plethysmograph,eda} hours (when the dataset
+    has raw physio in physio_stats_per_subject.tsv).
   - If dataset_info.yaml is absent: create a minimal skeleton.
 
+Physiology hours are usable hours per stream: Σ run duration × the fraction of
+valid windows in the physprep QC. Streams without QC are left untouched.
+
+Stimulus blocks under stats.tasks carrying `source: $FMRI` are filled from the
+fMRI hours (all numeric fields of the block, or only those listed in
+`source_fields`); `total_*` gets fmri.total_h and `per_subject_*` gets
+fmri.per_subject_h.
+
 Statuses partial / pending / collected_not_released are never overwritten.
-Fields not derived from the pipeline (tasks, physiology, modalities, etc.)
-are left untouched.
+Fields not derived from the pipeline (tasks, physiology.eye_tracking,
+modalities, etc.) are left untouched.
 
 Run from the repo root:
   python docs/update_dataset_stats.py
@@ -31,9 +41,68 @@ DEFAULT_STATS_DIR = (
 # Stats dataset name → folder name (only non-trivial overrides needed)
 STATS_TO_FOLDER = {}
 
+FMRI_REF = "$FMRI"
+STIMULUS_FIELDS = (
+    "total_unique",
+    "per_subject_unique",
+    "total_with_repetition",
+    "per_subject_with_repetition",
+)
+HOURS_FIELDS = ("total_h", "per_subject_h")
+ALL_REF_FIELDS = STIMULUS_FIELDS + HOURS_FIELDS
+
+
+def _ref_value(field, total_h, per_subject_h):
+    if field.startswith("total_"):
+        return total_h
+    if field.startswith("per_subject_"):
+        return per_subject_h
+    raise ValueError(f"source_fields entry {field!r} has no total_/per_subject_ prefix")
+
+
+def _marked_blocks(stats):
+    for name, block in (stats.get("tasks") or {}).items():
+        if hasattr(block, "get") and "source" in block:
+            yield name, block
+
+
+def has_fmri_refs(stats):
+    return any(True for _ in _marked_blocks(stats))
+
+
+def apply_fmri_refs(stats, total_h, per_subject_h):
+    """Fill tasks blocks marked `source: $FMRI`; return change lines."""
+    changes = []
+    for name, block in _marked_blocks(stats):
+        if block["source"] != FMRI_REF:
+            raise ValueError(f"tasks.{name}.source: unknown value {block['source']!r}")
+        if "source_fields" in block:
+            fields = list(block["source_fields"])
+            for f in fields:
+                _ref_value(f, total_h, per_subject_h)
+        else:
+            fields = [f for f in ALL_REF_FIELDS if f in block]
+            if "total_h" not in block and "total_unique" in block:
+                fields = [f for f in fields if f in STIMULUS_FIELDS]
+        for f in fields:
+            new = _ref_value(f, total_h, per_subject_h)
+            if block.get(f) != new:
+                changes.append(f"  tasks.{name}.{f}: {block.get(f)} → {new}")
+                block[f] = new
+    return changes
+
+
 PRESERVE_STATUSES = {"partial", "pending", "collected_not_released"}
 
 ALL_SUBJECTS = ["sub-01", "sub-02", "sub-03", "sub-04", "sub-05", "sub-06"]
+
+# physio_stats column prefix → dataset_info.yaml physiology key
+PHYSIO_STREAMS = {
+    "ECG": "ecg",
+    "RSP": "respiration",
+    "PPG": "plethysmograph",
+    "EDA": "eda",
+}
 
 
 def load_tsv(path):
@@ -52,6 +121,35 @@ def build_fmri_index(rows):
         runs = int(row["total_runs"]) if row["total_runs"] else 0
         duration = float(row["total_duration_h"]) if row["total_duration_h"] else 0.0
         index.setdefault(ds, {})[subj] = {"total_runs": runs, "total_duration_h": duration}
+    return index
+
+
+def build_physio_index(rows):
+    """Return {stat_name: {stream: {total_h, per_subject_h}}} from usable hours.
+
+    Only subjects with physio runs count towards per_subject_h; a stream with no
+    QC for any subject (empty usable_h) is left out.
+    """
+    by_dataset = {}
+    for row in rows:
+        if row["dataset"] == "all" or not row["n_runs"] or int(row["n_runs"]) == 0:
+            continue
+        by_dataset.setdefault(row["dataset"], []).append(row)
+
+    index = {}
+    for ds, subj_rows in by_dataset.items():
+        streams = {}
+        for prefix, key in PHYSIO_STREAMS.items():
+            values = [float(r[f"{prefix}_usable_h"]) for r in subj_rows if r[f"{prefix}_usable_h"]]
+            if not values:
+                continue
+            total_h = round(sum(values), 1)
+            streams[key] = {
+                "total_h": total_h,
+                "per_subject_h": round(total_h / len(subj_rows), 1),
+            }
+        if streams:
+            index[ds] = streams
     return index
 
 
@@ -79,7 +177,7 @@ def skeleton_yaml(stat_name, subjects_n, subj_sessions, has_fmri):
     return data
 
 
-def update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri):
+def update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri, physio=None):
     yaml = YAML()
     yaml.preserve_quotes = True
     yaml.width = 4096  # don't re-wrap hand-written folded descriptions
@@ -128,6 +226,18 @@ def update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri):
         data["stats"]["neuroimaging"]["fmri"]["total_h"] = total_h
         data["stats"]["neuroimaging"]["fmri"]["per_subject_h"] = per_subject_h
 
+        changes += apply_fmri_refs(data["stats"], total_h, per_subject_h)
+    elif has_fmri_refs(data.get("stats", {})):
+        print(f"WARNING: {yaml_path}: $FMRI marker but no fMRI stats; left untouched", file=sys.stderr)
+
+    for key, hours in (physio or {}).items():
+        physiology = data["stats"].setdefault("physiology", {})
+        stream = physiology.setdefault(key, {})
+        for field in ("total_h", "per_subject_h"):
+            if stream.get(field) != hours[field]:
+                changes.append(f"  physiology.{key}.{field}: {stream.get(field)} → {hours[field]}")
+                stream[field] = hours[field]
+
     if "subjects" not in data:
         data["subjects"] = []
 
@@ -168,6 +278,7 @@ def main():
     stats_dir = args.stats_dir
     per_subject_path = stats_dir / "fmri_stats_per_subject.tsv"
     sessions_path = stats_dir / "session_counts.tsv"
+    physio_path = stats_dir / "physio_stats_per_subject.tsv"
 
     for p in (per_subject_path, sessions_path):
         if not p.exists():
@@ -176,6 +287,11 @@ def main():
 
     fmri_index = build_fmri_index(load_tsv(per_subject_path))
     session_index = build_session_index(load_tsv(sessions_path))
+    if physio_path.exists():
+        physio_index = build_physio_index(load_tsv(physio_path))
+    else:
+        print(f"WARNING: missing {physio_path} — physiology hours not updated", file=sys.stderr)
+        physio_index = {}
 
     # All datasets with any data in either source
     all_stat_names = set(fmri_index) | {
@@ -193,7 +309,9 @@ def main():
         subj_sessions = session_index.get(stat_name, {})
 
         suffix = "" if has_fmri else " (session counts only — fMRI hours not updated)"
-        changes = update_or_create(yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri)
+        changes = update_or_create(
+            yaml_path, stat_name, subj_fmri, subj_sessions, has_fmri, physio_index.get(stat_name)
+        )
 
         if changes:
             created = changes == ["  (created skeleton)"]

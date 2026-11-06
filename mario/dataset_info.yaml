@@ -2,6 +2,11 @@ description: >-
   In-scanner gameplay of Super Mario Bros. (1985) across a discovery phase and a longer
   practice phase.
 
+maturity:
+  level: stable
+  reuse: [Paugam2025-oq, Harel2025-gl]
+  note: Reused in several papers beyond its own data paper
+
 stats:
   subjects_n: 5
   neuroimaging:
@@ -10,31 +15,34 @@ stats:
       per_subject_h: 18.4
   tasks:
     game:
+      source: $FMRI
       total_h: 92.2
       per_subject_h: 18.4
     video:
+      source: $FMRI
       total_unique: 92.2
       per_subject_unique: 18.4
       total_with_repetition: 92.2
       per_subject_with_repetition: 18.4
     audio:
+      source: $FMRI
       total_unique: 92.2
       per_subject_unique: 18.4
       total_with_repetition: 92.2
       per_subject_with_repetition: 18.4
   physiology:
     ecg:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 45.4
+      per_subject_h: 9.1
     respiration:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 91.2
+      per_subject_h: 18.2
     plethysmograph:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 68.0
+      per_subject_h: 13.6
     eda:
-      total_h: 92.2
-      per_subject_h: 18.4
+      total_h: 87.2
+      per_subject_h: 17.4
 
 subjects:
 - {id: sub-01, status: available}

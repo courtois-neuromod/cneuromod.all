@@ -1,5 +1,8 @@
 description: >-
-  Listening to spoken narratives in the scanner.
+  Listening to spoken stories, each followed by in-scanner free recall and recency judgments.
+
+maturity:
+  level: alpha
 
 stats:
   subjects_n: 5
@@ -9,11 +12,15 @@ stats:
       per_subject_h: 9.7
   tasks:
     audio:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 9.7
       per_subject_unique: 3.2
       total_with_repetition: 48.7
       per_subject_with_repetition: 9.7
     speech_listening:
+      source: $FMRI
+      source_fields: [total_with_repetition, per_subject_with_repetition]
       total_unique: 9.7
       per_subject_unique: 3.2
       total_with_repetition: 48.7

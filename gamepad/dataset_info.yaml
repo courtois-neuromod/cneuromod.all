@@ -2,6 +2,10 @@ description: >-
   Cued button-press task validating the CNeuroMod MRI-compatible videogame controller
   against a commercial gamepad.
 
+maturity:
+  level: stable
+  validation: [Harel2023-gp]
+
 stats:
   subjects_n: 4
   neuroimaging:

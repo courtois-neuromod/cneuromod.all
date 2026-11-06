@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+type: dataset
+title: "petit-prince — Courtois NeuroMod"
+license: CC0-1.0
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Li
+      given-names: Jixing
+    - family-names: Bhattasali
+      given-names: Shohini
+    - family-names: Zhang
+      given-names: Shulin
+    - family-names: Franzluebbers
+      given-names: Berta
+    - family-names: Luh
+      given-names: Wen-Ming
+    - family-names: Spreng
+      given-names: R. Nathan
+    - family-names: Brennan
+      given-names: Jonathan R.
+    - family-names: Yang
+      given-names: Yiming
+    - family-names: Pallier
+      given-names: Christophe
+    - family-names: Hale
+      given-names: John
+  title: "Le Petit Prince multilingual naturalistic fMRI corpus"
+  journal: "Scientific Data"
+  volume: 9
+  start: 530
+  year: 2022
+  doi: "10.1038/s41597-022-01625-7"

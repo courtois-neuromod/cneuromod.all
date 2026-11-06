@@ -1,0 +1,33 @@
+{
+  "projectName": "narratives",
+  "contributors": [
+    {
+      "id": "mtoneva",
+      "roles": ["Conceptualization", "Methodology"]
+    },
+    {
+      "id": "valentina-borghesani",
+      "roles": ["Conceptualization", "Methodology"]
+    },
+    {
+      "gitid": "MarieStLaurent",
+      "roles": ["Data curation", "Project administration", "Software"]
+    },
+    {
+      "gitid": "bpinsard",
+      "roles": ["Data curation", "Project administration", "Software"]
+    },
+    {
+      "gitid": "julieaboyle1",
+      "roles": ["Project administration", "Resources"]
+    },
+    {
+      "gitid": "lunebellec",
+      "roles": ["Conceptualization", "Supervision", "Funding acquisition", "Resources", "Project administration"]
+    }
+  ],
+  "funding": [
+    {"name": "Courtois Foundation"},
+    {"name": "Institut de valorisation des données (IVADO)"}
+  ]
+}

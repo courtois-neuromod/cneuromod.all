@@ -7,7 +7,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'source'))
 
-from _ext.validator import validate_dataset_info, _load_schema, load_authors, validate_authors, validate_contributors
+from _ext.validator import validate_dataset_info, _load_schema, load_authors, validate_authors, validate_contributors, validate_maturity, load_bibkeys
 
 
 class TestValidateDatasetInfo:
@@ -61,3 +61,30 @@ class TestContributors:
 
     def test_load_authors_missing_file(self, tmp_path):
         assert load_authors(tmp_path / 'nope.yaml') == {}
+
+
+class TestValidateMaturity:
+    def _write(self, tmp_path, text):
+        p = tmp_path / 'dataset_info.yaml'
+        p.write_text(text, encoding='utf-8')
+        return p
+
+    def test_valid(self, tmp_path):
+        p = self._write(tmp_path, "maturity:\n  level: stable\n  validation: [A1]\n  reuse: [B2]\n")
+        assert validate_maturity(p, {'A1', 'B2'}) == []
+
+    def test_absent_is_valid(self, tmp_path):
+        assert validate_maturity(self._write(tmp_path, "description: x\n"), {'A1'}) == []
+
+    def test_bad_level(self, tmp_path):
+        errors = validate_maturity(self._write(tmp_path, "maturity:\n  level: shiny\n"), set())
+        assert any('shiny' in e for e in errors)
+
+    def test_unknown_bibkey(self, tmp_path):
+        p = self._write(tmp_path, "maturity:\n  level: beta\n  reuse: [Nope2000]\n")
+        assert any('Nope2000' in e for e in validate_maturity(p, {'A1'}))
+
+    def test_load_bibkeys(self, tmp_path):
+        bib = tmp_path / 'x.bib'
+        bib.write_text("@ARTICLE{Foo2020-ab,\n title={t}\n}\n@misc{bar2021,\n}\n")
+        assert load_bibkeys(bib) == {'Foo2020-ab', 'bar2021'}

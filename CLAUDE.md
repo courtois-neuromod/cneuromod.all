@@ -61,23 +61,52 @@ It falls back to the first `tasks[].label` when absent. `docs/schema.json` descr
 - `tasks`: `game`, `video`, `audio`, `speech_listening`, `text_reading`, `resting_state`, `controlled`, `contrasts`, `images`
   - `game` (not `gameplay`) — use `{total_h, per_subject_h}`
   - stimulus types (`video`, `audio`, `speech_listening`, `text_reading`, `images`) — use `{total_unique, per_subject_unique, total_with_repetition, per_subject_with_repetition}`
+- Any `tasks.*` block may carry `source: $FMRI` (optionally with `source_fields: [...]` to limit which fields): CI then writes the fMRI `total_h`/`per_subject_h` into the block's `total_*`/`per_subject_*` fields (all of them when `source_fields` is absent). The marker stays in the yaml.
 - `physiology`: `ecg`, `respiration`, `plethysmograph`, `eda`, `eye_tracking` — each a `{total_h, per_subject_h}` object. **All physiology in `stats` is auto-rendered; do not duplicate it in `modalities`.**
 
 **`modalities` section** — manual list for things not captured in `stats` (e.g. game log file types, eyetracking availability when `eye_tracking` is absent from stats). Do not list physiology signals here.
 
 **`subjects` section** — list of `{id, status}` objects; valid statuses: `available`, `partial`, `pending`, `not_collected`, `collected_not_released`.
 
+**`maturity` section** — hand-maintained trust level, rendered as a badge in the gallery and a
+**Maturity** row on the dataset page. Shape: `{level, validation: [bibkeys], reuse: [bibkeys], note}`.
+Bibkeys must exist in `docs/source/cneuromod_references.bib` (unknown keys raise a Sphinx warning,
+as does an unknown level). Levels:
+- `reference` — formal validation paper **and** substantial reuse
+- `stable` — formal validation paper **or** substantial reuse
+- `beta` — complete (all planned participants released, fMRIPrep derivatives, docs README) but neither validated nor substantially reused
+- `alpha` — anything short of `beta`
+
+*Validation* = a dedicated paper testing that the dataset carries its intended signal (general
+QC metrics alone do not count). *Substantial reuse* = at least 3 papers using the data to answer
+a research question, excluding the dataset's own validation paper. Not named `status`, which
+already means availability in `subjects[]`/`modalities[]`.
+
 ### Machine-generated fields — do not hand-edit
 
-`stats.subjects_n`, `stats.neuroimaging.fmri.*`, and `subjects[*].status` are recomputed by
-CI on every PR and on every push to `main` (`.github/workflows/stats-pr.yml` /
+`stats.subjects_n`, `stats.neuroimaging.fmri.*`,
+`stats.physiology.{ecg,respiration,plethysmograph,eda}.*` and `subjects[*].status` are
+recomputed by CI on every PR and on every push to `main` (`.github/workflows/stats-pr.yml` /
 `stats-main.yml`), driven by `analysis/run_statistics.sh` and
 `docs/update_dataset_stats.py`. Edit the underlying data or the pipeline, not these fields
 directly — a manual edit will simply be overwritten by the next PR's stats check.
+Physiology hours are *usable* hours per stream (Σ run duration × the fraction of valid
+windows in the physprep QC), written only for datasets with raw physio in their BIDS tree;
+`tasks.*` fields filled by a `source: $FMRI` marker are also CI-written.
+`physiology.eye_tracking`, and physiology of datasets without raw physio, stay hand-set.
 `update_dataset_stats.py` never overwrites the `partial` / `pending` /
 `collected_not_released` statuses, so those remain hand-set. Everything else in
-`dataset_info.yaml` (`tasks`, `physiology`, `modalities`, notes, etc.) is untouched by the
+`dataset_info.yaml` (`tasks`, `modalities`, notes, etc.) is untouched by the
 pipeline and remains fully hand-maintained.
+
+`stats-main.yml` also runs `invoke refresh` (which rebuilds only the datasets whose
+source repos changed, tracked in `output_data/SOURCE_STATE.json`; the first run, or any
+change to the pipeline code, rebuilds everything) and pushes its outputs, including
+the release dashboard published at <https://stats.cneuromod.ca>, to
+`cneuromod.all.statistics`. It needs every source tree and the S3-backed timeseries index,
+so it refuses to run without the `CNEUROMOD_BOT_S3_ACCESS_KEY` / `CNEUROMOD_BOT_S3_SECRET_KEY`
+secrets (passed as `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`) rather than push a degraded
+dashboard.
 
 ## Submodule structure
 

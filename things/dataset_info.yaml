@@ -1,6 +1,10 @@
 description: >-
   Roughly 4000 images from 720 THINGS categories, each shown three times per subject.
 
+maturity:
+  level: stable
+  validation: [St-Laurent2026-zc]
+
 stats:
   subjects_n: 4
   neuroimaging:

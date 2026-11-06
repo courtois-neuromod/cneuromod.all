@@ -3,6 +3,11 @@ description: >-
   four
   times a year since 2018.
 
+maturity:
+  level: reference
+  validation: [Boudreau2025-ji]
+  note: Used implicitly by every derivative
+
 stats:
   subjects_n: 6
 subjects:
