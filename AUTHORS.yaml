@@ -285,10 +285,12 @@ authors:
 - id: eddy-fortier
   first_name: Eddy
   last_name: Fortier
+  orcid: 0000-0001-9459-8717
+  gitid: e-fortier
   affiliations:
-  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Department of Psychology, Université de Montréal, Montréal, Canada
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
-  verified: false
+  verified: true
 - id: adrian-fuente
   first_name: Adrian
   last_name: Fuente
