@@ -184,7 +184,7 @@ authors:
   orcid: 0000-0002-2060-4608
   affiliations:
   - IBM Research, Yorktown Heights, USA
-  verified: false
+  verified: true
 - id: karim-jerbi
   first_name: Karim
   last_name: Jerbi
@@ -211,7 +211,7 @@ authors:
   - Department of Psychology, University of Montréal, Montréal, Canada
   - Department of Anthropology and Sociology, Concordia University, Montréal, Canada
   - Milieux Institute for Arts, Culture and Technology, Concordia University, Montréal, Canada
-  verified: false
+  verified: true
 - id: FrancoisPgm
   first_name: François
   last_name: Paugam
