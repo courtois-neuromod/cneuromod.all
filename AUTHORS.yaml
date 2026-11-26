@@ -205,9 +205,12 @@ authors:
 - id: sangfrois
   first_name: François
   last_name: Lespinasse
+  orcid: 0000-0002-6897-2119
   gitid: sangfrois
   affiliations:
   - Department of Psychology, University of Montréal, Montréal, Canada
+  - Department of Anthropology and Sociology, Concordia University, Montréal, Canada
+  - Milieux Institute for Arts, Culture and Technology, Concordia University, Montréal, Canada
   verified: false
 - id: FrancoisPgm
   first_name: François
