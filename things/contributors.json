@@ -15,7 +15,7 @@
     },
     {
       "gitid": "emdupre",
-      "roles": ["Software", "Investigation", "Data curation", "Validation"]
+      "roles": ["Software", "Investigation", "Data curation", "Formal analysis", "Validation", "Writing – review & editing"]
     },
     {
       "gitid": "seelikat",

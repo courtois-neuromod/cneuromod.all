@@ -44,6 +44,10 @@
     {
       "gitid": "me-pic",
       "roles": ["Investigation", "Data curation"]
+    },
+    {
+      "gitid": "motahareh-pourrahimi",
+      "roles": ["Investigation"]
     }
   ]
 }

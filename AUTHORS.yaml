@@ -5,11 +5,17 @@ authors:
 - id: himanshu-aggarwal
   first_name: Himanshu
   last_name: Aggarwal
-  verified: false
+  orcid: 0000-0003-2451-0470
+  affiliations:
+  - Inria, CEA, Université Paris-Saclay, Palaiseau, France
+  verified: true
 - id: Delphine-A-22
   first_name: Delphine
   last_name: Aguiar
+  orcid: 0009-0002-1492-1970
   gitid: Delphine-A-22
+  affiliations:
+  - Département de psychologie, Université de Montréal, Montréal, Canada
   verified: false
 - id: lunebellec
   first_name: Lune
@@ -36,10 +42,11 @@ authors:
 - id: arnaudbore
   first_name: Arnaud
   last_name: Bore
+  orcid: 0000-0002-4822-1211
   gitid: arnaudbore
   affiliations:
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
-  verified: false
+  verified: true
 - id: valentina-borghesani
   first_name: Valentina
   last_name: Borghesani
@@ -108,8 +115,9 @@ authors:
   orcid: 0000-0003-1358-196X
   gitid: emdupre
   affiliations:
-  - McGill University, Montréal, Canada
-  verified: false
+  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  verified: true
 - id: nicofarr
   first_name: Nicolas
   last_name: Farrugia
@@ -159,21 +167,24 @@ authors:
   gitid: martinhebart
   affiliations:
   - Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany
-  verified: false
+  - Department of Medicine, Justus Liebig University Giessen, Giessen, Germany
+  verified: true
 - id: pouya-bashivan
   first_name: Pouya
   last_name: Bashivan
+  orcid: 0000-0002-0296-6381
   affiliations:
   - Department of Physiology, McGill University, Montréal, Canada
   - Mila – Quebec AI Institute, Montréal, Canada
   - Department of Computer Science, McGill University, Montréal, Canada
-  verified: false
+  verified: true
 - id: takuya-ito
   first_name: Takuya
   last_name: Ito
+  orcid: 0000-0002-2060-4608
   affiliations:
   - IBM Research, Yorktown Heights, USA
-  verified: false
+  verified: true
 - id: karim-jerbi
   first_name: Karim
   last_name: Jerbi
@@ -183,20 +194,24 @@ authors:
   - Mila – Quebec AI Institute, Montréal, Canada
   verified: false
 - id: RainyFields
-  first_name: Xiao-Xuan
+  first_name: Xiaoxuan
   last_name: Lei
+  orcid: 0000-0002-0003-509X
   gitid: RainyFields
   affiliations:
   - Department of Physiology, McGill University, Montréal, Canada
   - Mila – Quebec AI Institute, Montréal, Canada
-  verified: false
+  verified: true
 - id: sangfrois
   first_name: François
   last_name: Lespinasse
+  orcid: 0000-0002-6897-2119
   gitid: sangfrois
   affiliations:
   - Department of Psychology, University of Montréal, Montréal, Canada
-  verified: false
+  - Department of Anthropology and Sociology, Concordia University, Montréal, Canada
+  - Milieux Institute for Arts, Culture and Technology, Concordia University, Montréal, Canada
+  verified: true
 - id: FrancoisPgm
   first_name: François
   last_name: Paugam
@@ -209,8 +224,12 @@ authors:
 - id: me-pic
   first_name: Marie-Ève
   last_name: Picard
+  orcid: 0009-0001-2412-7829
   gitid: me-pic
-  verified: false
+  affiliations:
+  - Département de psychologie, Université de Montréal, Montréal, Canada
+  - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
+  verified: true
 - id: bpinsard
   first_name: Basile
   last_name: Pinsard
@@ -224,17 +243,25 @@ authors:
 - id: ana-fernanda-ponce
   first_name: Ana Fernanda
   last_name: Ponce
-  verified: false
+  orcid: 0000-0001-7142-0975
+  affiliations:
+  - Université Paris-Saclay, Inria, CEA, Palaiseau, France
+  verified: true
 - id: motahareh-pourrahimi
   first_name: Motahareh
   last_name: Pourrahimi
+  orcid: 0009-0007-3337-0138
   gitid: motahareh-pourrahimi
-  verified: false
+  affiliations:
+  - McGill University, Montréal, Canada
+  - Mila – Quebec AI Institute, Montréal, Canada
+  verified: true
 - id: pierre-rainville
   first_name: Pierre
   last_name: Rainville
+  orcid: 0000-0001-9801-757X
   affiliations:
-  - Université de Montréal
+  - Département de stomatologie, Université de Montréal, Montréal, Canada
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
   verified: false
 - id: pravishsainath
@@ -252,11 +279,11 @@ authors:
   gitid: seelikat
   affiliations:
   - Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany
-  verified: false
+  verified: true
 - id: MarieStLaurent
   first_name: Marie
   last_name: St-Laurent
-  orcid: 0000-0003-1777-4857
+  orcid: 0009-0004-6315-9702
   gitid: MarieStLaurent
   affiliations:
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
@@ -265,15 +292,17 @@ authors:
   first_name: Bertrand
   last_name: Thirion
   orcid: 0000-0001-5018-7895
-  verified: false
+  affiliations:
+  - Inria, CEA, Université Paris-Saclay, Palaiseau, France
+  verified: true
 - id: mtoneva
   first_name: Mariya
   last_name: Toneva
   orcid: 0000-0002-2407-9871
   gitid: mtoneva
   affiliations:
-  - Carnegie Mellon University, Pittsburgh, USA
-  verified: false
+  - Max Planck Institute for Software Systems, Saarbrücken, Germany
+  verified: true
 - id: lwehbe
   first_name: Leila
   last_name: Wehbe
@@ -285,14 +314,17 @@ authors:
 - id: eddy-fortier
   first_name: Eddy
   last_name: Fortier
+  orcid: 0000-0001-9459-8717
+  gitid: e-fortier
   affiliations:
-  - Department of Psychology, University of Montréal, Montréal, Canada
+  - Department of Psychology, Université de Montréal, Montréal, Canada
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
-  verified: false
+  verified: true
 - id: adrian-fuente
   first_name: Adrian
   last_name: Fuente
+  orcid: 0000-0003-3736-5057
   affiliations:
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
   - School of Speech-Language Pathology and Audiology, University of Montréal, Montréal, Canada
-  verified: false
+  verified: true
