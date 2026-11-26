@@ -22,10 +22,6 @@
       "roles": ["Software", "Validation"]
     },
     {
-      "orcid": "0000-0002-7909-8631",
-      "roles": ["Conceptualization", "Methodology"]
-    },
-    {
       "gitid": "julieaboyle1",
       "roles": ["Conceptualization", "Project administration", "Investigation", "Data curation", "Validation"]
     },
