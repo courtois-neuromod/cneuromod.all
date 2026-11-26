@@ -38,6 +38,10 @@
       "roles": ["Investigation", "Data curation"]
     },
     {
+      "gitid": "MarieStLaurent",
+      "roles": ["Data curation", "Software", "Validation"]
+    },
+    {
       "gitid": "lunebellec",
       "roles": ["Methodology"]
     }

@@ -2,9 +2,9 @@
 
 ## Overview
 
-This dataset contains functional MRI (fMRI) data acquired while 6 CNeuroMod participants watched episodes of the American sitcom *Friends* in English. The dataset covers seasons 1–7. fMRI responses span the whole brain and are synchronized with multimodal movie stimuli — visual frames, audio samples, and time-stamped language transcripts.
+This dataset contains functional MRI (fMRI) data acquired while 6 CNeuroMod participants watched episodes of the American sitcom *Friends* (Crane & Kauffman, 1994–2004) in English. The dataset covers seasons 1–7. fMRI responses span the whole brain and are synchronized with multimodal movie stimuli — visual frames, audio samples, and time-stamped language transcripts.
 
-The Friends dataset is the primary training corpus for the [Algonauts Project 2025 Challenge](https://algonautsproject.com/) (*How the Human Brain Makes Sense of Multimodal Movies*), which benchmarks computational encoding models of multimodal brain responses.
+The Friends dataset is the primary training corpus for the [Algonauts Project 2025 Challenge](https://algonautsproject.com/) (*How the Human Brain Makes Sense of Multimodal Movies*), which benchmarks computational encoding models of brain responses to multimodal stimuli.
 
 ## Stimulus
 
