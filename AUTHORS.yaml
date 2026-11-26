@@ -181,6 +181,7 @@ authors:
 - id: takuya-ito
   first_name: Takuya
   last_name: Ito
+  orcid: 0000-0002-2060-4608
   affiliations:
   - IBM Research, Yorktown Heights, USA
   verified: false
