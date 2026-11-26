@@ -276,7 +276,7 @@ authors:
   gitid: seelikat
   affiliations:
   - Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany
-  verified: false
+  verified: true
 - id: MarieStLaurent
   first_name: Marie
   last_name: St-Laurent
