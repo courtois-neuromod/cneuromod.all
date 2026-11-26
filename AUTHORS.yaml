@@ -246,8 +246,12 @@ authors:
 - id: motahareh-pourrahimi
   first_name: Motahareh
   last_name: Pourrahimi
+  orcid: 0009-0007-3337-0138
   gitid: motahareh-pourrahimi
-  verified: false
+  affiliations:
+  - McGill University, Montréal, Canada
+  - Mila – Quebec AI Institute, Montréal, Canada
+  verified: true
 - id: pierre-rainville
   first_name: Pierre
   last_name: Rainville
