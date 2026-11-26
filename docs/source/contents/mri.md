@@ -65,7 +65,7 @@ This software also allowed to trigger the start of the eyetracking system, and o
 ## Physiological measures
 
 ### Biopac
-During all sequences, electrophysiological signals were recorded using a Biopac M160  MRI compatible systems and amplifiers. Measurements were acquired at 1000 Hz. Recodings were synchronized to the MRI scans via trigger pulses. All measurements were recorded and monitored using Biopac's AcqKnowledge sofware.
+During all sequences, electrophysiological signals were recorded using a Biopac M160  MRI compatible systems and amplifiers. Measurements were acquired at 10000 Hz. Recodings were synchronized to the MRI scans via trigger pulses. All measurements were recorded and monitored using Biopac's AcqKnowledge sofware.
 
 ### Plethysmograph
 Participant cardiac pulse was measured using an MRI compatible plethysmograph. A Biopac TSD200-MRI photoplethysmogram transducer was  placed on the foot or toe of the participants to obtain beat-by-beat estimates of heart rate.
