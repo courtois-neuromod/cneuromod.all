@@ -67,10 +67,11 @@ authors:
 - id: simona-brambati
   first_name: Simona M.
   last_name: Brambati
+  orcid: 0000-0002-9227-1443
   affiliations:
   - Department of Psychology, University of Montréal, Montréal, Canada
   - Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal (CRIUGM), Montréal, Canada
-  verified: false
+  verified: true
 - id: julieaboyle1
   first_name: Julie A.
   last_name: Boyle
