@@ -12,8 +12,8 @@ To access the data from all 6 subjects in the CNeuroMod databank, researchers ar
 
 Fill out one of the access forms below:
 
-  * [Access form](https://limesurvey.unf-montreal.ca/index.php/971272?newtest=Y&lang=en) (English version).
-  * [Formulaire d'accès](https://limesurvey.unf-montreal.ca/index.php/971272?newtest=Y&lang=fr) (version française).
+  * [Access form](https://ls.unf-montreal.ca/index.php/971272?newtest=Y&lang=en) (English version).
+  * [Formulaire d'accès](https://ls.unf-montreal.ca/index.php/971272?newtest=Y&lang=fr) (version française).
 
 If you have any question regarding the access form, send us an email at [courtois.neuromod@gmail.com](mailto:courtois.neuromod@gmail.com). These forms are also listed on the [access request page](https://www.cneuromod.ca/access/access/) of the CNeuroMod website.
 
