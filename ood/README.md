@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `ood` ("out-of-distribution") dataset was collected to test how well brain encoding models trained on CNeuroMod movie data (friends and movie10) generalize to movie content that differs from their training distribution in different ways. Participants watched excerpts from six films and TV programs chosen to span a range of genres, visual styles, tones and languages: a silent black-and-white comedy, hand-drawn and digital animation, a vintage children's show in Canadian French, a nature documentary, and a neo-noir crime feature film.
+The `ood` ("out-of-distribution") dataset was collected to test how well brain encoding models trained on CNeuroMod movie data (friends and movie10) generalize to movie content that differs from their training distribution. Participants watched excerpts from six films and TV programs chosen to span a range of genres, visual styles, tones and languages: a silent black-and-white comedy, hand-drawn and digital animation, a vintage children's show in Canadian French, a nature documentary, and a neo-noir crime feature film.
 
 The dataset served as the held-out test set for the second, out-of-distribution phase of the [Algonauts 2025 challenge](https://arxiv.org/abs/2501.00504), in which models trained on Friends and movie10 were evaluated on their ability to predict brain responses to these new stimuli. Results from the challenge winners show that prediction accuracy drops substantially relative to in-distribution data (Friends season 7), and that the drop is largest for the most atypical stimuli, such as silent film, abstract animation, and nature documentaries (d'Ascoli et al., 2026).
 
@@ -15,7 +15,7 @@ Each source was edited into two segments of roughly ten minutes (8–12 min), ea
 | `chaplin1`, `chaplin2` | "The Pawn Shop" (Chaplin, 1916), a Charlie Chaplin film | 10.7, 10.1 min | Music, black-and-white; no speech |
 | `mononoke1`, `mononoke2` | [Princess Mononoke](https://en.wikipedia.org/wiki/Princess_Mononoke) (Miyazaki, 1997) | 10.5, 10.6 min | Hand-drawn animation |
 | `passepartout1`, `passepartout2` | [Passe-Partout](https://en.wikipedia.org/wiki/Passe-Partout) (Lachance, 1979), episode 94 "Bon Coup, Mauvais Coup" and episode 95 "Cause et Effet"| 10.5, 10.8 min | French-language children's show from Québec (Canada) featuring puppets and live-action|
-| `planetearth1`, `planetearth2` | [Planet Earth](https://en.wikipedia.org/wiki/Planet_Earth_(2006_TV_series)) (BBC, 2006), episode 2 "Mountains" | 10.8, 10.4 min | Originally a wildlife documentary with narration; scenes featuring wildlife were edited out to show only landscapes |
+| `planetearth1`, `planetearth2` | [Planet Earth](https://en.wikipedia.org/wiki/Planet_Earth_(2006_TV_series)) (BBC, 2006), episode 2 "Mountains" | 10.8, 10.4 min | A nature documentary with narration; scenes featuring wildlife were edited out to show only landscapes |
 | `pulpfiction1`, `pulpfiction2` | [Pulp Fiction](https://en.wikipedia.org/wiki/Pulp_Fiction) (Tarantino, 1994) | 11.6, 9.4 min | Neo-noir crime comedy |
 | `wot1`, `wot2` | [World of Tomorrow](https://en.wikipedia.org/wiki/World_of_Tomorrow_(film)) (Hertzfeldt, 2015) | 8.8, 8.0 min | Abstract, minimalist animated short |
 
